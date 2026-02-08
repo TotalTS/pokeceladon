@@ -14,6 +14,8 @@ PlayBattleMusic::
 	jr .playSong
 .notGymLeaderBattle
 	ld a, [wCurOpponent]
+	cp MEW
+	jp z, .mewBattle
 	cp OPP_ID_OFFSET
 	jr c, .wildBattle
 	cp OPP_RIVAL3
@@ -21,6 +23,9 @@ PlayBattleMusic::
 	cp OPP_LANCE
 	jr nz, .normalTrainerBattle
 	ld a, MUSIC_GYM_LEADER_BATTLE ; lance also plays gym leader theme
+	jr .playSong
+.mewBattle
+	ld a, MUSIC_MEW_BATTLE
 	jr .playSong
 .normalTrainerBattle
 	ld a, MUSIC_TRAINER_BATTLE

@@ -417,6 +417,9 @@ ToggleableObjectStates:
 	toggle_object_state SEAFOAMISLANDSB4F_BOULDER1, OFF
 	toggle_object_state SEAFOAMISLANDSB4F_BOULDER2, OFF
 	toggle_object_state SEAFOAMISLANDSB4F_ARTICUNO, ON
+	
+	toggleable_objects_for VERMILION_DOCK
+	toggle_object_state VERMILION_DOCK_MEW, OFF
 
 	assert_table_length NUM_TOGGLEABLE_OBJECTS
 
