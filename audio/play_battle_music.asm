@@ -18,6 +18,8 @@ PlayBattleMusic::
 	jp z, .mewBattle
 	cp OPP_ID_OFFSET
 	jr c, .wildBattle
+	cp OPP_PROF_OAK
+	jr z, .finalBattle
 	cp OPP_RIVAL3
 	jr z, .finalBattle
 	cp OPP_LANCE

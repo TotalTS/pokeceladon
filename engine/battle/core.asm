@@ -931,7 +931,10 @@ TrainerBattleVictory:
 .gymleader
 	ld a, [wTrainerClass]
 	cp RIVAL3 ; final battle against rival
+	jr z, .isSpecialVictory
+	cp PROF_OAK ; final battle against OAK
 	jr nz, .notrival
+.isSpecialVictory
 	ld b, MUSIC_DEFEATED_GYM_LEADER
 	ld hl, wStatusFlags7
 	set BIT_NO_MAP_MUSIC, [hl]
