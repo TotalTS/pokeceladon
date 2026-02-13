@@ -35,6 +35,8 @@ CeladonMansion3FGameDesignerText:
 	ld hl, .Text
 	jr .done
 .completed_dex
+	ld a, 0
+    ld [wWhichTrade], a
 	ld hl, .CompletedDexText
 .done
 	call PrintText

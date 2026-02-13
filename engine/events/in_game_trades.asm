@@ -160,7 +160,7 @@ InGameTrade_DoTrade:
 	ld [wInGameTradeTextPointerTableIndex], a
 	ret
 
-InGameTrade_RestoreScreen:
+InGameTrade_RestoreScreen::
 	call GBPalWhiteOutWithDelay3
 	call RestoreScreenTilesAndReloadTilePatterns
 	call ReloadTilesetTilePatterns
@@ -201,7 +201,7 @@ InGameTrade_PrepareTradeData:
 	ld de, wTradedEnemyMonOTID
 	jp CopyData
 
-InGameTrade_CopyData:
+InGameTrade_CopyData::
 	push hl
 	push bc
 	call CopyData
@@ -209,7 +209,7 @@ InGameTrade_CopyData:
 	pop hl
 	ret
 
-InGameTrade_CopyDataToReceivedMon:
+InGameTrade_CopyDataToReceivedMon::
 	ld hl, wPartyMonNicks
 	ld bc, NAME_LENGTH
 	call InGameTrade_GetReceivedMonPointer

@@ -1,6 +1,8 @@
 InternalClockTradeAnim:
 ; Do the trading animation with the player's gameboy on the left.
 ; In-game trades and internally clocked link cable trades use this.
+	xor a
+	ld [wCustomTradeTextboxMode], a ; 0 = normal
 	ld a, [wTradedPlayerMonSpecies]
 	ld [wLeftGBMonSpecies], a
 	ld a, [wTradedEnemyMonSpecies]
@@ -8,9 +10,22 @@ InternalClockTradeAnim:
 	ld de, InternalClockTradeFuncSequence
 	jr TradeAnimCommon
 
+UniversityDistroAnim:
+	ld a, 1
+	ld [wCustomTradeTextboxMode], a ; 1 = university wide textbox
+	ld a, MAGIKARP
+	ld [wTradedPlayerMonSpecies], a
+    ld [wTradedEnemyMonSpecies], a
+    ld [wLeftGBMonSpecies], a
+    ld [wRightGBMonSpecies], a
+	ld de, UniversityDistroSequence
+	jr TradeAnimCommon
+
 ExternalClockTradeAnim:
 ; Do the trading animation with the player's gameboy on the right.
 ; Externally clocked link cable trades use this.
+	xor a
+	ld [wCustomTradeTextboxMode], a ; 0 = normal
 	ld a, [wTradedEnemyMonSpecies]
 	ld [wLeftGBMonSpecies], a
 	ld a, [wTradedPlayerMonSpecies]
@@ -111,6 +126,17 @@ ExternalClockTradeFuncSequence:
 	tradefunc PrintTradeWentToText
 	tradefunc Trade_Cleanup
 	db -1 ; end
+	
+UniversityDistroSequence:
+    tradefunc LoadTradingGFXAndMonNames
+	tradefunc Trade_SetGenericPal
+    tradefunc Trade_AnimRightToLeft
+    tradefunc Trade_ShowClearedWindow
+    tradefunc Trade_DrawOpenEndOfLinkCable
+    tradefunc Trade_ShowMagikarp
+    tradefunc Trade_Delay100
+	tradefunc Trade_Cleanup
+    db -1 ;
 
 TradeFuncPointerTable:
 	addtradefunc LoadTradingGFXAndMonNames
@@ -130,6 +156,8 @@ TradeFuncPointerTable:
 	addtradefunc Trade_Cleanup
 	addtradefunc Trade_SlideTextBoxOffScreen
 	addtradefunc Trade_SwapNames
+	addtradefunc Trade_ShowMagikarp
+	addtradefunc Trade_SetGenericPal
 
 Trade_Delay100:
 	ld c, 100
@@ -221,6 +249,10 @@ Trade_Cleanup:
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
 	ret
+	
+Trade_SetGenericPal:
+    ld b, SET_PAL_GENERIC
+    jp RunPaletteCommand
 
 Trade_ShowPlayerMon:
 	ld a, LCDC_ON | LCDC_WIN_9800 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC_BG_9C00 | LCDC_OBJ_8 | LCDC_OBJ_ON | LCDC_BG_ON
@@ -376,6 +408,44 @@ Trade_ShowEnemyMon:
 	lb bc, 8, 12
 	call ClearScreenArea
 	jp PrintTradeTakeCareText
+	
+Trade_ShowMagikarp:
+    ld a, TRADE_BALL_TILT_ANIM
+    call Trade_ShowAnimation
+    call Trade_ShowClearedWindow
+    
+    hlcoord 4, 10
+    ld b, 6
+    ld c, 10
+    call TextBoxBorder
+    
+    ld a, MAGIKARP
+    ld [wTradedEnemyMonSpecies], a
+    ld [wNamedObjectIndex], a
+    call GetMonName
+    
+    call Trade_PrintEnemyMonInfoText
+    call Trade_CopyTileMapToVRAM
+    ld a, $1
+    ldh [hAutoBGTransferEnabled], a
+    
+    ld a, [wTradedEnemyMonSpecies]
+    call Trade_LoadMonSprite
+    
+    ld a, TRADE_BALL_POOF_ANIM
+    call Trade_ShowAnimation
+    
+    ld a, $1
+    ldh [hAutoBGTransferEnabled], a
+    ld a, [wTradedEnemyMonSpecies]
+    call PlayCry
+    
+    call Trade_Delay100
+
+    hlcoord 4, 10
+    lb bc, 8, 12
+    call ClearScreenArea
+    ret
 
 Trade_AnimLeftToRight:
 ; Animates the mon moving from the left GB to the right one.
@@ -529,7 +599,15 @@ Trade_DrawRightGameboy:
 ; draw text box with enemy name above link cable
 	hlcoord 6, 0
 	ld b, 2
+	ld a, [wCustomTradeTextboxMode]
+	and a
+	jr z, .normalWidth
+.universityWidth
+	ld c, 10
+	jr .drawBox
+.normalWidth
 	ld c, 7
+.drawBox
 	call TextBoxBorder
 	hlcoord 7, 2
 	ld de, wLinkEnemyTrainerName

@@ -142,6 +142,7 @@ MapHeaderBanks::
 	db BANK(CeladonDiner_h)
 	db BANK(CeladonChiefHouse_h)
 	db BANK(CeladonHotel_h)
+	db BANK(CeladonUniversity_h)
 	db BANK(LavenderPokecenter_h)
 	db BANK(PokemonTower1F_h)
 	db BANK(PokemonTower2F_h)

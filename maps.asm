@@ -499,6 +499,11 @@ INCLUDE "scripts/CeladonHotel.asm"
 INCLUDE "data/maps/objects/CeladonHotel.asm"
 CeladonHotel_Blocks: INCBIN "maps/CeladonHotel.blk"
 
+INCLUDE "data/maps/headers/CeladonUniversity.asm"
+INCLUDE "scripts/CeladonUniversity.asm"
+INCLUDE "data/maps/objects/CeladonUniversity.asm"
+CeladonUniversity_Blocks: INCBIN "maps/CeladonUniversity.blk"
+
 INCLUDE "data/maps/headers/MtMoonPokecenter.asm"
 INCLUDE "scripts/MtMoonPokecenter.asm"
 INCLUDE "data/maps/objects/MtMoonPokecenter.asm"

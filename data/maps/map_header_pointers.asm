@@ -142,6 +142,7 @@ MapHeaderPointers::
 	dw CeladonDiner_h
 	dw CeladonChiefHouse_h
 	dw CeladonHotel_h
+	dw CeladonUniversity_h
 	dw LavenderPokecenter_h
 	dw PokemonTower1F_h
 	dw PokemonTower2F_h

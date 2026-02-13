@@ -295,6 +295,10 @@ wMenuWatchMovingOutOfBounds:: db
 
 wTradeCenterPointerTableIndex:: db
 
+wCustomTradeTextboxMode:: db
+; 0 = normal trade (InternalClockTradeAnim)
+; 1 = UniversityDistroAnim (expand name box)
+
 	ds 1
 
 ; destination pointer for text output

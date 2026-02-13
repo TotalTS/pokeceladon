@@ -68,3 +68,6 @@ Facility_Coll::
 
 Plateau_Coll::
 	coll_tiles $1b, $23, $2c, $2d, $3b, $45
+
+University_Coll::
+	coll_tiles $01, $05, $11, $14, $34, $35, $40, $41
