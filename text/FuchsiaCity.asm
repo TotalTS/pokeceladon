@@ -117,3 +117,21 @@ _FuchsiaCityFossilSignKabutoText::
 _FuchsiaCityFossilSignUndeterminedText::
 	text "..."
 	done
+
+_ErikReceivedPokegearText::
+	text "ERIK: A"
+	line "#GEAR?"
+	cont "Wait... she"
+	cont "meant catching"
+	cont "#MON?"
+
+	para "Not flying here"
+	line "on a bird"
+	cont "#MON?"
+	cont "Oh, boy!"
+
+	para "I really"
+	line "messed up!"
+	cont "I'm going to"
+	cont "the SAFARI ZONE!"
+	done

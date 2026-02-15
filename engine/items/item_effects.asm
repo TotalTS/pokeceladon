@@ -66,7 +66,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone   ; LEAF_STONE
 	dw ItemUseCardKey    ; CARD_KEY
 	dw UnusableItem      ; NUGGET
-	dw UnusableItem      ; ITEM_32
+	dw ItemUsePokeGEAR   ; ITEM_32
 	dw ItemUsePokeDoll   ; POKE_DOLL
 	dw ItemUseMedicine   ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
@@ -2958,3 +2958,11 @@ CheckMapForMon:
 	jr nz, .loop
 	dec hl
 	ret
+
+ItemUsePokeGEAR:
+	ld hl, OakPokegearCancelText
+	jp ItemUseFailed
+
+OakPokegearCancelText:
+	text_far _OakPokegearCancelText
+	text_end

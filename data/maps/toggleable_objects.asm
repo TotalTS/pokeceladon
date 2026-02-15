@@ -420,6 +420,12 @@ ToggleableObjectStates:
 	
 	toggleable_objects_for VERMILION_DOCK
 	toggle_object_state VERMILION_DOCK_MEW, OFF
+	
+	toggleable_objects_for SAFARI_ZONE_CENTER_REST_HOUSE
+	toggle_object_state SAFARI_REST_HOUSE_ERIK, OFF
+	
+	toggleable_objects_for FUCHSIA_CITY
+	toggle_object_state FUCHSIACITY_ERIK, ON
 
 	assert_table_length NUM_TOGGLEABLE_OBJECTS
 

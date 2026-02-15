@@ -393,5 +393,11 @@ ENDM
 	
 	toggle_consts_for VERMILION_DOCK
 	const TOGGLE_MEW
+	
+	toggle_consts_for SAFARI_ZONE_CENTER_REST_HOUSE
+	const TOGGLE_SAFARI_REST_HOUSE_ERIK
+	
+	toggle_consts_for FUCHSIA_CITY
+	const TOGGLE_FUCHSIACITY_ERIK
 
 DEF NUM_TOGGLEABLE_OBJECTS EQU const_value

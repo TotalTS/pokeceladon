@@ -16,6 +16,14 @@ SafariZoneGate_ScriptPointers:
 	EXPORT SCRIPT_SAFARIZONEGATE_LEAVING_SAFARI ; used by engine/events/hidden_events/safari_game.asm
 
 SafariZoneGateDefaultScript:
+	CheckEvent EVENT_IN_SAFARI_ZONE
+	jr z, .normal_behavior
+
+	ld a, SCRIPT_SAFARIZONEGATE_LEAVING_SAFARI
+	ld [wSafariZoneGateCurScript], a
+	ret
+
+.normal_behavior
 	ld hl, .PlayerNextToSafariZoneWorker1CoordsArray
 	call ArePlayerCoordsInArray
 	ret nc
@@ -146,8 +154,11 @@ SafariZoneGateSafariZoneWorker1Text:
 	text_end
 
 SafariZoneGateSafariZoneWorker1WouldYouLikeToJoinText:
-	text_far _SafariZoneGateSafariZoneWorker1WouldYouLikeToJoinText
 	text_asm
+	CheckEvent EVENT_GAVE_POKEGEAR_TO_ERIK
+	jr nz, .FreeEntry
+	ld hl, .OriginalJoinText
+	call PrintText
 	ld a, MONEY_BOX
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
@@ -165,7 +176,21 @@ SafariZoneGateSafariZoneWorker1WouldYouLikeToJoinText:
 	jr nc, .success
 	ld hl, .NotEnoughMoneyText
 	call PrintText
-	jr .CantPayWalkDown
+	jp .CantPayWalkDown
+	
+.FreeEntry:
+	ld hl, .FreeEntryText
+	call PrintText
+	jr .success_free
+	
+.OriginalJoinText:
+	text_far _SafariZoneGateSafariZoneWorker1WouldYouLikeToJoinText
+	text_end
+	
+.FreeEntryText:
+	text_far _FreeEntryText
+	sound_get_item_1
+	text_end
 
 .success
 	xor a
@@ -183,6 +208,22 @@ SafariZoneGateSafariZoneWorker1WouldYouLikeToJoinText:
 	call DisplayTextBoxID
 	ld hl, .MakePaymentText
 	call PrintText
+	ld a, 30
+	ld [wNumSafariBalls], a
+	ld a, HIGH(502)
+	ld [wSafariSteps], a
+	ld a, LOW(502)
+	ld [wSafariSteps + 1], a
+	ld a, PAD_UP
+	ld c, 3
+	call SafariZoneEntranceAutoWalk
+	SetEvent EVENT_IN_SAFARI_ZONE
+	ResetEventReuseHL EVENT_SAFARI_GAME_OVER
+	ld a, SCRIPT_SAFARIZONEGATE_PLAYER_MOVING
+	ld [wSafariZoneGateCurScript], a
+	jr .done
+	
+.success_free:
 	ld a, 30
 	ld [wNumSafariBalls], a
 	ld a, HIGH(502)

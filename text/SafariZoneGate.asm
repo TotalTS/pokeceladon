@@ -95,3 +95,14 @@ _SafariZoneGateSafariZoneWorker2YoureARegularHereText::
 	text "Sorry, you're a"
 	line "regular here!"
 	done
+
+_FreeEntryText::
+	text "ERIK told me"
+	line "about you!"
+
+	para "You can go in"
+	line "for free! Enjoy!"
+	
+	para "<PLAYER> received"
+	line "30 SAFARI BALLs!@"
+	text_end
