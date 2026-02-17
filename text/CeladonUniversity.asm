@@ -113,7 +113,7 @@ _CeladonUniversityProfNoText::
 _CeladonUniversityProfStartExamText::
 	text "Excellent!"
 
-	para "This exam is not"
+	para "This EXAM is not"
 	line "for beginners."
 
 	para "Failing is normal!"
@@ -128,9 +128,10 @@ _CeladonUniversityProfStartExamText::
 
 _CeladonUniversityProfQ1Text::
     text "QUESTION 1:"
-	line "Is WATER-Type"
+	line "Is water-type"
 	cont "weak against"
-	cont "GRASS #MON?"
+	cont "grass-type"
+	cont "#MON?"
     done
 
 _CeladonUniversityProfQ2Text::
