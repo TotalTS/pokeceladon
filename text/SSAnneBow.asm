@@ -50,3 +50,26 @@ _SSAnneBowSailor3AfterBattleText::
 	cont "#MON. I think"
 	cont "there are more."
 	done
+
+_SSAnneBowRookieBattleText::
+	text "Hey! I've been"
+	line "training hard"
+	cont "at the dock!"
+
+	para "Word is, you're"
+	line "the new CHAMPION!"
+	cont "Let's test you!"
+	done
+
+_SSAnneBowRookieEndBattleText::
+	text "Whoa!"
+	line "So much power!"
+	prompt
+
+_SSAnneBowRookieAfterBattleText::
+	text "Someday, I'll be"
+	line "as tough as a"
+	cont "GYM LEADER."
+
+	para "I won't give up!"
+	done

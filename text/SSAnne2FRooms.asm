@@ -111,3 +111,13 @@ _SSAnne2FRoomsCooltrainerFAfterBattleText::
 	text "Oh, I adore your"
 	line "strong #MON!"
 	done
+
+_ChikoritaIntroText::
+	text "I've seen plenty"
+	line "of #MON, but"
+	cont "this one was"
+	cont "unbelievable!"
+
+	para "It looked just"
+	line "like this!"
+	done

@@ -1,5 +1,6 @@
 SSAnneCaptainsRoom_Script:
 	call SSAnneCaptainsRoomEventScript
+	call CaptainPostGameToggle
 	jp EnableAutoTextBoxDrawing
 
 SSAnneCaptainsRoomEventScript:
@@ -8,10 +9,29 @@ SSAnneCaptainsRoomEventScript:
 	ld hl, wStatusFlags3
 	set BIT_NO_NPC_FACE_PLAYER, [hl]
 	ret
+	
+CaptainPostGameToggle:
+    ld a, [wNumHoFTeams]
+    and a
+    ret z
+
+    CheckEvent EVENT_CAPTAIN_MOVED_TO_CORNER
+    ret nz 
+
+	SetEvent EVENT_CAPTAIN_MOVED_TO_CORNER 
+
+	ld a, TOGGLE_SSANNECAPTAINSROOM_CAPTAIN
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+
+	ld a, TOGGLE_SSANNECAPTAINSROOM_CAPTAINPG
+	ld [wToggleableObjectIndex], a
+	predef_jump ShowObject
 
 SSAnneCaptainsRoom_TextPointers:
 	def_text_pointers
 	dw_const SSAnneCaptainsRoomCaptainText,     TEXT_SSANNECAPTAINSROOM_CAPTAIN
+	dw_const SSAnneCaptainsRoomCaptainHowDoYouLikeText, TEXT_SSANNECAPTAINSROOM_CAPTAINPG
 	dw_const SSAnneCaptainsRoomTrashText,       TEXT_SSANNECAPTAINSROOM_TRASH
 	dw_const SSAnneCaptainsRoomSeasickBookText, TEXT_SSANNECAPTAINSROOM_SEASICK_BOOK
 
@@ -86,6 +106,10 @@ SSAnneCaptainsRoomCaptainNotSickAnymoreText:
 
 SSAnneCaptainsRoomCaptainHM01NoRoomText:
 	text_far _SSAnneCaptainsRoomCaptainHM01NoRoomText
+	text_end
+
+SSAnneCaptainsRoomCaptainHowDoYouLikeText:
+	text_far _SSAnneCaptainsRoomCaptainHowDoYouLikeText
 	text_end
 
 SSAnneCaptainsRoomTrashText:

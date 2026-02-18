@@ -51,6 +51,9 @@ VermilionCityDefaultScript:
 	ld a, TEXT_VERMILIONCITY_SAILOR1
 	ldh [hTextID], a
 	call DisplayTextID
+	ld a, [wNumHoFTeams]
+    and a
+    ret nz
 	CheckEvent EVENT_SS_ANNE_LEFT
 	jr nz, .ship_departed
 	ld b, S_S_TICKET
@@ -157,6 +160,9 @@ VermilionCityGambler1Text:
 
 VermilionCitySailor1Text:
 	text_asm
+	ld a, [wNumHoFTeams]
+	and a
+	jr nz, .welcome_back_champ
 	CheckEvent EVENT_SS_ANNE_LEFT
 	jr nz, .ship_departed
 	ld a, [wSpritePlayerStateData1FacingDirection]
@@ -189,6 +195,12 @@ VermilionCitySailor1Text:
 .ship_departed
 	ld hl, .ShipSetSailText
 	call PrintText
+	jr .end
+.welcome_back_champ
+	ld hl, .WelcomeBackText
+	call PrintText
+	ld a, SCRIPT_VERMILIONCITY_PLAYER_ALLOWED_TO_PASS
+	ld [wVermilionCityCurScript], a
 .end
 	jp TextScriptEnd
 
@@ -215,6 +227,10 @@ VermilionCitySailor1Text:
 
 .ShipSetSailText:
 	text_far _VermilionCitySailor1ShipSetSailText
+	text_end
+	
+.WelcomeBackText:
+	text_far _VermilionCitySailor1WelcomeBackText
 	text_end
 
 VermilionCityGambler2Text:

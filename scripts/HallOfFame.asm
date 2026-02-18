@@ -46,6 +46,7 @@ HallOfFameResetEventsAndSaveScript:
 	ld [wLancesRoomCurScript], a
 	ld [wHallOfFameCurScript], a
 	; Elite 4 events
+	ResetEvent EVENT_SS_ANNE_LEFT
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
 	xor a
 	ld [wHallOfFameCurScript], a

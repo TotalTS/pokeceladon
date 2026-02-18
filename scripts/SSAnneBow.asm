@@ -5,7 +5,26 @@ SSAnneBow_Script:
 	ld a, [wSSAnneBowCurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wSSAnneBowCurScript], a
+	call SSAnneBowPostGameToggle
 	ret
+
+SSAnneBowPostGameToggle:
+    ld a, [wNumHoFTeams]
+    and a
+    ret z
+
+    CheckEvent EVENT_SSANNEBOW_NEWTRAINER
+    ret nz 
+
+	SetEvent EVENT_SSANNEBOW_NEWTRAINER 
+
+	ld a, TOGGLE_SSANNEBOW_SUPER_NERD
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+
+	ld a, TOGGLE_SSANNEBOW_ROOKIE
+	ld [wToggleableObjectIndex], a
+	predef_jump ShowObject
 
 SSAnneBow_ScriptPointers:
 	def_script_pointers
@@ -20,6 +39,7 @@ SSAnneBow_TextPointers:
 	dw_const SSAnneBowCooltrainerMText, TEXT_SSANNEBOW_COOLTRAINER_M
 	dw_const SSAnneBowSailor2Text,      TEXT_SSANNEBOW_SAILOR2
 	dw_const SSAnneBowSailor3Text,      TEXT_SSANNEBOW_SAILOR3
+	dw_const SSAnneBowRookieText,       TEXT_SSANNEBOW_ROOKIE
 
 SSAnne5TrainerHeaders:
 	def_trainers 4
@@ -27,7 +47,9 @@ SSAnne5TrainerHeader0:
 	trainer EVENT_BEAT_SS_ANNE_5_TRAINER_0, 3, SSAnneBowSailor2BattleText, SSAnneBowSailor2EndBattleText, SSAnneBowSailor2AfterBattleText
 SSAnne5TrainerHeader1:
 	trainer EVENT_BEAT_SS_ANNE_5_TRAINER_1, 3, SSAnneBowSailor3BattleText, SSAnneBowSailor3EndBattleText, SSAnneBowSailor3AfterBattleText
-	db -1 ; end
+SSAnne5TrainerHeader2:
+	trainer EVENT_BEAT_SS_ANNE_5_TRAINER_2, 3, SSAnneBowRookieBattleText, SSAnneBowRookieEndBattleText, SSAnneBowRookieAfterBattleText
+	db -1
 
 SSAnneBowSuperNerdText:
 	text_far _SSAnneBowSuperNerdText
@@ -76,3 +98,21 @@ SSAnneBowSailor3EndBattleText:
 SSAnneBowSailor3AfterBattleText:
 	text_far _SSAnneBowSailor3AfterBattleText
 	text_end
+	
+SSAnneBowRookieText:
+	text_asm
+	ld hl, SSAnne5TrainerHeader2
+	call TalkToTrainer
+	jp TextScriptEnd
+
+SSAnneBowRookieBattleText:
+    text_far _SSAnneBowRookieBattleText
+    text_end
+
+SSAnneBowRookieEndBattleText:
+    text_far _SSAnneBowRookieEndBattleText
+    text_end
+
+SSAnneBowRookieAfterBattleText:
+    text_far _SSAnneBowRookieAfterBattleText
+    text_end

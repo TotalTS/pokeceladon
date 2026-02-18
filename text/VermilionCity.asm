@@ -125,3 +125,12 @@ _VermilionCityGymSignText::
 _VermilionCityHarborSignText::
 	text "VERMILION HARBOR"
 	done
+
+_VermilionCitySailor1WelcomeBackText::
+	text "Welcome to S.S."
+	line "ANNE!"
+
+    para "S.S.ANNE has"
+    line "returned,"
+	cont "CHAMPION!"
+    done

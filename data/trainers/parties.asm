@@ -12,7 +12,7 @@ TrainerDataPointers:
 	dw BikerData
 	dw BurglarData
 	dw EngineerData
-	dw UnusedJugglerData
+	dw RookieData
 	dw FisherData
 	dw SwimmerData
 	dw CueBallData
@@ -310,8 +310,11 @@ EngineerData:
 	db 21, MAGNEMITE, 0
 	db 18, MAGNEMITE, MAGNEMITE, MAGNETON, 0
 
-UnusedJugglerData:
-; none
+RookieData:
+	db 55, ARBOK, ALAKAZAM, 0
+	db 40, PIDGEOT, ELECTABUZZ, 0
+	db 37, MACHOKE, GOLEM, 0
+	db 33, MAGNEMITE, MAGNEMITE, MAGNETON, 0
 
 FisherData:
 ; SS Anne 2F Rooms

@@ -1,5 +1,6 @@
 	object_const_def
 	const_export SSANNECAPTAINSROOM_CAPTAIN
+	const_export SSANNECAPTAINSROOM_CAPTAINPG
 
 SSAnneCaptainsRoom_Object:
 	db $c ; border block
@@ -13,5 +14,6 @@ SSAnneCaptainsRoom_Object:
 
 	def_object_events
 	object_event  4,  2, SPRITE_CAPTAIN, STAY, UP, TEXT_SSANNECAPTAINSROOM_CAPTAIN
+	object_event  1,  1, SPRITE_CAPTAIN, STAY, DOWN, TEXT_SSANNECAPTAINSROOM_CAPTAINPG
 
 	def_warps_to SS_ANNE_CAPTAINS_ROOM

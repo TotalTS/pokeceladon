@@ -373,3 +373,8 @@ LoreleiPic::       INCBIN "gfx/trainers/lorelei.pic"
 ChannelerPic::     INCBIN "gfx/trainers/channeler.pic"
 AgathaPic::        INCBIN "gfx/trainers/agatha.pic"
 LancePic::         INCBIN "gfx/trainers/lance.pic"
+
+SECTION "Pics 6", ROMX
+
+RookiePic::        INCBIN "gfx/new_trainers/rookie.pic"
+ChikoritaPic::     INCBIN "gfx/pokemon/front/chikorita.pic"

@@ -22,7 +22,21 @@ KabutopsFossilText::
 	text_far _KabutopsFossilText
 	text_end
 
-DisplayMonFrontSpriteInBox:
+ChikoritaShowSprite::
+	call EnableAutoTextBoxDrawing
+	tx_pre ChikoritaIntroText
+	ld a, CHIKORITA
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+    call Delay3
+	call UpdateSprites
+    ret
+
+ChikoritaIntroText::
+	text_far _ChikoritaIntroText
+	text_end
+
+DisplayMonFrontSpriteInBox::
 ; Displays a pokemon's front sprite in a pop-up window.
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a

@@ -8,6 +8,9 @@ VermilionDock_Script:
 	jr nz, .walking_out_of_dock
 	CheckEventReuseHL EVENT_GOT_HM01
 	ret z
+	ld a, [wNumHoFTeams]
+	and a
+	ret nz
 	ld a, [wDestinationWarpID]
 	cp $1
 	ret nz

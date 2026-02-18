@@ -426,6 +426,14 @@ ToggleableObjectStates:
 	
 	toggleable_objects_for FUCHSIA_CITY
 	toggle_object_state FUCHSIACITY_ERIK, ON
+	
+	toggleable_objects_for SS_ANNE_CAPTAINS_ROOM
+	toggle_object_state SSANNECAPTAINSROOM_CAPTAIN, ON
+	toggle_object_state SSANNECAPTAINSROOM_CAPTAINPG, OFF
+	
+	toggleable_objects_for SS_ANNE_BOW
+	toggle_object_state SSANNEBOW_SUPER_NERD, ON
+	toggle_object_state SSANNEBOW_ROOKIE, OFF
 
 	assert_table_length NUM_TOGGLEABLE_OBJECTS
 

@@ -62,3 +62,15 @@ _SSAnneCaptainsRoomSeasickBookText::
 	cont "The CAPTAIN's"
 	cont "reading this!"
 	done
+
+_SSAnneCaptainsRoomCaptainHowDoYouLikeText::
+	text "CAPTAIN: Ah…"
+	line "it’s you!"
+	cont "The CHAMPION!"
+
+	para "How do you like"
+	line "S.S.ANNE's ride?"
+	
+	para "She sails proud"
+	line "across the seas."
+	done

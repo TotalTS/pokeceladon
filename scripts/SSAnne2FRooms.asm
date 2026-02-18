@@ -70,13 +70,22 @@ SSAnne2FRoomsCooltrainerFText:
 
 SSAnne2FRoomsGentleman3Text:
 	text_asm
+	ld a, [wNumHoFTeams]
+    and a
+    jr nz, .chikorita_postgame
 	call SaveScreenTilesToBuffer1
 	ld hl, .Text
 	call PrintText
 	call LoadScreenTilesFromBuffer1
 	ld a, SNORLAX
 	call DisplayPokedex
-	jp TextScriptEnd
+    jp TextScriptEnd
+
+.chikorita_postgame
+    farcall ChikoritaShowSprite
+    ld a, 1
+    ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+    jp TextScriptEnd
 
 .Text:
 	text_far _SSAnne2FRoomsGentleman3Text

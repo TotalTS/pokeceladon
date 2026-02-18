@@ -392,6 +392,10 @@ GetMonHeader::
 	ld de, GhostPic
 	cp MON_GHOST ; Ghost
 	jr z, .specialID
+	ld de, ChikoritaPic
+    ld b, $55 ; Chikorita 5x5
+    cp CHIKORITA
+    jr z, .specialID
 	ld de, FossilAerodactylPic
 	ld b, $77 ; size of Aerodactyl fossil sprite
 	cp FOSSIL_AERODACTYL ; Aerodactyl fossil
