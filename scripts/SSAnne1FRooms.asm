@@ -79,8 +79,27 @@ SSAnne1FRoomsGentleman1EndBattleText:
 	text_end
 
 SSAnne1FRoomsGentleman1AfterBattleText:
+	text_asm
+	ld a, [wNumHoFTeams]
+    and a
+    jr nz, .postgame
+	ld hl, .normal_text
+	jr .done
+.postgame
+	ld hl, .postgame_text
+
+.done:
+	call PrintText
+	jp TextScriptEnd
+	
+.normal_text:	
 	text_far _SSAnne1FRoomsGentleman1AfterBattleText
 	text_end
+
+.postgame_text:
+	text_far _SSAnne1FRoomsGentleman1PostGameText
+	text_end
+
 
 SSAnne1FRoomsGentleman2BattleText:
 	text_far _SSAnne1FRoomsGentleman2BattleText
@@ -91,7 +110,25 @@ SSAnne1FRoomsGentleman2EndBattleText:
 	text_end
 
 SSAnne1FRoomsGentleman2AfterBattleText:
+	text_asm
+	ld a, [wNumHoFTeams]
+    and a
+    jr nz, .postgame
+	ld hl, .normal_text
+	jr .done
+.postgame
+	ld hl, .postgame_text
+
+.done:
+	call PrintText
+	jp TextScriptEnd
+	
+.normal_text:	
 	text_far _SSAnne1FRoomsGentleman2AfterBattleText
+	text_end
+
+.postgame_text:
+	text_far _SSAnne1FRoomsGentleman2PostGameText
 	text_end
 
 SSAnne1FRoomsYoungsterBattleText:
@@ -135,5 +172,23 @@ SSAnne1FRoomsGirl2Text:
 	text_end
 
 SSAnne1FRoomsGentleman3Text:
+	text_asm
+	ld a, [wNumHoFTeams]
+    and a
+    jr nz, .postgame
+	ld hl, .normal_text
+	jr .done
+.postgame
+	ld hl, .postgame_text
+
+.done:
+	call PrintText
+	jp TextScriptEnd
+
+.normal_text:
 	text_far _SSAnne1FRoomsGentleman3Text
+	text_end
+
+.postgame_text:
+	text_far _SSAnne1FRoomsGentleman3PostGameText
 	text_end

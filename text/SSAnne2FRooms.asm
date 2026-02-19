@@ -121,3 +121,32 @@ _ChikoritaIntroText::
 	para "It looked just"
 	line "like this!"
 	done
+
+_SSAnne2FRoomsFisherPostGameText::
+	text "The trainers here"
+	line "now are on a"
+	cont "different level!"
+
+	para "They all want a"
+	line "piece of the"
+	cont "new CHAMPION!"
+	done
+
+_SSAnne2FRoomsBrunetteGirlPostGameText::
+	text "The CAPTAIN looks"
+	line "great now!"
+
+	para "He says a kid"
+	line "helped him out"
+	cont "long ago!"
+	done
+	
+_SSAnne2FRoomsBeautyPostGameText::
+	text "This ship is now"
+	line "famous for its"
+	cont "strong trainers!"
+
+	para "Are you the one"
+	line "everyone's"
+	cont "talking about?"
+	done

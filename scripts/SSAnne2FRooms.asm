@@ -133,22 +133,40 @@ SSAnne2FRoomsLittleBoyText:
 
 SSAnne2FRoomsBrunetteGirlText:
 	text_asm
-	ld hl, .Text
+	ld a, [wNumHoFTeams]
+	and a
+	ld hl, .normal_text
+	jr z, .done
+	ld hl, .postgame_text
+.done
 	call PrintText
 	jp TextScriptEnd
 
-.Text:
+.normal_text:
 	text_far _SSAnne2FRoomsBrunetteGirlText
+	text_end
+
+.postgame_text:
+	text_far _SSAnne2FRoomsBrunetteGirlPostGameText
 	text_end
 
 SSAnne2FRoomsBeautyText:
 	text_asm
-	ld hl, .Text
+	ld a, [wNumHoFTeams]
+	and a
+	ld hl, .normal_text
+	jr z, .done
+	ld hl, .postgame_text
+.done
 	call PrintText
 	jp TextScriptEnd
 
-.Text:
+.normal_text:
 	text_far _SSAnne2FRoomsBeautyText
+	text_end
+
+.postgame_text:
+	text_far _SSAnne2FRoomsBeautyPostGameText
 	text_end
 
 SSAnne2FRoomsGentleman1BattleText:
@@ -172,7 +190,25 @@ SSAnne2FRoomsFisherEndBattleText:
 	text_end
 
 SSAnne2FRoomsFisherAfterBattleText:
+	text_asm
+	ld a, [wNumHoFTeams]
+    and a
+    jr nz, .postgame
+	ld hl, .normal_text
+	jr .done
+.postgame
+	ld hl, .postgame_text
+
+.done:
+	call PrintText
+	jp TextScriptEnd
+
+.normal_text:
 	text_far _SSAnne2FRoomsFisherAfterBattleText
+	text_end
+
+.postgame_text:
+	text_far _SSAnne2FRoomsFisherPostGameText
 	text_end
 
 SSAnne2FRoomsGentleman2BattleText:

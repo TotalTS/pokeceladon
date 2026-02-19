@@ -103,3 +103,53 @@ _SSAnne1FRoomsGentleman3Text::
 	para "I'm on the trail"
 	line "of TEAM ROCKET!"
 	done
+	
+_SSAnne1FRoomsGentleman3PostGameText::
+    text "Oh? It's you,"
+    line "CHAMPION!"
+
+    para "My mission to"
+    line "stop TEAM ROCKET"
+    cont "is over thanks"
+    cont "to your bravery."
+
+    para "I'm just hunting"
+    line "for any strays"
+    cont "hiding on board."
+
+    para "The world is"
+    line "safer with you"
+    cont "at the top!"
+    done
+
+_SSAnne1FRoomsGentleman1PostGameText::
+	text "I see now why"
+    line "you've conquered"
+    cont "the #MON"
+	cont "LEAGUE."
+
+    para "Strength alone"
+    line "is hollow, but"
+    cont "yours is fueled"
+    cont "by trust."
+
+    para "A true CHAMPION"
+    line "never walks"
+    cont "truly alone."
+    done
+
+_SSAnne1FRoomsGentleman2PostGameText::
+    text "Ah, the CHAMPION!"
+    line "Please, forgive"
+    cont "my rude manners."
+	
+	para "Even the #MON"
+    line "LEAGUE may feel"
+    cont "small for you"
+	cont "now."
+
+    para "Have you heard of"
+    line "MT. SILVER? Only"
+    cont "the strongest"
+    cont "dare to go there."
+	done

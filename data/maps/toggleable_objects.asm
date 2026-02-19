@@ -242,6 +242,16 @@ ToggleableObjectStates:
 	toggle_object_state SSANNE2FROOMS_RARE_CANDY, ON
 
 	toggleable_objects_for SS_ANNE_B1F_ROOMS
+;	toggle_object_state SSANNEB1FROOMS_SAILOR1,    ON
+;	toggle_object_state SSANNEB1FROOMS_SAILOR2,    ON
+;	toggle_object_state SSANNEB1FROOMS_SAILOR3,    ON
+;	toggle_object_state SSANNEB1FROOMS_SAILOR4,    ON
+;	toggle_object_state SSANNEB1FROOMS_SAILOR5,    ON
+;	toggle_object_state SSANNEB1FROOMS_FISHER,     ON
+	toggle_object_state SSANNEB1FROOMS_ROOKIE1,    OFF
+	toggle_object_state SSANNEB1FROOMS_ROOKIE2,    OFF
+	toggle_object_state SSANNEB1FROOMS_SUPER_NERD, ON
+	toggle_object_state SSANNEB1FROOMS_MACHOKE,    ON
 	toggle_object_state SSANNEB1FROOMS_ETHER,      ON
 	toggle_object_state SSANNEB1FROOMS_TM_REST,    ON
 	toggle_object_state SSANNEB1FROOMS_MAX_POTION, ON

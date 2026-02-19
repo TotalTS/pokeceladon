@@ -112,3 +112,52 @@ _SSAnneB1FRoomsSuperNerdText::
 	line "STRENGTH to move"
 	cont "big rocks!"
 	done
+
+_SSAnneB1FRoomsSailor1PostGameText::
+	text "Haha! You're the"
+	line "CHAMPION now!"
+
+	para "The sea is big,"
+	line "but you've"
+	cont "conquered it all!"
+	done
+	
+_SSAnneB1FRoomsRookie1BattleText::
+	text "I've been waiting"
+	line "in this cabin for"
+	cont "the CHAMPION!"
+	done
+
+_SSAnneB1FRoomsRookie1EndBattleText::
+	text "Whoa!"
+	line "You're the real"
+	cont "deal!"
+	prompt
+
+_SSAnneB1FRoomsRookie1AfterBattleText::
+	text "I heard rumors"
+	line "that you'd come"
+	cont "back here."
+
+	para "My training was"
+	line "not enough!"
+	done
+	
+_SSAnneB1FRoomsRookie2BattleText::
+	text "A rookie like me"
+	line "challenging the"
+	cont "CHAMPION?"
+
+	para "Here I go!"
+	done
+
+_SSAnneB1FRoomsRookie2EndBattleText::
+	text "I"
+	line "learned a lot!"
+	prompt
+
+_SSAnneB1FRoomsRookie2AfterBattleText::
+	text "Someday, I'll be"
+	line "the one everyone"
+	cont "wants to battle!"
+	done
