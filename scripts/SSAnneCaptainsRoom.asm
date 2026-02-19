@@ -14,6 +14,9 @@ CaptainPostGameToggle:
     ld a, [wNumHoFTeams]
     and a
     ret z
+	
+	ld hl, wStatusFlags3
+    res BIT_NO_NPC_FACE_PLAYER, [hl]
 
     CheckEvent EVENT_CAPTAIN_MOVED_TO_CORNER
     ret nz 

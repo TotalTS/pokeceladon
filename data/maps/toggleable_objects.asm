@@ -237,6 +237,7 @@ ToggleableObjectStates:
 	toggleable_objects_for SS_ANNE_1F_ROOMS
 	toggle_object_state SSANNE1FROOMS_ROOKIE1,          OFF
 	toggle_object_state SSANNE1FROOMS_ROOKIE2,          OFF
+	toggle_object_state SSANNE1FROOMS_ROOKIE3,          OFF
 	toggle_object_state SSANNE1FROOMS_GIRL1,            ON
 	toggle_object_state SSANNE1FROOMS_MIDDLE_AGED_MAN,  ON
 	toggle_object_state SSANNE1FROOMS_LITTLE_GIRL,      ON
@@ -247,11 +248,14 @@ ToggleableObjectStates:
 	toggleable_objects_for SS_ANNE_2F_ROOMS
 	toggle_object_state SSANNE2FROOMS_ROOKIE1,     OFF
 	toggle_object_state SSANNE2FROOMS_ROOKIE2,     OFF
+;	toggle_object_state SSANNE2FROOMS_ROOKIE3,     OFF ; tried to add Rookie 3 but there's too many objects on that map
 	toggle_object_state SSANNE2FROOMS_GENTLEMAN3,  ON
 	toggle_object_state SSANNE2FROOMS_MAX_ETHER,   ON
 	toggle_object_state SSANNE2FROOMS_GENTLEMAN4,  ON
 	toggle_object_state SSANNE2FROOMS_GRAMPS,      ON
 	toggle_object_state SSANNE2FROOMS_RARE_CANDY,  ON
+	toggle_object_state SSANNE2FROOMS_GENTLEMAN5,  ON
+	toggle_object_state SSANNE2FROOMS_LITTLE_BOY,  ON
 
 	toggleable_objects_for SS_ANNE_B1F_ROOMS
 ;	toggle_object_state SSANNEB1FROOMS_SAILOR1,    ON

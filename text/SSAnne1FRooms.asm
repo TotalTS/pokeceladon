@@ -195,3 +195,27 @@ _SSAnne1FRoomsRookie2AfterBattleText::
 	cont "VIRIDIAN and"
 	cont "train more."
 	done
+
+_SSAnne1FRoomsRookie3BattleText::
+	text "Wait! I know your"
+	line "battle style!"
+
+	para "I've analyzed your"
+	line "strategy, and I"
+	cont "have the answer!"
+	done
+
+_SSAnne1FRoomsRookie3EndBattleText::
+	text "No!"
+	line "My calculations!"
+	prompt
+
+_SSAnne1FRoomsRookie3AfterBattleText::
+	text "Calculations and"
+	line "data can't measure"
+	cont "your #MON's"
+	cont "spirit."
+
+	para "I have a lot"
+	line "to learn yet!"
+	done
