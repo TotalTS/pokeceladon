@@ -311,15 +311,31 @@ EngineerData:
 	db 18, MAGNEMITE, MAGNEMITE, MAGNETON, 0
 
 RookieData:
-	db 55, ARBOK, ALAKAZAM, 0
-	db 40, PIDGEOT, ELECTABUZZ, 0
-	db 37, MACHOKE, GOLEM, 0 ; SS_Anne_Bow
-	db 35, MAGNETON, TENTACRUEL, 0
-	db 42, ELECTRODE, PRIMEAPE, 0
-	db 38, PORYGON, RAPIDASH, 0
-	db 39, JYNX, MR_MIME, 0
-	db 41, ARCANINE, POLIWRATH, 0 ; SS_Anne_B1F_Rooms
-	db 44, JYNX, MR_MIME, DEWGONG, 0 ; SS_Anne_B1F_Rooms
+; Unused
+	db  5, RATTATA, 0
+	db  5, RATTATA, 0
+; SS_Anne_Bow
+	db 37, MACHOKE, GOLEM, 0
+; Unused
+	db  5, RATTATA, 0
+	db  5, RATTATA, 0
+	db  5, RATTATA, 0
+	db  5, RATTATA, 0
+; SS_Anne_B1F_Rooms
+	db 43, ARCANINE, POLIWRATH, RAPIDASH, 0
+	db 44, JYNX, MR_MIME, VILEPLUME, 0
+; Unused
+	db  5, RATTATA, 0
+	db  5, RATTATA, 0
+	db  5, RATTATA, 0
+; SS_Anne_1F_Rooms
+	db 42, ELECTRODE, PRIMEAPE, PORYGON, 0
+	db 44, ARBOK, ALAKAZAM, 0
+; Unused
+	db  5, RATTATA, 0
+; SS_Anne_2F_Rooms
+	db 49, TENTACRUEL, MAGNETON, 0
+	db 45, PIDGEOT, ELECTABUZZ, CHARIZARD, 0
 
 FisherData:
 ; SS Anne 2F Rooms

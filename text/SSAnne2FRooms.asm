@@ -150,3 +150,41 @@ _SSAnne2FRoomsBeautyPostGameText::
 	line "everyone's"
 	cont "talking about?"
 	done
+
+_SSAnne2FRoomsRookie1BattleText::
+	text "I saved up all"
+	line "my money for this"
+	cont "ticket just to"
+	cont "find you!"
+	done
+
+_SSAnne2FRoomsRookie1EndBattleText::
+	text "Worth"
+	line "every penny!"
+	prompt
+
+_SSAnne2FRoomsRookie1AfterBattleText::
+	text "The CAPTAIN said"
+	line "you're a legend"
+	cont "around here."
+
+	para "Now I see why!"
+	done
+
+_SSAnne2FRoomsRookie2BattleText::
+	text "Don't think you"
+	line "can win just"
+	cont "because of your"
+	cont "title!"
+	done
+
+_SSAnne2FRoomsRookie2EndBattleText::
+	text "Okay,"
+	line "maybe you can!"
+	prompt
+
+_SSAnne2FRoomsRookie2AfterBattleText::
+	text "Even after losing,"
+	line "battling you feels"
+	cont "like an honor!"
+	done

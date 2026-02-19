@@ -5,7 +5,35 @@ SSAnne1FRooms_Script:
 	ld a, [wSSAnne1FRoomsCurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wSSAnne1FRoomsCurScript], a
+	call SSAnne1FRoomsPostGameToggle
 	ret
+	
+SSAnne1FRoomsPostGameToggle:
+	ld a, [wNumHoFTeams]
+	and a
+	ret z
+
+	CheckEvent EVENT_SS_ANNE_1F_POSTGAME
+	ret nz
+
+	SetEvent EVENT_SS_ANNE_1F_POSTGAME
+
+	ld a, TOGGLE_SS_ANNE_1F_ROOMS_MIDDLE_AGED_MAN
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	ld a, TOGGLE_SS_ANNE_1F_ROOMS_LITTLE_GIRL
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	ld a, TOGGLE_SS_ANNE_1F_ROOMS_WIGGLYTUFF
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+
+	ld a, TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE1
+	ld [wToggleableObjectIndex], a
+	predef ShowObject
+	ld a, TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE2
+	ld [wToggleableObjectIndex], a
+	predef_jump ShowObject
 
 SSAnne1FRooms_ScriptPointers:
 	def_script_pointers
@@ -19,6 +47,8 @@ SSAnne1FRooms_TextPointers:
 	dw_const SSAnne1FRoomsGentleman2Text,    TEXT_SSANNE1FROOMS_GENTLEMAN2
 	dw_const SSAnne1FRoomsYoungsterText,     TEXT_SSANNE1FROOMS_YOUNGSTER
 	dw_const SSAnne1FRoomsCooltrainerFText,  TEXT_SSANNE1FROOMS_COOLTRAINER_F
+	dw_const SSAnne1FRoomsRookie1Text,       TEXT_SSANNE1FROOMS_ROOKIE1
+	dw_const SSAnne1FRoomsRookie2Text,       TEXT_SSANNE1FROOMS_ROOKIE2
 	dw_const SSAnne1FRoomsGirl1Text,         TEXT_SSANNE1FROOMS_GIRL1
 	dw_const SSAnne1FRoomsMiddleAgedManText, TEXT_SSANNE1FROOMS_MIDDLE_AGED_MAN
 	dw_const SSAnne1FRoomsLittleGirlText,    TEXT_SSANNE1FROOMS_LITTLE_GIRL
@@ -37,6 +67,10 @@ SSAnne8TrainerHeader2:
 	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_2, 2, SSAnne1FRoomsYoungsterBattleText, SSAnne1FRoomsYoungsterEndBattleText, SSAnne1FRoomsYoungsterAfterBattleText
 SSAnne8TrainerHeader3:
 	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_3, 2, SSAnne1FRoomsCooltrainerFBattleText, SSAnne1FRoomsCooltrainerFEndBattleText, SSAnne1FRoomsCooltrainerFAfterBattleText
+SSAnne8TrainerHeader4:
+	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_4, 3, SSAnne1FRoomsRookie1BattleText, SSAnne1FRoomsRookie1EndBattleText, SSAnne1FRoomsRookie1AfterBattleText
+SSAnne8TrainerHeader5:
+	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_5, 2, SSAnne1FRoomsRookie2BattleText, SSAnne1FRoomsRookie2EndBattleText, SSAnne1FRoomsRookie2AfterBattleText
 	db -1 ; end
 
 SSAnne1FRoomsGentleman1Text:
@@ -154,6 +188,18 @@ SSAnne1FRoomsCooltrainerFEndBattleText:
 SSAnne1FRoomsCooltrainerFAfterBattleText:
 	text_far _SSAnne1FRoomsCooltrainerFAfterBattleText
 	text_end
+	
+SSAnne1FRoomsRookie1Text:
+	text_asm
+	ld hl, SSAnne8TrainerHeader4
+	call TalkToTrainer
+	jp TextScriptEnd
+	
+SSAnne1FRoomsRookie2Text:
+	text_asm
+	ld hl, SSAnne8TrainerHeader5
+	call TalkToTrainer
+	jp TextScriptEnd
 
 SSAnne1FRoomsGirl1Text:
 	text_far _SSAnne1FRoomsGirl1Text
@@ -191,4 +237,28 @@ SSAnne1FRoomsGentleman3Text:
 
 .postgame_text:
 	text_far _SSAnne1FRoomsGentleman3PostGameText
+	text_end
+
+SSAnne1FRoomsRookie1BattleText:
+	text_far _SSAnne1FRoomsRookie1BattleText
+	text_end
+
+SSAnne1FRoomsRookie1EndBattleText:
+	text_far _SSAnne1FRoomsRookie1EndBattleText
+	text_end
+
+SSAnne1FRoomsRookie1AfterBattleText:
+	text_far _SSAnne1FRoomsRookie1AfterBattleText
+	text_end
+	
+SSAnne1FRoomsRookie2BattleText:
+	text_far _SSAnne1FRoomsRookie2BattleText
+	text_end
+
+SSAnne1FRoomsRookie2EndBattleText:
+	text_far _SSAnne1FRoomsRookie2EndBattleText
+	text_end
+
+SSAnne1FRoomsRookie2AfterBattleText:
+	text_far _SSAnne1FRoomsRookie2AfterBattleText
 	text_end

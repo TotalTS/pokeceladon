@@ -235,11 +235,23 @@ ToggleableObjectStates:
 	toggle_object_state SSANNE2F_RIVAL, OFF
 
 	toggleable_objects_for SS_ANNE_1F_ROOMS
-	toggle_object_state SSANNE1FROOMS_TM_BODY_SLAM, ON
+	toggle_object_state SSANNE1FROOMS_ROOKIE1,          OFF
+	toggle_object_state SSANNE1FROOMS_ROOKIE2,          OFF
+	toggle_object_state SSANNE1FROOMS_GIRL1,            ON
+	toggle_object_state SSANNE1FROOMS_MIDDLE_AGED_MAN,  ON
+	toggle_object_state SSANNE1FROOMS_LITTLE_GIRL,      ON
+	toggle_object_state SSANNE1FROOMS_WIGGLYTUFF,       ON
+	toggle_object_state SSANNE1FROOMS_GIRL2,            ON
+	toggle_object_state SSANNE1FROOMS_TM_BODY_SLAM,     ON
 
 	toggleable_objects_for SS_ANNE_2F_ROOMS
-	toggle_object_state SSANNE2FROOMS_MAX_ETHER,  ON
-	toggle_object_state SSANNE2FROOMS_RARE_CANDY, ON
+	toggle_object_state SSANNE2FROOMS_ROOKIE1,     OFF
+	toggle_object_state SSANNE2FROOMS_ROOKIE2,     OFF
+	toggle_object_state SSANNE2FROOMS_GENTLEMAN3,  ON
+	toggle_object_state SSANNE2FROOMS_MAX_ETHER,   ON
+	toggle_object_state SSANNE2FROOMS_GENTLEMAN4,  ON
+	toggle_object_state SSANNE2FROOMS_GRAMPS,      ON
+	toggle_object_state SSANNE2FROOMS_RARE_CANDY,  ON
 
 	toggleable_objects_for SS_ANNE_B1F_ROOMS
 ;	toggle_object_state SSANNEB1FROOMS_SAILOR1,    ON

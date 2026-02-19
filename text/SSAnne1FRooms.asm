@@ -153,3 +153,45 @@ _SSAnne1FRoomsGentleman2PostGameText::
     cont "the strongest"
     cont "dare to go there."
 	done
+
+_SSAnne1FRoomsRookie1BattleText::
+	text "The rumors were"
+	line "true! You're back"
+	cont "on the ship!"
+
+	para "Prepare to face"
+	line "my best team!"
+	done
+
+_SSAnne1FRoomsRookie1EndBattleText::
+	text "Amazing!"
+	line "What power!"
+	prompt
+
+_SSAnne1FRoomsRookie1AfterBattleText::
+	text "I've watched all"
+	line "your battles at"
+	cont "the LEAGUE."
+
+	para "Seeing you in"
+	line "person is even"
+	cont "more intense!"
+	done
+	
+_SSAnne1FRoomsRookie2BattleText::
+	text "I'm going to be"
+	line "the one to take"
+	cont "down the CHAMP!"
+	done
+
+_SSAnne1FRoomsRookie2EndBattleText::
+	text "I"
+	line "wasn't ready..."
+	prompt
+
+_SSAnne1FRoomsRookie2AfterBattleText::
+	text "Maybe I should"
+	line "go back to"
+	cont "VIRIDIAN and"
+	cont "train more."
+	done
