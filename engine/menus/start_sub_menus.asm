@@ -340,6 +340,8 @@ StartMenu_Item::
 	ld a, [wCurItem]
 	cp BICYCLE
 	jp z, .useOrTossItem
+	cp ROCKET_SUIT
+	jp z, .useItem_closeMenu
 ; not Bicycle
 	ld a, USE_TOSS_MENU_TEMPLATE
 	ld [wTextBoxID], a

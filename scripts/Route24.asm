@@ -119,6 +119,22 @@ Route24CooltrainerM1Text:
 	call PrintText
 	ld hl, .JoinTeamRocketText
 	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refusedJoin
+	lb bc, ROCKET_SUIT, 1
+	call GiveItem
+	jr nc, .bag_full
+	ld hl, .WelcomeToRocketText
+	call PrintText
+	ld hl, .ReceivedNuggetText
+	call PrintText
+	jp TextScriptEnd
+
+.refusedJoin
+	ld hl, .ConvincingText
+	call PrintText
 	ld hl, wStatusFlags3
 	set BIT_TALKED_TO_TRAINER, [hl]
 	set BIT_PRINT_END_BATTLE_TEXT, [hl]
@@ -157,12 +173,26 @@ Route24CooltrainerM1Text:
 	text_promptbutton
 	text_end
 
+.ReceivedRocketSuitText:
+	text_far _Route24CooltrainerM1ReceivedNuggetText
+	sound_get_item_1
+	text_promptbutton
+	text_end
+
 .NoRoomText:
 	text_far _Route24CooltrainerM1NoRoomText
 	text_end
 
 .JoinTeamRocketText:
 	text_far _Route24CooltrainerM1JoinTeamRocketText
+	text_end
+	
+.WelcomeToRocketText:
+	text_far _Route24CooltrainerM1WelcomeToRocketText
+	text_end
+	
+.ConvincingText:
+	text_far _Route24CooltrainerM1ConvincingText
 	text_end
 
 .DefeatedText:

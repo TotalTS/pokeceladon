@@ -31,10 +31,27 @@ _Route24CooltrainerM1JoinTeamRocketText::
 	para "We're a group"
 	line "dedicated to evil"
 	cont "using #MON!"
-
+	
 	para "Want to join?"
+	done
+	
+_Route24CooltrainerM1WelcomeToRocketText::
+	text "Smart choice!"
+	line "You look like a"
+	cont "natural-born"
+	cont "villain."
 
-	para "Are you sure?"
+	para "Take this ROCKET"
+	line "SUIT. Wear it"
+	cont "to blend in"
+	cont "with us!"
+    
+    para "Don't make me"
+    line "regret this!"
+	prompt
+
+_Route24CooltrainerM1ConvincingText::
+	text "Are you sure?"
 
 	para "Come on, join us!"
 

@@ -131,6 +131,8 @@ IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	jr nz, .trainerNotEngaging
 ENDC
+	callfar CheckRocketSuitInfiltratedMap
+	jr c, .trainerRocketSuitNotEngaging
 	call CheckForEngagingTrainers
 	ld a, [wSpriteIndex]
 	cp $ff
@@ -138,6 +140,11 @@ ENDC
 IF DEF(_DEBUG)
 .trainerNotEngaging
 ENDC
+	xor a
+	ld [wSpriteIndex], a
+	ld [wTrainerHeaderFlagBit], a
+	ret
+.trainerRocketSuitNotEngaging	
 	xor a
 	ld [wSpriteIndex], a
 	ld [wTrainerHeaderFlagBit], a

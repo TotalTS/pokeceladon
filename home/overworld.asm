@@ -811,7 +811,12 @@ LoadPlayerSpriteGraphics::
 	; 0: standing
 	; 1: biking
 	; 2: surfing
+	ld a, [wIsRocketSuit]
+    and a
+    jr z, .notRocket
+    jp LoadRocketPlayerSpriteGraphics
 
+.notRocket
 	ld a, [wWalkBikeSurfState]
 	dec a
 	jr z, .ridingBike
@@ -2000,6 +2005,11 @@ LoadSurfingPlayerSpriteGraphics::
 
 LoadBikePlayerSpriteGraphics::
 	ld de, RedBikeSprite
+	ld hl, vNPCSprites
+	jr LoadPlayerSpriteGraphicsCommon
+	
+LoadRocketPlayerSpriteGraphics::
+	ld de, RocketSprite
 	ld hl, vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon::

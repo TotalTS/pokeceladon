@@ -60,7 +60,7 @@ ItemUsePtrTable:
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY
-	dw UnusableItem      ; ITEM_2C
+	dw ItemUseRocketSuit ; ITEM_2C
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
@@ -1539,6 +1539,78 @@ ItemUseRepelCommon:
 	ld a, b
 	ld [wRepelRemainingSteps], a
 	jp PrintItemUseTextAndRemoveItem
+
+ItemUseRocketSuit:
+    ld a, [wIsInBattle]
+    and a
+    jp nz, ItemUseNotTime
+
+    ld a, [wWalkBikeSurfState]
+    cp 2
+    jp z, ItemUseNotTime
+    cp 1
+    jr z, .cannotWhileBiking
+	ld a, [wIsRocketSuit]
+    and a
+    jr nz, .takeOffSuit
+
+.putOnSuit
+    ld a, 1
+    ld [wIsRocketSuit], a
+	xor a
+    ld [wWalkBikeSurfState], a
+    call ItemUseReloadOverworldData
+    ld hl, PutOnRocketSuitText
+    jp PrintText
+
+.takeOffSuit
+	xor a
+    ld [wIsRocketSuit], a
+    ld [wWalkBikeSurfState], a
+    call ItemUseReloadOverworldData
+    ld hl, TookOffRocketSuitText
+    jp PrintText
+
+.cannotWhileBiking
+    ld hl, CannotUseWhileBikingText
+    jp PrintText
+
+PutOnRocketSuitText::
+    text_far PutOnRocketSuitText1
+    text_low
+    text_far PutOnRocketSuitText2
+    text_end
+
+PutOnRocketSuitText1::
+    text "<PLAYER> put on the@"
+    text_end
+
+PutOnRocketSuitText2::
+    text_ram wStringBuffer
+    text "!"
+    prompt
+
+TookOffRocketSuitText::
+    text_far TookOffRocketSuitText1
+    text_low
+    text_far TookOffRocketSuitText2
+    text_end
+
+TookOffRocketSuitText1::
+    text "<PLAYER> took off@"
+    text_end
+
+TookOffRocketSuitText2::
+    text "the @"
+    text_ram wStringBuffer
+    text "."
+    prompt
+
+CannotUseWhileBikingText::
+    text "You can't change"
+    line "clothes while"
+    cont "riding a BIKE!"
+    prompt
 
 ; handles X Accuracy item
 ItemUseXAccuracy:
