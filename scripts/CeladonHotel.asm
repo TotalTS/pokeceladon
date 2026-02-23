@@ -57,7 +57,6 @@ CeladonHotelSatoText:
 	call DisplayListMenuID
 	jr c, .cancel ; B pressed
 
-	; Convertir item ID → HOME_* index
 	ld a, [wCurItem]
 	sub HOME_PALLET_ITEM
 	ld [wPlayerHomeLocation], a
