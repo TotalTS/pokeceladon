@@ -811,6 +811,11 @@ LoadPlayerSpriteGraphics::
 	; 0: standing
 	; 1: biking
 	; 2: surfing
+	
+	ld a, [wWalkBikeSurfState]
+    cp 2 ; SURFING
+    jp z, LoadSurfingPlayerSpriteGraphics
+
 	ld a, [wIsRocketSuit]
     and a
     jr z, .notRocket

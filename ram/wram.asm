@@ -1270,6 +1270,8 @@ wTrainerName:: ds 13
 ; trainer battle, this is 2
 wIsInBattle:: db
 
+wSavedIsInBattle:: db
+
 ; flags that indicate which party members should be be given exp when GainExperience is called
 wPartyGainExpFlags:: flag_array PARTY_LENGTH
 
@@ -1334,8 +1336,6 @@ wPlayerToxicCounter:: db
 ; high nibble: which move is disabled (1-4)
 ; low nibble: disable turns left
 wPlayerDisabledMove:: db
-
-	ds 1
 
 ; when the enemy is attacking multiple times, the number of attacks left
 wEnemyNumAttacksLeft:: db

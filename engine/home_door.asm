@@ -182,7 +182,7 @@ HomeDoor_Apply::
     lb bc, 6, 3
     predef ReplaceTileBlock
 
-    ld a, $2d
+    ld a, $64
     ld [wNewTileBlockID], a
     lb bc, 7, 1
     predef ReplaceTileBlock

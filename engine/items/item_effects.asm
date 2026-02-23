@@ -108,7 +108,13 @@ ItemUseBall:
 	and a
 	jp z, ItemUseNotTime
 
+; Rocket Suit can steal Pokémon
+	ld a, [wIsRocketSuit]
+	and a
+	jr nz, .useWithRocketSuit
+
 ; Balls can't catch trainers' Pokémon.
+	ld a, [wIsInBattle]
 	dec a
 	jp nz, ThrowBallAtTrainerMon
 
@@ -123,6 +129,11 @@ ItemUseBall:
 	ld a, [wBoxCount] ; is box full?
 	cp MONS_PER_BOX
 	jp z, BoxFullCannotThrowBall
+	
+.useWithRocketSuit
+	ld a, [wIsInBattle]
+	ld [wSavedIsInBattle], a	 ; save original state of battle
+	jr .canUseBall
 
 .canUseBall
 	xor a
@@ -419,6 +430,12 @@ ItemUseBall:
 	ld c, 20
 	call DelayFrames
 
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .skipRocketAnimCheck
+	ld a, 1
+	ld [wIsInBattle], a ; Force wild state for animation of stealing Pokémon
+.skipRocketAnimCheck
 ; Do the animation.
 	ld a, TOSS_ANIM
 	ld [wAnimationID], a
@@ -574,6 +591,13 @@ ItemUseBall:
 	call ClearSprites
 
 .done
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .finish
+	ld a, [wSavedIsInBattle] ; restore original state
+	ld [wIsInBattle], a
+
+.finish
 	ld a, [wBattleType]
 	and a ; is this the old man battle?
 	ret nz ; if so, don't remove a ball from the bag
@@ -636,6 +660,9 @@ ItemUseTownMap:
 	farjp DisplayTownMap
 
 ItemUseBicycle:
+	ld a, [wIsRocketSuit]
+    and a
+	jp nz, ItemUseNotTime
 	ld a, [wIsInBattle]
 	and a
 	jp nz, ItemUseNotTime
@@ -1541,6 +1568,9 @@ ItemUseRepelCommon:
 	jp PrintItemUseTextAndRemoveItem
 
 ItemUseRocketSuit:
+    ld a, [wWalkBikeSurfState]
+    cp 2 ; SURFING
+    jp z, ItemUseNotTime
     ld a, [wIsInBattle]
     and a
     jp nz, ItemUseNotTime
@@ -1974,6 +2004,12 @@ FishingInit:
 	scf ; can't fish during battle
 	ret
 .notInBattle
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .notRocketSuit
+	scf
+	ret
+.notRocketSuit
 	call IsNextTileShoreOrWater
 	ret c
 	ld a, [wWalkBikeSurfState]
