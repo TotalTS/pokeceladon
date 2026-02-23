@@ -250,4 +250,6 @@ MapHeaderPointers::
 	dw LoreleisRoom_h
 	dw BrunosRoom_h
 	dw AgathasRoom_h
+	dw ChampionsHouse1F_h
+	dw ChampionsHouse2F_h
 	assert_table_length NUM_MAPS

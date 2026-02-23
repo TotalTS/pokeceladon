@@ -8,6 +8,7 @@ EnterMap::
 	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	call LoadMapData
+	call UpdateHomeDoorIfNeeded
 	farcall ClearVariablesOnEnterMap
 	ld hl, wStatusFlags2
 	bit BIT_WILD_ENCOUNTER_COOLDOWN, [hl]
@@ -530,6 +531,7 @@ WarpFound2::
 .goBackOutside
 	ld a, [wLastMap]
 	ld [wCurMap], a
+	call AdjustHomeWarpIfNeeded
 	call PlayMapChangeSound
 	xor a
 	ld [wMapPalOffset], a
@@ -681,6 +683,9 @@ CheckMapConnections::
 ; x#SPRITESTATEDATA2_IMAGEBASEOFFSET without loading any tile patterns.
 	farcall InitMapSprites
 	call LoadTileBlockMap
+	
+	call UpdateHomeDoorIfNeeded
+	
 	jp OverworldLoopLessDelay
 
 .didNotEnterConnectedMap
@@ -2463,3 +2468,24 @@ LoadDestinationWarpPosition::
 	ldh [hLoadedROMBank], a
 	ld [rROMB], a
 	ret
+
+UpdateHomeDoorIfNeeded:
+    callfar HomeDoor_Apply
+    ret
+
+AdjustHomeWarpIfNeeded:
+    callfar HomeWarp_Apply
+    ret
+
+HomeMapIDTable::
+    db PALLET_TOWN      ; 0
+    db VIRIDIAN_CITY    ; 1
+    db PEWTER_CITY      ; 2
+    db CERULEAN_CITY    ; 3
+    db VERMILION_CITY   ; 4
+    db LAVENDER_TOWN    ; 5
+    db CELADON_CITY     ; 6
+    db SAFFRON_CITY     ; 7
+    db FUCHSIA_CITY     ; 8
+    db CINNABAR_ISLAND  ; 9
+    db ROUTE_23         ; 10

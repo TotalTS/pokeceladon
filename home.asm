@@ -82,3 +82,7 @@ INCLUDE "home/random.asm"
 INCLUDE "home/predef.asm"
 INCLUDE "home/hidden_events.asm"
 INCLUDE "home/predef_text.asm"
+
+SECTION "Home Door Tables", ROMX
+
+INCLUDE "engine/home_door.asm"

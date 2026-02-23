@@ -19,6 +19,7 @@ VermilionCity_Object:
 	warp_event 19, 31, VERMILION_DOCK, 1
 	warp_event 15, 13, VERMILION_TRADE_HOUSE, 1
 	warp_event  7,  3, VERMILION_OLD_ROD_HOUSE, 1
+	warp_event 15,  3, CHAMPIONS_HOUSE_1F, 1
 
 	def_bg_events
 	bg_event 27,  3, TEXT_VERMILIONCITY_SIGN

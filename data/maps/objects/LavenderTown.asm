@@ -13,6 +13,7 @@ LavenderTown_Object:
 	warp_event 15, 13, LAVENDER_MART, 1
 	warp_event  3, 13, LAVENDER_CUBONE_HOUSE, 1
 	warp_event  7, 13, NAME_RATERS_HOUSE, 1
+	warp_event  3,  9, CHAMPIONS_HOUSE_1F, 1
 
 	def_bg_events
 	bg_event 11,  9, TEXT_LAVENDERTOWN_SIGN

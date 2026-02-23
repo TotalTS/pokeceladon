@@ -11,6 +11,7 @@ CinnabarIsland_Object:
 	warp_event  6,  9, CINNABAR_LAB, 1
 	warp_event 11, 11, CINNABAR_POKECENTER, 1
 	warp_event 15, 11, CINNABAR_MART, 1
+	warp_event  5, 13, CHAMPIONS_HOUSE_1F, 1
 
 	def_bg_events
 	bg_event  9,  5, TEXT_CINNABARISLAND_SIGN

@@ -50,8 +50,13 @@ HallOfFameResetEventsAndSaveScript:
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
 	xor a
 	ld [wHallOfFameCurScript], a
-	ld a, PALLET_TOWN
-	ld [wLastBlackoutMap], a
+    ld a, [wPlayerHomeLocation]
+    ld d, 0
+    ld e, a
+    ld hl, HomeMapIDTable
+    add hl, de
+    ld a, [hl]
+    ld [wLastBlackoutMap], a
 	farcall SaveGameData
 	ld b, 5
 .delayLoop

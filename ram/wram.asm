@@ -2077,7 +2077,9 @@ wSeafoamIslandsB3FCurScript:: db
 wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
-	ds 6
+wChampionsHouse1FCurScript:: db
+wChampionsHouse2FCurScript:: db
+	ds 4
 wGameProgressFlagsEnd::
 
 UNION
@@ -2125,6 +2127,8 @@ wPlayerStarter:: db
 wBoulderSpriteIndex:: db
 
 wLastBlackoutMap:: db
+
+wPlayerHomeLocation:: db
 
 ; destination map (for certain types of special warps, not ordinary walking)
 wDestinationMap:: db

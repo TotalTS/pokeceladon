@@ -89,3 +89,28 @@ FlyWarpDataPtr:
 .SaffronCity:    fly_warp SAFFRON_CITY,     9, 30
 .Route4:         fly_warp ROUTE_4,         11,  6
 .Route10:        fly_warp ROUTE_10,        11, 20
+
+HomeWarpDataPtr:
+	dw .HomePallet     ; 0
+    dw .HomeViridian   ; 1
+    dw .HomePewter     ; 2
+    dw .HomeCerulean   ; 3
+    dw .HomeVermilion  ; 4
+    dw .HomeLavender   ; 5
+    dw .HomeCeladon    ; 6
+    dw .HomeSaffron    ; 7
+    dw .HomeFuchsia    ; 8
+    dw .HomeCinnabar   ; 9
+    dw .HomeIndigo     ; 10
+	
+.HomePallet:    fly_warp PALLET_TOWN,      5,  6
+.HomeViridian:  fly_warp VIRIDIAN_CITY,   16, 26
+.HomePewter:    fly_warp PEWTER_CITY,     31,  6
+.HomeCerulean:  fly_warp CERULEAN_CITY,   15, 12
+.HomeVermilion: fly_warp VERMILION_CITY,  15,  4
+.HomeLavender:  fly_warp LAVENDER_TOWN,    3, 10
+.HomeCeladon:   fly_warp CELADON_CITY,    29, 10
+.HomeSaffron:   fly_warp SAFFRON_CITY,    13, 30
+.HomeFuchsia:   fly_warp FUCHSIA_CITY,    15, 28
+.HomeCinnabar:  fly_warp CINNABAR_ISLAND,  6, 14
+.HomeIndigo:    fly_warp ROUTE_23,         1, 18

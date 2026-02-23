@@ -67,7 +67,7 @@ LoadSpecialWarpData:
 	ld a, [hli]
 	ld [wCurMapTileset], a
 	xor a
-	jr .done
+	jp .done ; necessary due to new code
 .notNewGameWarp
 	ld a, [wLastMap] ; this value is overwritten before it's ever read
 	ld hl, wStatusFlags6
@@ -110,7 +110,37 @@ LoadSpecialWarpData:
 	add hl, de
 	jr .copyWarpData2
 .otherDestination
-	ld a, [wDestinationMap]
+    ld a, [wCurMap]
+    cp HALL_OF_FAME
+    jr z, .forceHomeWarp
+
+    ld a, [wDestinationMap]
+    jr .usedFlyWarp
+
+.forceHomeWarp
+    ; 1. Update the map
+    ld a, [wPlayerHomeLocation]
+    ld d, 0
+    ld e, a
+    ld hl, HomeMapIDTable
+    add hl, de
+    ld a, [hl]
+    ld [wCurMap], a
+
+    ; 2. Load table pointer
+    ld a, [wPlayerHomeLocation]
+    add a, a      ; x2
+    ld d, 0
+    ld e, a
+    ld hl, HomeWarpDataPtr
+    add hl, de
+    
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a       ; HL now points to .HomePallet, .HomeViridian, etc.
+    
+    ; 3. Copy data from macro
+    jr .copyWarpData2
 .usedFlyWarp
 	ld b, a
 	ld [wCurMap], a

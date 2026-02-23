@@ -117,5 +117,6 @@ InternalMapEntries:
 	indoor_map ROCK_TUNNEL_2,      14,  3, RockTunnelName
 	indoor_map SILPH_CO_2,         10,  5, SilphCoName
 	indoor_map POKEMON_LEAGUE_3,    0,  2, PokemonLeagueName
+	indoor_map CHAMPIONS_HOUSE,     0,  2, ChampionsHouseName
 	assert_table_length NUM_INDOOR_MAP_GROUPS
 	db -1 ; end

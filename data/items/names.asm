@@ -98,4 +98,16 @@ ItemNames::
 	li "10F"
 	li "11F"
 	li "B4F"
-	assert_list_length NUM_ITEMS + NUM_FLOORS
+assert_list_length NUM_ITEMS + NUM_FLOORS
+    li "PALLET T."
+    li "VIRIDIAN C."
+    li "PEWTER C."
+    li "CERULEAN C."
+    li "VERMILION C."
+    li "LAVENDER T."
+    li "CELADON C."
+    li "SAFFRON C."
+    li "FUCHSIA C."
+    li "CINNABAR I."
+    li "INDIGO P."
+assert_list_length NUM_ITEMS + NUM_FLOORS + 11

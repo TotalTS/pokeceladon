@@ -112,6 +112,20 @@ DEF NUM_ITEMS EQU const_value - 1
 	const FLOOR_B4F     ; $61
 DEF NUM_FLOORS EQU const_value - 1 - NUM_ITEMS
 
+; homes use item IDs (for home selection menu)
+	const HOME_PALLET_ITEM
+	const HOME_VIRIDIAN_ITEM
+	const HOME_PEWTER_ITEM
+	const HOME_CERULEAN_ITEM
+	const HOME_VERMILION_ITEM
+	const HOME_LAVENDER_ITEM
+	const HOME_CELADON_ITEM
+	const HOME_SAFFRON_ITEM
+	const HOME_FUCHSIA_ITEM
+	const HOME_CINNABAR_ITEM
+	const HOME_INDIGO_ITEM
+DEF NUM_HOME_ITEMS EQU const_value - NUM_FLOORS - NUM_ITEMS - 1
+
 	const_next $C4
 
 ; HMs are defined before TMs, so the actual number of TM definitions

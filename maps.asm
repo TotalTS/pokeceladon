@@ -1224,3 +1224,13 @@ INCLUDE "data/maps/headers/AgathasRoom.asm"
 INCLUDE "scripts/AgathasRoom.asm"
 INCLUDE "data/maps/objects/AgathasRoom.asm"
 AgathasRoom_Blocks: INCBIN "maps/AgathasRoom.blk"
+
+INCLUDE "data/maps/headers/ChampionsHouse1F.asm"
+INCLUDE "scripts/ChampionsHouse1F.asm"
+INCLUDE "data/maps/objects/ChampionsHouse1F.asm"
+ChampionsHouse1F_Blocks: INCBIN "maps/ChampionsHouse1F.blk"
+
+INCLUDE "data/maps/headers/ChampionsHouse2F.asm"
+INCLUDE "scripts/ChampionsHouse2F.asm"
+INCLUDE "data/maps/objects/ChampionsHouse2F.asm"
+ChampionsHouse2F_Blocks: INCBIN "maps/ChampionsHouse2F.blk"
