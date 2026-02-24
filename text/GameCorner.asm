@@ -188,3 +188,27 @@ _GameCornerOopsForgotCoinCaseText::
 	text "Oops! Forgot the"
 	line "COIN CASE!"
 	done
+
+_GameCornerRocketSuitGreetingText::
+	text "Oh! You're the"
+	line "relief scout?"
+	cont "About time!"
+
+	para "The BOSS is"
+	line "waiting for the"
+	cont "latest report."
+
+	para "I'll open the"
+	line "secret path for"
+	cont "you. Stand back!"
+	prompt
+	
+_GameCornerRocketSuitFarewellText::
+	text "I'm off to the"
+	line "GAME CORNER for"
+	cont "a break."
+
+	para "Don't let any"
+	line "strangers near"
+	cont "that switch!"
+	done

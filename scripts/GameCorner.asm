@@ -54,12 +54,15 @@ GameCornerDefaultScript:
 GameCornerRocketBattleScript:
 	ld a, [wIsInBattle]
 	cp $ff
-	jp z, GameCornerReenterMapAfterPlayerLoss
+	jr z, .startRetreat
+	
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, TEXT_GAMECORNER_ROCKET_AFTER_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
+
+.startRetreat
 	ld a, GAMECORNER_ROCKET
 	ldh [hSpriteIndex], a
 	call SetSpriteMovementBytesToFF
@@ -420,6 +423,37 @@ GameCornerGentlemanText:
 
 GameCornerRocketText:
 	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+
+	ld hl, .RocketSuitGreetingText
+	call PrintText
+	
+	ld a, SFX_SWITCH
+	call PlaySound
+	call WaitForSoundToFinish
+	
+	SetEvent EVENT_FOUND_ROCKET_HIDEOUT
+	ld a, $43
+	ld [wNewTileBlockID], a
+	lb bc, 2, 8
+	predef ReplaceTileBlock
+	
+	ld a, SFX_GO_INSIDE
+	call PlaySound
+
+	ld hl, .RocketSuitFarewellText
+	call PrintText
+	
+	ld a, $ff
+	ld [wIsInBattle], a
+	ld a, SCRIPT_GAMECORNER_ROCKET_BATTLE
+	ld [wGameCornerCurScript], a 
+
+	jp TextScriptEnd
+
+.normalBehavior
 	ld hl, .ImGuardingThisPosterText
 	call PrintText
 	ld hl, wStatusFlags3
@@ -439,6 +473,14 @@ GameCornerRocketText:
 	ld a, SCRIPT_GAMECORNER_ROCKET_BATTLE
 	ld [wGameCornerCurScript], a
 	jp TextScriptEnd
+	
+.RocketSuitGreetingText:
+	text_far _GameCornerRocketSuitGreetingText
+	text_end
+	
+.RocketSuitFarewellText:
+	text_far _GameCornerRocketSuitFarewellText
+	text_end
 
 .ImGuardingThisPosterText:
 	text_far _GameCornerRocketImGuardingThisPosterText

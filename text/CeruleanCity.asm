@@ -233,3 +233,20 @@ _CeruleanCityGymSign::
 	para "The Tomboyish"
 	line "Mermaid!"
 	done
+
+_RocketSuitGreetingText::
+	text "Whoa! A fellow"
+	line "member! You here"
+	cont "to back me up?"
+
+	para "Good timing! The"
+	line "POLICE are all"
+	cont "over the place!"
+
+	para "Keep this TM28"
+	line "safe for the"
+	cont "TEAM, will you?"
+	
+	para "Tell the BOSS I"
+	line "did the job!"
+	prompt

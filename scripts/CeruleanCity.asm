@@ -42,6 +42,9 @@ IF DEF(_DEBUG)
 ENDC
 	CheckEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
 	jr nz, .skipRocketThiefEncounter
+	ld a, [wIsRocketSuit]
+    and a
+    jr nz, .skipRocketThiefEncounter
 	ld hl, CeruleanCityCoords1
 	call ArePlayerCoordsInArray
 	jr nc, .skipRocketThiefEncounter
@@ -287,6 +290,27 @@ CeruleanCityRocketText:
 	text_asm
 	CheckEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
 	jr nz, .beatRocketThief
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .RocketSuitGreetingText
+	call PrintText
+	lb bc, TM_DIG, 1
+	call GiveItem
+	jr nc, .NoRoom
+	SetEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, .ReceivedTM28Text
+	call PrintText
+    farcall CeruleanHideRocket
+    jr .Done
+.NoRoom
+    ld hl, .TM28NoRoomText
+    call PrintText
+    jr .Done
+
+.normalBehavior
 	ld hl, .Text
 	call PrintText
 	ld hl, wStatusFlags3
@@ -319,6 +343,10 @@ CeruleanCityRocketText:
 	farcall CeruleanHideRocket
 .Done
 	jp TextScriptEnd
+	
+.RocketSuitGreetingText:
+	text_far _RocketSuitGreetingText
+	text_end
 
 .Text:
 	text_far _CeruleanCityRocketText
