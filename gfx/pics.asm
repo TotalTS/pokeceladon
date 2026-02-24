@@ -378,3 +378,4 @@ SECTION "Pics 6", ROMX
 
 RookiePic::        INCBIN "gfx/new_trainers/rookie.pic"
 ChikoritaPic::     INCBIN "gfx/pokemon/front/chikorita.pic"
+RocketPicBack::    INCBIN "gfx/player/rocketb.pic"
