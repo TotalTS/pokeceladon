@@ -20,3 +20,13 @@ _Route16Gate1FGamblerText::
 	text "How'd you get in?"
 	line "Good effort!"
 	done
+
+_Route16Gate1FGuardNoRocketsAllowedText::
+	text "TEAM ROCKET is"
+	line "not allowed on"
+	cont "the CYCLING ROAD!"
+
+	para "Orders from the"
+	line "higher-ups! Now"
+	cont "beat it!"
+	done

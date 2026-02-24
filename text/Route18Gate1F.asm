@@ -12,3 +12,13 @@ _Route18Gate1FGuardCyclingRoadUphillText::
 _Route18Gate1FGuardExcuseMeText::
 	text "Excuse me!"
 	done
+
+_Route18Gate1FGuardNoRocketsAllowedText::
+	text "TEAM ROCKET is"
+	line "not allowed on"
+	cont "the CYCLING ROAD!"
+
+	para "Orders from the"
+	line "higher-ups! Now"
+	cont "beat it!"
+	done

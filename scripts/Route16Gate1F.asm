@@ -15,7 +15,15 @@ Route16Gate1F_ScriptPointers:
 
 Route16Gate1FDefaultScript:
 	call Route16Gate1FIsBicycleInBagScript
-	ret nz
+	jr nz, .checkRocketSuit
+	jr .stopPlayer
+
+.checkRocketSuit
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .allowPass
+
+.stopPlayer
 	ld hl, .StopsPlayerCoords
 	call ArePlayerCoordsInArray
 	ret nc
@@ -43,6 +51,8 @@ Route16Gate1FDefaultScript:
 	ld a, SCRIPT_ROUTE16GATE1F_GUARD
 	ld [wRoute16Gate1FCurScript], a
 	ret
+.allowPass
+    ret
 
 .StopsPlayerCoords:
 	dbmapcoord  4,  7
@@ -95,6 +105,10 @@ Route16Gate1F_TextPointers:
 
 Route16Gate1FGuardText:
 	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr nz, .rocketStopping
+
 	call Route16Gate1FIsBicycleInBagScript
 	jr z, .no_bike
 	ld hl, .CyclingRoadExplanationText
@@ -103,8 +117,15 @@ Route16Gate1FGuardText:
 .no_bike
 	ld hl, .NoPedestriansAllowedText
 	call PrintText
+.rocketStopping
+    ld hl, .NoRocketsAllowedText
+    call PrintText
 .text_script_end
 	jp TextScriptEnd
+
+.NoRocketsAllowedText:
+	text_far _Route16Gate1FGuardNoRocketsAllowedText
+	text_end
 
 .NoPedestriansAllowedText:
 	text_far _Route16Gate1FGuardNoPedestriansAllowedText
