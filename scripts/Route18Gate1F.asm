@@ -112,6 +112,7 @@ Route18Gate1FGuardText:
 .no_bike
 	ld hl, .YouNeedABicycleText
 	call PrintText
+	jr .text_script_end
 .rocketStopping
     ld hl, .NoRocketsAllowedText
     call PrintText

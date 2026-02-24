@@ -117,6 +117,7 @@ Route16Gate1FGuardText:
 .no_bike
 	ld hl, .NoPedestriansAllowedText
 	call PrintText
+	jr .text_script_end
 .rocketStopping
     ld hl, .NoRocketsAllowedText
     call PrintText
