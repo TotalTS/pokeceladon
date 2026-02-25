@@ -42,7 +42,7 @@ EnterMap::
 OverworldLoop::
 	call DelayFrame
 OverworldLoopLessDelay::
-	call DelayFrame
+	;call DelayFrame ;60fps mode
 	call LoadGBPal
 	ld a, [wMovementFlags]
 	bit BIT_LEDGE_OR_FISHING, a
@@ -117,14 +117,14 @@ OverworldLoopLessDelay::
 	ld [wEnteringCableClub], a
 	jr z, .changeMap
 ; XXX can this code be reached?
-	predef TryLoadSaveFile
-	ld a, [wCurMap]
-	ld [wDestinationMap], a
-	call PrepareForSpecialWarp
-	ld a, [wCurMap]
-	call SwitchToMapRomBank
-	ld hl, wCurMapTileset
-	set BIT_NO_PREVIOUS_MAP, [hl]
+;	predef TryLoadSaveFile
+;	ld a, [wCurMap]
+;	ld [wDestinationMap], a
+;	call PrepareForSpecialWarp
+;	ld a, [wCurMap]
+;	call SwitchToMapRomBank
+;	ld hl, wCurMapTileset
+;	set BIT_NO_PREVIOUS_MAP, [hl]
 .changeMap
 	jp EnterMap
 .checkForOpponent
@@ -264,7 +264,7 @@ OverworldLoopLessDelay::
 	jp c, OverworldLoop
 
 .noCollision
-	ld a, $08
+	ld a, $10
 	ld [wWalkCounter], a
 	jr .moveAhead2
 
@@ -279,22 +279,25 @@ OverworldLoopLessDelay::
 .moveAhead2
 	ld hl, wMiscFlags
 	res BIT_TURNING, [hl]
+	ld a, [wMovementFlags]
+	bit BIT_SPINNING, a
+	jr nz, .spinnerSpeed
 	ld a, [wWalkBikeSurfState]
 	dec a ; riding a bike?
 	jr nz, .normalPlayerSpriteAdvancement
 	ld a, [wMovementFlags]
 	bit BIT_LEDGE_OR_FISHING, a
 	jr nz, .normalPlayerSpriteAdvancement
+	call GetBikeSpeed
+	jr .notRunning
+.spinnerSpeed
 	call DoBikeSpeedup
 	jr .notRunning
 .normalPlayerSpriteAdvancement
-	; Holding B makes you run at 2x walking speed
 	ld a, [hJoyHeld]
 	and PAD_B
-	jr z, .notRunning
-	call DoBikeSpeedup
+	call nz, DoBikeSpeedup
 .notRunning
-	;original .normalPlayerSpriteAdvancement continues here
 	call AdvancePlayerSprite
 	ld a, [wWalkCounter]
 	and a
@@ -383,19 +386,39 @@ NewBattle::
 .noBattle
 	and a
 	ret
-
+	
+GetBikeSpeed::
+	; Bike is normally 2x walking speed
+	; Holding B makes the bike even faster
+	ld a, [wCurMap]
+	cp ROUTE_17 ; Cycling Road
+	jr z, .cyclingRoad
+	ldh a, [hJoyHeld]
+	and PAD_B
+	jr z, DoBikeSpeedup
+	; B button held
+	call DoBikeSpeedup
+	call DoBikeSpeedup
+	jr DoBikeSpeedup
+.cyclingRoad
+	; uphill we can only go a bit faster, downhill we can go full speed
+	ldh a, [hJoyHeld]
+	and PAD_UP | PAD_LEFT | PAD_RIGHT
+	call z, DoBikeSpeedup
+	ldh a, [hJoyHeld]
+	and PAD_B
+	ret z
+	call DoBikeSpeedup
+	ldh a, [hJoyHeld]
+	and PAD_UP | PAD_LEFT | PAD_RIGHT
+	ret nz
+	; fall through
+	
 ; function to make bikes twice as fast as walking
 DoBikeSpeedup::
 	ld a, [wNPCMovementScriptPointerTableNum]
 	and a
 	ret nz
-	ld a, [wCurMap]
-	cp ROUTE_17 ; Cycling Road
-	jr nz, .goFaster
-	ldh a, [hJoyHeld]
-	and PAD_UP | PAD_LEFT | PAD_RIGHT
-	ret nz
-.goFaster
 	jp AdvancePlayerSprite
 
 ; check if the player has stepped onto a warp after having not collided
@@ -1484,7 +1507,10 @@ AdvancePlayerSprite::
 	ld [wXCoord], a
 .afterUpdateMapCoords
 	ld a, [wWalkCounter]
-	cp $07
+	push bc
+	ld b, $0F
+	cp b
+	pop bc
 	jp nz, .scrollBackgroundAndSprites
 ; if this is the first iteration of the animation
 	ld a, c
@@ -1631,8 +1657,8 @@ AdvancePlayerSprite::
 	ld b, a
 	ld a, [wSpritePlayerStateData1XStepVector]
 	ld c, a
-	sla b
-	sla c
+	;sla b ; 60FPS mode doesn't need this
+	;sla c
 	ldh a, [hSCY]
 	add b
 	ldh [hSCY], a ; update background scroll Y
