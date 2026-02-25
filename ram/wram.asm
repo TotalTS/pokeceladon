@@ -2100,6 +2100,8 @@ wWalkBikeSurfState:: db
 
 wIsRocketSuit:: db
 
+wSurfingPokemonID:: db
+
 	ds 9
 
 wTownVisitedFlag:: flag_array NUM_CITY_MAPS

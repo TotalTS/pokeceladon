@@ -72,6 +72,13 @@ BrunoSprite::            INCBIN "gfx/sprites/bruno.2bpp"
 LoreleiSprite::          INCBIN "gfx/sprites/lorelei.2bpp"
 SeelSprite::             INCBIN "gfx/sprites/seel.2bpp"
 
+
+SECTION "NPC Sprites 3", ROMX
+
+LaprasSprite::                  INCBIN "gfx/new_sprites/lapras.2bpp"
+SurfingPikachuSprite::          INCBIN "gfx/new_sprites/surfing_pikachu.2bpp"
+
+
 SECTION "MonIcons", ROMX
 
 MonIcons::

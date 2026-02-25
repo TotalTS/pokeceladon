@@ -2001,29 +2001,49 @@ RunMapScript::
 	ret
 
 LoadWalkingPlayerSpriteGraphics::
+	ld b, BANK(RedSprite)
 	ld de, RedSprite
-	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadSurfingPlayerSpriteGraphics::
+	ld a, [wSurfingPokemonID]
+	cp PIKACHU
+	jr z, .pikachu
+	cp LAPRAS
+	jr z, .lapras
+
+	ld b, BANK(SeelSprite)
 	ld de, SeelSprite
-	ld hl, vNPCSprites
+	jr LoadPlayerSpriteGraphicsCommon
+
+.pikachu
+	ld b, BANK(SurfingPikachuSprite)
+	ld de, SurfingPikachuSprite
+	jr LoadPlayerSpriteGraphicsCommon
+
+.lapras
+	ld b, BANK(LaprasSprite)
+	ld de, LaprasSprite
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
+	ld b, BANK(RedBikeSprite)
 	ld de, RedBikeSprite
-	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 	
 LoadRocketPlayerSpriteGraphics::
+	ld b, BANK(RocketSprite)
 	ld de, RocketSprite
-	ld hl, vNPCSprites
+	jr LoadPlayerSpriteGraphicsCommon
 
 LoadPlayerSpriteGraphicsCommon::
+	ld hl, vNPCSprites
 	push de
 	push hl
-	lb bc, BANK(RedSprite), $0c
+	push bc
+	ld c, $c
 	call CopyVideoData
+	pop bc
 	pop hl
 	pop de
 	ld a, $c0
@@ -2033,7 +2053,7 @@ LoadPlayerSpriteGraphicsCommon::
 	inc d
 .noCarry
 	set 3, h ; add $800 ($80 tiles) to hl (1 << 3 == $8)
-	lb bc, BANK(RedSprite), $0c
+	ld c, $c
 	jp CopyVideoData
 
 ; function to load data from the map header

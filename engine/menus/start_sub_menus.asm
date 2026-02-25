@@ -165,6 +165,12 @@ StartMenu_Pokemon::
 	bit BIT_SURF_ALLOWED, [hl]
 	res BIT_SURF_ALLOWED, [hl]
 	jp z, .loop
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [hl]
+	ld [wSurfingPokemonID], a
 	ld a, SURFBOARD
 	ld [wCurItem], a
 	ld [wPseudoItemID], a

@@ -17,6 +17,16 @@ TrySurf:
 	ld d, SURF
 	call HasPartyMove
 	jr nz, .no
+	push hl
+	push bc
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [hl]
+	ld [wSurfingPokemonID], a
+	pop bc
+	pop hl
 	ld a, [wObtainedBadges]
 	bit BIT_SOULBADGE, a
 	jr z, .no
