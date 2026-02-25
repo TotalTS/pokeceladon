@@ -177,6 +177,18 @@ StartMenu_Pokemon::
 .strength
 	bit BIT_RAINBOWBADGE, a
 	jp z, .newBadgeRequired
+	ld a, [wWhichPokemon]
+	ld hl, wPartySpecies
+	; bumping hl by a, need to make sure carry happens
+	ld c, a
+	ld a, l
+	add a, c
+	ld l, a
+	jr nc, .strengthNoCarry
+	inc h
+.strengthNoCarry
+	ld a, [hl]
+	ld [wCurPartySpecies], a
 	predef PrintStrengthText
 	call GBPalWhiteOutWithDelay3
 	jp .goBackToMap

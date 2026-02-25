@@ -14,7 +14,7 @@ GroundRoseText::
 	text_end
 
 BoulderText::
-	text_far _BoulderText
+	text_far _BoulderText2
 	text_end
 
 MartSignText::

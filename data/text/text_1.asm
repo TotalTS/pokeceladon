@@ -42,9 +42,9 @@ _GroundRoseText::
 	done
 
 _BoulderText::
-	text "This requires"
-	line "STRENGTH to move!"
-	done
+	text "A #MON may be"
+	line "able to move this."
+	prompt
 
 _MartSignText::
 	text "All your item"

@@ -110,3 +110,4 @@ PredefPointers::
 	add_predef DisplayElevatorFloorMenu
 	add_predef OaksAideScript
 	add_predef UniversityDistroAnim
+	add_predef TryFieldMove
