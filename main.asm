@@ -328,6 +328,7 @@ INCLUDE "engine/overworld/field_moves.asm"
 SECTION "Itemfinder 1", ROMX
 
 INCLUDE "engine/movie/credits.asm"
+INCLUDE "engine/events/pokecenter_chansey.asm"
 INCLUDE "engine/pokemon/status_ailments.asm"
 INCLUDE "engine/items/itemfinder.asm"
 

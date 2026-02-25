@@ -8,6 +8,7 @@ PewterPokecenter_TextPointers:
 	dw_const PewterPokecenterGentlemanText,        TEXT_PEWTERPOKECENTER_GENTLEMAN
 	dw_const PewterPokecenterJigglypuffText,       TEXT_PEWTERPOKECENTER_JIGGLYPUFF
 	dw_const PewterPokecenterLinkReceptionistText, TEXT_PEWTERPOKECENTER_LINK_RECEPTIONIST
+	dw_const PewterPokecenterChanseyText,          TEXT_PEWTERPOKECENTER_CHANSEY
 
 PewterPokecenterNurseText:
 	script_pokecenter_nurse
@@ -90,3 +91,8 @@ PewterPokecenterJigglypuffText:
 
 PewterPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
+
+PewterPokecenterChanseyText:
+	text_asm
+	callfar PokecenterChanseyText
+	jp TextScriptEnd
