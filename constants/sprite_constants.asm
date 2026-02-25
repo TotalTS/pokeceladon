@@ -55,13 +55,32 @@
 	const SPRITE_MOM                     ; $33
 	const SPRITE_BALDING_GUY             ; $34
 	const SPRITE_LITTLE_BOY              ; $35
-	const SPRITE_UNUSED_GAMEBOY_KID      ; $36
+	const SPRITE_BILL                    ; $36
 	const SPRITE_GAMEBOY_KID             ; $37
 	const SPRITE_FAIRY                   ; $38
 	const SPRITE_AGATHA                  ; $39
 	const SPRITE_BRUNO                   ; $3a
 	const SPRITE_LORELEI                 ; $3b
 	const SPRITE_SEEL                    ; $3c
+	const SPRITE_BLAINE                  ; new
+	const SPRITE_BROCK                   ; new
+	const SPRITE_BUG_CATCHER             ; new
+	const SPRITE_BULBASAUR               ; new
+	const SPRITE_CHANSEY                 ; new
+	const SPRITE_ERIKA                   ; new
+	const SPRITE_JIGGLYPUFF              ; new
+	const SPRITE_KOGA_GEN2               ; new
+	const SPRITE_MISTY                   ; new
+	const SPRITE_NURSE_JOY               ; new
+	const SPRITE_ODDISH                  ; new
+	const SPRITE_OFFICER_JENNY           ; new
+	const SPRITE_PIKACHU                 ; new
+	const SPRITE_POLIWRATH               ; new
+	const SPRITE_ROCKET_GIRL             ; new
+	const SPRITE_SANDSHREW               ; new
+	const SPRITE_SURGE                   ; new
+	const SPRITE_SWIMMER_GIRL            ; new
+	const SPRITE_FUCHSIA_MON             ; new
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e
@@ -70,9 +89,9 @@ DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKEDEX                 ; $41
 	const SPRITE_CLIPBOARD               ; $42
 	const SPRITE_SNORLAX                 ; $43
-	const SPRITE_UNUSED_OLD_AMBER        ; $44
+	const SPRITE_GOLD_TROPHY             ; new
 	const SPRITE_OLD_AMBER               ; $45
-	const SPRITE_UNUSED_GAMBLER_ASLEEP_1 ; $46
+	const SPRITE_SLOWPOKE                ; new
 	const SPRITE_UNUSED_GAMBLER_ASLEEP_2 ; $47
 	const SPRITE_GAMBLER_ASLEEP          ; $48
 DEF NUM_SPRITES EQU const_value - 1

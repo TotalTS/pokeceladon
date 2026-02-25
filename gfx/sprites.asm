@@ -78,6 +78,30 @@ SECTION "NPC Sprites 3", ROMX
 LaprasSprite::                  INCBIN "gfx/new_sprites/lapras.2bpp"
 SurfingPikachuSprite::          INCBIN "gfx/new_sprites/surfing_pikachu.2bpp"
 
+BillSprite::                    INCBIN "gfx/new_sprites/bill.2bpp"
+BlaineSprite::                  INCBIN "gfx/new_sprites/blaine.2bpp"
+BrockSprite::                   INCBIN "gfx/new_sprites/brock.2bpp"
+BugCatcherSprite::              INCBIN "gfx/new_sprites/bug_catcher.2bpp"
+BulbasaurSprite::               INCBIN "gfx/new_sprites/bulbasaur.2bpp"
+ChanseySprite::                 INCBIN "gfx/new_sprites/chansey.2bpp"
+ErikaSprite::                   INCBIN "gfx/new_sprites/erika.2bpp"
+JigglypuffSprite::              INCBIN "gfx/new_sprites/jigglypuff.2bpp"
+KogaGen2Sprite::                INCBIN "gfx/new_sprites/koga.2bpp"
+MistySprite::                   INCBIN "gfx/new_sprites/misty.2bpp"
+NurseJoySprite::                INCBIN "gfx/new_sprites/nurse.2bpp"
+OddishSprite::                  INCBIN "gfx/new_sprites/oddish.2bpp"
+OfficerJennySprite::            INCBIN "gfx/new_sprites/officer_jenny.2bpp"
+PikachuSprite::                 INCBIN "gfx/new_sprites/pikachu.2bpp"
+PoliwrathSprite::               INCBIN "gfx/new_sprites/poliwrath.2bpp"
+RocketGirlSprite::              INCBIN "gfx/new_sprites/rocket_girl.2bpp"
+SandshrewSprite::               INCBIN "gfx/new_sprites/sandshrew.2bpp"
+SurgeSprite::                   INCBIN "gfx/new_sprites/surge.2bpp"
+SwimmerGirlSprite::             INCBIN "gfx/new_sprites/swimmer_girl.2bpp"
+
+GoldTrophySprite::              INCBIN "gfx/new_sprites/gold_trophy.2bpp"
+SlowpokeSprite::                INCBIN "gfx/new_sprites/slowpoke.2bpp"
+FuchsiaMonSprite::              INCBIN "gfx/new_sprites/fuchsia_mon.2bpp"
+
 
 SECTION "MonIcons", ROMX
 
