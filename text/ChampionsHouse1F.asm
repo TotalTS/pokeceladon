@@ -99,3 +99,23 @@ _ChampionsHouse1FTVStandByMeMovieText::
 _ChampionsHouse1FTVWrongSideText::
 	text "Oops, wrong side."
 	done
+	
+_ChampionsHouse2FCupText::
+	text "The #MON LEAGUE"
+	line "GOLDEN CUP."
+
+	para "It gleams with a"
+	line "brilliant light,"
+	cont "honoring the new"
+	cont "CHAMPION!"
+	done
+
+_ChampionsHouse2FPikachuDollText::
+	text "A rare, golden-"
+	line "furred PIKACHU"
+	cont "plush doll."
+
+	para "Only League"
+	line "CHAMPIONS can"
+	cont "afford this!"
+	done

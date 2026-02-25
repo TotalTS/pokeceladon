@@ -1,3 +1,6 @@
+const_export CHAMPIONSHOUSE2F_CUP
+const_export CHAMPIONSHOUSE2F_PIKACHUDOLL
+
 ChampionsHouse2F_Object:
 	db $a ; border block
 
@@ -9,6 +12,7 @@ ChampionsHouse2F_Object:
 	bg_event  3,  5, TEXT_CHAMPIONSHOUSE2F_SNES
 
 	def_object_events
-;	object_event  2,  0, SPRITE_FAIRY, STAY, DOWN
+	object_event  4,  1, SPRITE_GOLD_TROPHY, STAY, NONE, TEXT_CHAMPIONSHOUSE2F_CUP
+	object_event  4,  6, SPRITE_PIKACHU, STAY, DOWN, TEXT_CHAMPIONSHOUSE2F_PIKACHUDOLL
 
 	def_warps_to CHAMPIONS_HOUSE_2F
