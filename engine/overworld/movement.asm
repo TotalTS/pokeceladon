@@ -69,8 +69,24 @@ UpdatePlayerSprite:
 	ld a, [hl]
 	inc a
 	ld [hl], a
-	cp 4
-	jr nz, .calcImageIndex
+	push bc
+	ld c, 4
+	ld b, a
+	ld a, [wJoyIgnore]
+	and a
+	jr nz, .doneSpeed
+	ld a, [wWalkBikeSurfState]
+    cp 1
+    jr z, .doneSpeed
+	ld a, [hJoyHeld]
+	and PAD_B
+	jr z, .doneSpeed
+	ld c, 2
+.doneSpeed
+	ld a, b
+	cp c
+	pop bc
+	jr c, .calcImageIndex
 	xor a
 	ld [hl], a
 	inc hl
@@ -597,6 +613,19 @@ CanWalkOntoTile:
 	and a
 	ret
 .notScripted
+	ld a, [wCurMap]
+	cp FUCHSIA_CITY
+	jr nz, .noLaprasCheck
+	ld a, c
+	cp $14 ; water tile
+	jr nz, .noLaprasCheck
+	ld h, HIGH(wSpriteStateData1)
+	ldh a, [hCurrentSpriteOffset]
+	ld l, a
+	ld a, [hl]
+	cp SPRITE_LAPRAS ; lapras in fuchsia city
+	jr z, .skipTileCheck
+.noLaprasCheck
 	ld a, [wTilesetCollisionPtr]
 	ld l, a
 	ld a, [wTilesetCollisionPtr+1]
@@ -614,6 +643,7 @@ CanWalkOntoTile:
 	ld a, [hl]         ; x#SPRITESTATEDATA2_MOVEMENTBYTE1
 	inc a
 	jr z, .impassable  ; if $ff, no movement allowed (however, changing direction is)
+.skipTileCheck
 	ld h, HIGH(wSpriteStateData1)
 	ldh a, [hCurrentSpriteOffset]
 	add SPRITESTATEDATA1_YPIXELS

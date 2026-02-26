@@ -88,7 +88,7 @@ DisplayNamingScreen:
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	call UpdateSprites
-	ld b, SET_PAL_GENERIC
+	ld b, SET_PAL_GENERIC2
 	call RunPaletteCommand
 	call LoadHpBarAndStatusTilePatterns
 	call LoadEDTile
@@ -117,7 +117,9 @@ DisplayNamingScreen:
 	ld [wAnimCounter], a
 .selectReturnPoint
 	call PrintAlphabet
-	call GBPalNormal
+	ld a, %11100100 ; 3210
+	ldh [rBGP], a
+	ldh [rOBP0], a
 .ABStartReturnPoint
 	ld a, [wNamingScreenSubmitName]
 	and a

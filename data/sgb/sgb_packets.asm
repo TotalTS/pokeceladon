@@ -216,7 +216,7 @@ BlkPacket_GameFreakIntro:
 
 
 PalPacket_Empty:          PAL_SET 0, 0, 0, 0
-PalPacket_PartyMenu:      PAL_SET PAL_MEWMON, PAL_GREENBAR, PAL_YELLOWBAR, PAL_REDBAR
+PalPacket_PartyMenu:      PAL_SET PAL_YELLOWMON, PAL_GREENBAR, PAL_YELLOWBAR, PAL_REDBAR
 PalPacket_Black:          PAL_SET PAL_BLACK, PAL_BLACK, PAL_BLACK, PAL_BLACK
 PalPacket_TownMap:        PAL_SET PAL_TOWNMAP, 0, 0, 0
 PalPacket_Pokedex:        PAL_SET PAL_BROWNMON, 0, 0, 0
@@ -226,6 +226,7 @@ PalPacket_TrainerCard:    PAL_SET PAL_MEWMON, PAL_BADGE, PAL_REDMON, PAL_YELLOWM
 PalPacket_Generic:        PAL_SET PAL_MEWMON, 0, 0, 0
 PalPacket_NidorinoIntro:  PAL_SET PAL_PURPLEMON, PAL_BLACK, 0, 0
 PalPacket_GameFreakIntro: PAL_SET PAL_GAMEFREAK, PAL_REDMON, PAL_VIRIDIAN, PAL_BLUEMON
+PalPacket_Generic2:       PAL_SET PAL_YELLOWMON, 0, 0, 0
 
 PalTrnPacket:  PAL_TRN
 MltReq1Packet: MLT_REQ 1

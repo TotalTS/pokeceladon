@@ -73,7 +73,7 @@ DisplayDiploma::
 .afterGfx
     call EnableLCD
 	farcall LoadTrainerInfoTextBoxTiles
-    ld b, SET_PAL_GENERIC
+    ld b, SET_PAL_GENERIC2
 	call RunPaletteCommand
 	call Delay3
 	call GBPalNormal

@@ -198,6 +198,10 @@ RedrawPartyMenu_::
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
+	ld a, %11100100 ; 3210
+	ldh [rBGP], a
+	ldh [rOBP0], a
+	ret
 	jp GBPalNormal
 .printItemUseMessage
 	and $0F

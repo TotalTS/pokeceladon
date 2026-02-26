@@ -16,13 +16,7 @@ _Route23YouDontHaveTheBadgeYetText::
 	text_end
 
 _Route23OhThatIsTheBadgeText::
-	text "You can pass here"
-	line "only if you have"
-	cont "the @"
-	text_ram wNameBuffer
-	text "!"
-
-	para "Oh! That is the"
+	text "Oh! That is the"
 	line "@"
 	text_ram wNameBuffer
 	text "!@"

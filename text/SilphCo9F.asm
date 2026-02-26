@@ -11,7 +11,7 @@ SilphCo9FNurseDontGiveUpText::
 SilphCo9FNurseThankYouText::
 	text "Thank you so"
 	line "much!"
-	done
+	prompt
 
 _SilphCo9FRocket1BattleText::
 	text "Your #MON seem"

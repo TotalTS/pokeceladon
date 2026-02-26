@@ -240,6 +240,11 @@ SetPal_TrainerCard:
 	ld de, wTrainerCardBlkPacket
 	ret
 
+SetPal_Generic2:
+	ld hl, PalPacket_Generic2
+	ld de, BlkPacket_WholeScreen
+	ret
+
 SetPalFunctions:
 ; entries correspond to SET_PAL_* constants
 	dw SetPal_BattleBlack
@@ -256,6 +261,7 @@ SetPalFunctions:
 	dw SetPal_PokemonWholeScreen
 	dw SetPal_GameFreakIntro
 	dw SetPal_TrainerCard
+	dw SetPal_Generic2
 
 ; The length of the blk data of each badge on the Trainer Card.
 ; The Rainbow Badge has 3 entries because of its many colors.

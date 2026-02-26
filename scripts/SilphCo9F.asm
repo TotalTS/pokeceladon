@@ -157,6 +157,12 @@ SilphCo9FNurseText:
 .beat_giovanni
 	ld hl, .ThankYouText
 	call PrintText
+	predef HealParty
+	call GBFadeOutToWhite
+	call Delay3
+	call GBFadeInFromWhite
+	ld hl, .DontGiveUpText
+	call PrintText
 .text_script_end
 	jp TextScriptEnd
 
