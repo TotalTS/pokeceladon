@@ -151,11 +151,11 @@ pokered_vc.gbc:     RGBLINKFLAGS += -p 0x00
 pokeblue_vc.gbc:    RGBLINKFLAGS += -p 0x00
 
 RGBFIXFLAGS += -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03
-pokered.gbc:        RGBFIXFLAGS += -p 0x00 -t "POKEMON RED"
-pokeblue.gbc:       RGBFIXFLAGS += -p 0x00 -t "POKEMON BLUE"
-pokeblue_debug.gbc: RGBFIXFLAGS += -p 0xff -t "POKEMON BLUE"
-pokered_vc.gbc:     RGBFIXFLAGS += -p 0x00 -t "POKEMON RED"
-pokeblue_vc.gbc:    RGBFIXFLAGS += -p 0x00 -t "POKEMON BLUE"
+pokered.gbc:        RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"
+pokeblue.gbc:       RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"
+pokeblue_debug.gbc: RGBFIXFLAGS += -p 0xff -t "POKEMON CELADON"
+pokered_vc.gbc:     RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"
+pokeblue_vc.gbc:    RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -m $*.map -n $*.sym -o $@ $(filter %.o,$^)

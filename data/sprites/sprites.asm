@@ -73,6 +73,7 @@ SpriteSheetPointerTable:
 	overworld_sprite BulbasaurSprite, 12        ; SPRITE_BULBASAUR
 	overworld_sprite ChanseySprite, 12          ; SPRITE_CHANSEY
 	overworld_sprite ErikaSprite, 12            ; SPRITE_ERIKA
+	overworld_sprite FTrainerSprite, 12         ; SPRITE_FTRAINER
 	overworld_sprite JigglypuffSprite, 12       ; SPRITE_JIGGLYPUFF
 	overworld_sprite KogaGen2Sprite, 12         ; SPRITE_KOGA_GEN2
 	overworld_sprite MistySprite, 12            ; SPRITE_MISTY
@@ -82,6 +83,7 @@ SpriteSheetPointerTable:
 	overworld_sprite PikachuSprite, 12          ; SPRITE_PIKACHU
 	overworld_sprite PoliwrathSprite, 12        ; SPRITE_POLIWRATH
 	overworld_sprite RocketGirlSprite, 12       ; SPRITE_ROCKET_GIRL
+	overworld_sprite SabrinaSprite, 12          ; SPRITE_SABRINA
 	overworld_sprite SandshrewSprite, 12        ; SPRITE_SANDSHREW
 	overworld_sprite SurgeSprite, 12            ; SPRITE_SURGE
 	overworld_sprite SwimmerGirlSprite, 12      ; SPRITE_SWIMMER_GIRL

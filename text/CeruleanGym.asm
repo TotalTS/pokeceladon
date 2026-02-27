@@ -131,3 +131,57 @@ _CeruleanGymGymGuideBeatMistyText::
 	line "we make a pretty"
 	cont "darn good team!"
 	done
+
+
+_CeruleanGymRematchPreBattleText::
+	text "I heard an"
+	line "interesting"
+	cont "rumor!"
+	cont "Not only you and"
+	cont "the other kid"
+	cont "defeat those"
+	cont "TEAM ROCKET guys,"
+	cont "but you also met"
+	cont "again in the"
+	cont "battle for"
+	cont "CHAMPION."
+	
+	para "Argh!"
+	line "I just can't"
+	cont "take it anymore!"
+	
+	para "You've gotten so"
+	line "strong that I "
+	cont "just absolutely"
+	cont "have to battle"
+	cont "you again!"
+	done
+
+_CeruleanGymRematchAcceptedText::
+	text "You got that?"
+	line "No refusing!"
+	done
+
+_CeruleanGymRematchRefusedText::
+	text "Maybe some other"
+	line "time."
+	done
+
+_CeruleanGymRematchDefeatedText::
+	text "Hmph!"
+	line "How annoying!"
+	prompt
+
+_CeruleanGymRematchPostBattleText::
+	text "I lost..."
+	line "I need to try"
+	cont "swimming around"
+	cont "for a bit so I"
+	cont "can clear my head"
+	cont "from these"
+	cont "feelings."
+	
+	para "I definitely"
+	line "won't lose next"
+	cont "time!"
+	done

@@ -68,6 +68,7 @@
 	const SPRITE_BULBASAUR               ; new
 	const SPRITE_CHANSEY                 ; new
 	const SPRITE_ERIKA                   ; new
+	const SPRITE_FTRAINER               ; new
 	const SPRITE_JIGGLYPUFF              ; new
 	const SPRITE_KOGA_GEN2               ; new
 	const SPRITE_MISTY                   ; new
@@ -77,6 +78,7 @@
 	const SPRITE_PIKACHU                 ; new
 	const SPRITE_POLIWRATH               ; new
 	const SPRITE_ROCKET_GIRL             ; new
+	const SPRITE_SABRINA                 ; new
 	const SPRITE_SANDSHREW               ; new
 	const SPRITE_SURGE                   ; new
 	const SPRITE_SWIMMER_GIRL            ; new

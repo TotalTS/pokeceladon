@@ -143,3 +143,54 @@ _VermilionGymGymGuideBeatLTSurgeText::
 	text "Whew! That match"
 	line "was electric!"
 	done
+
+_VermilionGymRematchPreBattleText::
+	text "Hey there, kid!"
+	line "Pretty shocking"
+	cont "you made it"
+	cont "through the"
+	cont "#MON LEAGUE!"
+	
+	para "No doubt some"
+	line "electric-type"
+	cont "#MON had a"
+	cont "pretty big"
+	cont "hand in that,"
+	cont "right?"
+	
+	para "All right, then."
+	line "How about you"
+	cont "show me what"
+	cont "kind of"
+	cont "#MON you've"
+	cont "raised!"
+	done
+
+_VermilionGymRematchRefusedText::
+	text "Maybe some other"
+	line "time."
+	done
+
+_VermilionGymRematchDefeatedText::
+	text " "
+	line "Absolutely"
+	cont "shocking!"
+	prompt
+
+_VermilionGymRematchPostBattleText::
+	text "Looks like"
+	line "there's still a"
+	cont "gap between our"
+	cont "skill levels I"
+	cont "need to close,"
+	cont "kid!"
+	
+	para "This is the"
+	line "first time I've"
+	cont "felt like this"
+	cont "since I arrived"
+	cont "here in KANTO!"
+	
+	para "Come back"
+	line "tomorrow!"
+	done

@@ -142,7 +142,12 @@ CinnabarGymBlainePostBattleScript:
 	jp z, CinnabarGymResetScripts
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-; fallthrough
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr z, CinnabarGymReceiveTM38	
+	ld a, TEXT_CINNABARGYM_REMATCH_POST_BATTLE
+	ldh [hTextID], a
+	call DisplayTextID
+	jp CinnabarGymResetScripts
 CinnabarGymReceiveTM38:
 	ld a, TEXT_CINNABARGYM_BLAINE_VOLCANO_BADGE_INFO
 	ldh [hTextID], a
@@ -188,6 +193,7 @@ CinnabarGym_TextPointers:
 	dw_const CinnabarGymBlaineVolcanoBadgeInfoText, TEXT_CINNABARGYM_BLAINE_VOLCANO_BADGE_INFO
 	dw_const CinnabarGymBlaineReceivedTM38Text,     TEXT_CINNABARGYM_BLAINE_RECEIVED_TM38
 	dw_const CinnabarGymBlaineTM38NoRoomText,       TEXT_CINNABARGYM_BLAINE_TM38_NO_ROOM
+	dw_const CinnabarGymRematchPostBattleText,      TEXT_CINNABARGYM_REMATCH_POST_BATTLE
 
 CinnabarGymStartBattleScript:
 	ldh a, [hSpriteIndex]
@@ -219,6 +225,8 @@ CinnabarGymBlaineText:
 	call DisableWaitingAfterTextDisplay
 	jp TextScriptEnd
 .afterBeat
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr nz, .BlaineRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp TextScriptEnd
@@ -230,6 +238,36 @@ CinnabarGymBlaineText:
 	call SaveEndBattleTextPointers
 	ld a, $7
 	ld [wGymLeaderNo], a
+	jr .endBattle
+.BlaineRematch
+	ld hl, .PreBattleRematchText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld a, $01
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, CinnabarGymRematchDefeatedText
+	ld de, CinnabarGymRematchDefeatedText
+	call SaveEndBattleTextPointers
+	ld a, OPP_BLAINE
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld a, $7
+	ld [wGymLeaderNo], a
+	ld a, SCRIPT_CINNABARGYM_BLAINE_POST_BATTLE
+	ld [wCinnabarGymCurScript], a
+	jp TextScriptEnd
+.refused
+	ld hl, .PreBattleRematchRefusedText
+	call PrintText
+	jp TextScriptEnd
+.endBattle
 	jp CinnabarGymStartBattleScript
 
 .PreBattleText:
@@ -244,6 +282,22 @@ CinnabarGymBlaineText:
 
 .PostBattleAdviceText:
 	text_far _CinnabarGymBlainePostBattleAdviceText
+	text_end
+
+.PreBattleRematchText:
+	text_far _CinnabarGymRematchPreBattleText
+	text_end
+	
+.PreBattleRematchRefusedText:
+	text_far _CinnabarGymRematchRefusedText
+	text_end
+
+CinnabarGymRematchDefeatedText:
+	text_far _CinnabarGymRematchDefeatedText
+	text_end
+
+CinnabarGymRematchPostBattleText:
+	text_far _CinnabarGymRematchPostBattleText
 	text_end
 
 CinnabarGymBlaineVolcanoBadgeInfoText:

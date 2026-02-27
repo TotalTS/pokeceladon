@@ -134,6 +134,7 @@ HallOfFameOakCongratulationsScript:
 	ld a, TOGGLE_CERULEAN_CAVE_GUY
 	ld [wToggleableObjectIndex], a
 	predef HideObject
+	SetEvent EVENT_PLAYER_IS_CHAMPION
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a
 	ret

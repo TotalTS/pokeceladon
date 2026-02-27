@@ -42,7 +42,13 @@ PewterGymBrockPostBattle:
 	jp z, PewterGymResetScripts
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-; fallthrough
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr z, PewterGymScriptReceiveTM34	
+	ld a, TEXT_PEWTERGYM_REMATCH_POST_BATTLE
+	ldh [hTextID], a
+	call DisplayTextID
+	jp PewterGymResetScripts
+
 PewterGymScriptReceiveTM34:
 	ld a, TEXT_PEWTERGYM_BROCK_WAIT_TAKE_THIS
 	ldh [hTextID], a
@@ -88,6 +94,7 @@ PewterGym_TextPointers:
 	dw_const PewterGymBrockWaitTakeThisText, TEXT_PEWTERGYM_BROCK_WAIT_TAKE_THIS
 	dw_const PewterGymReceivedTM34Text,      TEXT_PEWTERGYM_RECEIVED_TM34
 	dw_const PewterGymTM34NoRoomText,        TEXT_PEWTERGYM_TM34_NO_ROOM
+	dw_const PewterGymRematchPostBattleText, TEXT_PEWTERGYM_REMATCH_POST_BATTLE
 
 PewterGymTrainerHeaders:
 	def_trainers 2
@@ -103,8 +110,10 @@ PewterGymBrockText:
 	jr nz, .afterBeat
 	call z, PewterGymScriptReceiveTM34
 	call DisableWaitingAfterTextDisplay
-	jr .done
+	jp .done
 .afterBeat
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr nz, .BrockRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jr .done
@@ -125,6 +134,35 @@ PewterGymBrockText:
 	ld [wGymLeaderNo], a
 	xor a
 	ldh [hJoyHeld], a
+	jr .endBattle
+.BrockRematch
+	ld hl, .PreBattleRematchText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleRematchAcceptedText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, PewterGymRematchDefeatedText
+	ld de, PewterGymRematchDefeatedText
+	call SaveEndBattleTextPointers
+	ld a, OPP_BROCK
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld a, $1	
+	ld [wGymLeaderNo], a
+	jr .endBattle
+.refused
+	ld hl, .PreBattleRematchRefusedText
+	call PrintText
+	jr .done
+.endBattle
 	ld a, SCRIPT_PEWTERGYM_BROCK_POST_BATTLE
 	ld [wPewterGymCurScript], a
 	ld [wCurMapScript], a
@@ -137,6 +175,26 @@ PewterGymBrockText:
 
 .PostBattleAdviceText:
 	text_far _PewterGymBrockPostBattleAdviceText
+	text_end
+	
+.PreBattleRematchText:
+	text_far _PewterGymRematchPreBattleText
+	text_end
+	
+.PreBattleRematchAcceptedText:
+	text_far _PewterGymRematchAcceptedText
+	text_end
+	
+.PreBattleRematchRefusedText:
+	text_far _PewterGymRematchRefusedText
+	text_end
+
+PewterGymRematchDefeatedText:
+	text_far _PewterGymRematchDefeatedText
+	text_end
+
+PewterGymRematchPostBattleText:
+	text_far _PewterGymRematchPostBattleText
 	text_end
 
 PewterGymBrockWaitTakeThisText:

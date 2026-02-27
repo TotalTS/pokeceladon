@@ -218,3 +218,54 @@ _CeladonGymAfterBattleText8::
 	para "Wait 'til next"
 	line "time!"
 	done
+
+_CeladonGymRematchPreBattleText::
+	text "Oh, if it isn't"
+	line "the one who's"
+	cont "been trying to"
+	cont "fill the"
+	cont "#DEX."
+	
+	para "I do hope"
+	line "things have"
+	cont "been going"
+	cont "well for you"
+	cont "since our last"
+	cont "encounter."
+
+	para "I see..."
+	line "You certainly"
+	cont "have been busy."
+	cont "I'm not"
+	cont "particulary fond"
+	cont "of those kinds"
+	cont "of public"
+	cont "things..."
+	
+	para "However, battles"
+	line "are different."
+	cont "That's what"
+	cont "you came for,"
+	cont "isn't it?"
+	done
+
+_CeladonGymRematchRefusedText::
+	text "Maybe some other"
+	line "time."
+	done
+
+_CeladonGymRematchDefeatedText::
+	text "Oh!"
+	line "It appears it"
+	cont "is my loss..."
+	prompt
+
+_CeladonGymRematchPostBattleText::
+	text "Simply"
+	line "marvelous."
+	
+	para "That was an"
+	line "effort worthy at"
+	cont "least 10"
+	cont "RAINBOWBADGES."
+	done

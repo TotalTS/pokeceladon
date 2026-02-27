@@ -42,6 +42,12 @@ CeruleanGymMistyPostBattleScript:
 	jp z, CeruleanGymResetScripts
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr z, CeruleanGymReceiveTM11	
+	ld a, TEXT_CERULEANGYM_REMATCH_POST_BATTLE
+	ldh [hTextID], a
+	call DisplayTextID
+	jp CeruleanGymResetScripts
 
 CeruleanGymReceiveTM11:
 	ld a, TEXT_CERULEANGYM_MISTY_CASCADE_BADGE_INFO
@@ -80,6 +86,7 @@ CeruleanGym_TextPointers:
 	dw_const CeruleanGymMistyCascadeBadgeInfoText, TEXT_CERULEANGYM_MISTY_CASCADE_BADGE_INFO
 	dw_const CeruleanGymMistyReceivedTM11Text,     TEXT_CERULEANGYM_MISTY_RECEIVED_TM11
 	dw_const CeruleanGymMistyTM11NoRoomText,       TEXT_CERULEANGYM_MISTY_TM11_NO_ROOM
+	dw_const CeruleanGymRematchPostBattleText,     TEXT_CERULEANGYM_REMATCH_POST_BATTLE
 
 CeruleanGymTrainerHeaders:
 	def_trainers 2
@@ -97,8 +104,10 @@ CeruleanGymMistyText:
 	jr nz, .afterBeat
 	call z, CeruleanGymReceiveTM11
 	call DisableWaitingAfterTextDisplay
-	jr .done
+	jp .done
 .afterBeat
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr nz, .MistyRematch
 	ld hl, .TM11ExplanationText
 	call PrintText
 	jr .done
@@ -119,6 +128,35 @@ CeruleanGymMistyText:
 	ld [wGymLeaderNo], a
 	xor a
 	ldh [hJoyHeld], a
+	jr .endBattle
+.MistyRematch
+	ld hl, .PreBattleRematchText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleRematchAcceptedText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, CeruleanGymRematchDefeatedText
+	ld de, CeruleanGymRematchDefeatedText
+	call SaveEndBattleTextPointers
+	ld a, OPP_MISTY
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld a, $2
+	ld [wGymLeaderNo], a
+	jr .endBattle
+.refused
+	ld hl, .PreBattleRematchRefusedText
+	call PrintText
+	jr .done
+.endBattle
 	ld a, SCRIPT_CERULEANGYM_MISTY_POST_BATTLE
 	ld [wCeruleanGymCurScript], a
 .done
@@ -130,6 +168,26 @@ CeruleanGymMistyText:
 
 .TM11ExplanationText:
 	text_far _CeruleanGymMistyTM11ExplanationText
+	text_end
+	
+.PreBattleRematchText:
+	text_far _CeruleanGymRematchPreBattleText
+	text_end
+	
+.PreBattleRematchAcceptedText:
+	text_far _CeruleanGymRematchAcceptedText
+	text_end
+	
+.PreBattleRematchRefusedText:
+	text_far _CeruleanGymRematchRefusedText
+	text_end
+
+CeruleanGymRematchDefeatedText:
+	text_far _CeruleanGymRematchDefeatedText
+	text_end
+
+CeruleanGymRematchPostBattleText:
+	text_far _CeruleanGymRematchPostBattleText
 	text_end
 
 CeruleanGymMistyCascadeBadgeInfoText:

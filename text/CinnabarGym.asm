@@ -210,3 +210,82 @@ _CinnabarGymGymGuideBeatBlaineText::
 	text "<PLAYER>! You beat"
 	line "that fire brand!"
 	done
+
+_CinnabarGymRematchPreBattleText::
+	text "Hah!"
+	line "Well done,"
+	cont "returning here to"
+	cont "my GYM!"
+	
+	para "You're the one"
+	line "who retrieved the"
+	cont "KEY to this GYM"
+	cont "from the #MON"
+	cont "MANSION!"
+	
+	para "Did you see"
+	line "anything"
+	cont "interesting while"
+	cont "you were in"
+	cont "there?"
+	
+	para "That place still"
+	line "holds the"
+	cont "remnants of my"
+	cont "old friend's"
+	cont "research!"
+	
+	para "By the way, I've"
+	line "been hearing an"
+	cont "interesting rumor"
+	cont "floating around"
+	cont "recently..."
+	
+	para "You wouldn't"
+	line "happen to know a"
+	cont "young lady named"
+	cont "GREEN, would you?"
+	
+	para "...Hmph, well,"
+	line "it's not as"
+	cont "though I really"
+	cont "know the whole"
+	cont "story anyway."
+	
+	para "More importantly,"
+	line "since you came"
+	cont "all this way,"
+	cont "we should have"
+	cont "a battle!"
+	cont "Hah!"
+	done
+
+_CinnabarGymRematchRefusedText::
+	text "Maybe some other"
+	line "time."
+	done
+
+_CinnabarGymRematchDefeatedText::
+	text "Hah!" 
+	line "I'm all"
+	cont "fired up!"
+	prompt
+
+_CinnabarGymRematchPostBattleText::
+	text "Recently, GYM"
+	line "challengers"
+	cont "sure have been"
+	cont "increasing!"
+	
+	para "That just means"
+	line "more fun for me,"
+	cont "so I don't mind"
+	cont "at all!"
+	
+	para "It's true that"
+	line "you already have"
+	cont "a VOLCANOBADGE,"
+	cont "but don't worry"
+	cont "about that"
+	cont "-let's battle!"
+	done

@@ -237,3 +237,62 @@ _SaffronGymYoungster4AfterBattleText::
 	line "used telepathy to"
 	cont "read your mind!"
 	done
+
+_SaffronGymRematchPreBattleText::
+	text "... It's true"
+	line "that psychic"
+	cont "power is a potent"
+	cont "ability."
+	
+	para "However, there"
+	line "are things that"
+	cont "cannot be"
+	cont "overcome with"
+	cont "that power"
+	cont "alone."
+
+	para "I finally"
+	line "understand that"
+	cont "now, after"
+	cont "losing to you"
+	cont "in our last"
+	cont "battle."
+	
+	para "I won't be"
+	line "relying on just"
+	cont "psychic power"
+	cont "this time. My"
+	cont "true strength..."
+	cont "My true self..."
+	cont "Allow me to test"
+	cont "them against you!"
+	done
+
+_SaffronGymRematchRefusedText::
+	text "Maybe some other"
+	line "time."
+	done
+
+_SaffronGymRematchDefeatedText::
+	text "I won't" 
+	line "encounter a"
+	cont "TRAINER like"
+	cont "you for another"
+	cont "three years."
+	prompt
+
+_SaffronGymRematchPostBattleText::
+	text "There was once a"
+	line "time when I was"
+	cont "shocked that I"
+	cont "lost to you."
+	cont "That feeling is"
+	cont "gone now."
+	
+	para "It's been"
+	line "replaced with a"
+	cont "desire to grow"
+	cont "strong and live"
+	cont "freely, as you"
+	cont "do."
+	done
