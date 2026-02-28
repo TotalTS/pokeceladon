@@ -65,15 +65,18 @@ DisplayDiploma::
     inc hl
     dec c
     jr nz, .adjustPlayerGfxLoop
+	call EnableLCD
+	farcall LoadTrainerInfoTextBoxTiles
+    ld b, SET_PAL_GENERIC
     jr .afterGfx
 
 .magikarpGfx
     call DrawMagikarpDiploma
-    jr .afterGfx
-.afterGfx
-    call EnableLCD
+	call EnableLCD
 	farcall LoadTrainerInfoTextBoxTiles
     ld b, SET_PAL_GENERIC2
+    jr .afterGfx
+.afterGfx
 	call RunPaletteCommand
 	call Delay3
 	call GBPalNormal
