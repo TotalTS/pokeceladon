@@ -713,6 +713,14 @@ endr
 Trade_WriteCircledMonOAM:
 	farcall WriteMonPartySpriteOAMBySpecies
 	call Trade_WriteCircleOAMBlock
+	ld hl, wShadowOAM + 3
+	ld c, 4
+.forcePal
+	set 4, [hl]
+	ld de, OBJ_SIZE
+	add hl, de
+	dec c
+	jr nz, .forcePal
 
 Trade_AddOffsetsToOAMCoords:
 	ld hl, wShadowOAM
