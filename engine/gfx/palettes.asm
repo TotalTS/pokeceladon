@@ -415,6 +415,11 @@ LoadSGB:
 	ld de, ChrTrnPacket
 	ld hl, SGBBorderGraphics
 	call CopyGfxToSuperNintendoVRAM
+	ld a, 1
+	ld [wCopyingSGBTileData], a
+	ld de, ChrTrn1Packet
+	ld hl, SGBBorderGraphics tile 256
+	call CopyGfxToSuperNintendoVRAM
 	xor a
 	ld [wCopyingSGBTileData], a
 	ld de, PctTrnPacket
@@ -617,22 +622,13 @@ CopySGBBorderTiles:
 	ld b, 128
 .tileLoop
 ; Copy bit planes 1 and 2 of the tile data.
-	ld c, TILE_SIZE
+	ld c, TILE_SIZE * 2
 .copyLoop
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec c
 	jr nz, .copyLoop
-
-; Zero bit planes 3 and 4.
-	ld c, 16
-	xor a
-.zeroLoop
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .zeroLoop
 
 	dec b
 	jr nz, .tileLoop
