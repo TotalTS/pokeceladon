@@ -103,6 +103,7 @@ SwimmerGirlSprite::             INCBIN "gfx/new_sprites/swimmer_girl.2bpp"
 GoldTrophySprite::              INCBIN "gfx/new_sprites/gold_trophy.2bpp"
 SlowpokeSprite::                INCBIN "gfx/new_sprites/slowpoke.2bpp"
 FuchsiaMonSprite::              INCBIN "gfx/new_sprites/fuchsia_mon.2bpp"
+FighterMachopSprite::           INCBIN "gfx/new_sprites/fighter_machop.2bpp"
 
 
 SECTION "MonIcons", ROMX

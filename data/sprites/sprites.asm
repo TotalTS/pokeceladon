@@ -98,6 +98,6 @@ SpriteSheetPointerTable:
 	overworld_sprite GoldTrophySprite, 4        ; SPRITE_UNUSED_OLD_AMBER
 	overworld_sprite OldAmberSprite, 4          ; SPRITE_OLD_AMBER
 	overworld_sprite SlowpokeSprite, 4          ; SPRITE_UNUSED_GAMBLER_ASLEEP_1
-	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_UNUSED_GAMBLER_ASLEEP_2
+	overworld_sprite FighterMachopSprite, 4     ; SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_GAMBLER_ASLEEP
 	assert_table_length NUM_SPRITES

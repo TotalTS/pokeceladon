@@ -68,7 +68,7 @@
 	const SPRITE_BULBASAUR               ; new
 	const SPRITE_CHANSEY                 ; new
 	const SPRITE_ERIKA                   ; new
-	const SPRITE_FTRAINER               ; new
+	const SPRITE_FTRAINER                ; new
 	const SPRITE_JIGGLYPUFF              ; new
 	const SPRITE_KOGA_GEN2               ; new
 	const SPRITE_MISTY                   ; new
@@ -94,6 +94,6 @@ DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_GOLD_TROPHY             ; new
 	const SPRITE_OLD_AMBER               ; $45
 	const SPRITE_SLOWPOKE                ; new
-	const SPRITE_UNUSED_GAMBLER_ASLEEP_2 ; $47
+	const SPRITE_FIGHTER_MACHOP          ; $47
 	const SPRITE_GAMBLER_ASLEEP          ; $48
 DEF NUM_SPRITES EQU const_value - 1
