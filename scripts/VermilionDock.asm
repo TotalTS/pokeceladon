@@ -269,14 +269,6 @@ TruckOAMTable_Right:
 	db $58, $68, $C6, $10
 	db $58, $70, $C7, $10
 
-RedLeftOAMTable:
-	db $8,$0,$9,$0
-	db $a,$2,$b,$3
-	
-RedRightOAMTable:
-	db $8,$20,$9,$20
-	db $a,$22,$b,$23
-
 TruckSpriteGFX: INCBIN  "gfx/sprites/truck_sprite.2bpp"
 TruckWhiteGFX: INCBIN  "gfx/sprites/truck_white.2bpp"
 
@@ -348,6 +340,7 @@ TruckCheck:
 	ret
 
 PushTruckLeft:
+	call CorruptMewAudio
 	ld a, $ff
 	ld [wJoyIgnore], a
 	ld [wUpdateSpritesEnabled], a
@@ -456,6 +449,7 @@ PushTruckLeft:
 	ret
 
 PushTruckRight:
+	call CorruptMewAudio
 	ld a, $ff
 	ld [wJoyIgnore], a
 	ld [wUpdateSpritesEnabled], a
@@ -569,7 +563,6 @@ ShowMew:
 	ld a, TOGGLE_MEW
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
-	call CorruptMewAudio
 	ret
 	
 CorruptMewAudio:
@@ -586,6 +579,20 @@ CorruptMewAudio:
     ld [wChannel2VibratoExtent], a
     ld hl, wChannel2Flags2
     set 0, [hl]
+	
+	ld a, $70
+	ld [wChannel1Tempo], a
+	xor a
+	ld [wChannel1Tempo + 1], a
+
+	ld a, $70
+	ld [wChannel2Tempo], a
+	xor a
+	ld [wChannel2Tempo + 1], a
+	
+	xor a
+	ld [wChannel1Transposition], a
+	ld [wChannel2Transposition], a
 
     ret
 
@@ -651,6 +658,14 @@ GetOWCoord:
 	ret
 
 VermilionDockRedLeftAnimate:
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .isNormalRed
+	ld de, RocketSprite tile 20
+	lb bc, BANK(RocketSprite), 4
+	ld hl, vSprites tile 8
+	jp CopyVideoData
+ .isNormalRed
 	ld a, [wWalkBikeSurfState]
 	ld de, RedSprite tile 20
 	lb bc, BANK(RedSprite), 4
@@ -664,7 +679,7 @@ VermilionDockRedLeftAnimate:
 	ld c, 10
 	call DelayFrames
 	ld a, [wWalkBikeSurfState]
-	ld de, RedSprite tile 8
+	ld de, RedSprite tile 20
 	lb bc, BANK(RedSprite), 4
 	and a
 	jr z, .load2
