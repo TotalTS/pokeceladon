@@ -164,8 +164,12 @@ InitializeFieldMoveTextBox:
 	ret
 
 _BoulderText2::
-	text_far _BoulderText
 	text_asm
+	ld a, [wStatusFlags1]
+	bit 0, a ; using Strength?
+	jr nz, .alreadyActive
+	ld hl, BoulderText
+	call PrintText
 	ld a, [wObtainedBadges]
 	bit BIT_RAINBOWBADGE, a
 	jr z, .done 
@@ -202,6 +206,11 @@ _BoulderText2::
 	ld a, $01
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
     jp TextScriptEnd
+	
+.alreadyActive
+	ld hl, BouldersMayNowBeMovedText
+	call PrintText
+	jp TextScriptEnd
 
 CloseFieldMoveTextBox:
 	ld a,[hLoadedROMBank]
@@ -219,12 +228,15 @@ ExplainCutText:
 PromptToCutText:
 	text_far _PromptToCutText
 	text_end
+
+BoulderText:
+	text_far _BoulderText
+	text_end
 	
 PromptToStrengthText:
 	text_far _PromptToStrengthText
 	text_end
 
-;_BouldersMayNowBeMovedText::
-;	text "Boulders may now"
-;	line "be moved!"
-;	done
+BouldersMayNowBeMovedText:
+	text_far _BouldersMayNowBeMovedText
+	text_end

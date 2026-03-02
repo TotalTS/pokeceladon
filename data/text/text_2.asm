@@ -1807,3 +1807,8 @@ _PromptToStrengthText::
 	text "Want to use"
 	line "STRENGTH?"
 	done
+
+_BouldersMayNowBeMovedText::
+	text "Boulders may now"
+	line "be moved!"
+	done
