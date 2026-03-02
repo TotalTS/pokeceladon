@@ -2079,7 +2079,8 @@ wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
 wChampionsHouse1FCurScript:: db
 wChampionsHouse2FCurScript:: db
-	ds 4
+wRoute22YujirouPreGymCurScript:: db
+	ds 3
 wGameProgressFlagsEnd::
 
 UNION

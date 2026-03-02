@@ -6808,6 +6808,8 @@ _LoadTrainerPic:
 	ld a, [wTrainerClass]
 	cp ROOKIE
 	jr z, .loadRookie
+	cp YUJIROU
+	jr z, .loadYujirou
 
 	ld a, BANK(YoungsterPic)
 	jr .loadSprite
@@ -6815,6 +6817,10 @@ _LoadTrainerPic:
 .loadRookie
 	ld a, BANK(RookiePic)
 	jr .loadSprite
+	
+.loadYujirou
+	ld a, BANK(YujirouPic)
+	jr .loadSprite	
 
 .useRed
 	ld a, BANK(RedPicFront)

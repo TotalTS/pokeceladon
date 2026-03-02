@@ -134,6 +134,15 @@ HallOfFameOakCongratulationsScript:
 	ld a, TOGGLE_CERULEAN_CAVE_GUY
 	ld [wToggleableObjectIndex], a
 	predef HideObject
+	ld a, TOGGLE_ROUTE22YUJIROU_YUJIROU
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	ld a,TOGGLE_VIRIDIAN_GYM_GIOVANNI
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	ld a, TOGGLE_VIRIDIAN_GYM_YUJIROU
+	ld [wToggleableObjectIndex], a
+	predef ShowObject
 	SetEvent EVENT_PLAYER_IS_CHAMPION
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a

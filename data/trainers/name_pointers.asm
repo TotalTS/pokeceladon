@@ -50,6 +50,7 @@ TrainerNamePointers:
 	dw wTrainerName
 	dw wTrainerName
 	dw wTrainerName
+	dw .YujirouName
 	assert_table_length NUM_TRAINERS
 
 .YoungsterName:     db "YOUNGSTER@"
@@ -73,3 +74,4 @@ TrainerNamePointers:
 .RocketName:        db "ROCKET@"
 .CooltrainerMName:  db "COOLTRAINER♂@"
 .CooltrainerFName:  db "COOLTRAINER♀@"
+.YujirouName:       db "YUJIROU@"

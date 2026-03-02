@@ -9,6 +9,7 @@ Route22Gate_Object:
 	warp_event  5,  7, LAST_MAP, 1
 	warp_event  4,  0, LAST_MAP, 1
 	warp_event  5,  0, LAST_MAP, 2
+	warp_event  9,  5, ROUTE_22_YUJIROU_PRE_GYM, 1
 
 	def_bg_events
 

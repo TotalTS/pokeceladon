@@ -1,6 +1,12 @@
 ViridianGym_Script:
 	ld hl, .CityName
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr nz, .yujirouName
 	ld de, .LeaderName
+	jr .continueScript
+.yujirouName
+	ld de, .YujirouName
+.continueScript
 	call LoadGymLeaderAndCityName
 	call EnableAutoTextBoxDrawing
 	ld hl, ViridianGymTrainerHeaders
@@ -15,6 +21,8 @@ ViridianGym_Script:
 
 .LeaderName:
 	db "GIOVANNI@"
+.YujirouName:
+	db "YUJIROU@"
 
 ViridianGymResetScripts:
 	xor a
@@ -30,6 +38,7 @@ ViridianGym_ScriptPointers:
 	dw_const EndTrainerBattle,                      SCRIPT_VIRIDIANGYM_END_BATTLE
 	dw_const ViridianGymGiovanniPostBattle,         SCRIPT_VIRIDIANGYM_GIOVANNI_POST_BATTLE
 	dw_const ViridianGymPlayerSpinningScript,       SCRIPT_VIRIDIANGYM_PLAYER_SPINNING
+	dw_const ViridianGymYujirouPostBattle,          SCRIPT_VIRIDIANGYM_YUJIROU_POST_BATTLE
 
 ViridianGymDefaultScript:
 	ld a, [wYCoord]
@@ -166,6 +175,20 @@ ViridianGymReceiveTM27:
 	predef ShowObject
 	SetEvents EVENT_2ND_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	jp ViridianGymResetScripts
+	
+ViridianGymYujirouPostBattle:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, ViridianGymResetScripts
+	
+	ld a, PAD_CTRL_PAD
+	ld [wJoyIgnore], a
+	
+	ld a, TEXT_VIRIDIANGYM_REMATCH_POST_BATTLE
+	ldh [hTextID], a
+	call DisplayTextID
+	
+	jp ViridianGymResetScripts
 
 ViridianGym_TextPointers:
 	def_text_pointers
@@ -179,10 +202,12 @@ ViridianGym_TextPointers:
 	dw_const ViridianGymRocker2Text,                TEXT_VIRIDIANGYM_ROCKER2
 	dw_const ViridianGymCooltrainerM3Text,          TEXT_VIRIDIANGYM_COOLTRAINER_M3
 	dw_const ViridianGymGymGuideText,               TEXT_VIRIDIANGYM_GYM_GUIDE
+	dw_const ViridianGymYujirouRematchText,         TEXT_VIRIDIANGYM_YUJIROU
 	dw_const PickUpItemText,                        TEXT_VIRIDIANGYM_REVIVE
 	dw_const ViridianGymGiovanniEarthBadgeInfoText, TEXT_VIRIDIANGYM_GIOVANNI_EARTH_BADGE_INFO
 	dw_const ViridianGymGiovanniReceivedTM27Text,   TEXT_VIRIDIANGYM_GIOVANNI_RECEIVED_TM27
 	dw_const ViridianGymGiovanniTM27NoRoomText,     TEXT_VIRIDIANGYM_GIOVANNI_TM27_NO_ROOM
+	dw_const YujirouViridianPostBattleAdviceText,   TEXT_VIRIDIANGYM_REMATCH_POST_BATTLE
 
 ViridianGymTrainerHeaders:
 	def_trainers 2
@@ -274,6 +299,67 @@ ViridianGymGiovanniTM27ExplanationText:
 
 ViridianGymGiovanniTM27NoRoomText:
 	text_far _ViridianGymGiovanniTM27NoRoomText
+	text_end
+	
+ViridianGymYujirouRematchText:
+	text_asm
+	ld hl, .YujirouViridianPreBattleText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleRematchAcceptedText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, YujirouViridianDefeatedText
+	ld de, YujirouViridianDefeatedText
+	call SaveEndBattleTextPointers
+	
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
+	call InitBattleEnemyParameters
+	
+	ld a, OPP_YUJIROU
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld a, $8
+	ld [wGymLeaderNo], a
+	
+	ld a, SCRIPT_VIRIDIANGYM_YUJIROU_POST_BATTLE 
+	ld [wViridianGymCurScript], a
+	ld [wCurMapScript], a
+	jr .done
+.refused
+	ld hl, .PreBattleRematchRefusedText
+	call PrintText
+	jr .done
+.done
+	jp TextScriptEnd
+
+.YujirouViridianPreBattleText:
+	text_far _YujirouViridianPreBattleText
+	text_end
+	
+.PreBattleRematchAcceptedText:
+	text_far _YujirouViridianRematchAcceptedText
+	text_end
+	
+.PreBattleRematchRefusedText:
+	text_far _YujirouViridianRematchRefusedText
+	text_end
+
+YujirouViridianDefeatedText:
+	text_far _YujirouViridianDefeatedText
+	text_end
+
+YujirouViridianPostBattleAdviceText:
+	text_far _YujirouViridianPostBattleAdviceText
 	text_end
 
 ViridianGymCooltrainerM1Text:

@@ -39,6 +39,7 @@
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_5
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_6
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_7
+	const EVENT_BEAT_YUJIROU_REMATCH
 
 ; Pewter City events
 	const_next $68
@@ -799,6 +800,8 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 ; Post Game events
 	const_next $9E0
 	const EVENT_PLAYER_IS_CHAMPION
+	const EVENT_BEAT_YUJIROU_PRE_GYM
+	const EVENT_GOT_TM19
 
 ; End of events
 	const_next $A00

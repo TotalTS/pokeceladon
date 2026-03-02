@@ -376,6 +376,9 @@ LancePic::         INCBIN "gfx/trainers/lance.pic"
 
 SECTION "Pics 6", ROMX
 
+; trainers
 RookiePic::        INCBIN "gfx/new_trainers/rookie.pic"
-ChikoritaPic::     INCBIN "gfx/pokemon/front/chikorita.pic"
+YujirouPic::       INCBIN "gfx/new_trainers/yujirou.pic"
 RocketPicBack::    INCBIN "gfx/player/rocketb.pic"
+; pokemon
+ChikoritaPic::     INCBIN "gfx/pokemon/front/chikorita.pic"

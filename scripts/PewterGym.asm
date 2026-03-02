@@ -54,6 +54,8 @@ PewterGymScriptReceiveTM34:
 	ldh [hTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_BROCK
+	SetEvent EVENT_BEAT_YUJIROU_PRE_GYM
+	SetEvent EVENT_GOT_TM19
 	lb bc, TM_BIDE, 1
 	call GiveItem
 	jr nc, .BagFull

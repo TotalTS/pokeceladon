@@ -238,3 +238,40 @@ _ViridianGymGuidePostBattleText::
 	line "GIOVANNI was the"
 	cont "GYM LEADER here?"
 	done
+
+_YujirouViridianPreBattleText::
+	text "I've been waiting,"
+	line "CHAMPION!"
+
+	para "With GIOVANNI"
+	line "gone, I am the"
+	cont "new GYM LEADER"
+	cont "now."
+	
+	para "Want to test"
+	line "your strength?"
+	done
+	
+_YujirouViridianRematchAcceptedText::
+	text "Don't hold back"
+	line "now, CHAMPION!"
+	done
+
+_YujirouViridianRematchRefusedText::	
+	text "Maybe some other"
+	line "time."
+	done
+
+_YujirouViridianDefeatedText::
+	text " "
+	line "Your title is"
+	cont "well deserved."
+	prompt
+
+_YujirouViridianPostBattleAdviceText::
+	text "I will continue"
+	line "to guard this"
+	cont "GYM until a"
+	cont "new LEADER is"
+	cont "chosen."
+	done

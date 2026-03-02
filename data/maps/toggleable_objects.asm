@@ -126,6 +126,7 @@ ToggleableObjectStates:
 
 	toggleable_objects_for VIRIDIAN_GYM
 	toggle_object_state VIRIDIANGYM_GIOVANNI, ON
+	toggle_object_state VIRIDIANGYM_YUJIROU,  OFF
 	toggle_object_state VIRIDIANGYM_REVIVE,   ON
 
 	toggleable_objects_for MUSEUM_1F
@@ -460,6 +461,9 @@ ToggleableObjectStates:
 	toggleable_objects_for SS_ANNE_BOW
 	toggle_object_state SSANNEBOW_SUPER_NERD, ON
 	toggle_object_state SSANNEBOW_ROOKIE, OFF
+	
+	toggleable_objects_for ROUTE_22_YUJIROU_PRE_GYM
+	toggle_object_state ROUTE_22_YUJIROU_PRE_GYM_YUJIROU, ON
 
 	assert_table_length NUM_TOGGLEABLE_OBJECTS
 

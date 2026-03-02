@@ -142,6 +142,7 @@ INCLUDE "data/text/text_3.asm"
 
 INCLUDE "text/RedsHouse1F.asm"
 INCLUDE "text/ChampionsHouse1F.asm"
+INCLUDE "text/Route22YujirouPreGym.asm"
 INCLUDE "text/BluesHouse.asm"
 INCLUDE "text/OaksLab.asm"
 INCLUDE "text/pokedex_ratings.asm"

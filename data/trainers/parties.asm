@@ -47,6 +47,7 @@ TrainerDataPointers:
 	dw ChannelerData
 	dw AgathaData
 	dw LanceData
+	dw YujirouData
 	assert_table_length NUM_TRAINERS
 
 ; if first byte != $FF, then
@@ -563,8 +564,6 @@ GiovanniData:
 	db $FF, 37, NIDORINO, 35, KANGASKHAN, 37, RHYHORN, 41, NIDOQUEEN, 0
 ; Viridian Gym
 	db $FF, 45, RHYHORN, 42, DUGTRIO, 44, NIDOQUEEN, 45, NIDOKING, 50, RHYDON, 0
-; Rematch
-	db $FF, 68, RHYHORN, 68, DUGTRIO, 68, NIDOKING, 68, NIDOQUEEN, 70, RHYDON, 0
 
 RocketData:
 ; Mt. Moon B2F
@@ -781,3 +780,8 @@ AgathaData:
 
 LanceData:
 	db $FF, 58, GYARADOS, 56, DRAGONAIR, 56, DRAGONAIR, 60, AERODACTYL, 62, DRAGONITE, 0
+
+YujirouData:
+	db $FF, 9, NIDORAN_M, 9, NIDORAN_F, 11, DIGLETT, 0
+; Rematch
+	db $FF, 68, RHYHORN, 68, DUGTRIO, 68, NIDOKING, 68, NIDOQUEEN, 70, RHYDON, 0

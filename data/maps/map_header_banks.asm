@@ -252,4 +252,5 @@ MapHeaderBanks::
 	db BANK(AgathasRoom_h)
 	db BANK(ChampionsHouse1F_h)
 	db BANK(ChampionsHouse2F_h)
+	db BANK(Route22YujirouPreGym_h)
 	assert_table_length NUM_MAPS

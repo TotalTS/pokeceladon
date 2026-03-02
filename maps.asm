@@ -1234,3 +1234,8 @@ INCLUDE "data/maps/headers/ChampionsHouse2F.asm"
 INCLUDE "scripts/ChampionsHouse2F.asm"
 INCLUDE "data/maps/objects/ChampionsHouse2F.asm"
 ChampionsHouse2F_Blocks: INCBIN "maps/ChampionsHouse2F.blk"
+
+INCLUDE "data/maps/headers/Route22YujirouPreGym.asm"
+INCLUDE "scripts/Route22YujirouPreGym.asm"
+INCLUDE "data/maps/objects/Route22YujirouPreGym.asm"
+Route22YujirouPreGym_Blocks: INCBIN "maps/Route22YujirouPreGym.blk"

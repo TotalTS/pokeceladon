@@ -118,5 +118,6 @@ InternalMapEntries:
 	indoor_map SILPH_CO_2,         10,  5, SilphCoName
 	indoor_map POKEMON_LEAGUE_3,    0,  2, PokemonLeagueName
 	indoor_map CHAMPIONS_HOUSE,     0,  2, ChampionsHouseName
+	indoor_map ROUTE_22_YUJIROU_PRE_GYM, 0, 7, Route22Name
 	assert_table_length NUM_INDOOR_MAP_GROUPS
 	db -1 ; end
