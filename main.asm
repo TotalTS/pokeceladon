@@ -320,7 +320,6 @@ INCLUDE "engine/battle/battle_transitions.asm"
 INCLUDE "engine/items/town_map.asm"
 INCLUDE "engine/gfx/mon_icons.asm"
 INCLUDE "engine/events/in_game_trades.asm"
-INCLUDE "engine/gfx/palettes.asm"
 INCLUDE "engine/menus/save.asm"
 INCLUDE "engine/overworld/field_moves.asm"
 
@@ -356,3 +355,7 @@ INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/items/tm_prices.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "gfx/fishing.asm"
+
+SECTION "bank1F", ROMX
+
+INCLUDE "engine/gfx/palettes.asm"
