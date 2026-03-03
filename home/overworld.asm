@@ -2513,3 +2513,16 @@ LoadDestinationWarpPosition::
 	ldh [hLoadedROMBank], a
 	ld [rROMB], a
 	ret
+	
+HomeMapIDTable::
+    db PALLET_TOWN      ; 0
+    db VIRIDIAN_CITY    ; 1
+    db PEWTER_CITY      ; 2
+    db CERULEAN_CITY    ; 3
+    db VERMILION_CITY   ; 4
+    db LAVENDER_TOWN    ; 5
+    db CELADON_CITY     ; 6
+    db SAFFRON_CITY     ; 7
+    db FUCHSIA_CITY     ; 8
+    db CINNABAR_ISLAND  ; 9
+    db ROUTE_23         ; 10
