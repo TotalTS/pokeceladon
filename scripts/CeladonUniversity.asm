@@ -15,7 +15,6 @@ CeladonUniversity_TextPointers:
 	dw_const CeladonUniversitySignText5,TEXT_CELADONUNIVERSITY_SIGN5
 	dw_const CeladonUniversityStatueGD, TEXT_CELADONUNIVERSITY_SIGN6
 	dw_const CeladonUniversityBlackboard,TEXT_CELADONUNIVERSITY_SIGN7
-	dw_const CeladonUniversityBookcaseText, TEXT_CELADONUNIVERSITY_SIGN8
 
 CeladonUniversitySignText:
 	text_far _CeladonUniversitySignText
@@ -73,10 +72,6 @@ CeladonUniversityStatueGD:
 CeladonUniversityBlackboard:
 	text_far _CeladonUniversityBlackboard
 	text_end
-	
-CeladonUniversityBookcaseText:
-    text_far _BookcaseText
-    text_end
 
 CeladonUniversityProfText:
 	text_asm
