@@ -22,8 +22,8 @@ Features:
 - If you have badge(s) Guards have shorter texts on Route 23.
 - Nurse at Silph Co. 9F still heals you after beating Giovanni.
 - Mew under the truck.
-- New trainer classes Rookie and Yurijou. (From prototypes)
-- You can battle Yurijou before Brock at Route 22 Gate 2F. He will give you TM19 to make the battle easier if you have a Charmander as starter.
+- New trainer classes Rookie and Yujirou. (From prototypes)
+- You can battle Yujirou before Brock at Route 22 Gate 2F. He will give you TM19 to make the battle easier if you have a Charmander as starter.
 - You can make Erik and Sarah meet again at Safari Zone. Doing so will unlock free pass to it.
 - New Celadon University location, where you can get a Magikarp with Dragon Rage and a Celadon University Diploma.
 - You can have a Rocket Suit after beating the Nugget Bridge. (Optional) Use it to skip battles against the Team Rocket.
@@ -34,7 +34,7 @@ Post game events:
 - If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
 - S.S. Anne returns with new trainers.
 - At Celadon Hotel, you can select a new home in any city you want.
-- Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yurijou)
+- Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
 
 # Screenshots
 
@@ -44,6 +44,12 @@ Post game events:
 ![0004](screenshots/0004.bmp)
 ![0005](screenshots/0005.bmp)
 ![0006](screenshots/0006.bmp)
+![0007](screenshots/0007.bmp)
+![0008](screenshots/0008.bmp)
+![0009](screenshots/0009.bmp)
+![0010](screenshots/0010.bmp)
+![0011](screenshots/0011.bmp)
+![0012](screenshots/0012.bmp)
 
 # Credits
 
