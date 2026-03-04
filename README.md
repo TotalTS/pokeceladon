@@ -24,7 +24,7 @@ Features:
 - Mew under the truck.
 - New trainer classes Rookie and Yujirou. (From prototypes)
 - You can battle Yujirou before Brock at Route 22 Gate 2F. He will give you TM19 to make the battle easier if you have a Charmander as starter.
-- You can make Erik and Sarah meet again at Safari Zone. Doing so will unlock free pass to it.
+- You can make Erik and Sara meet again at Safari Zone. Doing so will unlock free pass to it.
 - New Celadon University location, where you can get a Magikarp with Dragon Rage and a Celadon University Diploma.
 - You can have a Rocket Suit after beating the Nugget Bridge. (Optional) Use it to skip battles against the Team Rocket.
 - With Rocket Suit, you can catch enemy's Pokémon. (But it ends the battle instantly)
@@ -77,6 +77,9 @@ Post game events:
 **cRz-Shadows**
 - New party icons code.
 
+**Sanqui and Dannye**
+- For pokered-crysaudio used for this project
+
 **Dannye**
 - Surf with Lapras, Seel, Pikachu.
 
@@ -89,12 +92,6 @@ Post game events:
 **pret tutorials**
 - Add a new map sprite
 - Adding gym leader rematches
-
-# pokered-crysaudio
-
-Pokémon Red/Blue with the Pokémon Crystal sound engine stitched in. Made by Sanqui and dannye.
-
-Original README follows...
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 
