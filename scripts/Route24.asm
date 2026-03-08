@@ -129,7 +129,7 @@ Route24CooltrainerM1Text:
 	jr nc, .bag_full
 	ld hl, .WelcomeToRocketText
 	call PrintText
-	ld hl, .ReceivedNuggetText
+	ld hl, .ReceivedRocketSuitText
 	call PrintText
 	jp TextScriptEnd
 
@@ -177,7 +177,6 @@ Route24CooltrainerM1Text:
 .ReceivedRocketSuitText:
 	text_far _Route24CooltrainerM1ReceivedNuggetText
 	sound_get_item_1
-	text_promptbutton
 	text_end
 
 .NoRoomText:
