@@ -350,39 +350,45 @@ CheckPlayerIsInFrontOfSprite:
 
 CheckRocketSuitInfiltratedMap::
 	ld a, [wIsRocketSuit]
-    and a
-    jr z, .continueChecking
+	and a
+	jr z, .continueChecking
 
-    ld a, [wCurMap]
-    cp SILPH_CO_2F
-    jr z, .infiltrated
-    cp SILPH_CO_3F
-    jr z, .infiltrated
-    cp SILPH_CO_4F
-    jr z, .infiltrated
-    cp SILPH_CO_5F
-    jr z, .infiltrated
-    cp SILPH_CO_6F
-    jr z, .infiltrated
-    cp SILPH_CO_7F
-    jr z, .infiltrated
-    cp SILPH_CO_8F
-    jr z, .infiltrated
-    cp ROCKET_HIDEOUT_B1F
-    jr z, .infiltrated
-    cp ROCKET_HIDEOUT_B2F
-    jr z, .infiltrated
-    cp ROCKET_HIDEOUT_B3F
-    jr z, .infiltrated
-    cp ROCKET_HIDEOUT_B4F
-    jr z, .infiltrated
-    cp POKEMON_TOWER_7F
-    jr z, .infiltrated
+	ld a, [wCurMap]
+	cp SILPH_CO_2F
+	jr z, .infiltrated
+	cp SILPH_CO_3F
+	jr z, .infiltrated
+	cp SILPH_CO_4F
+	jr z, .infiltrated
+	cp SILPH_CO_5F
+	jr z, .infiltrated
+	cp SILPH_CO_6F
+	jr z, .infiltrated
+	cp SILPH_CO_7F
+	jr z, .infiltrated
+	cp SILPH_CO_8F
+	jr z, .infiltrated
+	cp SILPH_CO_9F
+	jr z, .infiltrated
+	cp SILPH_CO_10F
+	jr z, .infiltrated
+	cp SILPH_CO_11F
+	jr z, .infiltrated
+	cp ROCKET_HIDEOUT_B1F
+	jr z, .infiltrated
+	cp ROCKET_HIDEOUT_B2F
+	jr z, .infiltrated
+	cp ROCKET_HIDEOUT_B3F
+	jr z, .infiltrated
+	cp ROCKET_HIDEOUT_B4F
+	jr z, .infiltrated
+	cp POKEMON_TOWER_7F
+	jr z, .infiltrated
 
 .continueChecking
 	and a
-    ret
+	ret
 
 .infiltrated
 	scf
-    ret
+	ret
