@@ -22,6 +22,8 @@ RockTunnel1F_TextPointers:
 	dw_const RockTunnel1FCooltrainerF1Text, TEXT_ROCKTUNNEL1F_COOLTRAINER_F1
 	dw_const RockTunnel1FCooltrainerF2Text, TEXT_ROCKTUNNEL1F_COOLTRAINER_F2
 	dw_const RockTunnel1FCooltrainerF3Text, TEXT_ROCKTUNNEL1F_COOLTRAINER_F3
+	dw_const RockTunnel1FFishingGuruText,   TEXT_ROCKTUNNEL1F_FISHING_GURU
+	dw_const RockTunnel1FPikachuText,       TEXT_ROCKTUNNEL1F_PIKACHU
 	dw_const RockTunnel1FSignText,          TEXT_ROCKTUNNEL1F_SIGN
 
 RockTunnel1TrainerHeaders:
@@ -161,6 +163,71 @@ RockTunnel1FCooltrainerF3EndBattleText:
 
 RockTunnel1FCooltrainerF3AfterBattleText:
 	text_far _RockTunnel1FCooltrainerF3AfterBattleText
+	text_end
+
+RockTunnel1FFishingGuruText:
+	text_asm
+	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP
+	jr nz, .already
+	ld hl, .Text
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .saidNo
+	xor a
+	ld [wMapPalOffset], a
+	ld hl, .flashLightsAreaText
+	call PrintText
+	call GBFadeOutToWhite
+	call Delay3
+	call GBFadeInFromWhite
+	ld hl, .TextAfter
+	call PrintText
+	SetEvent EVENT_ROCK_TUNNEL_FLASH_HELP
+	jp TextScriptEnd
+	
+.Text
+	text_far _RockTunnel1FishingGuruText
+	text_end
+	
+.saidNo
+	ld hl, .NextTimeText
+	call PrintText
+	jp TextScriptEnd
+	
+.NextTimeText
+	text_far _RockTunnel1FishingGuruNextTimeText
+	text_end
+
+.already
+	ld hl, .TextAlready
+	call PrintText
+	jp TextScriptEnd
+	
+.flashLightsAreaText
+	text_far _FlashLightsAreaText
+	text_end
+	
+.TextAfter
+	text_far _RockTunnel1FishingGuruAfterText
+	text_end
+
+.TextAlready	
+	text_far _RockTunnel1FishingGuruAlreadyText
+	text_end
+
+RockTunnel1FPikachuText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, PIKACHU
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text
+	text_far _PokemonFanClubPikachuText
 	text_end
 
 RockTunnel1FSignText:

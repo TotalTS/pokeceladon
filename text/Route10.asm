@@ -106,3 +106,25 @@ _Route10RockTunnelSignText::
 _Route10PowerPlantSignText::
 	text "POWER PLANT"
 	done
+
+_Route10HikerFlashText::
+	text "Hello, kid!"
+	
+	para "There's a new"
+	line "TRAINER with a"
+	cont "PIKACHU that's"
+	cont "helping people"
+	cont "through ROCK"
+	cont "TUNNEL!"
+
+	para "You can cross it"
+	line "without using"
+	cont "FLASH!"
+	
+	para "He's just east"
+	line "of the ROCK"
+	cont "TUNNEL entrance."
+	
+	para "Isn't that"
+	line "great?"
+	done

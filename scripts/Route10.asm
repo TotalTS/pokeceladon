@@ -21,6 +21,7 @@ Route10_TextPointers:
 	dw_const Route10CooltrainerF1Text,  TEXT_ROUTE10_COOLTRAINER_F1
 	dw_const Route10Hiker2Text,         TEXT_ROUTE10_HIKER2
 	dw_const Route10CooltrainerF2Text,  TEXT_ROUTE10_COOLTRAINER_F2
+	dw_const Route10HikerFlashText,     TEXT_ROUTE10_HIKERFLASH
 	dw_const Route10RockTunnelSignText, TEXT_ROUTE10_ROCKTUNNEL_NORTH_SIGN
 	dw_const PokeCenterSignText,        TEXT_ROUTE10_POKECENTER_SIGN
 	dw_const Route10RockTunnelSignText, TEXT_ROUTE10_ROCKTUNNEL_SOUTH_SIGN
@@ -148,6 +149,10 @@ Route10CooltrainerF2EndBattleText:
 
 Route10CooltrainerF2AfterBattleText:
 	text_far _Route10CooltrainerF2AfterBattleText
+	text_end
+	
+Route10HikerFlashText:
+	text_far _Route10HikerFlashText
 	text_end
 
 Route10RockTunnelSignText:

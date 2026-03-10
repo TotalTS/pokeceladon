@@ -107,6 +107,45 @@ _RockTunnel1FCooltrainerF3AfterBattleText::
 	text "Whew! I'm all"
 	line "sweaty now!"
 	done
+	
+_RockTunnel1FishingGuruText::
+	text "Hello!"
+	
+	para "It's dark here."
+
+	para "My PIKACHU can"
+	line "light the way!"
+
+	para "Permanently!"
+
+	para "Want it to use"
+	line "FLASH?"
+	done
+	
+_RockTunnel1FishingGuruNextTimeText::
+	text "Alright."
+
+	para "If you need"
+	line "light, just ask."
+
+	para "PIKACHU and I"
+	line "will be here."
+	done
+	
+_RockTunnel1FishingGuruAfterText::
+	text "PIKACHU will"
+	line "keep ROCK TUNNEL"
+	cont "bright!"
+	done
+
+_RockTunnel1FishingGuruAlreadyText::
+	text "During SUMMER,"
+	line "I go with my"
+	cont "PIKACHU to a"
+	cont "rented house"
+	cont "near the sea in"
+	cont "ROUTE 19."
+	done
 
 _RockTunnel1FSignText::
 	text "ROCK TUNNEL"
