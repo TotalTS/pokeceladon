@@ -198,7 +198,7 @@ RockTunnel1FFishingGuruText:
 	ld [hli], a
 	call HandleMenuInput
 	bit B_PAD_B, a
-	jr nz, .cancel
+	jr nz, .pressedB
 	call LoadScreenTilesFromBuffer1
 	ld a, [wCurrentMenuItem]
 	cp 0
@@ -230,6 +230,8 @@ RockTunnel1FFishingGuruText:
 	call PrintText
 	SetEvent EVENT_ROCK_TUNNEL_FLASH_HELP
 	jp TextScriptEnd
+.pressedB
+	call LoadScreenTilesFromBuffer1
 .cancel
 	ld hl, .NextTimeText
 	call PrintText

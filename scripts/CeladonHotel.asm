@@ -22,49 +22,42 @@ CeladonHotelSuperNerdText:
 
 CeladonHotelSatoText:
 	text_asm
-
 	ld a, [wNumHoFTeams]
 	and a
 	jr z, .notChampion
-
+	call SaveScreenTilesToBuffer1
 	ld hl, MrSatoChampionGreetingText
 	call PrintText
-
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wListScrollOffset], a
-
 .loop
 	ld hl, MrSatoChooseHomeText
 	call PrintText
-
 	ld hl, .HomeItemList
 	call LoadItemList
-
 	ld hl, wItemList
 	ld a, l
 	ld [wListPointer], a
 	ld a, h
 	ld [wListPointer + 1], a
-
 	xor a
 	ld [wPrintItemPrices], a
 	ld [wMenuItemToSwap], a
-
 	ld a, SPECIALLISTMENU
 	ld [wListMenuID], a
-
 	call DisplayListMenuID
-	jr c, .cancel ; B pressed
-
+	jr c, .pressedB ; B pressed
+	call LoadScreenTilesFromBuffer1
 	ld a, [wCurItem]
 	sub HOME_PALLET_ITEM
 	ld [wPlayerHomeLocation], a
-
 	ld hl, MrSatoConfirmedText
 	call PrintText
 	jr .done
 
+.pressedB
+	call LoadScreenTilesFromBuffer1
 .cancel
 	ld hl, MrSatoNoHomeText
 	call PrintText
