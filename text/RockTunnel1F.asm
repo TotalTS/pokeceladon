@@ -116,8 +116,6 @@ _RockTunnel1FishingGuruText::
 	para "My PIKACHU can"
 	line "light the way!"
 
-	para "Permanently!"
-
 	para "Want it to use"
 	line "FLASH?"
 	done

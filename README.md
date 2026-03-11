@@ -28,7 +28,7 @@ Features:
 - New Celadon University location, where you can get a Magikarp with Dragon Rage and a Celadon University Diploma.
 - You can have a Rocket Suit after beating the Nugget Bridge. (Optional) Use it to skip battles against the Team Rocket.
 - With Rocket Suit, you can catch enemy's Pokémon. (But it ends the battle instantly)
-- In Rock Tunnel, there's an NPC that uses FLASH for you (permanently) without need to learn the HM.
+- In Rock Tunnel, there's an NPC that uses FLASH for you without need to learn the HM.
 
 Post game events:
 
