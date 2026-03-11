@@ -177,20 +177,20 @@ RockTunnel1FFishingGuruText:
 	call SaveScreenTilesToBuffer1
 	ld hl, .Text
 	call PrintText
-	hlcoord 3, 5
+	hlcoord 7, 5
 	ld b, $6
-	ld c, $f
+	ld c, $b
 	call TextBoxBorder
 	call UpdateSprites
 	xor a
 	ld [wLetterPrintingDelayFlags], a
-	hlcoord 5, 7
+	hlcoord 9, 7
 	ld de, RockTunnelFlashMenuText
 	call PlaceString
 	ld hl, wTopMenuItemY
 	ld a, 7
 	ld [hli], a
-	ld a, 4
+	ld a, 8
 	ld [hli], a
 	xor a
 	ld [hli], a ; wCurrentMenuItem
@@ -205,22 +205,10 @@ RockTunnel1FFishingGuruText:
 	call LoadScreenTilesFromBuffer1
 	ld a, [wCurrentMenuItem]
 	cp 0
-	jr z, .permanent
-	cp 1
 	jr z, .temporary
+	cp 1
+	jr z, .permanent
 	jr .cancel
-.permanent
-	xor a
-	ld [wMapPalOffset], a
-	ld hl, .flashLightsAreaText
-	call PrintText
-	call GBFadeOutToWhite
-	call Delay3
-	call GBFadeInFromWhite
-	ld hl, .TextAfter
-	call PrintText
-	SetEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
-	jp TextScriptEnd
 .temporary
 	xor a
 	ld [wMapPalOffset], a
@@ -232,6 +220,18 @@ RockTunnel1FFishingGuruText:
 	ld hl, .TextAfter
 	call PrintText
 	SetEvent EVENT_ROCK_TUNNEL_FLASH_HELP
+	jp TextScriptEnd
+.permanent
+	xor a
+	ld [wMapPalOffset], a
+	ld hl, .flashLightsAreaText
+	call PrintText
+	call GBFadeOutToWhite
+	call Delay3
+	call GBFadeInFromWhite
+	ld hl, .TextAfter
+	call PrintText
+	SetEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
 	jp TextScriptEnd
 .pressedB
 	call LoadScreenTilesFromBuffer1
@@ -266,8 +266,8 @@ RockTunnel1FFishingGuruText:
 	text_end
 	
 RockTunnelFlashMenuText:
-    db "PERMANENT"
-    next "JUST THIS TIME"
+    db "JUST ONCE"
+    next "PERMANENT"
     next "CANCEL@"
 
 RockTunnel1FPikachuText:
