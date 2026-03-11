@@ -197,6 +197,8 @@ RockTunnel1FFishingGuruText:
 	ld a, PAD_A | PAD_B
 	ld [hli], a
 	call HandleMenuInput
+	bit B_PAD_B, a
+	jr nz, .cancel
 	call LoadScreenTilesFromBuffer1
 	ld a, [wCurrentMenuItem]
 	cp 0
