@@ -168,13 +168,55 @@ RockTunnel1FCooltrainerF3AfterBattleText:
 RockTunnel1FFishingGuruText:
 	text_asm
 	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP
-	jr nz, .already
+	jp nz, .already
+	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
+	jp nz, .already
+	call SaveScreenTilesToBuffer1
 	ld hl, .Text
 	call PrintText
-	call YesNoChoice
+	hlcoord 3, 5
+	ld b, $6
+	ld c, $f
+	call TextBoxBorder
+	call UpdateSprites
+	xor a
+	ld [wLetterPrintingDelayFlags], a
+	hlcoord 5, 7
+	ld de, RockTunnelFlashMenuText
+	call PlaceString
+	ld hl, wTopMenuItemY
+	ld a, 7
+	ld [hli], a
+	ld a, 4
+	ld [hli], a
+	xor a
+	ld [hli], a ; wCurrentMenuItem
+	inc hl
+	ld a, 2
+	ld [hli], a
+	ld a, PAD_A | PAD_B
+	ld [hli], a
+	call HandleMenuInput
+	call LoadScreenTilesFromBuffer1
 	ld a, [wCurrentMenuItem]
-	and a
-	jr nz, .saidNo
+	cp 0
+	jr z, .permanent
+	cp 1
+	jr z, .temporary
+	jr .cancel
+.permanent
+	xor a
+	ld [wMapPalOffset], a
+	ld hl, .flashLightsAreaText
+	call PrintText
+	call GBFadeOutToWhite
+	call Delay3
+	call GBFadeInFromWhite
+	ld hl, .TextAfter
+	call PrintText
+	SetEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
+	jp TextScriptEnd
+.temporary
 	xor a
 	ld [wMapPalOffset], a
 	ld hl, .flashLightsAreaText
@@ -186,15 +228,14 @@ RockTunnel1FFishingGuruText:
 	call PrintText
 	SetEvent EVENT_ROCK_TUNNEL_FLASH_HELP
 	jp TextScriptEnd
-	
-.Text
-	text_far _RockTunnel1FishingGuruText
-	text_end
-	
-.saidNo
+.cancel
 	ld hl, .NextTimeText
 	call PrintText
 	jp TextScriptEnd
+
+.Text
+	text_far _RockTunnel1FishingGuruText
+	text_end
 	
 .NextTimeText
 	text_far _RockTunnel1FishingGuruNextTimeText
@@ -216,6 +257,11 @@ RockTunnel1FFishingGuruText:
 .TextAlready	
 	text_far _RockTunnel1FishingGuruAlreadyText
 	text_end
+	
+RockTunnelFlashMenuText:
+    db "PERMANENT"
+    next "JUST THIS TIME"
+    next "CANCEL@"
 
 RockTunnel1FPikachuText:
 	text_asm

@@ -507,6 +507,8 @@ WarpFound2::
 	ld [wCurMap], a
 	cp ROCK_TUNNEL_1F
 	jr nz, .notRockTunnel
+	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
+	jr nz, .notRockTunnel
 	ResetEvent EVENT_ROCK_TUNNEL_FLASH_HELP
 	ld a, $06
 	ld [wMapPalOffset], a
