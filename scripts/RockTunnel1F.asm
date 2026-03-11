@@ -167,9 +167,12 @@ RockTunnel1FCooltrainerF3AfterBattleText:
 
 RockTunnel1FFishingGuruText:
 	text_asm
-	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP
+	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP ; option "Just this time"
 	jp nz, .already
-	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
+	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP2 ; option "Permanent"
+	jp nz, .already
+	ld a, [wMapPalOffset] ; checks if Flash is already used
+	cp $06
 	jp nz, .already
 	call SaveScreenTilesToBuffer1
 	ld hl, .Text
@@ -198,7 +201,7 @@ RockTunnel1FFishingGuruText:
 	ld [hli], a
 	call HandleMenuInput
 	bit B_PAD_B, a
-	jr nz, .pressedB
+	jr nz, .pressedB ; if B pressed, cancel
 	call LoadScreenTilesFromBuffer1
 	ld a, [wCurrentMenuItem]
 	cp 0
