@@ -182,39 +182,9 @@ HomeDoor_Apply::
     cp HOME_CINNABAR
     jr nz, .check_indigo
 
-    ld a, $64
-    ld [wNewTileBlockID], a
-    lb bc, 6, 1
-    predef ReplaceTileBlock
-	
     ld a, $02
     ld [wNewTileBlockID], a
-    lb bc, 6, 2
-    predef ReplaceTileBlock
-	
-    ld a, $03
-    ld [wNewTileBlockID], a
-    lb bc, 6, 3
-    predef ReplaceTileBlock
-
-    ld a, $64
-    ld [wNewTileBlockID], a
-    lb bc, 7, 1
-    predef ReplaceTileBlock
-	
-    ld a, $77
-    ld [wNewTileBlockID], a
-    lb bc, 7, 2
-    predef ReplaceTileBlock
-	
-    ld a, $77
-    ld [wNewTileBlockID], a
-    lb bc, 7, 3
-    predef ReplaceTileBlock
-	
-    ld a, $77
-    ld [wNewTileBlockID], a
-    lb bc, 7, 4
+    lb bc, 5, 4
     predef ReplaceTileBlock
     jp .done
 	
