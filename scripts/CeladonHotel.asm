@@ -71,7 +71,7 @@ CeladonHotelSatoText:
 	jp TextScriptEnd
 
 .HomeItemList:
-	db 11
+	db 12
 	table_width 1
 	db HOME_PALLET_ITEM
 	db HOME_VIRIDIAN_ITEM
@@ -82,6 +82,7 @@ CeladonHotelSatoText:
 	db HOME_CELADON_ITEM
 	db HOME_SAFFRON_ITEM
 	db HOME_FUCHSIA_ITEM
+	db HOME_ROUTE_19_ITEM
 	db HOME_CINNABAR_ITEM
 	db HOME_INDIGO_ITEM
 	db -1

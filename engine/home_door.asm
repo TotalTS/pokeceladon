@@ -146,15 +146,30 @@ HomeDoor_Apply::
 .check_fuchsia:
     ld a, [wCurMap]
     cp FUCHSIA_CITY
-    jr nz, .check_cinnabar
+    jr nz, .check_route_19
 
     ld a, [wPlayerHomeLocation]
     cp HOME_FUCHSIA
-    jr nz, .check_cinnabar
+    jr nz, .check_route_19
 
     ld a, $02
     ld [wNewTileBlockID], a
     lb bc, 13, 7
+    predef ReplaceTileBlock
+    jp .done
+
+.check_route_19:
+    ld a, [wCurMap]
+    cp ROUTE_19
+    jr nz, .check_cinnabar
+
+    ld a, [wPlayerHomeLocation]
+    cp HOME_ROUTE_19
+    jr nz, .check_cinnabar
+
+    ld a, $02
+    ld [wNewTileBlockID], a
+    lb bc, 4, 2
     predef ReplaceTileBlock
     jp .done
 	
@@ -326,13 +341,26 @@ HomeWarp_Apply::
 .check_fuchsia:
     ld a, [wCurMap]
     cp FUCHSIA_CITY
-    jr nz, .check_cinnabar
+    jr nz, .check_route_19
 
     ld a, [wPlayerHomeLocation]
     cp HOME_FUCHSIA
-    jr nz, .check_cinnabar
+    jr nz, .check_route_19
 
     ld a, 9
+    ld [wDestinationWarpID], a
+    ret
+	
+.check_route_19:
+    ld a, [wCurMap]
+    cp ROUTE_19
+    jr nz, .check_cinnabar
+
+    ld a, [wPlayerHomeLocation]
+    cp HOME_ROUTE_19
+    jr nz, .check_cinnabar
+
+    ld a, 0
     ld [wDestinationWarpID], a
     ret
 
