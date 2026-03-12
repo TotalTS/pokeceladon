@@ -24,6 +24,18 @@ PlayDefaultMusicCommon::
 	jr z, .walking
 	cp $2
 	jr z, .surfing
+	ld a, [wLastMusicSoundID]
+	cp MUSIC_BIKE_RIDING
+	ld a, [wMapMusicSoundID]
+	ld b, a
+	ld a, [wLastMapMusicBeforeBicycle]
+	cp b
+	jr z, .skip_update
+
+	ld a, b
+	ld [wLastMapMusicBeforeBicycle], a
+
+.skip_update
 	ld a, MUSIC_BIKE_RIDING
 	jr .next
 
@@ -49,6 +61,13 @@ PlayDefaultMusicCommon::
 
 .walking
 	ld a, [wMapMusicSoundID]
+	cp MUSIC_KEEP
+	jr nz, .use_map_music
+	ld a, [wLastMusicSoundID]
+	cp MUSIC_BIKE_RIDING
+	jr nz, .use_map_music
+	ld a, [wLastMapMusicBeforeBicycle]
+.use_map_music
 	ld b, a
 ;	call CompareMapMusicBankWithCurrentBank
 ;	jr c, .next4
