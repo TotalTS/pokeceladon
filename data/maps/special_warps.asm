@@ -106,7 +106,7 @@ HomeWarpDataPtr:
 	dw .HomeIndigo         ; 11
 	
 .HomePallet:    fly_warp PALLET_TOWN,        5,  6
-.HomeViridian:  fly_warp VIRIDIAN_CITY,     16, 26
+.HomeViridian:  fly_warp VIRIDIAN_CITY,     25, 16
 .HomePewter:    fly_warp PEWTER_CITY,       31,  6
 .HomeCerulean:  fly_warp CERULEAN_CITY,     15, 12
 .HomeVermilion: fly_warp VERMILION_CITY,    15,  4
@@ -115,5 +115,5 @@ HomeWarpDataPtr:
 .HomeSaffron:   fly_warp SAFFRON_CITY,      13, 30
 .HomeFuchsia:   fly_warp FUCHSIA_CITY,      15, 28
 .HomeRoute19:   fly_warp ROUTE_19,           5, 10
-.HomeCinnabar:  fly_warp CINNABAR_ISLAND,    6, 14
+.HomeCinnabar:  fly_warp CINNABAR_ISLAND,    9, 12
 .HomeIndigo:    fly_warp ROUTE_23,           1, 18

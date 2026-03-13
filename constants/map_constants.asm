@@ -64,6 +64,7 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_23,                      10, 72 ; $22
 	map_const ROUTE_24,                      10, 18 ; $23
 	map_const ROUTE_25,                      34, 20 ; $24
+	map_const BILLS_GARDEN,                  10, 15
 
 DEF FIRST_INDOOR_MAP EQU const_value
 	map_const REDS_HOUSE_1F,                  4,  4 ; $25
@@ -151,7 +152,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const ROUTE_12_GATE_1F,               5,  4 ; $57
 	end_indoor_group ROUTE_12
 
-	map_const BILLS_HOUSE,                    4,  4 ; $58
+	map_const BILLS_HOUSE,                    8, 11 ; $58
 	end_indoor_group SEA_COTTAGE
 
 	map_const VERMILION_POKECENTER,           7,  4 ; $59

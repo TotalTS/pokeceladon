@@ -22,24 +22,9 @@ HomeDoor_Apply::
     cp HOME_VIRIDIAN
     jr nz, .check_pewter
 
-    ld a, $7c
+    ld a, $02
     ld [wNewTileBlockID], a
-    lb bc, 12, 8
-    predef ReplaceTileBlock
-
-    ld a, $7e
-    ld [wNewTileBlockID], a
-    lb bc, 12, 9
-    predef ReplaceTileBlock
-
-    ld a, $20
-    ld [wNewTileBlockID], a
-    lb bc, 11, 8
-    predef ReplaceTileBlock
-
-    ld a, $21
-    ld [wNewTileBlockID], a
-    lb bc, 11, 9
+    lb bc, 7, 12
     predef ReplaceTileBlock
     jp .done
 
@@ -60,16 +45,6 @@ HomeDoor_Apply::
     ld a, $3d
     ld [wNewTileBlockID], a
     lb bc, 2, 16
-    predef ReplaceTileBlock
-
-    ld a, $38
-    ld [wNewTileBlockID], a
-    lb bc, 1, 15
-    predef ReplaceTileBlock
-
-    ld a, $39
-    ld [wNewTileBlockID], a
-    lb bc, 1, 16
     predef ReplaceTileBlock
     jp .done
 	
@@ -100,11 +75,6 @@ HomeDoor_Apply::
     ld a, $02
     ld [wNewTileBlockID], a
     lb bc, 4, 1
-    predef ReplaceTileBlock
-	
-    ld a, $03
-    ld [wNewTileBlockID], a
-    lb bc, 4, 2
     predef ReplaceTileBlock
     jp .done
 	

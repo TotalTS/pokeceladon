@@ -1239,3 +1239,8 @@ INCLUDE "data/maps/headers/Route22YujirouPreGym.asm"
 INCLUDE "scripts/Route22YujirouPreGym.asm"
 INCLUDE "data/maps/objects/Route22YujirouPreGym.asm"
 Route22YujirouPreGym_Blocks: INCBIN "maps/Route22YujirouPreGym.blk"
+
+INCLUDE "data/maps/headers/BillsGarden.asm"
+INCLUDE "scripts/BillsGarden.asm"
+INCLUDE "data/maps/objects/BillsGarden.asm"
+BillsGarden_Blocks: INCBIN "maps/BillsGarden.blk"

@@ -44,6 +44,7 @@ ExternalMapEntries:
 	outdoor_map  0,  6, Route23Name
 	outdoor_map 10,  1, Route24Name
 	outdoor_map 11,  0, Route25Name
+	outdoor_map 12,  0, BillsGardenName
 	assert_table_length FIRST_INDOOR_MAP
 
 
