@@ -4,6 +4,7 @@ BillsGarden_Object:
 	db $2c ; border block
 
 	def_warp_events
+	warp_event 14, 3, MYSTERY_CAVE, 1
 
 	def_bg_events
 	bg_event 11, 49, TEXT_BILLS_GARDEN_SIGN

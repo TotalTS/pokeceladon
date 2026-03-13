@@ -254,4 +254,5 @@ MapHeaderPointers::
 	dw ChampionsHouse1F_h
 	dw ChampionsHouse2F_h
 	dw Route22YujirouPreGym_h
+	dw MysteryCave_h
 	assert_table_length NUM_MAPS

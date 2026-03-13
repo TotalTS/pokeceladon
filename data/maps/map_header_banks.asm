@@ -254,4 +254,5 @@ MapHeaderBanks::
 	db BANK(ChampionsHouse1F_h)
 	db BANK(ChampionsHouse2F_h)
 	db BANK(Route22YujirouPreGym_h)
+	db BANK(MysteryCave_h)
 	assert_table_length NUM_MAPS

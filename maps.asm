@@ -1244,3 +1244,8 @@ INCLUDE "data/maps/headers/BillsGarden.asm"
 INCLUDE "scripts/BillsGarden.asm"
 INCLUDE "data/maps/objects/BillsGarden.asm"
 BillsGarden_Blocks: INCBIN "maps/BillsGarden.blk"
+
+INCLUDE "data/maps/headers/MysteryCave.asm"
+INCLUDE "scripts/MysteryCave.asm"
+INCLUDE "data/maps/objects/MysteryCave.asm"
+MysteryCave_Blocks: INCBIN "maps/MysteryCave.blk"

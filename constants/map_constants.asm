@@ -406,6 +406,9 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const ROUTE_22_YUJIROU_PRE_GYM,       5,  4
 	end_indoor_group ROUTE_22_YUJIROU_PRE_GYM
 	
+	map_const MYSTERY_CAVE,       30,  10
+	end_indoor_group MYSTERY_CAVE
+	
 DEF NUM_MAPS EQU const_value
 
 ; Indoor maps, such as houses, use this as the Map ID in their exit warps
