@@ -6,6 +6,8 @@ BillsGarden_Object:
 	def_warp_events
 
 	def_bg_events
+	bg_event 11, 49, TEXT_BILLS_GARDEN_SIGN
+	bg_event 13,  5, TEXT_BILLS_GARDEN_MYSTERY_CAVE_SIGN
 
 	def_object_events
 

@@ -32,10 +32,11 @@ Features:
 
 Post game events:
 
-- If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
 - S.S. Anne returns with new trainers.
+- You can visit Bill's Garden and a new Mystery Cave to finish the Pokédex and battle more trainers.
 - At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19)
 - Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
+- If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
 
 # Screenshots
 
