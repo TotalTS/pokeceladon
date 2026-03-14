@@ -39,6 +39,8 @@ MapHeaderBanks::
 	db BANK(Route24_h)
 	db BANK(Route25_h)
 	db BANK(BillsGarden_h)
+	db BANK(Route1West_h)
+	db BANK(Route1SouthWest_h)
 	db BANK(RedsHouse1F_h)
 	db BANK(RedsHouse2F_h)
 	db BANK(BluesHouse_h)
@@ -107,9 +109,9 @@ MapHeaderBanks::
 	db BANK(SSAnne1FRooms_h)
 	db BANK(SSAnne2FRooms_h)
 	db BANK(SSAnneB1FRooms_h)
-	db $1D ; UNUSED_MAP_69
-	db $1D ; UNUSED_MAP_6A
-	db $1D ; UNUSED_MAP_6B
+	db BANK(ChampionsHouse1F_h)
+	db BANK(ChampionsHouse2F_h)
+	db BANK(Route22YujirouPreGym_h)
 	db BANK(VictoryRoad1F_h)
 	db $1D ; UNUSED_MAP_6D
 	db $1D ; UNUSED_MAP_6E
@@ -251,8 +253,5 @@ MapHeaderBanks::
 	db BANK(LoreleisRoom_h)
 	db BANK(BrunosRoom_h)
 	db BANK(AgathasRoom_h)
-	db BANK(ChampionsHouse1F_h)
-	db BANK(ChampionsHouse2F_h)
-	db BANK(Route22YujirouPreGym_h)
 	db BANK(MysteryCave_h)
 	assert_table_length NUM_MAPS

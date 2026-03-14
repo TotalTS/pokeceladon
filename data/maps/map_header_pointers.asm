@@ -39,6 +39,8 @@ MapHeaderPointers::
 	dw Route24_h
 	dw Route25_h
 	dw BillsGarden_h
+	dw Route1West_h
+	dw Route1SouthWest_h
 	dw RedsHouse1F_h
 	dw RedsHouse2F_h
 	dw BluesHouse_h
@@ -107,9 +109,9 @@ MapHeaderPointers::
 	dw SSAnne1FRooms_h
 	dw SSAnne2FRooms_h
 	dw SSAnneB1FRooms_h
-	dw LancesRoom_h ; UNUSED_MAP_69
-	dw LancesRoom_h ; UNUSED_MAP_6A
-	dw LancesRoom_h ; UNUSED_MAP_6B
+	dw ChampionsHouse1F_h
+	dw ChampionsHouse2F_h
+	dw Route22YujirouPreGym_h
 	dw VictoryRoad1F_h
 	dw LancesRoom_h ; UNUSED_MAP_6D
 	dw LancesRoom_h ; UNUSED_MAP_6E
@@ -251,8 +253,5 @@ MapHeaderPointers::
 	dw LoreleisRoom_h
 	dw BrunosRoom_h
 	dw AgathasRoom_h
-	dw ChampionsHouse1F_h
-	dw ChampionsHouse2F_h
-	dw Route22YujirouPreGym_h
 	dw MysteryCave_h
 	assert_table_length NUM_MAPS

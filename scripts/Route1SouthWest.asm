@@ -1,0 +1,5 @@
+Route1SouthWest_Script:
+	jp EnableAutoTextBoxDrawing
+
+Route1SouthWest_TextPointers:
+	def_text_pointers

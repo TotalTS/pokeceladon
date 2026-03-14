@@ -1249,3 +1249,13 @@ INCLUDE "data/maps/headers/MysteryCave.asm"
 INCLUDE "scripts/MysteryCave.asm"
 INCLUDE "data/maps/objects/MysteryCave.asm"
 MysteryCave_Blocks: INCBIN "maps/MysteryCave.blk"
+
+INCLUDE "data/maps/headers/Route1West.asm"
+INCLUDE "scripts/Route1West.asm"
+INCLUDE "data/maps/objects/Route1West.asm"
+Route1West_Blocks: INCBIN "maps/Route1West.blk"
+
+INCLUDE "data/maps/headers/Route1SouthWest.asm"
+INCLUDE "scripts/Route1SouthWest.asm"
+INCLUDE "data/maps/objects/Route1SouthWest.asm"
+Route1SouthWest_Blocks: INCBIN "maps/Route1SouthWest.blk"

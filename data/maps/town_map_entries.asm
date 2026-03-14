@@ -45,6 +45,8 @@ ExternalMapEntries:
 	outdoor_map 10,  1, Route24Name
 	outdoor_map 11,  0, Route25Name
 	outdoor_map 12,  0, BillsGardenName
+	outdoor_map  2, 10, Route1WestName
+	outdoor_map  2, 10, Route1SouthWestName
 	assert_table_length FIRST_INDOOR_MAP
 
 
@@ -78,6 +80,8 @@ InternalMapEntries:
 	indoor_map SEA_COTTAGE,        12,  0, SeaCottageName
 	indoor_map VERMILION_CITY,     10,  9, VermilionCityName
 	indoor_map SS_ANNE,             9, 10, SSAnneName
+	indoor_map CHAMPIONS_HOUSE,     0,  0, ChampionsHouseName
+	indoor_map ROUTE_22_YUJIROU_PRE_GYM, 0, 7, Route22Name
 	indoor_map VICTORY_ROAD,        0,  4, VictoryRoadName
 	indoor_map POKEMON_LEAGUE,      0,  2, PokemonLeagueName
 	indoor_map UNDERGROUND_PATH,   10,  5, UndergroundPathName
@@ -118,8 +122,6 @@ InternalMapEntries:
 	indoor_map ROCK_TUNNEL_2,      14,  3, RockTunnelName
 	indoor_map SILPH_CO_2,         10,  5, SilphCoName
 	indoor_map POKEMON_LEAGUE_3,    0,  2, PokemonLeagueName
-	indoor_map CHAMPIONS_HOUSE,     0,  2, ChampionsHouseName
-	indoor_map ROUTE_22_YUJIROU_PRE_GYM, 0, 7, Route22Name
 	indoor_map MYSTERY_CAVE, 12, 0, MysteryCaveName
 	assert_table_length NUM_INDOOR_MAP_GROUPS
 	db -1 ; end
