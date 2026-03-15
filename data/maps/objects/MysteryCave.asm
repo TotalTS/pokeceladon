@@ -12,7 +12,7 @@ MysteryCave_Object:
 	warp_event 14,  0, MYSTERY_CAVE, 5
 	warp_event 15,  7, MYSTERY_CAVE, 8
 	warp_event 20, 14, MYSTERY_CAVE, 7
-	warp_event  5,  9, ROUTE_1_WEST, 1
+	warp_event  3,  9, ROUTE_1_WEST, 1
 
 	def_bg_events
 

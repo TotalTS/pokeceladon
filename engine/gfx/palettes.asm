@@ -158,9 +158,17 @@ SetPal_Overworld:
 .normalDungeonOrBuilding
 	ld a, [wLastMap] ; town or route that current dungeon or building is located
 .townOrRoute
+;	cp ROUTE_1_WEST
+;	jr z, .Route1West
+	cp ROUTE_1_SOUTH_WEST
+	jr z, .Route1West
 	cp NUM_CITY_MAPS
 	jr c, .town
 	ld a, PAL_ROUTE - 1
+	jr .town
+.Route1West
+	ld a, PAL_PALLET - 1
+	jr .town
 .town
 	inc a ; a town's palette ID is its map ID + 1
 	ld hl, wPalPacket + 1

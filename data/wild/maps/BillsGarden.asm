@@ -1,28 +1,28 @@
 BillsGardenWildMons:
 	def_grass_wildmons 25 ; encounter rate
 IF DEF(_RED)
-	db 52, SANDSLASH
-	db 34, VULPIX
-	db 28, BELLSPROUT
-	db 30, WEEPINBELL
-	db 28, SANDSHREW
-	db 28, MEOWTH
-	db 28, PINSIR
-	db 36, MAGMAR
-	db 40, FARFETCHD
-	db 40, JYNX
+	db 45, PORYGON
+	db 35, VULPIX
+	db 35, BELLSPROUT
+	db 40, WEEPINBELL
+	db 30, SANDSHREW
+	db 30, MEOWTH
+	db 50, PINSIR
+	db 50, MAGMAR
+	db 45, FARFETCHD
+	db 45, LICKITUNG
 ENDC
 IF DEF(_BLUE)
-	db 52, ARBOK
-	db 34, GROWLITHE
-	db 28, ODDISH
-	db 30, GLOOM
-	db 28, EKANS
-	db 28, MANKEY
-	db 28, SCYTHER
-	db 36, ELECTABUZZ
-	db 40, MR_MIME
-	db 40, LICKITUNG
+	db 45, PORYGON
+	db 35, GROWLITHE
+	db 35, ODDISH
+	db 40, GLOOM
+	db 30, EKANS
+	db 30, MANKEY
+	db 50, SCYTHER
+	db 50, ELECTABUZZ
+	db 45, FARFETCHD
+	db 45, LICKITUNG
 ENDC
 	end_grass_wildmons
 

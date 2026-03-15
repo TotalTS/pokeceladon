@@ -1,7 +1,7 @@
 	object_const_def
 
 Route1West_Object:
-	db $0F ; border block $43
+	db $0F ; border block
 
 	def_warp_events
 	warp_event  2,  5, MYSTERY_CAVE, 9
