@@ -54,8 +54,13 @@ GameCornerDefaultScript:
 GameCornerRocketBattleScript:
 	ld a, [wIsInBattle]
 	cp $ff
-	jr z, .startRetreat
-	
+	jr nz, .notScriptBattle
+
+	xor a
+	ld [wIsInBattle], a
+	jr .startRetreat
+
+.notScriptBattle	
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, TEXT_GAMECORNER_ROCKET_AFTER_BATTLE
