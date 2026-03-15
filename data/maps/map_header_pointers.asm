@@ -113,7 +113,7 @@ MapHeaderPointers::
 	dw ChampionsHouse2F_h
 	dw Route22YujirouPreGym_h
 	dw VictoryRoad1F_h
-	dw LancesRoom_h ; UNUSED_MAP_6D
+	dw MysteryCave_h
 	dw LancesRoom_h ; UNUSED_MAP_6E
 	dw LancesRoom_h ; UNUSED_MAP_6F
 	dw LancesRoom_h ; UNUSED_MAP_70
@@ -253,5 +253,4 @@ MapHeaderPointers::
 	dw LoreleisRoom_h
 	dw BrunosRoom_h
 	dw AgathasRoom_h
-	dw MysteryCave_h
 	assert_table_length NUM_MAPS

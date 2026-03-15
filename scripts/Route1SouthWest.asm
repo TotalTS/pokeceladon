@@ -3,3 +3,8 @@ Route1SouthWest_Script:
 
 Route1SouthWest_TextPointers:
 	def_text_pointers
+	dw_const Route1SouthWestMysteryCaveSignText, TEXT_ROUTE1SOUTHWEST_MYSTERY_CAVE_SIGN
+
+Route1SouthWestMysteryCaveSignText:
+	text_far _BillsGardenMysteryCaveSignText
+	text_end

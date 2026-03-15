@@ -64,9 +64,9 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_23,                      10, 72 ; $22
 	map_const ROUTE_24,                      10, 18 ; $23
 	map_const ROUTE_25,                      34, 20 ; $24
-	map_const BILLS_GARDEN,                  12, 28 ; $25
-	map_const ROUTE_1_WEST,                  10, 18 ; $26
-	map_const ROUTE_1_SOUTH_WEST,            10,  9 ; $27
+	map_const BILLS_GARDEN,                  12, 28 ; new map
+	map_const ROUTE_1_WEST,                  10, 18 ; new map
+	map_const ROUTE_1_SOUTH_WEST,            10,  9 ; new map
 
 DEF FIRST_INDOOR_MAP EQU const_value
 	map_const REDS_HOUSE_1F,                  4,  4 ; $25
@@ -187,7 +187,9 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const VICTORY_ROAD_1F,               10,  9 ; $6C
 	end_indoor_group VICTORY_ROAD
 
-	map_const UNUSED_MAP_6D,                  0,  0 ; $6D
+	map_const MYSTERY_CAVE,                  30, 10 ; moved new map
+	end_indoor_group MYSTERY_CAVE
+
 	map_const UNUSED_MAP_6E,                  0,  0 ; $6E
 	map_const UNUSED_MAP_6F,                  0,  0 ; $6F
 	map_const UNUSED_MAP_70,                  0,  0 ; $70
@@ -404,9 +406,6 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const BRUNOS_ROOM,                    5,  6 ; $F6
 	map_const AGATHAS_ROOM,                   5,  6 ; $F7
 	end_indoor_group POKEMON_LEAGUE_3
-	
-	map_const MYSTERY_CAVE,       30,  10
-	end_indoor_group MYSTERY_CAVE
 	
 DEF NUM_MAPS EQU const_value
 

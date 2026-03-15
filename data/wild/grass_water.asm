@@ -38,8 +38,8 @@ WildDataPointers:
 	dw Route24WildMons         ; ROUTE_24
 	dw Route25WildMons         ; ROUTE_25
 	dw BillsGardenWildMons     ; BILLS_GARDEN
-	dw NothingWildMons
-	dw NothingWildMons
+	dw Route1WestWildMons
+	dw Route1SouthWestWildMons
 	dw NothingWildMons         ; REDS_HOUSE_1F
 	dw NothingWildMons
 	dw NothingWildMons
@@ -112,7 +112,7 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw VictoryRoad1FWildMons
-	dw NothingWildMons
+	dw MysteryCaveWildMons
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -252,7 +252,6 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	dw MysteryCaveWildMons
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -328,3 +327,5 @@ INCLUDE "data/wild/maps/VictoryRoad1F.asm"
 INCLUDE "data/wild/maps/DiglettsCave.asm"
 INCLUDE "data/wild/maps/BillsGarden.asm"
 INCLUDE "data/wild/maps/MysteryCave.asm"
+INCLUDE "data/wild/maps/Route1West.asm"
+INCLUDE "data/wild/maps/Route1SouthWest.asm"

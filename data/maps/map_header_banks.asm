@@ -113,7 +113,7 @@ MapHeaderBanks::
 	db BANK(ChampionsHouse2F_h)
 	db BANK(Route22YujirouPreGym_h)
 	db BANK(VictoryRoad1F_h)
-	db $1D ; UNUSED_MAP_6D
+	db BANK(MysteryCave_h)
 	db $1D ; UNUSED_MAP_6E
 	db $1D ; UNUSED_MAP_6F
 	db $1D ; UNUSED_MAP_70
@@ -253,5 +253,4 @@ MapHeaderBanks::
 	db BANK(LoreleisRoom_h)
 	db BANK(BrunosRoom_h)
 	db BANK(AgathasRoom_h)
-	db BANK(MysteryCave_h)
 	assert_table_length NUM_MAPS

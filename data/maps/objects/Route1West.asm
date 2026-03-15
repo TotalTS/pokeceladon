@@ -7,6 +7,7 @@ Route1West_Object:
 	warp_event  2,  5, MYSTERY_CAVE, 9
 
 	def_bg_events
+	bg_event    3,  7, TEXT_ROUTE1WEST_MYSTERY_CAVE_SIGN
 
 	def_object_events
 

@@ -55,12 +55,13 @@ Post game events:
 
 # Credits
 
-**Narishma-gb, Sylvie, Pan Docs files, superfamiconv** 
-- SGB Border. (HELPED A LOT with 4bpp adaptation used to built it.)
+**Narishma-gb, Sylvie, Pan Docs files, superfamiconv** (HELPED A LOT with 4bpp adaptation used to built it.)
+- SGB Border.
 
 **Sylvie**
 - Talk to use SURF, CUT, STRENGTH.
 - Ported Charmander, Squirtle, Bulbasaur givers.
+- Polished Map.
 
 **Pigu-A**
 - Battle with Professor Oak.
