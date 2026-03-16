@@ -46,7 +46,7 @@ ExternalMapEntries:
 	outdoor_map 11,  0, Route25Name
 	outdoor_map 12,  0, BillsGardenName
 	outdoor_map  1, 10, Route1WestName
-	outdoor_map  1, 11, Route1SouthWestName
+	outdoor_map  1, 11, Route0WestName
 	assert_table_length FIRST_INDOOR_MAP
 
 

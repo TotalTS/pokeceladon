@@ -66,7 +66,7 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_25,                      34, 20 ; $24
 	map_const BILLS_GARDEN,                  12, 28 ; new map
 	map_const ROUTE_1_WEST,                  10, 18 ; new map
-	map_const ROUTE_1_SOUTH_WEST,            10,  9 ; new map
+	map_const ROUTE_0_WEST,            10, 11 ; new map
 
 DEF FIRST_INDOOR_MAP EQU const_value
 	map_const REDS_HOUSE_1F,                  4,  4 ; $25

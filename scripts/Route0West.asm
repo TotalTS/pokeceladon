@@ -1,0 +1,10 @@
+Route0West_Script:
+	jp EnableAutoTextBoxDrawing
+
+Route0West_TextPointers:
+	def_text_pointers
+	dw_const Route0WestMysteryCaveSignText, TEXT_ROUTE_0_WEST_MYSTERY_CAVE_SIGN
+
+Route0WestMysteryCaveSignText:
+	text_far _BillsGardenMysteryCaveSignText
+	text_end

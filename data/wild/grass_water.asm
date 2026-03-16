@@ -39,7 +39,7 @@ WildDataPointers:
 	dw Route25WildMons         ; ROUTE_25
 	dw BillsGardenWildMons     ; BILLS_GARDEN
 	dw Route1WestWildMons
-	dw Route1SouthWestWildMons
+	dw Route0WestWildMons
 	dw NothingWildMons         ; REDS_HOUSE_1F
 	dw NothingWildMons
 	dw NothingWildMons
@@ -328,4 +328,4 @@ INCLUDE "data/wild/maps/DiglettsCave.asm"
 INCLUDE "data/wild/maps/BillsGarden.asm"
 INCLUDE "data/wild/maps/MysteryCave.asm"
 INCLUDE "data/wild/maps/Route1West.asm"
-INCLUDE "data/wild/maps/Route1SouthWest.asm"
+INCLUDE "data/wild/maps/Route0West.asm"

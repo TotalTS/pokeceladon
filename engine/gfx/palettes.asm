@@ -160,7 +160,7 @@ SetPal_Overworld:
 .townOrRoute
 ;	cp ROUTE_1_WEST
 ;	jr z, .Route1West
-	cp ROUTE_1_SOUTH_WEST
+	cp ROUTE_0_WEST
 	jr z, .Route1West
 	cp NUM_CITY_MAPS
 	jr c, .town

@@ -1,4 +1,4 @@
-Route1SouthWestWildMons:
+Route0WestWildMons:
 	def_grass_wildmons 25 ; encounter rate
 	db 5, CHARMANDER
 	db 5, BULBASAUR
