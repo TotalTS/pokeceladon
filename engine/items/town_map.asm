@@ -381,6 +381,21 @@ DisplayWildLocations:
 	jr z, .exitLoop
 	and a
 	jr z, .nextEntry
+	ld a, [de]
+	CP PALLET_TOWN
+	jr z, .nextEntry
+	ld a, [de]
+	CP MYSTERY_CAVE
+	jr z, .nextEntry
+	ld a, [de]
+	CP BILLS_GARDEN
+	jr z, .nextEntry
+	ld a, [de]
+	CP ROUTE_1_WEST
+	jr z, .nextEntry
+	ld a, [de]
+;	CP ROUTE_0_WEST
+;	jr z, .nextEntry
 	push hl
 	call LoadTownMapEntry
 	pop hl

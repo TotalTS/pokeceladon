@@ -1,6 +1,14 @@
 ; try to initiate a wild pokemon encounter
 ; returns success in Z
 TryDoWildEncounter:
+	ld a, [wCurMap]
+	cp PALLET_TOWN
+	jr nz, .continue
+	ld hl, PalletTownSafeExitCoords
+	call ArePlayerCoordsInArray
+	jr nc, .continue
+	jr .CantEncounter
+.continue
 	ld a, [wNPCMovementScriptPointerTableNum]
 	and a
 	ret nz
@@ -100,5 +108,12 @@ TryDoWildEncounter:
 .willEncounter
 	xor a
 	ret
+	
+PalletTownSafeExitCoords:
+	dbmapcoord 16, 0
+	dbmapcoord 17, 0
+	dbmapcoord 16, 1
+	dbmapcoord 17, 1
+	db -1
 
 INCLUDE "data/wild/probabilities.asm"
