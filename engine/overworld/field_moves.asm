@@ -8,15 +8,14 @@ TryFieldMove:: ; predef
 TrySurf:
 	ld a, [wWalkBikeSurfState]
 	cp 2 ; is the player already surfing?
-	jr z, .no
+	jp z, .no
 	callfar IsNextTileShoreOrWater
-	jr c, .no
+	jp c, .no
 	ld hl, TilePairCollisionsWater
 	call CheckForTilePairCollisions2
-	jr c, .no
+	jp c, .no
 	ld d, SURF
 	call HasPartyMove
-	jr nz, .no
 	push hl
 	push bc
 	ld a, [wWhichPokemon]
@@ -27,26 +26,57 @@ TrySurf:
 	ld [wSurfingPokemonID], a
 	pop bc
 	pop hl
+	jr nz, .no
 	ld a, [wObtainedBadges]
 	bit BIT_SOULBADGE, a
 	jr z, .no
-	farcall  IsSurfingAllowed
-	ld hl, wStatusFlags1
-	bit BIT_SURF_ALLOWED, [hl]
-	res BIT_SURF_ALLOWED, [hl]
-	jr z, .no
+
+	; cyclingRoad
+	ld a, [wStatusFlags6]
+	bit BIT_ALWAYS_ON_BIKE, a
+	jr nz, .cyclingRoad
+
+	ld a, [wCurMap]
+	cp SEAFOAM_ISLANDS_B4F
+	jr nz, .canSurfCheck
+
+	; Seafoam B4F
+	CheckBothEventsSet EVENT_SEAFOAM4_BOULDER1_DOWN_HOLE, EVENT_SEAFOAM4_BOULDER2_DOWN_HOLE
+	jr z, .canSurfCheck
+	
+	ld hl, SeafoamIslandsB4FStairsPressedACoords
+	call ArePlayerCoordsInArray
+	jr nc, .canSurfCheck
+	
+	call InitializeFieldMoveTextBox
+	ld hl, CurrentTooFastPressedAText
+	call PrintText
+	jr .yes2
+
+.cyclingRoad
+	call InitializeFieldMoveTextBox
+	ld hl, CyclingIsFunPressedAText
+	call PrintText
+	jr .yes2
+
+.canSurfCheck
 	call InitializeFieldMoveTextBox
 	ld hl, PromptToSurfText
 	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
-	jr nz, .no2
+	jr nz, .yes2
+	
 	call GetPartyMonName2
 	ld a, SURFBOARD
 	ld [wCurItem], a
 	ld [wPseudoItemID], a
 	call UseItem
+	call CloseFieldMoveTextBox
+	xor a
+	ret
+
 .yes2
 	call CloseFieldMoveTextBox
 .yes
@@ -205,7 +235,7 @@ _BoulderText2::
 .done
 	ld a, $01
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-    jp TextScriptEnd
+	jp TextScriptEnd
 	
 .alreadyActive
 	ld hl, BouldersMayNowBeMovedText
@@ -239,4 +269,16 @@ PromptToStrengthText:
 
 BouldersMayNowBeMovedText:
 	text_far _BouldersMayNowBeMovedText
+	text_end
+
+SeafoamIslandsB4FStairsPressedACoords:
+	dbmapcoord  7, 11
+	db -1 ; end
+
+CurrentTooFastPressedAText:
+	text_far _CurrentTooFastText
+	text_end
+
+CyclingIsFunPressedAText:
+	text_far _CyclingIsFunText
 	text_end
