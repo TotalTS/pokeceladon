@@ -70,7 +70,7 @@ BillsHouseBillExitsMachineScript:
 	ldh [hSpriteScreenYCoord], a
 	ld a, $40
 	ldh [hSpriteScreenXCoord], a
-	ld a, 6
+	ld a, 20
 	ldh [hSpriteMapYCoord], a
 	ld a, 5
 	ldh [hSpriteMapXCoord], a

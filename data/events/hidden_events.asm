@@ -359,12 +359,12 @@ DEF ANY_FACING EQU $d0
 	db -1 ; end
 
 	hidden_events_for ROUTE_25
-	hidden_event 38,  3, HiddenItems, ETHER
-	hidden_event 10,  1, HiddenItems, ELIXER
+	hidden_event 38,  5, HiddenItems, ETHER
+	hidden_event 10,  3, HiddenItems, ELIXER
 	db -1 ; end
 
 	hidden_events_for ROUTE_9
-	hidden_event 14,  7, HiddenItems, ETHER
+	hidden_event 14, 11, HiddenItems, ETHER
 	db -1 ; end
 
 	hidden_events_for SS_ANNE_KITCHEN
@@ -485,7 +485,7 @@ DEF ANY_FACING EQU $d0
 	db -1 ; end
 
 	hidden_events_for BILLS_HOUSE
-	hidden_event  1,  4, BillsHousePC, SPRITE_FACING_UP
+	hidden_event  1, 18, BillsHousePC, SPRITE_FACING_UP
 	db -1 ; end
 
 	hidden_events_for VIRIDIAN_CITY
