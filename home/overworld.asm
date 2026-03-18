@@ -285,6 +285,12 @@ OverworldLoopLessDelay::
 	ld a, [wMovementFlags]
 	bit BIT_LEDGE_OR_FISHING, a
 	jr nz, .normalPlayerSpriteAdvancement
+	; Holding B makes go faster in bike
+	call DoBikeSpeedup
+	ld a, [hJoyHeld]
+	and PAD_B
+	jr z, .notRunning
+	call DoBikeSpeedup
 	call DoBikeSpeedup
 	jr .notRunning
 .normalPlayerSpriteAdvancement

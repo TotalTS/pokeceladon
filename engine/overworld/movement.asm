@@ -75,13 +75,16 @@ UpdatePlayerSprite:
 	ld a, [wJoyIgnore]
 	and a
 	jr nz, .doneSpeed
-	ld a, [wWalkBikeSurfState]
-    cp 1
-    jr z, .doneSpeed
 	ld a, [hJoyHeld]
 	and PAD_B
 	jr z, .doneSpeed
+	ld a, [wWalkBikeSurfState]
+	cp 1
+	jr z, .fastBike
 	ld c, 2
+	jr .doneSpeed
+.fastBike
+	ld c, 3
 .doneSpeed
 	ld a, b
 	cp c

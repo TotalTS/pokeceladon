@@ -15,7 +15,7 @@ Features:
 - New palettes.
 - New Super Gameboy border.
 - You can press SELECT to switch Pokémon in your party menu.
-- You can press B to run or swim faster in water.
+- You can press B to move faster while walking, cycling, or swimming.
 - You can talk to use SURF, CUT, STRENGTH.
 - You can have all starters like in Pokémon Yellow.
 - Lapras and Pikachu have unique sprites for SURF.
@@ -33,7 +33,7 @@ Features:
 Post game events:
 
 - S.S. Anne returns with new trainers.
-- You can visit Bill's Garden and a new Mystery Cave to finish the Pokédex and battle more trainers.
+- New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 West, Route 0.
 - At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19)
 - Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
 - If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
