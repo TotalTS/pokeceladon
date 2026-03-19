@@ -104,6 +104,11 @@ GoldTrophySprite::              INCBIN "gfx/new_sprites/gold_trophy.2bpp"
 SlowpokeSprite::                INCBIN "gfx/new_sprites/slowpoke.2bpp"
 FuchsiaMonSprite::              INCBIN "gfx/new_sprites/fuchsia_mon.2bpp"
 FighterMachopSprite::           INCBIN "gfx/new_sprites/fighter_machop.2bpp"
+ArticunoSprite::                INCBIN "gfx/new_sprites/articuno.2bpp"
+ZapdosSprite::                  INCBIN "gfx/new_sprites/zapdos.2bpp"
+MoltresSprite::                 INCBIN "gfx/new_sprites/moltres.2bpp"
+MewSprite::                     INCBIN "gfx/new_sprites/mew.2bpp"
+MewtwoSprite::                  INCBIN "gfx/new_sprites/mewtwo.2bpp"
 
 
 SECTION "MonIcons", ROMX

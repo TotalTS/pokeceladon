@@ -100,4 +100,9 @@ SpriteSheetPointerTable:
 	overworld_sprite SlowpokeSprite, 4          ; SPRITE_UNUSED_GAMBLER_ASLEEP_1
 	overworld_sprite FighterMachopSprite, 4     ; SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_GAMBLER_ASLEEP
+	overworld_sprite ArticunoSprite, 4          ; new
+	overworld_sprite ZapdosSprite, 4            ; new
+	overworld_sprite MoltresSprite, 4           ; new
+	overworld_sprite MewSprite, 4               ; new
+	overworld_sprite MewtwoSprite, 4            ; new
 	assert_table_length NUM_SPRITES
