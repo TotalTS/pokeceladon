@@ -261,9 +261,9 @@ PidgeottoPicBack::     INCBIN "gfx/pokemon/back/pidgeottob.pic"
 PidgeotPicFront::      INCBIN "gfx/pokemon/front/pidgeot.pic"
 PidgeotPicBack::       INCBIN "gfx/pokemon/back/pidgeotb.pic"
 StarmiePicFront::      INCBIN "gfx/pokemon/front/starmie.pic"
-StarmiePicBack::       INCBIN "gfx/pokemon/back/starmieb.pic"
 
 RedPicBack::           INCBIN "gfx/player/redb.pic"
+FTrainerPicBack::      INCBIN "gfx/player/ftrainerb.pic"
 OldManPicBack::        INCBIN "gfx/battle/oldmanb.pic"
 
 
@@ -323,6 +323,7 @@ WeepinbellPicFront::   INCBIN "gfx/pokemon/front/weepinbell.pic"
 WeepinbellPicBack::    INCBIN "gfx/pokemon/back/weepinbellb.pic"
 VictreebelPicFront::   INCBIN "gfx/pokemon/front/victreebel.pic"
 VictreebelPicBack::    INCBIN "gfx/pokemon/back/victreebelb.pic"
+StarmiePicBack::       INCBIN "gfx/pokemon/back/starmieb.pic"
 
 
 SECTION "Trainer Pics", ROMX
@@ -380,5 +381,6 @@ SECTION "Pics 6", ROMX
 RookiePic::        INCBIN "gfx/new_trainers/rookie.pic"
 YujirouPic::       INCBIN "gfx/new_trainers/yujirou.pic"
 RocketPicBack::    INCBIN "gfx/player/rocketb.pic"
+FRocketPicBack::   INCBIN "gfx/player/frocketb.pic"
 ; pokemon
 ChikoritaPic::     INCBIN "gfx/pokemon/front/chikorita.pic"

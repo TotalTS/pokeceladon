@@ -33,6 +33,20 @@ ENDC
 
 PrepareNewGameDebug: ; dummy except in _DEBUG
 IF DEF(_DEBUG)
+	ld hl, .boygirltext  ; added to the same file as the other Oak text
+  	call PrintText     ; show this text
+	ld a, PAD_B
+	ld [wJoyIgnore], a
+  	farcall BoyGirlChoice ; added routine at the end of this file
+	xor a
+	ld [wJoyIgnore], a
+   	ld a, [wCurrentMenuItem]
+   	ld [wPlayerGender], a ; store player's gender. 00 for boy, 01 for girl
+	call ClearScreen
+.boygirltext
+	text_far _BoyGirlText
+	text_end
+
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
 

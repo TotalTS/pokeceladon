@@ -14,6 +14,7 @@ Features:
 - New party menu icons ported from Gen 2.
 - New palettes.
 - New Super Gameboy border.
+- Gender selection.
 - You can press SELECT to switch Pokémon in your party menu.
 - You can press B to move faster while walking, cycling, or swimming.
 - You can talk to use SURF, CUT, STRENGTH.
@@ -72,6 +73,7 @@ Post game events:
 - Lapras can Surf in Fuchsia City.
 - New trainer class Rookie.
 - Press SELECT to switch Pokémon in your party menu.
+- Optimization on Home bank.
 
 **Mr. Cheeze**
 - Music: VS Mew.
@@ -100,6 +102,7 @@ Post game events:
 **pret tutorials**
 - Add a new map sprite
 - Adding gym leader rematches
+- Adding Gender Selection (original tutorial done by Mateo)
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 

@@ -836,9 +836,22 @@ LoadPlayerSpriteGraphics::
     jp z, LoadSurfingPlayerSpriteGraphics
 
 	ld a, [wIsRocketSuit]
-    and a
-    jr z, .notRocket
-    jp LoadRocketPlayerSpriteGraphics
+	and a
+	jr z, .notRocket
+
+	cp 1
+	jr z, .rocketMale
+
+	cp 2
+	jr z, .rocketFemale
+
+	jr .notRocket
+
+.rocketMale
+	jp LoadRocketMalePlayerSpriteGraphics
+
+.rocketFemale
+	jp LoadRocketFemalePlayerSpriteGraphics
 
 .notRocket
 	ld a, [wWalkBikeSurfState]
@@ -2018,6 +2031,13 @@ RunMapScript::
 	ret
 
 LoadWalkingPlayerSpriteGraphics::
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreGuy1
+	ld b, BANK(FTrainerSprite)
+	ld de, FTrainerSprite
+	jr LoadPlayerSpriteGraphicsCommon
+.AreGuy1
 	ld b, BANK(RedSprite)
 	ld de, RedSprite
 	jr LoadPlayerSpriteGraphicsCommon
@@ -2044,13 +2064,25 @@ LoadSurfingPlayerSpriteGraphics::
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreGuy2
+	ld b, BANK(FTrainerBikeSprite)
+	ld de, FTrainerBikeSprite
+	jr LoadPlayerSpriteGraphicsCommon
+.AreGuy2
 	ld b, BANK(RedBikeSprite)
 	ld de, RedBikeSprite
 	jr LoadPlayerSpriteGraphicsCommon
 	
-LoadRocketPlayerSpriteGraphics::
+LoadRocketMalePlayerSpriteGraphics::
 	ld b, BANK(RocketSprite)
 	ld de, RocketSprite
+	jr LoadPlayerSpriteGraphicsCommon
+	
+LoadRocketFemalePlayerSpriteGraphics::
+	ld b, BANK(RocketGirlSprite)
+	ld de, RocketGirlSprite
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadPlayerSpriteGraphicsCommon::

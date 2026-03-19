@@ -1812,3 +1812,8 @@ _BouldersMayNowBeMovedText::
 	text "Boulders may now"
 	line "be moved!"
 	done
+
+_BoyGirlText::
+    text "Are you a boy?"
+    line "Or are you a girl?"
+    done

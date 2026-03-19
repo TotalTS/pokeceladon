@@ -1611,7 +1611,18 @@ PutOnRocketSuitText::
 	text_far PutOnRocketSuitText2
 	text_asm
 	call DoSinglePlayerSpin
+	ld a, [wPlayerGender]
+	and a
+	jr z, .male
+
+.female
+	ld a, 2
+	jr .setSuit
+
+.male
 	ld a, 1
+
+.setSuit
 	ld [wIsRocketSuit], a
 	xor a
 	ld [wWalkBikeSurfState], a

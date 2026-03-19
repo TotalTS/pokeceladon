@@ -2101,11 +2101,18 @@ wObtainedHiddenCoinsFlags:: flag_array MAX_HIDDEN_COINS
 ; $02 = surfing
 wWalkBikeSurfState:: db
 
+; $00 = no suit
+; $01 = rocket male
+; $02 = rocket female
 wIsRocketSuit:: db
 
 wSurfingPokemonID:: db
 
-	ds 9
+wPlayerGender:: db
+	; $00 = male
+	; $01 = female
+
+	ds 8
 
 wTownVisitedFlag:: flag_array NUM_CITY_MAPS
 

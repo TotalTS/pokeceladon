@@ -6222,9 +6222,32 @@ LoadPlayerBackPic:
 .checkRocketSuit
 	ld a, [wIsRocketSuit]
 	and a
-	jr z, .isNormalRed
+	jr z, .checkGender
+
+	cp 1
+	jr z, .rocketMale
+
+	cp 2
+	jr z, .rocketFemale
+
+	jr .checkGender
+
+.rocketMale
 	ld de, RocketPicBack
 	ld b, BANK(RocketPicBack)
+	jr .next
+
+.rocketFemale
+	ld de, FRocketPicBack
+	ld b, BANK(FRocketPicBack)
+	jr .next
+	
+.checkGender
+	ld a, [wPlayerGender]
+	and a
+	jr z, .isNormalRed
+	ld de, FTrainerPicBack
+	ld b, BANK(FTrainerPicBack) ; Load female back sprite
 	jr .next
 
 .isNormalRed

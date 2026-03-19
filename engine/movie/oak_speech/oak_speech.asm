@@ -83,8 +83,25 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
+	call GBFadeInFromWhite
+	ld hl, BoyGirlText  ; added to the same file as the other oak text
+	call PrintText     ; show this text
+	ld a, PAD_B
+	ld [wJoyIgnore], a
+  	call BoyGirlChoice ; added routine at the end of this file
+	xor a
+	ld [wJoyIgnore], a
+	ld a, [wCurrentMenuItem]
+	ld [wPlayerGender], a ; store player's gender. 00 for boy, 01 for girl
+	call ClearScreen ; clear the screen before resuming normal intro
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $00
+	ld a, [wPlayerGender] 	; check gender
+	and a      				; check gender
+	jr z, .NotFTrainer1
+	ld de, FTrainerPicFront
+	lb bc, BANK(FTrainerPicFront), $00
+.NotFTrainer1
 	call IntroDisplayPicCenteredOrUpperRight
 	call MovePicLeft
 	ld hl, IntroducePlayerText
@@ -104,6 +121,12 @@ OakSpeech:
 	call ClearScreen
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $00
+	ld a, [wPlayerGender] ; check gender
+	and a      ; check gender
+	jr z, .NotFTrainer2
+	ld de, FTrainerPicFront
+	lb bc, Bank(FTrainerPicFront), $00
+.NotFTrainer2:
 	call IntroDisplayPicCenteredOrUpperRight
 	call GBFadeInFromWhite
 	ld a, [wStatusFlags3]
@@ -127,8 +150,15 @@ OakSpeech:
 	ld de, RedSprite
 	ld hl, vSprites
 	lb bc, BANK(RedSprite), $0C
+	ld a, [wPlayerGender] ; check gender
+	and a      ; check gender
+	jr z, .NotFTrainer3
+	ld de,FTrainerSprite
+	lb bc, BANK(FTrainerSprite), $0C
+.NotFTrainer3:
+	ld hl, vSprites
 	call CopyVideoData
-	ld de, ShrinkPic1
+	ld de,ShrinkPic1
 	lb bc, BANK(ShrinkPic1), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	ld c, 4
@@ -175,6 +205,10 @@ OakSpeechText2:
 	; BUG: The cry played does not match the sprite displayed.
 	sound_cry_nidorina
 	text_far _OakSpeechText2B
+	text_end
+	
+BoyGirlText:
+	text_far _BoyGirlText
 	text_end
 
 IntroducePlayerText:
@@ -250,3 +284,22 @@ IntroDisplayPicCenteredOrUpperRight:
 	xor a
 	ldh [hStartTileID], a
 	predef_jump CopyUncompressedPicToTilemap
+
+; displays boy/girl choice
+BoyGirlChoice::
+	call SaveScreenTilesToBuffer1
+	call InitBoyGirlTextBoxParameters
+	jr DisplayBoyGirlChoice
+
+InitBoyGirlTextBoxParameters::
+	ld a, $1 ; loads the value for the unused North/West choice, that was changed to say Boy/Girl
+	ld [wTwoOptionMenuID], a
+	coord hl, 6, 5
+	ld bc, $607
+	ret
+   
+DisplayBoyGirlChoice::
+	ld a, $14
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
+	jp LoadScreenTilesFromBuffer1
