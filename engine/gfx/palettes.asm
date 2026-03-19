@@ -181,7 +181,26 @@ SetPal_Overworld:
 	ld a, PAL_POKETOWER - 1
 	jr .town
 .caveOrBruno
+	ld a, [wCurMap]
+	cp MYSTERY_CAVE
+	jr z, .MysteryCave
+	cp SEAFOAM_ISLANDS_1F
+	jr z, .SeaFoamIslands
+	cp SEAFOAM_ISLANDS_B1F
+	jr z, .SeaFoamIslands
+	cp SEAFOAM_ISLANDS_B2F
+	jr z, .SeaFoamIslands
+	cp SEAFOAM_ISLANDS_B3F
+	jr z, .SeaFoamIslands
+	cp SEAFOAM_ISLANDS_B4F
+	jr z, .SeaFoamIslands
 	ld a, PAL_CAVE - 1
+	jr .town
+.MysteryCave
+	ld a, PAL_BRONZEMON - 1
+	jr .town
+.SeaFoamIslands
+	ld a, PAL_CYANMON - 1
 	jr .town
 .Lorelei
 	xor a
