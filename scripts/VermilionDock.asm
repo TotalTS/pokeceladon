@@ -660,31 +660,110 @@ GetOWCoord:
 VermilionDockRedLeftAnimate:
 	ld a, [wIsRocketSuit]
 	and a
-	jr z, .isNormalRed
+	jr z, .noSuit
+
+	cp 1
+	jr z, .rocketMale
+
+	cp 2
+	jr z, .rocketFemale
+
+	jr .noSuit ; fallback
+
+.rocketMale
 	ld de, RocketSprite tile 20
 	lb bc, BANK(RocketSprite), 4
 	ld hl, vSprites tile 8
 	jp CopyVideoData
- .isNormalRed
+
+.rocketFemale
+	ld de, RocketGirlSprite tile 20
+	lb bc, BANK(RocketGirlSprite), 4
+	ld hl, vSprites tile 8
+	jp CopyVideoData
+
+.noSuit
+	ld a, [wPlayerGender]
+	and a
+	jr z, .male
+	ld a, [wWalkBikeSurfState]
+	ld de, FTrainerSprite tile 20
+	lb bc, BANK(FTrainerSprite), 4
+	and a
+	jr z, .copy
+	ld de, FTrainerBikeSprite tile 20
+	lb bc, BANK(FTrainerBikeSprite), 4
+	jr .copy
+
+.male
 	ld a, [wWalkBikeSurfState]
 	ld de, RedSprite tile 20
 	lb bc, BANK(RedSprite), 4
 	and a
-	jr z, .load
+	jr z, .copy
 	ld de, RedBikeSprite tile 20
 	lb bc, BANK(RedBikeSprite), 4
-.load
+
+.copy
 	ld hl, vSprites tile 8
 	call CopyVideoData
 	ld c, 10
 	call DelayFrames
-	ld a, [wWalkBikeSurfState]
-	ld de, RedSprite tile 20
-	lb bc, BANK(RedSprite), 4
+
+	ld a, [wIsRocketSuit]
 	and a
-	jr z, .load2
+	jr z, .noSuit2
+
+	cp 1
+	jr z, .rocketMale2
+
+	cp 2
+	jr z, .rocketFemale2
+
+	jr .noSuit2
+
+.rocketMale2
+	ld de, RocketSprite tile 20
+	lb bc, BANK(RocketSprite), 4
+	jr .copy2
+
+.rocketFemale2
+	ld de, RocketGirlSprite tile 20
+	lb bc, BANK(RocketGirlSprite), 4
+	jr .copy2
+
+.noSuit2
+	ld a, [wPlayerGender]
+	and a
+	jr z, .male2
+
+.female2
+	ld a, [wWalkBikeSurfState]
+	and a
+	jr z, .femaleWalk2
+
+	ld de, FTrainerBikeSprite tile 8
+	lb bc, BANK(FTrainerBikeSprite), 4
+	jr .copy2
+
+.femaleWalk2
+	ld de, FTrainerSprite tile 20
+	lb bc, BANK(FTrainerSprite), 4
+	jr .copy2
+
+.male2
+	ld a, [wWalkBikeSurfState]
+	and a
+	jr z, .maleWalk2
+
 	ld de, RedBikeSprite tile 8
 	lb bc, BANK(RedBikeSprite), 4
-.load2
+	jr .copy2
+
+.maleWalk2
+	ld de, RedSprite tile 20
+	lb bc, BANK(RedSprite), 4
+
+.copy2
 	ld hl, vSprites tile 8
 	jp CopyVideoData
