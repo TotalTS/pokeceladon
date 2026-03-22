@@ -835,6 +835,16 @@ LoadPlayerSpriteGraphics::
     cp 2 ; SURFING
     jp z, LoadSurfingPlayerSpriteGraphics
 
+	push bc
+	push de
+	push hl
+	ld b, ROCKET_SUIT
+	call IsItemInBag
+	pop hl
+	pop de
+	pop bc
+	jr z, .forceTakeOff
+	
 	ld a, [wIsRocketSuit]
 	and a
 	jr z, .notRocket
@@ -845,6 +855,11 @@ LoadPlayerSpriteGraphics::
 	cp 2
 	jr z, .rocketFemale
 
+	jr .notRocket
+
+.forceTakeOff
+	xor a
+	ld [wIsRocketSuit], a
 	jr .notRocket
 
 .rocketMale
