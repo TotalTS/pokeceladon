@@ -23,8 +23,8 @@ ENDM
 ; Each map also has associated data in maps.asm.
 ; Order: towns/cities, then routes, then indoor/dungeon maps
 	const_def
-	map_const PALLET_TOWN,                   13,  9 ; $00
-	map_const VIRIDIAN_CITY,                 20, 18 ; $01
+	map_const PALLET_TOWN,                   16,  9 ; $00
+	map_const VIRIDIAN_CITY,                 21, 18 ; $01
 	map_const PEWTER_CITY,                   20, 18 ; $02
 	map_const CERULEAN_CITY,                 20, 18 ; $03
 	map_const LAVENDER_TOWN,                 10,  9 ; $04
@@ -39,7 +39,7 @@ DEF NUM_CITY_MAPS EQU const_value
 	map_const UNUSED_MAP_0B,                  0,  0 ; $0B
 
 DEF FIRST_ROUTE_MAP EQU const_value
-	map_const ROUTE_1,                       13, 18 ; $0C
+	map_const ROUTE_1,                       16, 18 ; $0C
 	map_const ROUTE_2,                       10, 36 ; $0D
 	map_const ROUTE_3,                       35,  9 ; $0E
 	map_const ROUTE_4,                       45,  9 ; $0F
@@ -66,7 +66,9 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_25,                      34, 20 ; $24
 	map_const BILLS_GARDEN,                  12, 28 ; new map
 	map_const ROUTE_1_WEST,                  10, 18 ; new map
-	map_const ROUTE_0_WEST,            10, 11 ; new map
+	map_const ROUTE_1_EAST,                  10, 18 ; new map
+	map_const ROUTE_0_WEST,                  10, 11 ; new map
+	map_const ROUTE_0_EAST,                  10, 11 ; new map
 
 DEF FIRST_INDOOR_MAP EQU const_value
 	map_const REDS_HOUSE_1F,                  4,  4 ; $25

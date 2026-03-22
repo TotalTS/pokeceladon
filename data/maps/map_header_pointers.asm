@@ -40,7 +40,9 @@ MapHeaderPointers::
 	dw Route25_h
 	dw BillsGarden_h
 	dw Route1West_h
+	dw Route1East_h
 	dw Route0West_h
+	dw Route0East_h
 	dw RedsHouse1F_h
 	dw RedsHouse2F_h
 	dw BluesHouse_h

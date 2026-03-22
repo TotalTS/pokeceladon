@@ -39,7 +39,9 @@ WildDataPointers:
 	dw Route25WildMons         ; ROUTE_25
 	dw BillsGardenWildMons     ; BILLS_GARDEN
 	dw Route1WestWildMons
+	dw NothingWildMons
 	dw Route0WestWildMons
+	dw NothingWildMons
 	dw NothingWildMons         ; REDS_HOUSE_1F
 	dw NothingWildMons
 	dw NothingWildMons

@@ -158,15 +158,15 @@ SetPal_Overworld:
 .normalDungeonOrBuilding
 	ld a, [wLastMap] ; town or route that current dungeon or building is located
 .townOrRoute
-;	cp ROUTE_1_WEST
-;	jr z, .Route1West
 	cp ROUTE_0_WEST
-	jr z, .Route1West
+	jr z, .Route0
+	cp ROUTE_0_EAST
+	jr z, .Route0
 	cp NUM_CITY_MAPS
 	jr c, .town
 	ld a, PAL_ROUTE - 1
 	jr .town
-.Route1West
+.Route0
 	ld a, PAL_PALLET - 1
 	jr .town
 .town
