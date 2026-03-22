@@ -48,6 +48,16 @@ HallOfFameResetEventsAndSaveScript:
 	; Elite 4 events
 	ResetEvent EVENT_SS_ANNE_LEFT
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
+	ld a, TOGGLE_ROUTE22YUJIROU_YUJIROU
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	ld a,TOGGLE_VIRIDIAN_GYM_GIOVANNI
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	ld a, TOGGLE_VIRIDIAN_GYM_YUJIROU
+	ld [wToggleableObjectIndex], a
+	predef ShowObject
+	SetEvent EVENT_PLAYER_IS_CHAMPION
 	xor a
 	ld [wHallOfFameCurScript], a
     ld a, [wPlayerHomeLocation]
@@ -122,6 +132,7 @@ HallOfFameOakCongratulationsScript:
 	ldh [hSpriteFacingDirection], a
 	call SetSpriteFacingDirectionAndDelay
 	call Delay3
+	call HallOfFameRemoveRocketSuitIfNeeded
 	xor a
 	ld [wJoyIgnore], a
 	inc a ; PLAYER_DIR_RIGHT
@@ -134,18 +145,42 @@ HallOfFameOakCongratulationsScript:
 	ld a, TOGGLE_CERULEAN_CAVE_GUY
 	ld [wToggleableObjectIndex], a
 	predef HideObject
-	ld a, TOGGLE_ROUTE22YUJIROU_YUJIROU
-	ld [wToggleableObjectIndex], a
-	predef HideObject
-	ld a,TOGGLE_VIRIDIAN_GYM_GIOVANNI
-	ld [wToggleableObjectIndex], a
-	predef HideObject
-	ld a, TOGGLE_VIRIDIAN_GYM_YUJIROU
-	ld [wToggleableObjectIndex], a
-	predef ShowObject
-	SetEvent EVENT_PLAYER_IS_CHAMPION
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a
+	ret
+	
+HallOfFameRemoveRocketSuitIfNeeded:
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .skip
+	cp 1
+	jr z, .forceTakeOff
+	cp 2
+.forceTakeOff
+	ld a, SPRITE_FACING_DOWN
+	ld [wSpritePlayerStateData1ImageIndex], a
+	ld c, 2
+	call DelayFrames
+	ld a, SPRITE_FACING_LEFT
+	ld [wSpritePlayerStateData1ImageIndex], a
+	ld c, 2
+	call DelayFrames
+	ld a, SPRITE_FACING_UP
+	ld [wSpritePlayerStateData1ImageIndex], a
+	ld c, 2
+	call DelayFrames
+	ld a, SPRITE_FACING_RIGHT
+	ld [wSpritePlayerStateData1ImageIndex], a
+	ld c, 2
+	call DelayFrames
+	ld a, SPRITE_FACING_DOWN
+	ld [wSpritePlayerStateData1ImageIndex], a
+	xor a
+	ld [wIsRocketSuit], a
+	call LoadPlayerSpriteGraphics
+	call DelayFrame
+	ret
+.skip
 	ret
 
 InitOakBattle:
