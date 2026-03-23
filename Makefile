@@ -1,6 +1,7 @@
 roms := \
 	pokered.gbc \
 	pokeblue.gbc \
+	pokered_debug.gbc \
 	pokeblue_debug.gbc
 patches := \
 	pokered.patch \
@@ -19,6 +20,7 @@ rom_obj := \
 
 pokered_obj        := $(rom_obj:.o=_red.o)
 pokeblue_obj       := $(rom_obj:.o=_blue.o)
+pokered_debug_obj  := $(rom_obj:.o=_red_debug.o)
 pokeblue_debug_obj := $(rom_obj:.o=_blue_debug.o)
 pokered_vc_obj     := $(rom_obj:.o=_red_vc.o)
 pokeblue_vc_obj    := $(rom_obj:.o=_blue_vc.o)
@@ -54,6 +56,7 @@ RGBGFXFLAGS  ?= -Weverything
 	all \
 	red \
 	blue \
+	red_debug \
 	blue_debug \
 	red_vc \
 	blue_vc \
@@ -65,6 +68,7 @@ RGBGFXFLAGS  ?= -Weverything
 all: $(roms)
 red:        pokered.gbc
 blue:       pokeblue.gbc
+red_debug:  pokered_debug.gbc
 blue_debug: pokeblue_debug.gbc
 red_vc:     pokered.patch
 blue_vc:    pokeblue.patch
@@ -89,6 +93,7 @@ tidy:
 	      $(pokeblue_obj) \
 	      $(pokered_vc_obj) \
 	      $(pokeblue_vc_obj) \
+	      $(pokered_debug_obj) \
 	      $(pokeblue_debug_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
@@ -108,6 +113,7 @@ endif
 
 $(pokered_obj):        RGBASMFLAGS += -D _RED
 $(pokeblue_obj):       RGBASMFLAGS += -D _BLUE
+$(pokered_debug_obj):  RGBASMFLAGS += -D _RED -D _DEBUG
 $(pokeblue_debug_obj): RGBASMFLAGS += -D _BLUE -D _DEBUG
 $(pokered_vc_obj):     RGBASMFLAGS += -D _RED -D _RED_VC
 $(pokeblue_vc_obj):    RGBASMFLAGS += -D _BLUE -D _BLUE_VC
@@ -136,6 +142,7 @@ endef
 # Dependencies for objects (drop _red and _blue from asm file basenames)
 $(foreach obj, $(pokered_obj), $(eval $(call DEP,$(obj),$(obj:_red.o=.asm))))
 $(foreach obj, $(pokeblue_obj), $(eval $(call DEP,$(obj),$(obj:_blue.o=.asm))))
+$(foreach obj, $(pokered_debug_obj), $(eval $(call DEP,$(obj),$(obj:_red_debug.o=.asm))))
 $(foreach obj, $(pokeblue_debug_obj), $(eval $(call DEP,$(obj),$(obj:_blue_debug.o=.asm))))
 $(foreach obj, $(pokered_vc_obj), $(eval $(call DEP,$(obj),$(obj:_red_vc.o=.asm))))
 $(foreach obj, $(pokeblue_vc_obj), $(eval $(call DEP,$(obj),$(obj:_blue_vc.o=.asm))))
@@ -146,6 +153,7 @@ endif
 RGBLINKFLAGS += -d
 pokered.gbc:        RGBLINKFLAGS += -p 0x00
 pokeblue.gbc:       RGBLINKFLAGS += -p 0x00
+pokered_debug.gbc:  RGBLINKFLAGS += -p 0xff
 pokeblue_debug.gbc: RGBLINKFLAGS += -p 0xff
 pokered_vc.gbc:     RGBLINKFLAGS += -p 0x00
 pokeblue_vc.gbc:    RGBLINKFLAGS += -p 0x00
@@ -153,6 +161,7 @@ pokeblue_vc.gbc:    RGBLINKFLAGS += -p 0x00
 RGBFIXFLAGS += -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03
 pokered.gbc:        RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"
 pokeblue.gbc:       RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"
+pokered_debug.gbc:  RGBFIXFLAGS += -p 0xff -t "POKEMON CELADON"
 pokeblue_debug.gbc: RGBFIXFLAGS += -p 0xff -t "POKEMON CELADON"
 pokered_vc.gbc:     RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"
 pokeblue_vc.gbc:    RGBFIXFLAGS += -p 0x00 -t "POKEMON CELADON"

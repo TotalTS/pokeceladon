@@ -32,6 +32,7 @@ Features:
 
 Post game events:
 
+- Currently, there are 2 versions of Celadon based on Red and Blue. The player can choose if they want their experience to be closer to og Red or og Blue versions, both versions have 151 Pokémon catchable post game.
 - S.S. Anne returns with new trainers.
 - New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 East/West, Route 0 East/West, Route 21 East/West.
 - At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19)
@@ -103,6 +104,7 @@ Post game events:
 - Add a new map sprite
 - Adding gym leader rematches
 - Adding Gender Selection (original tutorial done by **Luna**)
+- Add debug mode to Red version
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 
