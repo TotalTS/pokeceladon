@@ -42,6 +42,8 @@ WildDataPointers:
 	dw NothingWildMons
 	dw Route0WestWildMons
 	dw NothingWildMons
+	dw NothingWildMons
+	dw NothingWildMons
 	dw NothingWildMons         ; REDS_HOUSE_1F
 	dw NothingWildMons
 	dw NothingWildMons
@@ -115,10 +117,6 @@ WildDataPointers:
 	dw NothingWildMons
 	dw VictoryRoad1FWildMons
 	dw MysteryCaveWildMons
-	dw NothingWildMons
-	dw NothingWildMons
-	dw NothingWildMons
-	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons

@@ -59,7 +59,7 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_18,                      25,  9 ; $1D
 	map_const ROUTE_19,                      10, 27 ; $1E
 	map_const ROUTE_20,                      50,  9 ; $1F
-	map_const ROUTE_21,                      10, 45 ; $20
+	map_const ROUTE_21,                      16, 45 ; $20
 	map_const ROUTE_22,                      20, 10 ; $21
 	map_const ROUTE_23,                      10, 72 ; $22
 	map_const ROUTE_24,                      10, 18 ; $23
@@ -69,6 +69,8 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_1_EAST,                  10, 18 ; new map
 	map_const ROUTE_0_WEST,                  10, 11 ; new map
 	map_const ROUTE_0_EAST,                  10, 11 ; new map
+	map_const ROUTE_21_WEST,                 10, 45 ; new map
+	map_const ROUTE_21_EAST,                 10, 45 ; new map
 
 DEF FIRST_INDOOR_MAP EQU const_value
 	map_const REDS_HOUSE_1F,                  4,  4 ; $25
@@ -192,11 +194,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const MYSTERY_CAVE,                  30, 10 ; moved new map
 	end_indoor_group MYSTERY_CAVE
 
-	map_const UNUSED_MAP_6E,                  0,  0 ; $6E
-	map_const UNUSED_MAP_6F,                  0,  0 ; $6F
-	map_const UNUSED_MAP_70,                  0,  0 ; $70
 	map_const LANCES_ROOM,                   13, 13 ; $71
-	map_const UNUSED_MAP_72,                  0,  0 ; $72
 	map_const UNUSED_MAP_73,                  0,  0 ; $73
 	map_const UNUSED_MAP_74,                  0,  0 ; $74
 	map_const UNUSED_MAP_75,                  0,  0 ; $75

@@ -43,6 +43,8 @@ MapHeaderBanks::
 	db BANK(Route1East_h)
 	db BANK(Route0West_h)
 	db BANK(Route0East_h)
+	db BANK(Route21West_h)
+	db BANK(Route21East_h)
 	db BANK(RedsHouse1F_h)
 	db BANK(RedsHouse2F_h)
 	db BANK(BluesHouse_h)
@@ -116,11 +118,7 @@ MapHeaderBanks::
 	db BANK(Route22YujirouPreGym_h)
 	db BANK(VictoryRoad1F_h)
 	db BANK(MysteryCave_h)
-	db $1D ; UNUSED_MAP_6E
-	db $1D ; UNUSED_MAP_6F
-	db $1D ; UNUSED_MAP_70
 	db BANK(LancesRoom_h)
-	db $1D ; UNUSED_MAP_72
 	db $1D ; UNUSED_MAP_73
 	db $1D ; UNUSED_MAP_74
 	db $1D ; UNUSED_MAP_75

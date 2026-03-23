@@ -33,7 +33,7 @@ Features:
 Post game events:
 
 - S.S. Anne returns with new trainers.
-- New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 West, Route 0.
+- New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 East/West, Route 0 East/West, Route 21 East/West.
 - At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19)
 - Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
 - If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
@@ -102,7 +102,7 @@ Post game events:
 **pret tutorials**
 - Add a new map sprite
 - Adding gym leader rematches
-- Adding Gender Selection (original tutorial done by Mateo)
+- Adding Gender Selection (original tutorial done by **Luna**)
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 

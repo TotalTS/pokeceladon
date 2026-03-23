@@ -1269,3 +1269,13 @@ INCLUDE "data/maps/headers/Route0East.asm"
 INCLUDE "scripts/Route0East.asm"
 INCLUDE "data/maps/objects/Route0East.asm"
 Route0East_Blocks: INCBIN "maps/Route0East.blk"
+
+INCLUDE "data/maps/headers/Route21West.asm"
+INCLUDE "scripts/Route21West.asm"
+INCLUDE "data/maps/objects/Route21West.asm"
+Route21West_Blocks: INCBIN "maps/Route21West.blk"
+
+INCLUDE "data/maps/headers/Route21East.asm"
+INCLUDE "scripts/Route21East.asm"
+INCLUDE "data/maps/objects/Route21East.asm"
+Route21East_Blocks: INCBIN "maps/Route21East.blk"
