@@ -435,20 +435,49 @@ MakeNPCFacePlayer:
 	ldh a, [hCurrentSpriteOffset]
 	swap a
 	and $f
+	ld b, a
+	ld a, [wCurMap]
+	cp VICTORY_ROAD_2F
+	jr z, .VictoryRoad2F
+	cp POWER_PLANT
+	jr z, .PowerPlant
+	cp SEAFOAM_ISLANDS_B4F
+	jr z, .SeafoamB4F
+	cp CERULEAN_CAVE_B1F
+	jr z, .CeruleanCaveB1F
+	cp FUCHSIA_CITY
+	jr z, .FuchsiaCity
+	jr .normal
+.VictoryRoad2F
+	ld a, b
 	cp VICTORYROAD2F_MOLTRES
 	jr z, NotYetMoving
+	jr .normal
+.PowerPlant
+	ld a, b
 	cp POWERPLANT_ZAPDOS
 	jr z, NotYetMoving
+	jr .normal
+.SeafoamB4F
+	ld a, b
 	cp SEAFOAMISLANDSB4F_ARTICUNO
 	jr z, NotYetMoving
+	jr .normal
+.CeruleanCaveB1F
+	ld a, b
 	cp CERULEANCAVEB1F_MEWTWO
 	jr z, NotYetMoving
+	jr .normal
+.FuchsiaCity
+	ld a, b
 	cp FUCHSIACITY_SLOWPOKE
 	jr z, NotYetMoving
 	cp FUCHSIACITY_VOLTORB
 	jr z, NotYetMoving
 	cp FUCHSIACITY_FOSSIL
 	jr z, NotYetMoving
+	jr .normal
+.normal
 	ld a, [wStatusFlags3]
 	bit BIT_NO_NPC_FACE_PLAYER, a
 	jr nz, NotYetMoving
@@ -475,7 +504,7 @@ MakeNPCFacePlayer:
 	add $9
 	ld l, a
 	ld [hl], c              ; [x#SPRITESTATEDATA1_FACINGDIRECTION]: set facing direction
-	jr NotYetMoving
+	jp NotYetMoving
 
 InitializeSpriteStatus:
 	ld [hl], $1   ; [x#SPRITESTATEDATA1_MOVEMENTSTATUS] = ready
