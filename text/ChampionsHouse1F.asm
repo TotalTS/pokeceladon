@@ -21,17 +21,6 @@ _ChampionsHouse1FOakText::
 	cont "as well! Keep"
 	cont "up the good work!"
 	done
-
-_ChampionsHouse1FRivalText::
-	text "<RIVAL>: Yo!"
-	line "Don't get used to"
-	cont "this luxury,"
-	cont "<PLAYER>!"
-	
-	para "I'll be training"
-	line "harder than you."
-	cont "Smell ya later!"
-	done
 	
 _ChampionsHouse1FDaisyText::
 	text "DAISY: Hi! Your"
@@ -52,23 +41,41 @@ _ChampionsHouse1FBillText::
 	text "BILL: Golly!"
 	line "So this is how a"
 	cont "CHAMPION lives!"
-	
-	para "I'm working on a"
-	line "maintenance for"
-	cont "the PC SYSTEM."
-	
-	para "I'll make sure"
-	line "your personal PC"
-	cont "is always running"
-	cont "smoothly, pal!"
+
+	para "I came all the"
+	line "way here to tell"
+	cont "you something!"
+
+	para "I've finally"
+	line "opened up my"
+	cont "SECRET GARDEN!"
+
+	para "To find it, go"
+	line "east of ROUTE 25,"
+	cont "SURF, and enter"
+	cont "my house from"
+	cont "the side!"
+
+	para "There are rare"
+	line "#MON that you"
+	cont "won't find"
+	cont "anywhere else!"
+
+	para "I also spotted a"
+	line "MYSTERY CAVE,"
+	cont "but I didn't dare"
+	cont "go that far!"
+
+	para "Give it a look,"
+	line "pal!"
 	done
 
 _ChampionsHouse1FBirdText::
 	text "What is this?"
-	line "This bird has"
+	line "This PIDGEY has"
 	cont "something on"
-	cont "his wing!"
-	done
+	cont "its wing!"
+	prompt
 
 _ChampionsHouse1FBirdGaveItemText::
 	text "<PLAYER> received"
@@ -78,12 +85,12 @@ _ChampionsHouse1FBirdGaveItemText::
 	text_end
 
 _ChampionsHouse1FBirdBagFullText::
-	text "Your BAG is"
-	line "already full!"
+	text "You don't have"
+	line "any room!"
 	done
 
 _ChampionsHouse1FBirdDoneText::
-	text "The bird looks"
+	text "PIDGEY looks"
 	line "happy now!"
 	done
 
@@ -118,4 +125,15 @@ _ChampionsHouse2FPikachuDollText::
 	para "Only League"
 	line "CHAMPIONS can"
 	cont "afford this!"
+	done
+
+_ChampionsHouse1FRivalText::
+	text "<RIVAL>: Yo!"
+	line "Don't get used to"
+	cont "this luxury,"
+	cont "<PLAYER>!"
+	
+	para "I'll be training"
+	line "harder than you."
+	cont "Smell ya later!"
 	done

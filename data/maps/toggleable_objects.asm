@@ -464,6 +464,13 @@ ToggleableObjectStates:
 	
 	toggleable_objects_for ROUTE_22_YUJIROU_PRE_GYM
 	toggle_object_state ROUTE_22_YUJIROU_PRE_GYM_YUJIROU, ON
+	
+	toggleable_objects_for CHAMPIONS_HOUSE_1F
+	toggle_object_state CHAMPIONSHOUSE1F_DAISY, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_OAK, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_MOM, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_BILL, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_BIRD, OFF
 
 	assert_table_length NUM_TOGGLEABLE_OBJECTS
 

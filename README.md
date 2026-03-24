@@ -35,7 +35,8 @@ Post game events:
 - Currently, there are 2 versions of Celadon based on Red and Blue. The player can choose if they want their experience to be closer to og Red or og Blue versions, both versions have 151 Pokémon catchable post game.
 - S.S. Anne returns with new trainers.
 - New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 East/West, Route 0 East/West, Route 21 East/West.
-- At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19)
+- At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19) You will receive random visits every time you enter.
+- At your new home, Bill will visit you randomly and give you access to Bill's Garden. There's also a low chance that a Pidgey spawns on the house near the stairs, it will give you some random gifts.
 - Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
 - If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
 
@@ -87,6 +88,9 @@ Post game events:
 
 **Dannye**
 - Surf with Lapras, Seel, Pikachu.
+
+**PokefanMarcel**
+- Now on Champion's House you can have random visits. (this code is based on MtMoonSquare_Script on his hack yumepokered)
 
 **Jojobear**
 - Run animation.
