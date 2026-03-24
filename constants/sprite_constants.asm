@@ -83,6 +83,11 @@
 	const SPRITE_SURGE                   ; new
 	const SPRITE_SWIMMER_GIRL            ; new
 	const SPRITE_FUCHSIA_MON             ; new
+	const SPRITE_ARTICUNO                ; new
+	const SPRITE_ZAPDOS                  ; new
+	const SPRITE_MOLTRES                 ; new
+	const SPRITE_FIGHTER_MACHOP          ; new
+	const SPRITE_MEWTWO                  ; new
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e
@@ -94,11 +99,6 @@ DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_GOLD_TROPHY             ; new
 	const SPRITE_OLD_AMBER               ; $45
 	const SPRITE_SLOWPOKE                ; new
-	const SPRITE_FIGHTER_MACHOP          ; $47
+	const SPRITE_MEW                     ; $47
 	const SPRITE_GAMBLER_ASLEEP          ; $48
-	const SPRITE_ARTICUNO                ; new
-	const SPRITE_ZAPDOS                  ; new
-	const SPRITE_MOLTRES                 ; new
-	const SPRITE_MEW                     ; new
-	const SPRITE_MEWTWO                  ; new
 DEF NUM_SPRITES EQU const_value - 1

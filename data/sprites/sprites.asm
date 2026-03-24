@@ -88,6 +88,11 @@ SpriteSheetPointerTable:
 	overworld_sprite SurgeSprite, 12            ; SPRITE_SURGE
 	overworld_sprite SwimmerGirlSprite, 12      ; SPRITE_SWIMMER_GIRL
 	overworld_sprite FuchsiaMonSprite, 12       ; SPRITE_FUCHSIA_MON
+	overworld_sprite ArticunoSprite, 12         ; new
+	overworld_sprite ZapdosSprite, 12           ; new
+	overworld_sprite MoltresSprite, 12          ; new
+	overworld_sprite FighterMachopSprite, 12    ; new
+	overworld_sprite MewtwoSprite, 12           ; new
 	overworld_sprite PokeBallSprite, 4          ; SPRITE_POKE_BALL
 	overworld_sprite FossilSprite, 4            ; SPRITE_FOSSIL
 	overworld_sprite BoulderSprite, 4           ; SPRITE_BOULDER
@@ -98,11 +103,6 @@ SpriteSheetPointerTable:
 	overworld_sprite GoldTrophySprite, 4        ; SPRITE_UNUSED_OLD_AMBER
 	overworld_sprite OldAmberSprite, 4          ; SPRITE_OLD_AMBER
 	overworld_sprite SlowpokeSprite, 4          ; SPRITE_UNUSED_GAMBLER_ASLEEP_1
-	overworld_sprite FighterMachopSprite, 4     ; SPRITE_UNUSED_GAMBLER_ASLEEP_2
+	overworld_sprite MewSprite, 4               ; SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_GAMBLER_ASLEEP
-	overworld_sprite ArticunoSprite, 4          ; new
-	overworld_sprite ZapdosSprite, 4            ; new
-	overworld_sprite MoltresSprite, 4           ; new
-	overworld_sprite MewSprite, 4               ; new
-	overworld_sprite MewtwoSprite, 4            ; new
 	assert_table_length NUM_SPRITES
