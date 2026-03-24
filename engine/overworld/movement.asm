@@ -432,6 +432,23 @@ MakeNPCFacePlayer:
 
 ; Check if the behaviour of the NPC facing the player when spoken to is
 ; disabled. This is only done when rubbing the S.S. Anne captain's back.
+	ldh a, [hCurrentSpriteOffset]
+	swap a
+	and $f
+	cp VICTORYROAD2F_MOLTRES
+	jr z, NotYetMoving
+	cp POWERPLANT_ZAPDOS
+	jr z, NotYetMoving
+	cp SEAFOAMISLANDSB4F_ARTICUNO
+	jr z, NotYetMoving
+	cp CERULEANCAVEB1F_MEWTWO
+	jr z, NotYetMoving
+	cp FUCHSIACITY_SLOWPOKE
+	jr z, NotYetMoving
+	cp FUCHSIACITY_VOLTORB
+	jr z, NotYetMoving
+	cp FUCHSIACITY_FOSSIL
+	jr z, NotYetMoving
 	ld a, [wStatusFlags3]
 	bit BIT_NO_NPC_FACE_PLAYER, a
 	jr nz, NotYetMoving
