@@ -69,6 +69,28 @@ _ChampionsHouse1FBillText::
 	para "Give it a look,"
 	line "pal!"
 	done
+	
+_ChampionsHouse1FBillEnjoyText::
+	text "<PLAYER>!"
+	line "How's it going?"
+
+	para "Did you check out"
+	line "my GARDEN yet?"
+	
+	para "To find it, go"
+	line "east of ROUTE 25,"
+	cont "SURF, and enter"
+	cont "my house from"
+	cont "the side!"
+	
+	para "There are rare"
+	line "#MON that you"
+	cont "won't find"
+	cont "anywhere else!"
+	
+	para "Give it a look,"
+	line "pal!"
+	done
 
 _ChampionsHouse1FBirdText::
 	text "What is this?"

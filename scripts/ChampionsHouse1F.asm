@@ -86,10 +86,26 @@ ChampionsHouse1FDaisyText:
 	text_end
 	
 ChampionsHouse1FBillText:
-	text_far _ChampionsHouse1FBillText
 	text_asm
+	CheckEvent EVENT_CHAMPIONS_HOUSE_OPEN_BILLS_GARDEN
+    jr nz, .alreadyOpened
+	ld hl, .ChampionsHouse1FBillText
+	call PrintText
 	SetEvent EVENT_CHAMPIONS_HOUSE_OPEN_BILLS_GARDEN
+	jr .done
+.alreadyOpened:
+	ld hl, .ChampionsHouse1FBillEnjoyText
+	call PrintText
+.done
 	jp TextScriptEnd
+	
+.ChampionsHouse1FBillText:
+	text_far _ChampionsHouse1FBillText
+	text_end
+
+.ChampionsHouse1FBillEnjoyText:
+	text_far _ChampionsHouse1FBillEnjoyText
+	text_end
 	
 ChampionsHouse1FBirdText:
 	text_asm
