@@ -29,6 +29,7 @@ Features:
 - New Celadon University location, where you can get a Magikarp with Dragon Rage and a Celadon University Diploma.
 - You can have a Rocket Suit after beating the Nugget Bridge. (Optional) Use it to skip battles against the Team Rocket. You can also use it to catch enemy's Pokémon. (But it ends the battle instantly)
 - In Rock Tunnel, there's an NPC that uses FLASH for you without need to learn the HM.
+- Restored PC on Celadon Hotel.
 
 Post game events:
 
@@ -109,6 +110,7 @@ Post game events:
 - Adding gym leader rematches
 - Adding Gender Selection (original tutorial done by **Luna**)
 - Add debug mode to Red version
+- Restore the invisible PC in the Celadon Hotel
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 
