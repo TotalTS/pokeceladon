@@ -181,17 +181,17 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const SS_ANNE_B1F_ROOMS,             12,  8 ; $68
 	end_indoor_group SS_ANNE
 	
-	map_const CHAMPIONS_HOUSE_1F,             4,  4 ; moved new map
-	map_const CHAMPIONS_HOUSE_2F,             4,  4 ; moved new map
+	map_const CHAMPIONS_HOUSE_1F,             4,  4 ; new map
+	map_const CHAMPIONS_HOUSE_2F,             4,  4 ; new map
 	end_indoor_group CHAMPIONS_HOUSE
 
-	map_const ROUTE_22_YUJIROU_PRE_GYM,       5,  4 ; moved new map
+	map_const ROUTE_22_YUJIROU_PRE_GYM,       5,  4 ; new map
 	end_indoor_group ROUTE_22_YUJIROU_PRE_GYM
 
 	map_const VICTORY_ROAD_1F,               10,  9 ; $6C
 	end_indoor_group VICTORY_ROAD
 
-	map_const MYSTERY_CAVE,                  30, 10 ; moved new map
+	map_const MYSTERY_CAVE,                  30, 18 ; new map
 	end_indoor_group MYSTERY_CAVE
 
 	map_const LANCES_ROOM,                   13, 13 ; $71
