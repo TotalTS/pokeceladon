@@ -35,7 +35,13 @@
 	const ICON_GYARADOS
 	const ICON_SLOWPOKE
 	const ICON_BIGMON
+	const ICON_ARTICUNO
+	const ICON_ZAPDOS
+	const ICON_MOLTRES
+	const ICON_MEWTWO
+	const ICON_MEW
 
 DEF ICON_TRADEBUBBLE EQU $e ; difference between alternating icon frames' tile IDs
 
 DEF ICONOFFSET EQU $40
+
