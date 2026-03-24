@@ -98,13 +98,13 @@ ChampionsHouse1FBirdText:
 	ld hl, .ChampionsHouse1FBirdText
 	call PrintText
 	call Random
-	cp 85
+	cp 180 ; 76/256 chance of receiving Nugget
 	jr c, .giveNugget
-	cp 170
+	cp 120 ; 60/256 chance of receiving Max Revive
 	jr c, .giveMaxRevive
-	cp 40
+	cp 60 ; 60/256 chance of receiving Ultra ball
 	jr c, .giveUltraBall
-	lb bc, RARE_CANDY, 1
+	lb bc, RARE_CANDY, 1 ; 60/256 chance of receiving Rare Candy
 	jr .giveIt
 .giveNugget
 	lb bc, NUGGET, 1
