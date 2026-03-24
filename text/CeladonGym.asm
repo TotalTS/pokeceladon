@@ -88,8 +88,8 @@ _CeladonGymTM21NoRoomText::
 _CeladonGymBattleText2::
 	text "Hey!"
 
-	para "You are not"
-	line "allowed in here!"
+	para "I'll show you"
+	line "my cute #MON!"
 	done
 
 _CeladonGymEndBattleText2::
@@ -109,8 +109,8 @@ _CeladonGymBattleText3::
 	done
 
 _CeladonGymEndBattleText3::
-	text "My"
-	line "makeup!"
+	text "Give me a"
+	line "break."
 	prompt
 
 _CeladonGymAfterBattleText3::
@@ -124,19 +124,22 @@ _CeladonGymAfterBattleText3::
 	done
 
 _CeladonGymBattleText4::
-	text "Aren't you the"
-	line "peeping Tom?"
+	text "Weren't you"
+	line "peeking in here"
+	cont "earlier?"
 	done
 
 _CeladonGymEndBattleText4::
-	text "I'm"
-	line "in shock!"
+	text "I"
+	line "don't want to"
+	cont "see myself lose!"
 	prompt
 
 _CeladonGymAfterBattleText4::
-	text "Oh, you weren't"
-	line "peeping? We get a"
-	cont "lot of gawkers!"
+	text "Oh, you were"
+	line "looking at ERIKA,"
+	cont "you weren't"
+	cont "looking at me..."
 	done
 
 _CeladonGymBattleText5::

@@ -7,10 +7,10 @@ _CeladonCityLittleGirlText::
 	cont "when it's angry!"
 	done
 
-_CeladonCityGramps1Text::
-	text "Heheh! This GYM"
-	line "is great! It's"
-	cont "full of women!"
+_CeladonCityGirl2Text::
+	text "This GYM is"
+	line "great! It's full"
+	cont "of strong women!"
 	done
 
 _CeladonCityGirlText::

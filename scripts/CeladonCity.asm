@@ -7,7 +7,7 @@ CeladonCity_Script:
 CeladonCity_TextPointers:
 	def_text_pointers
 	dw_const CeladonCityLittleGirlText,        TEXT_CELADONCITY_LITTLE_GIRL
-	dw_const CeladonCityGramps1Text,           TEXT_CELADONCITY_GRAMPS1
+	dw_const CeladonCityGirl2Text,             TEXT_CELADONCITY_GIRL2
 	dw_const CeladonCityGirlText,              TEXT_CELADONCITY_GIRL
 	dw_const CeladonCityGramps2Text,           TEXT_CELADONCITY_GRAMPS2
 	dw_const CeladonCityGramps3Text,           TEXT_CELADONCITY_GRAMPS3
@@ -30,8 +30,8 @@ CeladonCityLittleGirlText:
 	text_far _CeladonCityLittleGirlText
 	text_end
 
-CeladonCityGramps1Text:
-	text_far _CeladonCityGramps1Text
+CeladonCityGirl2Text:
+	text_far _CeladonCityGirl2Text
 	text_end
 
 CeladonCityGirlText:
