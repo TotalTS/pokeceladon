@@ -661,8 +661,8 @@ ItemUseBallText06:
 	text_end
 	
 ConfirmUseBall:
-	hlcoord 13, 7
-	lb bc, 4, 5
+	hlcoord 13, 8
+	lb bc, 3, 5
 	call TextBoxBorder
 	call UpdateSprites
 	xor a
