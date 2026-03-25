@@ -382,20 +382,26 @@ DisplayWildLocations:
 	and a
 	jr z, .nextEntry
 	ld a, [de]
-	CP PALLET_TOWN
+	cp PALLET_TOWN
 	jr z, .nextEntry
 	ld a, [de]
-	CP MYSTERY_CAVE
+	cp MYSTERY_CAVE
 	jr z, .nextEntry
 	ld a, [de]
-	CP BILLS_GARDEN
+	cp BILLS_GARDEN
 	jr z, .nextEntry
 	ld a, [de]
-	CP ROUTE_1_WEST
+	cp ROUTE_1_WEST
 	jr z, .nextEntry
 	ld a, [de]
-;	CP ROUTE_0_WEST
-;	jr z, .nextEntry
+	cp ROUTE_1_EAST
+	jr z, .nextEntry
+	ld a, [de]
+	cp ROUTE_21_WEST
+	jr z, .nextEntry
+	ld a, [de]
+	cp ROUTE_21_EAST
+	jr z, .nextEntry
 	push hl
 	call LoadTownMapEntry
 	pop hl
