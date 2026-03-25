@@ -136,6 +136,8 @@ ItemUseBall:
 	jr .canUseBall
 
 .canUseBall
+	call ConfirmUseBall
+	jp c, .cancelBall
 	xor a
 	ld [wCapturedMonSpecies], a
 
@@ -607,6 +609,11 @@ ItemUseBall:
 	inc a
 	ld [wItemQuantity], a
 	jp RemoveItemFromInventory
+	
+.cancelBall
+	xor a
+	ld [wActionResultOrTookBattleTurn], a
+	ret
 
 ItemUseBallText00:
 ;"It dodged the thrown ball!"
@@ -652,6 +659,42 @@ ItemUseBallText06:
 	sound_dex_page_added
 	text_promptbutton
 	text_end
+	
+ConfirmUseBall:
+	hlcoord 13, 7
+	lb bc, 4, 5
+	call TextBoxBorder
+	call UpdateSprites
+	xor a
+	ld [wLetterPrintingDelayFlags], a
+	hlcoord 15, 9
+	ld de, BallMenuText
+	call PlaceString
+	ld hl, wTopMenuItemY
+	ld a, 9 ; cursor Y
+	ld [hli], a
+	ld a, 14 ; cursor X
+	ld [hli], a
+	xor a
+	ld [hli], a ; wCurrentMenuItem
+	inc hl
+	ld a, 1
+	ld [hli], a
+	ld a, PAD_A | PAD_B
+	ld [hli], a
+	call HandleMenuInput
+	bit B_PAD_B, a
+	jr nz, .quit
+	ld a, [wCurrentMenuItem]
+	and a
+	ret z
+.quit
+	scf
+	ret
+
+BallMenuText:
+	db "USE"
+	next "QUIT@"
 
 ItemUseTownMap:
 	ld a, [wIsInBattle]
