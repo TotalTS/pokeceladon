@@ -8,7 +8,7 @@ ChampionsHouse1F_Script:
 	ResetEvent EVENT_GOT_CHAMPIONS_HOUSE_BIRD_GIFT
 	call Random
 	cp 50
-	ld a, LOW(TOGGLE_CHAMPIONSHOUSE1F_DAISY)
+	ld a, TOGGLE_CHAMPIONSHOUSE1F_DAISY
 	jr nc, .hideDaisy
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
@@ -19,7 +19,7 @@ ChampionsHouse1F_Script:
 .checkOak
 	call Random
 	cp 38
-	ld a, LOW(TOGGLE_CHAMPIONSHOUSE1F_OAK)
+	ld a, TOGGLE_CHAMPIONSHOUSE1F_OAK
 	jr nc, .hideOak
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
@@ -30,7 +30,7 @@ ChampionsHouse1F_Script:
 .checkMom
 	call Random
 	cp 25
-	ld a, LOW(TOGGLE_CHAMPIONSHOUSE1F_MOM)
+	ld a, TOGGLE_CHAMPIONSHOUSE1F_MOM
 	jr nc, .hideMom
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
@@ -41,7 +41,7 @@ ChampionsHouse1F_Script:
 .checkBill
 	call Random
 	cp 30
-	ld a, LOW(TOGGLE_CHAMPIONSHOUSE1F_BILL)
+	ld a, TOGGLE_CHAMPIONSHOUSE1F_BILL
 	jr nc, .hideBill
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
@@ -52,7 +52,7 @@ ChampionsHouse1F_Script:
 .checkBird
 	call Random
 	cp 13
-	ld a, LOW(TOGGLE_CHAMPIONSHOUSE1F_BIRD)
+	ld a, TOGGLE_CHAMPIONSHOUSE1F_BIRD
 	jr nc, .hideBird
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
@@ -114,13 +114,13 @@ ChampionsHouse1FBirdText:
 	ld hl, .ChampionsHouse1FBirdText
 	call PrintText
 	call Random
-	cp 180 ; 76/256 chance of receiving Nugget
-	jr c, .giveNugget
-	cp 120 ; 60/256 chance of receiving Max Revive
-	jr c, .giveMaxRevive
 	cp 60 ; 60/256 chance of receiving Ultra ball
 	jr c, .giveUltraBall
-	lb bc, RARE_CANDY, 1 ; 60/256 chance of receiving Rare Candy
+	cp 120 ; 60/256 chance of receiving Max Revive
+	jr c, .giveMaxRevive
+	cp 180 ; 60/256 chance of receiving Nugget
+	jr c, .giveNugget
+	lb bc, RARE_CANDY, 1 ; 75/256 chance of receiving Rare Candy
 	jr .giveIt
 .giveNugget
 	lb bc, NUGGET, 1
