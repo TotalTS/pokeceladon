@@ -28,6 +28,7 @@
 	const ICON_CATERPILLAR
 	const ICON_GEODUDE
 	const ICON_FIGHTER
+	const ICON_EGG
 	const ICON_JELLYFISH
 	const ICON_MOTH
 	const ICON_BAT
