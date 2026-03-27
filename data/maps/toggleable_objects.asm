@@ -231,25 +231,32 @@ ToggleableObjectStates:
 	toggle_object_state MTMOONB2F_HELIX_FOSSIL,  ON
 	toggle_object_state MTMOONB2F_HP_UP,         ON
 	toggle_object_state MTMOONB2F_TM_MEGA_PUNCH, ON
+	
+	toggleable_objects_for VERMILION_DOCK
+	toggle_object_state VERMILION_DOCK_MEW, OFF
 
 	toggleable_objects_for SS_ANNE_2F
 	toggle_object_state SSANNE2F_RIVAL, OFF
+
+	toggleable_objects_for SS_ANNE_BOW
+	toggle_object_state SSANNEBOW_SUPER_NERD, ON
+	toggle_object_state SSANNEBOW_ROOKIE, OFF
+
+	toggleable_objects_for SS_ANNE_CAPTAINS_ROOM
+	toggle_object_state SSANNECAPTAINSROOM_CAPTAIN, ON
+	toggle_object_state SSANNECAPTAINSROOM_CAPTAINPG, OFF
 
 	toggleable_objects_for SS_ANNE_1F_ROOMS
 	toggle_object_state SSANNE1FROOMS_ROOKIE1,          OFF
 	toggle_object_state SSANNE1FROOMS_ROOKIE2,          OFF
 	toggle_object_state SSANNE1FROOMS_ROOKIE3,          OFF
 	toggle_object_state SSANNE1FROOMS_GIRL1,            ON
-	toggle_object_state SSANNE1FROOMS_MIDDLE_AGED_MAN,  ON
-	toggle_object_state SSANNE1FROOMS_LITTLE_GIRL,      ON
-	toggle_object_state SSANNE1FROOMS_WIGGLYTUFF,       ON
-	toggle_object_state SSANNE1FROOMS_GIRL2,            ON
+	toggle_object_state SSANNE1FROOMS_GENTLEMAN3,       ON
 	toggle_object_state SSANNE1FROOMS_TM_BODY_SLAM,     ON
 
 	toggleable_objects_for SS_ANNE_2F_ROOMS
 	toggle_object_state SSANNE2FROOMS_ROOKIE1,     OFF
 	toggle_object_state SSANNE2FROOMS_ROOKIE2,     OFF
-;	toggle_object_state SSANNE2FROOMS_ROOKIE3,     OFF ; tried to add Rookie 3 but there's too many objects on that map
 	toggle_object_state SSANNE2FROOMS_GENTLEMAN3,  ON
 	toggle_object_state SSANNE2FROOMS_MAX_ETHER,   ON
 	toggle_object_state SSANNE2FROOMS_GENTLEMAN4,  ON
@@ -259,12 +266,6 @@ ToggleableObjectStates:
 	toggle_object_state SSANNE2FROOMS_LITTLE_BOY,  ON
 
 	toggleable_objects_for SS_ANNE_B1F_ROOMS
-;	toggle_object_state SSANNEB1FROOMS_SAILOR1,    ON
-;	toggle_object_state SSANNEB1FROOMS_SAILOR2,    ON
-;	toggle_object_state SSANNEB1FROOMS_SAILOR3,    ON
-;	toggle_object_state SSANNEB1FROOMS_SAILOR4,    ON
-;	toggle_object_state SSANNEB1FROOMS_SAILOR5,    ON
-;	toggle_object_state SSANNEB1FROOMS_FISHER,     ON
 	toggle_object_state SSANNEB1FROOMS_ROOKIE1,    OFF
 	toggle_object_state SSANNEB1FROOMS_ROOKIE2,    OFF
 	toggle_object_state SSANNEB1FROOMS_SUPER_NERD, ON
@@ -272,6 +273,16 @@ ToggleableObjectStates:
 	toggle_object_state SSANNEB1FROOMS_ETHER,      ON
 	toggle_object_state SSANNEB1FROOMS_TM_REST,    ON
 	toggle_object_state SSANNEB1FROOMS_MAX_POTION, ON
+	
+	toggleable_objects_for CHAMPIONS_HOUSE_1F
+	toggle_object_state CHAMPIONSHOUSE1F_DAISY, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_OAK, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_MOM, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_BILL, OFF
+	toggle_object_state CHAMPIONSHOUSE1F_BIRD, OFF
+	
+	toggleable_objects_for ROUTE_22_YUJIROU_PRE_GYM
+	toggle_object_state ROUTE_22_YUJIROU_PRE_GYM_YUJIROU, ON
 
 	toggleable_objects_for VICTORY_ROAD_3F
 	toggle_object_state VICTORYROAD3F_MAX_REVIVE,   ON
@@ -344,7 +355,7 @@ ToggleableObjectStates:
 	toggle_object_state SILPHCO7F_RIVAL,           ON
 	toggle_object_state SILPHCO7F_CALCIUM,         ON
 	toggle_object_state SILPHCO7F_TM_SWORDS_DANCE, ON
-	toggle_object_state SILPHCO7F_UNUSED,          ON
+;	toggle_object_state SILPHCO7F_UNUSED,          ON
 
 	toggleable_objects_for SILPH_CO_8F
 	toggle_object_state SILPHCO8F_ROCKET1,   ON
@@ -385,6 +396,9 @@ ToggleableObjectStates:
 	toggle_object_state POKEMONMANSIONB1F_TM_BLIZZARD,  ON
 	toggle_object_state POKEMONMANSIONB1F_TM_SOLARBEAM, ON
 	toggle_object_state POKEMONMANSIONB1F_SECRET_KEY,   ON
+	
+	toggleable_objects_for FUCHSIA_CITY
+	toggle_object_state FUCHSIACITY_ERIK, ON
 
 	toggleable_objects_for SAFARI_ZONE_EAST
 	toggle_object_state SAFARIZONEEAST_FULL_RESTORE, ON
@@ -404,6 +418,9 @@ ToggleableObjectStates:
 
 	toggleable_objects_for SAFARI_ZONE_CENTER
 	toggle_object_state SAFARIZONECENTER_NUGGET, ON
+	
+	toggleable_objects_for SAFARI_ZONE_CENTER_REST_HOUSE
+	toggle_object_state SAFARI_REST_HOUSE_ERIK, OFF
 
 	toggleable_objects_for CERULEAN_CAVE_2F
 	toggle_object_state CERULEANCAVE2F_PP_UP,        ON
@@ -444,33 +461,6 @@ ToggleableObjectStates:
 	toggle_object_state SEAFOAMISLANDSB4F_BOULDER1, OFF
 	toggle_object_state SEAFOAMISLANDSB4F_BOULDER2, OFF
 	toggle_object_state SEAFOAMISLANDSB4F_ARTICUNO, ON
-	
-	toggleable_objects_for VERMILION_DOCK
-	toggle_object_state VERMILION_DOCK_MEW, OFF
-	
-	toggleable_objects_for SAFARI_ZONE_CENTER_REST_HOUSE
-	toggle_object_state SAFARI_REST_HOUSE_ERIK, OFF
-	
-	toggleable_objects_for FUCHSIA_CITY
-	toggle_object_state FUCHSIACITY_ERIK, ON
-	
-	toggleable_objects_for SS_ANNE_CAPTAINS_ROOM
-	toggle_object_state SSANNECAPTAINSROOM_CAPTAIN, ON
-	toggle_object_state SSANNECAPTAINSROOM_CAPTAINPG, OFF
-	
-	toggleable_objects_for SS_ANNE_BOW
-	toggle_object_state SSANNEBOW_SUPER_NERD, ON
-	toggle_object_state SSANNEBOW_ROOKIE, OFF
-	
-	toggleable_objects_for ROUTE_22_YUJIROU_PRE_GYM
-	toggle_object_state ROUTE_22_YUJIROU_PRE_GYM_YUJIROU, ON
-	
-	toggleable_objects_for CHAMPIONS_HOUSE_1F
-	toggle_object_state CHAMPIONSHOUSE1F_DAISY, OFF
-	toggle_object_state CHAMPIONSHOUSE1F_OAK, OFF
-	toggle_object_state CHAMPIONSHOUSE1F_MOM, OFF
-	toggle_object_state CHAMPIONSHOUSE1F_BILL, OFF
-	toggle_object_state CHAMPIONSHOUSE1F_BIRD, OFF
 
 	assert_table_length NUM_TOGGLEABLE_OBJECTS
 

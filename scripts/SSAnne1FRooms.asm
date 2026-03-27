@@ -18,16 +18,11 @@ SSAnne1FRoomsPostGameToggle:
 
 	SetEvent EVENT_SS_ANNE_1F_POSTGAME
 
-	ld a, TOGGLE_SS_ANNE_1F_ROOMS_MIDDLE_AGED_MAN
-	ld [wToggleableObjectIndex], a
-	predef HideObject
-	ld a, TOGGLE_SS_ANNE_1F_ROOMS_LITTLE_GIRL
-	ld [wToggleableObjectIndex], a
-	predef HideObject
-	ld a, TOGGLE_SS_ANNE_1F_ROOMS_WIGGLYTUFF
-	ld [wToggleableObjectIndex], a
-	predef HideObject
 	ld a, TOGGLE_SS_ANNE_1F_ROOMS_GIRL1
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	
+	ld a, TOGGLE_SS_ANNE_1F_ROOMS_GENTLEMAN3
 	ld [wToggleableObjectIndex], a
 	predef HideObject
 
