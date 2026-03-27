@@ -29,7 +29,7 @@
 	const POTION        ; $14
 	const SAFARI_BAIT   ; $15
 	const SAFARI_ROCK   ; $16
-	const UNUSED_ITEM1  ; $17
+	const SKATEBOARD    ; $17
 	const UNUSED_ITEM2  ; $18
 	const UNUSED_ITEM3  ; $19
 	const UNUSED_ITEM4  ; $1A

@@ -689,21 +689,35 @@ VermilionDockRedLeftAnimate:
 	ld a, [wWalkBikeSurfState]
 	ld de, FTrainerSprite tile 20
 	lb bc, BANK(FTrainerSprite), 4
-	and a
+	cp 0
 	jr z, .copy
+	cp 3
+	jr z, .femaleSkate
 	ld de, FTrainerBikeSprite tile 20
 	lb bc, BANK(FTrainerBikeSprite), 4
+	jr .copy
+	
+.femaleSkate
+	ld de, FTrainerSkateSprite tile 20
+	lb bc, BANK(FTrainerSkateSprite), 4
 	jr .copy
 
 .male
 	ld a, [wWalkBikeSurfState]
 	ld de, RedSprite tile 20
 	lb bc, BANK(RedSprite), 4
-	and a
+	cp 0
 	jr z, .copy
+
+	cp 3
+	jr z, .maleSkate
 	ld de, RedBikeSprite tile 20
 	lb bc, BANK(RedBikeSprite), 4
-
+	jr .copy
+	
+.maleSkate
+	ld de, RedSkateSprite tile 20
+	lb bc, BANK(RedSkateSprite), 4
 .copy
 	ld hl, vSprites tile 8
 	call CopyVideoData
@@ -739,8 +753,10 @@ VermilionDockRedLeftAnimate:
 
 .female2
 	ld a, [wWalkBikeSurfState]
-	and a
+	cp 0
 	jr z, .femaleWalk2
+	cp 3
+	jr z, .femaleSkate2
 
 	ld de, FTrainerBikeSprite tile 8
 	lb bc, BANK(FTrainerBikeSprite), 4
@@ -750,11 +766,22 @@ VermilionDockRedLeftAnimate:
 	ld de, FTrainerSprite tile 20
 	lb bc, BANK(FTrainerSprite), 4
 	jr .copy2
+	
+.femaleSkate2
+	ld de, FTrainerSkateSprite tile 8
+	lb bc, BANK(FTrainerSkateSprite), 4
+	jr .copy2
 
 .male2
 	ld a, [wWalkBikeSurfState]
 	and a
 	jr z, .maleWalk2
+	
+	cp 0
+	jr z, .maleWalk2
+
+	cp 3
+	jr z, .maleSkate2
 
 	ld de, RedBikeSprite tile 8
 	lb bc, BANK(RedBikeSprite), 4
@@ -763,6 +790,11 @@ VermilionDockRedLeftAnimate:
 .maleWalk2
 	ld de, RedSprite tile 20
 	lb bc, BANK(RedSprite), 4
+	jr .copy2
+	
+.maleSkate2
+	ld de, RedSkateSprite tile 8
+	lb bc, BANK(RedSkateSprite), 4
 
 .copy2
 	ld hl, vSprites tile 8

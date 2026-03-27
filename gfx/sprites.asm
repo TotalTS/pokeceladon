@@ -100,6 +100,8 @@ SabrinaSprite::                 INCBIN "gfx/new_sprites/sabrina.2bpp"
 SandshrewSprite::               INCBIN "gfx/new_sprites/sandshrew.2bpp"
 SurgeSprite::                   INCBIN "gfx/new_sprites/surge.2bpp"
 SwimmerGirlSprite::             INCBIN "gfx/new_sprites/swimmer_girl.2bpp"
+RedSkateSprite::                INCBIN "gfx/new_sprites/red_skate.2bpp"
+FTrainerSkateSprite::           INCBIN "gfx/new_sprites/ftrainer_skate.2bpp"
 
 GoldTrophySprite::              INCBIN "gfx/new_sprites/gold_trophy.2bpp"
 SlowpokeSprite::                INCBIN "gfx/new_sprites/slowpoke.2bpp"

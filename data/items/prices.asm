@@ -22,7 +22,7 @@ ItemPrices::
 	bcd3 300   ; POTION
 	bcd3 0     ; SAFARI_BAIT
 	bcd3 0     ; SAFARI_ROCK
-	bcd3 0     ; UNUSED_ITEM1
+	bcd3 0     ; SKATEBOARD
 	bcd3 0     ; UNUSED_ITEM2
 	bcd3 0     ; UNUSED_ITEM3
 	bcd3 0     ; UNUSED_ITEM4

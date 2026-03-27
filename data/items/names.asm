@@ -22,7 +22,7 @@ ItemNames::
 	li "POTION"
 	li "BAIT"
 	li "ROCK"
-	li "UNUSED1"
+	li "SKATEBOARD"
 	li "UNUSED2"
 	li "UNUSED3"
 	li "UNUSED4"

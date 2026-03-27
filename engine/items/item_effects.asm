@@ -39,7 +39,7 @@ ItemUsePtrTable:
 	dw ItemUseMedicine   ; POTION
 	dw ItemUseBait       ; SAFARI_BAIT
 	dw ItemUseRock       ; SAFARI_ROCK
-	dw UnusableItem      ; UNUSED_ITEM1
+	dw ItemUseBicycle    ; SKATEBOARD
 	dw UnusableItem      ; UNUSED_ITEM2
 	dw UnusableItem      ; UNUSED_ITEM3
 	dw UnusableItem      ; UNUSED_ITEM4
@@ -709,6 +709,9 @@ ItemUseBicycle:
 	ld a, [wIsInBattle]
 	and a
 	jp nz, ItemUseNotTime
+	ld a, [wCurItem]
+	cp SKATEBOARD
+	jr z, .useSkateboard
 	ld a, [wWalkBikeSurfState]
 	ld [wWalkBikeSurfStateCopy], a
 	cp 2 ; is the player surfing?
@@ -734,6 +737,31 @@ ItemUseBicycle:
 	call PlayDefaultMusic ; play bike riding music
 .printText
 	jp PrintText
+.useSkateboard
+	ld a, [wWalkBikeSurfState]
+	ld [wWalkBikeSurfStateCopy], a
+	cp 2 ; surfing?
+	jp z, ItemUseNotTime
+	cp 3 ; is player already on skate?
+	jr nz, .getOnSkate
+; get off skate
+	call ItemUseReloadOverworldData
+	xor a
+	ld [wWalkBikeSurfState], a
+	call PlayDefaultMusic
+	ld hl, GotOffBicycleText
+	jr .printText
+.getOnSkate
+	call IsBikeRidingAllowed
+	jp nc, NoCyclingAllowedHere
+	call ItemUseReloadOverworldData
+	xor a
+	ldh [hJoyHeld], a
+	ld a, 3
+	ld [wWalkBikeSurfState], a
+	call PlayDefaultMusic
+	ld hl, GotOnBicycleText
+	jr .printText
 
 ; indirectly used by SURF in StartMenu_Pokemon.surf
 ItemUseSurfboard:
@@ -1630,6 +1658,8 @@ ItemUseRocketSuit:
 	jp z, ItemUseNotTime
 	cp 1
 	jr z, .cannotWhileBiking
+	cp 3
+	jr z, .cannotWhileBiking
 	ld a, [wIsRocketSuit]
 	and a
 	jr nz, .takeOffSuit
@@ -1705,8 +1735,7 @@ TookOffRocketSuitText2::
 
 CannotUseWhileBikingText::
 	text "You can't change"
-	line "clothes while"
-	cont "riding a BIKE!"
+	line "clothes now!"
 	prompt
 	
 DoSinglePlayerSpin:

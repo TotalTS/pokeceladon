@@ -280,8 +280,12 @@ OverworldLoopLessDelay::
 	ld hl, wMiscFlags
 	res BIT_TURNING, [hl]
 	ld a, [wWalkBikeSurfState]
-	dec a ; riding a bike?
-	jr nz, .normalPlayerSpriteAdvancement
+	cp 1
+	jr z, .BikeandSkateMovement
+	cp 3
+	jr z, .BikeandSkateMovement
+	jr .normalPlayerSpriteAdvancement
+.BikeandSkateMovement
 	ld a, [wMovementFlags]
 	bit BIT_LEDGE_OR_FISHING, a
 	jr nz, .normalPlayerSpriteAdvancement
@@ -898,6 +902,8 @@ LoadPlayerSpriteGraphics::
 	jp z, LoadBikePlayerSpriteGraphics
 	dec a
 	jp z, LoadSurfingPlayerSpriteGraphics
+	dec a
+	jp z, LoadBikePlayerSpriteGraphics
 	jp LoadWalkingPlayerSpriteGraphics
 
 IsBikeRidingAllowed::
@@ -2079,6 +2085,9 @@ LoadSurfingPlayerSpriteGraphics::
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
+	ld a, [wWalkBikeSurfState]
+	cp 3
+	jr z, .LoadSkate
 	ld a, [wPlayerGender]
 	and a
 	jr z, .AreGuy2
@@ -2088,6 +2097,17 @@ LoadBikePlayerSpriteGraphics::
 .AreGuy2
 	ld b, BANK(RedBikeSprite)
 	ld de, RedBikeSprite
+	jr LoadPlayerSpriteGraphicsCommon
+.LoadSkate
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreGuySkate
+	ld b, BANK(FTrainerSkateSprite)
+	ld de, FTrainerSkateSprite
+	jr LoadPlayerSpriteGraphicsCommon
+.AreGuySkate
+	ld b, BANK(RedSkateSprite)
+	ld de, RedSkateSprite
 	jr LoadPlayerSpriteGraphicsCommon
 	
 LoadRocketMalePlayerSpriteGraphics::

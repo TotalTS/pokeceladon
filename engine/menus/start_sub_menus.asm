@@ -360,6 +360,8 @@ StartMenu_Item::
 	jp z, .useOrTossItem
 	cp ROCKET_SUIT
 	jp z, .useItem_closeMenu
+	cp SKATEBOARD
+	jp z, .useOrTossItem
 ; not Bicycle
 	ld a, USE_TOSS_MENU_TEMPLATE
 	ld [wTextBoxID], a
@@ -390,7 +392,11 @@ StartMenu_Item::
 	call CopyToStringBuffer
 	ld a, [wCurItem]
 	cp BICYCLE
-	jr nz, .notBicycle
+	jr z, .checkCyclingRoad
+	cp SKATEBOARD
+	jr z, .checkCyclingRoad
+	jr .notBicycle
+.checkCyclingRoad
 	ld a, [wStatusFlags6]
 	bit BIT_ALWAYS_ON_BIKE, a
 	jr z, .useItem_closeMenu
