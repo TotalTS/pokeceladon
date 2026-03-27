@@ -24,12 +24,13 @@ Features:
 - Nurse at Silph Co. 9F still heals you after beating Giovanni.
 - Mew under the truck.
 - New trainer classes Rookie and Yujirou. (From prototypes)
-- You can battle Yujirou before Brock at Route 22 Gate 2F. He will give you TM19 to make the battle easier if you have a Charmander as starter.
+- You can battle Yujirou before Brock at Route 22 Gate 2F. He will give you TM19 to make the battle against Brock easier if you have a Charmander as starter.
 - You can make Erik and Sara meet again at Safari Zone. Doing so will unlock free pass to it.
 - New Celadon University location, where you can get a Magikarp with Dragon Rage and a Celadon University Diploma.
 - You can have a Rocket Suit after beating the Nugget Bridge. (Optional) Use it to skip battles against the Team Rocket. You can also use it to catch enemy's Pokémon. (But it ends the battle instantly)
 - In Rock Tunnel, there's an NPC that uses FLASH for you without need to learn the HM.
 - Restored PC on Celadon Hotel.
+- Added USE/QUIT before throwing PokéBalls.
 
 Post game events:
 
@@ -77,6 +78,7 @@ Post game events:
 - New trainer class Rookie.
 - Press SELECT to switch Pokémon in your party menu.
 - Optimization on Home bank.
+- Move badge "item" definitions outside actual item list.
 
 **Mr. Cheeze**
 - Music: VS Mew.

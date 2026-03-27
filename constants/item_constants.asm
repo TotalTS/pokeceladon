@@ -27,17 +27,14 @@
 	const HYPER_POTION  ; $12
 	const SUPER_POTION  ; $13
 	const POTION        ; $14
-; badges use item IDs (see scripts/CeruleanBadgeHouse.asm)
-	const BOULDERBADGE  ; $15
-DEF SAFARI_BAIT EQU BOULDERBADGE ; overload
-	const CASCADEBADGE  ; $16
-DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
-	const THUNDERBADGE  ; $17
-	const RAINBOWBADGE  ; $18
-	const SOULBADGE     ; $19
-	const MARSHBADGE    ; $1A
-	const VOLCANOBADGE  ; $1B
-	const EARTHBADGE    ; $1C
+	const SAFARI_BAIT   ; $15
+	const SAFARI_ROCK   ; $16
+	const UNUSED_ITEM1  ; $17
+	const UNUSED_ITEM2  ; $18
+	const UNUSED_ITEM3  ; $19
+	const UNUSED_ITEM4  ; $1A
+	const UNUSED_ITEM5  ; $1B
+	const UNUSED_ITEM6  ; $1C
 	const ESCAPE_ROPE   ; $1D
 	const REPEL         ; $1E
 	const OLD_AMBER     ; $1F
@@ -126,6 +123,15 @@ DEF NUM_FLOORS EQU const_value - 1 - NUM_ITEMS
 	const HOME_CINNABAR_ITEM
 	const HOME_INDIGO_ITEM
 DEF NUM_HOME_ITEMS EQU const_value - NUM_FLOORS - NUM_ITEMS - 1
+
+	const BOULDERBADGE  ; $15
+	const CASCADEBADGE  ; $16
+	const THUNDERBADGE  ; $17
+	const RAINBOWBADGE  ; $18
+	const SOULBADGE     ; $19
+	const MARSHBADGE    ; $1A
+	const VOLCANOBADGE  ; $1B
+	const EARTHBADGE    ; $1C
 
 	const_next $C4
 
