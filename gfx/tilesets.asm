@@ -16,8 +16,6 @@ ShipPort_GFX::      INCBIN "gfx/tilesets/ship_port.2bpp"
 ShipPort_Block::    INCBIN "gfx/blocksets/ship_port.bst"
 Interior_GFX::      INCBIN "gfx/tilesets/interior.2bpp"
 Interior_Block::    INCBIN "gfx/blocksets/interior.bst"
-Plateau_GFX::       INCBIN "gfx/tilesets/plateau.2bpp"
-Plateau_Block::     INCBIN "gfx/blocksets/plateau.bst"
 
 
 SECTION "Tilesets 2", ROMX
@@ -67,4 +65,5 @@ SECTION "Tilesets 4", ROMX
 
 University_GFX::       INCBIN "gfx/tilesets/university.2bpp"
 University_Block::     INCBIN "gfx/blocksets/university.bst"
-
+Plateau_GFX::          INCBIN "gfx/tilesets/plateau.2bpp"
+Plateau_Block::        INCBIN "gfx/blocksets/plateau.bst"

@@ -1,7 +1,7 @@
 _ChampionsHouse1FMomText::
 	text "MOM: I'm so proud"
 	line "of you, <PLAYER>!"
-	cont "The CHAMPION'S"
+	cont "The CHAMPION's"
 	cont "house is so big!"
 	done
 
