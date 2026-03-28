@@ -15,6 +15,7 @@ Features:
 - New palettes.
 - New Super Gameboy border.
 - Gender selection.
+- Skateboard.
 - You can press SELECT to switch Pokémon in your party menu.
 - You can press B to move faster while walking, cycling, or swimming.
 - You can talk to use SURF, CUT, STRENGTH.

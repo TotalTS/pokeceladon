@@ -874,15 +874,11 @@ LoadPlayerSpriteGraphics::
 
 .notRocket
 	ld a, [wWalkBikeSurfState]
-	dec a
-	jr z, .ridingBike
-
-	ldh a, [hTileAnimations]
 	and a
-	jr nz, .determineGraphics
-	jr .startWalking
+	jr z, .startWalking
+	cp 2
+	jr z, .determineGraphics
 
-.ridingBike
 	; If the bike can't be used,
 	; start walking instead.
 	call IsBikeRidingAllowed

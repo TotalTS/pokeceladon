@@ -216,6 +216,11 @@ _NoCyclingAllowedHereText::
 	text "No cycling"
 	next "allowed here."
 	prompt
+	
+_NoSkatingAllowedHereText::
+	text "No skating"
+	next "allowed here."
+	prompt
 
 _NoSurfingHereText::
 	text "No SURFing on"

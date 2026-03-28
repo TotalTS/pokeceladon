@@ -753,7 +753,7 @@ ItemUseBicycle:
 	jr .printText
 .getOnSkate
 	call IsBikeRidingAllowed
-	jp nc, NoCyclingAllowedHere
+	jp nc, NoSkatingAllowedHere
 	call ItemUseReloadOverworldData
 	xor a
 	ldh [hJoyHeld], a
@@ -2535,6 +2535,10 @@ ThrowBallAtTrainerMon:
 NoCyclingAllowedHere:
 	ld hl, NoCyclingAllowedHereText
 	jr ItemUseFailed
+	
+NoSkatingAllowedHere:
+	ld hl, NoSkatingAllowedHereText
+	jr ItemUseFailed
 
 BoxFullCannotThrowBall:
 	ld hl, BoxFullCannotThrowBallText
@@ -2570,6 +2574,10 @@ ThrowBallAtTrainerMonText2:
 
 NoCyclingAllowedHereText:
 	text_far _NoCyclingAllowedHereText
+	text_end
+	
+NoSkatingAllowedHereText:
+	text_far _NoSkatingAllowedHereText
 	text_end
 
 NoSurfingHereText:
