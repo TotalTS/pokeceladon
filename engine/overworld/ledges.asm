@@ -59,28 +59,50 @@ HandleLedges::
 .isSkatingLedge
 	ld a, [wTileInFrontOfPlayer]
 	ld d, a
-	cp $37
-	jr z, .skateJump
-	cp $36
-	jr z, .skateJump
-	cp $27
-	jr z, .skateJump
-	cp $0D
-	jr z, .skateJump
-	cp $1D
-	jr z, .skateJump
+
+	cp $37 ; vertical
+	jr z, .checkVertical
+	cp $36 ; vertical
+	jr z, .checkVertical
+
+	cp $27 ; horizontal
+	jr z, .checkHorizontal
+	cp $0D ; horizontal
+	jr z, .checkHorizontal
+	cp $1D ; horizontal
+	jr z, .checkHorizontal
+
 	ret
-.skateJump
+
+.checkVertical
 	ld a, [wSpritePlayerStateData1FacingDirection]
-	and a
-	ld e, PAD_DOWN
-	jr z, .foundMatch
 	cp SPRITE_FACING_UP
-	ld e, PAD_UP
-	jr z, .foundMatch
+	jr z, .skateJumpUp
+	cp SPRITE_FACING_DOWN
+	jr z, .skateJumpDown
+	ret
+
+.checkHorizontal
+	ld a, [wSpritePlayerStateData1FacingDirection]
 	cp SPRITE_FACING_LEFT
+	jr z, .skateJumpLeft
+	cp SPRITE_FACING_RIGHT
+	jr z, .skateJumpRight
+	ret
+
+.skateJumpUp
+	ld e, PAD_UP
+	jr .foundMatch
+
+.skateJumpDown
+	ld e, PAD_DOWN
+	jr .foundMatch
+
+.skateJumpLeft
 	ld e, PAD_LEFT
-	jr z, .foundMatch
+	jr .foundMatch
+
+.skateJumpRight
 	ld e, PAD_RIGHT
 	jr .foundMatch
 
