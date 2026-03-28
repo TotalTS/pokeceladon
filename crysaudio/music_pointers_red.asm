@@ -50,4 +50,5 @@ Music:
 	dba Music_MeetFemaleTrainer
 	dba Music_MeetMaleTrainer
 	dba Music_MewBattle
+	dba Music_Skateboard
 	assert_table_length NUM_MUSIC_SONGS

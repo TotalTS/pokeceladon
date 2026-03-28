@@ -372,6 +372,7 @@ INCLUDE "crysaudio/music/RBY/surfingpikachu.asm"
 INCLUDE "crysaudio/music/RBY/yellowunusedsong.asm"
 INCLUDE "crysaudio/music/RBY/meetjessiejames.asm"
 INCLUDE "crysaudio/music/RBY/mewbattle.asm"
+INCLUDE "crysaudio/music/RBY/skateboard.asm"
 
 
 SECTION "TCG Songs 1", ROMX
