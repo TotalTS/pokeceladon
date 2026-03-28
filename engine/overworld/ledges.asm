@@ -6,6 +6,9 @@ HandleLedges::
 	and a ; OVERWORLD
 	ret nz
 	predef GetTileAndCoordsInFrontOfPlayer
+	ld a, [wWalkBikeSurfState]
+	cp 3
+	jr z, .isSkatingLedge
 	ld a, [wSpritePlayerStateData1FacingDirection]
 	ld b, a
 	lda_coord 8, 9
@@ -53,6 +56,33 @@ HandleLedges::
 	ld a, SFX_LEDGE
 	call PlaySound
 	ret
+.isSkatingLedge
+	ld a, [wTileInFrontOfPlayer]
+	ld d, a
+	cp $37
+	jr z, .skateJump
+	cp $36
+	jr z, .skateJump
+	cp $27
+	jr z, .skateJump
+	cp $0D
+	jr z, .skateJump
+	cp $1D
+	jr z, .skateJump
+	ret
+.skateJump
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	and a
+	ld e, PAD_DOWN
+	jr z, .foundMatch
+	cp SPRITE_FACING_UP
+	ld e, PAD_UP
+	jr z, .foundMatch
+	cp SPRITE_FACING_LEFT
+	ld e, PAD_LEFT
+	jr z, .foundMatch
+	ld e, PAD_RIGHT
+	jr .foundMatch
 
 INCLUDE "data/tilesets/ledge_tiles.asm"
 
