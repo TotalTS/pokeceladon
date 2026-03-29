@@ -17,7 +17,7 @@ Features:
 - Gender selection.
 - New item Skateboard, use it to go as fast as Bike and jump ledges in reverse.
 - You can press SELECT to switch Pokémon in your party menu.
-- You can press B to move faster while walking, cycling, or swimming.
+- You can press B to move faster while walking, cycling, skating, or swimming.
 - You can talk to use SURF, CUT, STRENGTH.
 - You can have all starters like in Pokémon Yellow.
 - Lapras and Pikachu have unique sprites for SURF.
@@ -93,6 +93,7 @@ Post game events:
 
 **Dannye**
 - Surf with Lapras, Seel, Pikachu.
+- Crystal Tracker was used to make the new Skateboard theme.
 
 **PokefanMarcel**
 - Now on Champion's House you can have random visits. (this code is based on MtMoonSquare_Script on his hack yumepokered)
