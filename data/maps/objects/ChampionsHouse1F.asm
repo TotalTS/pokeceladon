@@ -14,7 +14,6 @@ ChampionsHouse1F_Object:
 	warp_event  7,  1, CHAMPIONS_HOUSE_2F, 1
 
 	def_bg_events
-	bg_event  3,  1, TEXT_CHAMPIONSHOUSE1F_TV
 
 	def_object_events
 	object_event  2,  4, SPRITE_DAISY, STAY, RIGHT, TEXT_CHAMPIONSHOUSE1F_DAISY

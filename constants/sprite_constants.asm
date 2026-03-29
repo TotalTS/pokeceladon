@@ -88,6 +88,9 @@
 	const SPRITE_MOLTRES                 ; new
 	const SPRITE_FIGHTER_MACHOP          ; new
 	const SPRITE_MEWTWO                  ; new
+	const SPRITE_DOLL_SET_1              ; new
+	const SPRITE_DOLL_SET_2              ; new
+	const SPRITE_DOLL_SET_3              ; new
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e

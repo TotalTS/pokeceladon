@@ -93,6 +93,9 @@ SpriteSheetPointerTable:
 	overworld_sprite MoltresSprite, 12          ; new
 	overworld_sprite FighterMachopSprite, 12    ; new
 	overworld_sprite MewtwoSprite, 12           ; new
+	overworld_sprite DollSet1Sprite, 12         ; new
+	overworld_sprite DollSet2Sprite, 12         ; new
+	overworld_sprite DollSet3Sprite, 12         ; new
 	overworld_sprite PokeBallSprite, 4          ; SPRITE_POKE_BALL
 	overworld_sprite FossilSprite, 4            ; SPRITE_FOSSIL
 	overworld_sprite BoulderSprite, 4           ; SPRITE_BOULDER

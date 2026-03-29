@@ -65,7 +65,7 @@ HiddenEventMaps:
 	hidden_event_map POKEMON_MANSION_3F
 	hidden_event_map ROUTE_23
 	hidden_event_map VICTORY_ROAD_2F
-;	hidden_event_map UNUSED_MAP_6F
+	hidden_event_map CHAMPIONS_HOUSE_2F
 	hidden_event_map BILLS_HOUSE
 	hidden_event_map VIRIDIAN_CITY
 	hidden_event_map SAFARI_ZONE_WEST_REST_HOUSE
@@ -480,9 +480,9 @@ DEF ANY_FACING EQU $d0
 	hidden_event 26,  7, HiddenItems, FULL_RESTORE
 	db -1 ; end
 
-;	hidden_events_for UNUSED_MAP_6F
-;	hidden_event 14, 11, HiddenItems, MAX_ELIXER
-;	db -1 ; end
+	hidden_events_for CHAMPIONS_HOUSE_2F
+	hidden_event  0,  1, OpenPokemonCenterPC, SPRITE_FACING_UP
+	db -1 ; end
 
 	hidden_events_for BILLS_HOUSE
 	hidden_event  1, 18, BillsHousePC, SPRITE_FACING_UP

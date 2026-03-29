@@ -7,29 +7,20 @@ ChampionsHouse2F_Script:
 ChampionsHouse2F_ScriptPointers:
 	def_script_pointers
 	dw_const ChampionsHouse2FDefaultScript, SCRIPT_CHAMPIONSHOUSE2F_DEFAULT
-	dw_const ChampionsHouse2FNoopScript,    SCRIPT_CHAMPIONSHOUSE2F_NOOP
 
 ChampionsHouse2FDefaultScript:
-	xor a
-	ldh [hJoyHeld], a
-	ld a, PLAYER_DIR_UP
-	ld [wPlayerMovingDirection], a
-	ld a, SCRIPT_CHAMPIONSHOUSE2F_NOOP
-	ld [wChampionsHouse2FCurScript], a
-	ret
-
-ChampionsHouse2FNoopScript:
+	ld hl, wStatusFlags3
+	set BIT_NO_NPC_FACE_PLAYER, [hl]
 	ret
 
 ChampionsHouse2F_TextPointers:
 	def_text_pointers
-	dw_const ChampionsHouse2FCupText,          TEXT_CHAMPIONSHOUSE2F_CUP
-	dw_const ChampionsHouse2FPikachuDollText,  TEXT_CHAMPIONSHOUSE2F_PIKACHUDOLL
-	dw_const ChampionsHouse2FPC,               TEXT_CHAMPIONSHOUSE2F_PC
-	dw_const ChampionsHouse2FSNES,             TEXT_CHAMPIONSHOUSE2F_SNES
-
-ChampionsHouse2FPC:
-	db TX_SCRIPT_POKECENTER_PC
+	dw_const ChampionsHouse2FCupText,             TEXT_CHAMPIONSHOUSE2F_CUP
+	dw_const ChampionsHouse2FPikachuDollText,     TEXT_CHAMPIONSHOUSE2F_PIKACHUDOLL
+	dw_const ChampionsHouse2FCharmanderDollText,  TEXT_CHAMPIONSHOUSE2F_CHARMANDERDOLL
+	dw_const ChampionsHouse2FSquirtleDollText,    TEXT_CHAMPIONSHOUSE2F_SQUIRTLEDOLL
+	dw_const ChampionsHouse2FBulbasaurDollText,   TEXT_CHAMPIONSHOUSE2F_BULBASAURDOLL
+	dw_const ChampionsHouse2FSNES,                TEXT_CHAMPIONSHOUSE2F_SNES
 
 ChampionsHouse2FSNES:
 	text_far _RedBedroomSNESText
@@ -41,4 +32,16 @@ ChampionsHouse2FCupText:
 
 ChampionsHouse2FPikachuDollText:
 	text_far _ChampionsHouse2FPikachuDollText
+	text_end
+
+ChampionsHouse2FCharmanderDollText:
+	text_far _FuchsiaCityPokemonText
+	text_end
+
+ChampionsHouse2FSquirtleDollText:
+	text_far _FuchsiaCityPokemonText
+	text_end
+
+ChampionsHouse2FBulbasaurDollText:
+	text_far _FuchsiaCityPokemonText
 	text_end
