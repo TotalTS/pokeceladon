@@ -15,7 +15,7 @@ Features:
 - New palettes.
 - New Super Gameboy border.
 - Gender selection.
-- Skateboard.
+- New item Skateboard, use it to go as fast as Bike and jump ledges in reverse.
 - You can press SELECT to switch Pokémon in your party menu.
 - You can press B to move faster while walking, cycling, or swimming.
 - You can talk to use SURF, CUT, STRENGTH.
@@ -40,6 +40,7 @@ Post game events:
 - New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 East/West, Route 0 East/West, Route 21 East/West.
 - At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19) You will receive random visits every time you enter.
 - At your new home, Bill will visit you randomly and give you access to Bill's Garden. There's also a low chance that a Pidgey spawns on the house near the stairs, it will give you some random gifts.
+- Before visiting Bill's Garden, you can search for a Long House at Route 25, where you can get the Skateboard.
 - Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
 - If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
 

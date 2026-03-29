@@ -18,6 +18,7 @@ Route25_Object:
 	warp_event 48,  4, BILLS_HOUSE, 3
 	warp_event 45,  2, BILLS_HOUSE, 4
 	warp_event 46,  2, BILLS_HOUSE, 4
+	warp_event 17, 33, ROUTE_25_LONG_HOUSE, 1
 
 	def_bg_events
 	bg_event 43,  5, TEXT_ROUTE25_BILL_SIGN

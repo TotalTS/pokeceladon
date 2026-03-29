@@ -159,6 +159,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	end_indoor_group ROUTE_12
 
 	map_const BILLS_HOUSE,                    8, 11 ; $58
+	map_const ROUTE_25_LONG_HOUSE,           16,  4 ; $new
 	end_indoor_group SEA_COTTAGE
 
 	map_const VERMILION_POKECENTER,           7,  4 ; $59
@@ -195,7 +196,6 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	end_indoor_group MYSTERY_CAVE
 
 	map_const LANCES_ROOM,                   13, 13 ; $71
-	map_const UNUSED_MAP_73,                  0,  0 ; $73
 	map_const UNUSED_MAP_74,                  0,  0 ; $74
 	map_const UNUSED_MAP_75,                  0,  0 ; $75
 	map_const HALL_OF_FAME,                   5,  4 ; $76

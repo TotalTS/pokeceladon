@@ -97,6 +97,7 @@ MapHeaderBanks::
 	db BANK(Route11Gate2F_h)
 	db BANK(Route12Gate1F_h)
 	db BANK(BillsHouse_h)
+	db BANK(Route25LongHouse_h)
 	db BANK(VermilionPokecenter_h)
 	db BANK(PokemonFanClub_h)
 	db BANK(VermilionMart_h)
@@ -119,7 +120,6 @@ MapHeaderBanks::
 	db BANK(VictoryRoad1F_h)
 	db BANK(MysteryCave_h)
 	db BANK(LancesRoom_h)
-	db $1D ; UNUSED_MAP_73
 	db $1D ; UNUSED_MAP_74
 	db $1D ; UNUSED_MAP_75
 	db BANK(HallOfFame_h)

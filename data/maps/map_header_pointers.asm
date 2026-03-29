@@ -97,6 +97,7 @@ MapHeaderPointers::
 	dw Route11Gate2F_h
 	dw Route12Gate1F_h
 	dw BillsHouse_h
+	dw Route25LongHouse_h
 	dw VermilionPokecenter_h
 	dw PokemonFanClub_h
 	dw VermilionMart_h
@@ -119,7 +120,6 @@ MapHeaderPointers::
 	dw VictoryRoad1F_h
 	dw MysteryCave_h
 	dw LancesRoom_h
-	dw LancesRoom_h ; UNUSED_MAP_73
 	dw LancesRoom_h ; UNUSED_MAP_74
 	dw LancesRoom_h ; UNUSED_MAP_75
 	dw HallOfFame_h
