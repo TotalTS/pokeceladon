@@ -37,3 +37,25 @@ GymStatueText1::
 GymStatueText2::
 	text_far _GymStatueText2
 	text_end
+
+PrintMagikarpStatue1Text:
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	cp SPRITE_FACING_UP
+	ret nz
+	call EnableAutoTextBoxDrawing
+	tx_pre_jump MagikarpStatue1Text
+
+MagikarpStatue1Text::
+	text_far _CeladonUniversitySignText
+	text_end
+	
+PrintMagikarpStatue2Text:
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	cp SPRITE_FACING_UP
+	ret nz
+	call EnableAutoTextBoxDrawing
+	tx_pre_jump MagikarpStatue2Text
+	
+MagikarpStatue2Text::
+	text_far _CeladonUniversitySignText2
+	text_end

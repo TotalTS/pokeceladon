@@ -12,3 +12,14 @@ OpenRedsPC:
 
 RedBedroomPCText::
 	script_players_pc
+
+PrintChampionCupText:
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	cp SPRITE_FACING_UP
+	ret nz
+	call EnableAutoTextBoxDrawing
+	tx_pre_jump ChampionsHouseCupText
+
+ChampionsHouseCupText::
+	text_far _ChampionsHouse2FCupText
+	text_end

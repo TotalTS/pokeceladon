@@ -92,6 +92,7 @@ HiddenEventMaps:
 	hidden_event_map VERMILION_CITY
 	hidden_event_map CERULEAN_CITY
 	hidden_event_map ROUTE_4
+	hidden_event_map CELADON_UNIVERSITY
 	db -1 ; end
 
 HiddenEventPointers:
@@ -482,6 +483,8 @@ DEF ANY_FACING EQU $d0
 
 	hidden_events_for CHAMPIONS_HOUSE_2F
 	hidden_event  0,  1, OpenPokemonCenterPC, SPRITE_FACING_UP
+	hidden_event  2,  1, PrintChampionCupText, SPRITE_FACING_UP
+	hidden_event  2,  5, PrintRedSNESText, ANY_FACING
 	db -1 ; end
 
 	hidden_events_for BILLS_HOUSE
@@ -596,4 +599,8 @@ DEF ANY_FACING EQU $d0
 
 	hidden_events_for ROUTE_4
 	hidden_event 40,  3, HiddenItems, GREAT_BALL
+	
+	hidden_events_for CELADON_UNIVERSITY
+	hidden_event 3, 13, PrintMagikarpStatue1Text, SPRITE_FACING_UP
+	hidden_event 6, 13, PrintMagikarpStatue2Text, SPRITE_FACING_UP
 	db -1 ; end

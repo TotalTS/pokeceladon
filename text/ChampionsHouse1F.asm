@@ -115,19 +115,6 @@ _ChampionsHouse1FBirdDoneText::
 	text "PIDGEY looks"
 	line "happy now!"
 	done
-
-_ChampionsHouse1FTVStandByMeMovieText::
-	text "There's a movie"
-	line "on TV. Four boys"
-	cont "are walking on"
-	cont "railroad tracks."
-
-	para "I better go too."
-	done
-
-_ChampionsHouse1FTVWrongSideText::
-	text "Oops, wrong side."
-	done
 	
 _ChampionsHouse2FCupText::
 	text "The #MON LEAGUE"
@@ -147,6 +134,11 @@ _ChampionsHouse2FPikachuDollText::
 	para "Only League"
 	line "CHAMPIONS can"
 	cont "afford this!"
+	done
+	
+_ChampionsHouse2FGameboyText::
+	text "A brand new"
+	line "GAMEBOY!"
 	done
 
 _ChampionsHouse1FRivalText::
