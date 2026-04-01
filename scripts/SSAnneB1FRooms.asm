@@ -21,9 +21,6 @@ SSAnneB1FRoomsPostGameToggle:
 	ld a, TOGGLE_SS_ANNE_B1F_ROOMS_SUPER_NERD
 	ld [wToggleableObjectIndex], a
 	predef HideObject
-	ld a, TOGGLE_SS_ANNE_B1F_ROOMS_MACHOKE
-	ld [wToggleableObjectIndex], a
-	predef HideObject
 
 	ld a, TOGGLE_SS_ANNE_B1F_ROOMS_ROOKIE1
 	ld [wToggleableObjectIndex], a

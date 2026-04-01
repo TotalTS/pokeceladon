@@ -224,25 +224,20 @@ ENDM
 	const TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE2
 	const TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE3
 	const TOGGLE_SS_ANNE_1F_ROOMS_GIRL1
-	const TOGGLE_SS_ANNE_1F_ROOMS_GENTLEMAN3
 	const TOGGLE_SS_ANNE_1F_ROOMS_ITEM         ; 72 X
 
 	toggle_consts_for SS_ANNE_2F_ROOMS
 	const TOGGLE_SS_ANNE_2F_ROOMS_ROOKIE1
 	const TOGGLE_SS_ANNE_2F_ROOMS_ROOKIE2
-	const TOGGLE_SS_ANNE_2F_ROOMS_GENTLEMAN3
 	const TOGGLE_SS_ANNE_2F_ROOMS_ITEM_1       ; 73 X
 	const TOGGLE_SS_ANNE_2F_ROOMS_GENTLEMAN4
 	const TOGGLE_SS_ANNE_2F_ROOMS_GRAMPS
 	const TOGGLE_SS_ANNE_2F_ROOMS_ITEM_2       ; 74 X
-	const TOGGLE_SS_ANNE_2F_ROOMS_GENTLEMAN5
-	const TOGGLE_SS_ANNE_2F_ROOMS_LITTLE_BOY
 
 	toggle_consts_for SS_ANNE_B1F_ROOMS
 	const TOGGLE_SS_ANNE_B1F_ROOMS_ROOKIE1
 	const TOGGLE_SS_ANNE_B1F_ROOMS_ROOKIE2
 	const TOGGLE_SS_ANNE_B1F_ROOMS_SUPER_NERD
-	const TOGGLE_SS_ANNE_B1F_ROOMS_MACHOKE
 	const TOGGLE_SS_ANNE_B1F_ROOMS_ITEM_1      ; 75 X
 	const TOGGLE_SS_ANNE_B1F_ROOMS_ITEM_2      ; 76 X
 	const TOGGLE_SS_ANNE_B1F_ROOMS_ITEM_3      ; 77 X
@@ -285,7 +280,6 @@ ENDM
 	const TOGGLE_ROCKET_HIDEOUT_B4F_ITEM_5     ; 88
 
 	toggle_consts_for SILPH_CO_2F
-	const TOGGLE_SILPH_CO_2F_1                 ; 89 XXX never (de)activated?
 	const TOGGLE_SILPH_CO_2F_2                 ; 8A
 	const TOGGLE_SILPH_CO_2F_3                 ; 8B
 	const TOGGLE_SILPH_CO_2F_4                 ; 8C
@@ -328,7 +322,6 @@ ENDM
 	const TOGGLE_SILPH_CO_7F_RIVAL             ; A7
 	const TOGGLE_SILPH_CO_7F_ITEM_1            ; A8 X
 	const TOGGLE_SILPH_CO_7F_ITEM_2            ; A9 X
-;	const TOGGLE_SILPH_CO_7F_8                 ; AA XXX sprite doesn't exist
 
 	toggle_consts_for SILPH_CO_8F
 	const TOGGLE_SILPH_CO_8F_1                 ; AB
@@ -343,7 +336,6 @@ ENDM
 	toggle_consts_for SILPH_CO_10F
 	const TOGGLE_SILPH_CO_10F_1                ; B1
 	const TOGGLE_SILPH_CO_10F_2                ; B2
-	const TOGGLE_SILPH_CO_10F_3                ; B3 XXX never (de)activated?
 	const TOGGLE_SILPH_CO_10F_ITEM_1           ; B4 X
 	const TOGGLE_SILPH_CO_10F_ITEM_2           ; B5 X
 	const TOGGLE_SILPH_CO_10F_ITEM_3           ; B6 X
@@ -354,7 +346,7 @@ ENDM
 	const TOGGLE_SILPH_CO_11F_3                ; B9
 
 	toggle_consts_for CERULEAN_TRADE_HOUSE
-	const TOGGLE_CERULEAN_BULBASAUR            ; BA XXX sprite doesn't exist
+	const TOGGLE_CERULEAN_BULBASAUR            ; BA
 
 	toggle_consts_for POKEMON_MANSION_2F
 	const TOGGLE_POKEMON_MANSION_2F_ITEM       ; BB X

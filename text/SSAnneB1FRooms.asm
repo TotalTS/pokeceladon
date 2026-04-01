@@ -160,4 +160,18 @@ _SSAnneB1FRoomsRookie2AfterBattleText::
 	text "Someday, I'll be"
 	line "the one everyone"
 	cont "wants to battle!"
+	
+	para "Anyways, nobody's"
+	line "gonna talk about"
+	cont "the MACHOKE in"
+	cont "the room?"
+	
+	para "I don't know"
+	line "what it's even"
+	cont "doing here!"
+	
+	para "Just kidding..."
+	
+	para "It's my cousin's"
+	line "MACHOKE."
 	done

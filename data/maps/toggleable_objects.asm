@@ -251,25 +251,20 @@ ToggleableObjectStates:
 	toggle_object_state SSANNE1FROOMS_ROOKIE2,          OFF
 	toggle_object_state SSANNE1FROOMS_ROOKIE3,          OFF
 	toggle_object_state SSANNE1FROOMS_GIRL1,            ON
-	toggle_object_state SSANNE1FROOMS_GENTLEMAN3,       ON
 	toggle_object_state SSANNE1FROOMS_TM_BODY_SLAM,     ON
 
 	toggleable_objects_for SS_ANNE_2F_ROOMS
 	toggle_object_state SSANNE2FROOMS_ROOKIE1,     OFF
 	toggle_object_state SSANNE2FROOMS_ROOKIE2,     OFF
-	toggle_object_state SSANNE2FROOMS_GENTLEMAN3,  ON
 	toggle_object_state SSANNE2FROOMS_MAX_ETHER,   ON
 	toggle_object_state SSANNE2FROOMS_GENTLEMAN4,  ON
 	toggle_object_state SSANNE2FROOMS_GRAMPS,      ON
 	toggle_object_state SSANNE2FROOMS_RARE_CANDY,  ON
-	toggle_object_state SSANNE2FROOMS_GENTLEMAN5,  ON
-	toggle_object_state SSANNE2FROOMS_LITTLE_BOY,  ON
 
 	toggleable_objects_for SS_ANNE_B1F_ROOMS
 	toggle_object_state SSANNEB1FROOMS_ROOKIE1,    OFF
 	toggle_object_state SSANNEB1FROOMS_ROOKIE2,    OFF
 	toggle_object_state SSANNEB1FROOMS_SUPER_NERD, ON
-	toggle_object_state SSANNEB1FROOMS_MACHOKE,    ON
 	toggle_object_state SSANNEB1FROOMS_ETHER,      ON
 	toggle_object_state SSANNEB1FROOMS_TM_REST,    ON
 	toggle_object_state SSANNEB1FROOMS_MAX_POTION, ON
@@ -312,7 +307,6 @@ ToggleableObjectStates:
 	toggle_object_state ROCKETHIDEOUTB4F_LIFT_KEY,      OFF
 
 	toggleable_objects_for SILPH_CO_2F
-	toggle_object_state SILPHCO2F_SILPH_WORKER_F, ON
 	toggle_object_state SILPHCO2F_SCIENTIST1,     ON
 	toggle_object_state SILPHCO2F_SCIENTIST2,     ON
 	toggle_object_state SILPHCO2F_ROCKET1,        ON
@@ -355,7 +349,6 @@ ToggleableObjectStates:
 	toggle_object_state SILPHCO7F_RIVAL,           ON
 	toggle_object_state SILPHCO7F_CALCIUM,         ON
 	toggle_object_state SILPHCO7F_TM_SWORDS_DANCE, ON
-;	toggle_object_state SILPHCO7F_UNUSED,          ON
 
 	toggleable_objects_for SILPH_CO_8F
 	toggle_object_state SILPHCO8F_ROCKET1,   ON
@@ -370,7 +363,6 @@ ToggleableObjectStates:
 	toggleable_objects_for SILPH_CO_10F
 	toggle_object_state SILPHCO10F_ROCKET,         ON
 	toggle_object_state SILPHCO10F_SCIENTIST,      ON
-	toggle_object_state SILPHCO10F_SILPH_WORKER_F, ON
 	toggle_object_state SILPHCO10F_TM_EARTHQUAKE,  ON
 	toggle_object_state SILPHCO10F_RARE_CANDY,     ON
 	toggle_object_state SILPHCO10F_CARBOS,         ON
@@ -381,7 +373,7 @@ ToggleableObjectStates:
 	toggle_object_state SILPHCO11F_ROCKET2,  ON
 
 	toggleable_objects_for CERULEAN_TRADE_HOUSE
-	toggle_object_state CERULEANTRADEHOUSE_BULBASAUR, ON ; unused
+	toggle_object_state CERULEANTRADEHOUSE_BULBASAUR, ON
 
 	toggleable_objects_for POKEMON_MANSION_2F
 	toggle_object_state POKEMONMANSION2F_CALCIUM, ON
