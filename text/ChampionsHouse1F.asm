@@ -31,13 +31,52 @@ _ChampionsHouse1FDaisyText::
 	cont "<RIVAL>'s room!"
 	
 	para "I brought some"
-	line "TEA, but you"
-	cont "weren't home."
+	line "TEA for you."
 	
-	para "Remember to rest"
-	line "with your #MON"
-	cont "once in a while!"
+	para "Do you want to"
+	line "share a cup"
+	cont "together?"
 	done
+	
+_ChampionsHouse1FDaisy2Text::
+	text "<PLAYER>"
+	line "shared a cup"
+	cont "of TEA with"
+	cont "DAISY!"
+	prompt
+	
+_ChampionsHouse1FDaisy3Text::
+	text "DAISY: Oh, I"
+	line "understand. You"
+	cont "must be very"
+	cont "busy today."
+
+	para "The TEA will be"
+	line "here if you"
+	cont "change your mind!"
+	done
+	
+_ChampionsHouse1FDaisy4Text::
+	text "That was very"
+	line "relaxing!"
+
+	para "Your #MON are"
+	line "feeling much"
+	cont "better now!"
+	done
+	
+_ChampionsHouse1FDaisy5Text::
+	text "DAISY: You look"
+	line "more rested now!"
+	
+	para "Don't forget to"
+	line "take breaks"
+	cont "like this."
+	
+	para "Your #MON"
+	line "need them too!"
+	done
+
 	
 _ChampionsHouse1FBillText::
 	text "BILL: Golly!"

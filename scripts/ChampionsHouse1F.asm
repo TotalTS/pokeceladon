@@ -6,6 +6,7 @@ ChampionsHouse1F_Script:
 	ret z
 
 	ResetEvent EVENT_GOT_CHAMPIONS_HOUSE_BIRD_GIFT
+	ResetEvent EVENT_DRINK_TEA_WITH_DAISY
 	call Random
 	cp 50
 	ld a, TOGGLE_CHAMPIONSHOUSE1F_DAISY
@@ -79,10 +80,87 @@ ChampionsHouse1FMomText:
 ChampionsHouse1FOakText:
 	text_far _ChampionsHouse1FOakText
 	text_end
-	
+
+; In PureRGB there's a similar feature made by Vortyne, this ispired me to make my own with a different approach
 ChampionsHouse1FDaisyText:
+	text_asm
+	CheckEvent EVENT_DRINK_TEA_WITH_DAISY
+	jr nz, .alreadyDrinkTea
+	
+	ld hl, .ChampionsHouse1FDaisyText
+	call PrintText
+
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refusedTeaText
+
+	SetEvent EVENT_DRINK_TEA_WITH_DAISY
+
+	ld a, $16
+	ld [wNewTileBlockID], a
+	lb bc, 2, 1
+	predef ReplaceTileBlock
+
+	ld a, PLAYER_DIR_RIGHT
+	ld [wPlayerMovingDirection], a
+	ld a, SPRITE_FACING_RIGHT
+	ldh [hSpriteFacingDirection], a
+	ld a, 1
+	ldh [hSpriteIndex], a
+	call SetSpriteFacingDirectionAndDelay
+	ld hl, .ChampionsHouse1FDaisy2Text
+	call PrintText
+	ld a, [wLastMusicSoundID]
+	ld e, a
+	push de
+	call GBFadeOutToWhite
+	call ReloadMapData
+	predef HealParty
+	ld a, MUSIC_PKMN_HEALED
+	call PlayMusic
+	call WaitForSongToFinish
+	pop de
+	ld a, e
+	ld [wLastMusicSoundID], a
+	call PlayMusic
+	call GBFadeInFromWhite
+	ld hl, .ChampionsHouse1FDaisy4Text
+	call PrintText	
+	jr .exit
+	
+.ChampionsHouse1FDaisyText
 	text_far _ChampionsHouse1FDaisyText
 	text_end
+	
+.ChampionsHouse1FDaisy2Text
+	text_far _ChampionsHouse1FDaisy2Text
+	text_end
+	
+.refusedTeaText
+	ld hl, .ChampionsHouse1FDaisy3Text
+	call PrintText
+	jr .exit
+	
+.ChampionsHouse1FDaisy3Text
+	text_far _ChampionsHouse1FDaisy3Text
+	text_end
+	
+.ChampionsHouse1FDaisy4Text
+	text_far _ChampionsHouse1FDaisy4Text
+	text_end
+
+.alreadyDrinkTea
+	ld hl, .ChampionsHouse1FDaisy5Text
+	call PrintText
+	jr .exit
+
+.ChampionsHouse1FDaisy5Text
+	text_far _ChampionsHouse1FDaisy5Text
+	text_end
+
+.exit
+	jp TextScriptEnd
 	
 ChampionsHouse1FBillText:
 	text_asm

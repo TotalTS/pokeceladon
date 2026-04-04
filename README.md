@@ -40,6 +40,7 @@ Post game events:
 - New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 East/West, Route 0 East/West, Route 21 East/West.
 - At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19) You will receive random visits every time you enter.
 - At your new home, on your new room, you can arrange the displayed dolls at the table interacting with a Gameboy. (It's experimental for now)
+- At your new home, Daisy will visit you randomly and share a cup of tea with you. This is a way to restore your Pokémon's health if needed. The original idea was made by Vortyne on PureRGB.
 - At your new home, Bill will visit you randomly and give you access to Bill's Garden. There's also a low chance that a Pidgey spawns on the house near the stairs, it will give you some random gifts.
 - Before visiting Bill's Garden, you can search for a Long House at Route 25, where you can get the Skateboard.
 - Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
@@ -85,6 +86,7 @@ Post game events:
 - Press SELECT to switch Pokémon in your party menu.
 - Optimization on Home bank.
 - Move badge "item" definitions outside actual item list.
+- Original idea of drinking tea with Daisy.
 
 **Mr. Cheeze**
 - Music: VS Mew.
