@@ -2111,8 +2111,13 @@ wSurfingPokemonID:: db
 wPlayerGender:: db
 	; $00 = male
 	; $01 = female
-
-	ds 8
+wDoll1Facing:: db
+wDoll2Facing:: db
+wDoll3Facing:: db
+wDoll1Index:: db
+wDoll2Index:: db
+wDoll3Index:: db
+	ds 2
 
 wTownVisitedFlag:: flag_array NUM_CITY_MAPS
 
@@ -2124,9 +2129,7 @@ wFossilItem:: db
 ; mon that will result from the item
 wFossilMon:: db
 
-wSelectedDoll:: db
-
-	ds 1
+	ds 2
 
 ; trainer classes start at OPP_ID_OFFSET
 wEnemyMonOrTrainerClass:: db
@@ -2164,7 +2167,12 @@ wWhichDungeonWarp:: db
 
 wUnusedCardKeyGateID:: db
 
-	ds 8
+wSelectedDoll:: db
+wSelectedDollSet::   db
+wSelectedDollOption:: db
+wSelectedDollIndex:: db
+
+	ds 4
 
 wStatusFlags1:: db
 	ds 1
@@ -2261,6 +2269,16 @@ wOpponentAfterWrongAnswer:: db
 wCurMapScript:: db
 
 	ds 7
+	
+; wanted to do a new sort of RTC synchronized with the PC with lua scripting, but it might be done later
+
+;wRTCHour::   db ; Hour (0-23)
+;wRTCMinute:: db ; Minute (0-59)
+;wRTCSecond:: db ; Second (0-59)
+;wRTCDay::    db ; Day (1-31)
+;wRTCMonth::  db ; Month (1-12)
+;wRTCYear::   db ; Year (0-99)
+;wRTCDayOfWeek:: db ; Day of the Week (Monday, Tuesday, etc.)
 
 wPlayTimeHours:: db
 wPlayTimeMaxed:: db

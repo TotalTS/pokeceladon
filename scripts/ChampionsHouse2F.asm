@@ -11,6 +11,12 @@ ChampionsHouse2F_ScriptPointers:
 ChampionsHouse2FDefaultScript:
 	ld hl, wStatusFlags3
 	set BIT_NO_NPC_FACE_PLAYER, [hl]
+	CheckEvent EVENT_USED_DOLL_SWAP
+	jr z, .done
+	call RestoreDollFacings
+	ret
+	
+.done
 	ret
 
 ChampionsHouse2F_TextPointers:
@@ -360,9 +366,10 @@ ChampionsHouse2FGameboyText:
 	call ShowGenericDollMenu
 	jr c, .cancel
 
-	ld c, a ; store the selected option in 'c'
-	pop hl ; retrieve SET into 'hl' (h = SET) to avoid overwriting 'c'
-	ld b, h ; b = SET
+	ld [wSelectedDollOption], a
+	pop bc
+	ld a, b
+	ld [wSelectedDollSet], a
 	call ApplyDollSelection
 	jr .exit
 
@@ -384,9 +391,33 @@ ChampionsHouse2FGameboyText:
 	text_end
 
 ApplyDollSelection:
-	; b = set (0-2), c = option (0-2)
-	push bc
+	ld a, [wSelectedDollSet]
+	ld b, a
+	ld a, [wSelectedDollOption]
+	ld c, a
 
+	ld a, [wSelectedDoll]
+	cp 0
+	jr z, .saveDoll1
+	cp 1
+	jr z, .saveDoll2
+	jr .saveDoll3
+
+.saveDoll1
+	ld a, c
+	ld [wDoll1Facing], a
+	jr .saveDone
+
+.saveDoll2
+	ld a, c
+	ld [wDoll2Facing], a
+	jr .saveDone
+
+.saveDoll3
+	ld a, c
+	ld [wDoll3Facing], a
+
+.saveDone
 	ld a, [wSelectedDoll]
 	and a
 	jr z, .hideDoll1
@@ -426,10 +457,10 @@ ApplyDollSelection:
 	ld [wToggleableObjectIndex], a
 	predef HideObject
 .hideDone
-
-	pop bc
-	push bc ; preserve set + option
-	
+	ld a, [wSelectedDollSet]
+	ld b, a
+	ld a, [wSelectedDollOption]
+	ld c, a
 	; a = (doll * 3) + set
 	ld a, [wSelectedDoll]
 	add a          ; *2
@@ -437,6 +468,31 @@ ApplyDollSelection:
 	ld a, [wSelectedDoll]
 	add d          ; *3
 	add b          ; + set
+	ld [wSelectedDollIndex], a
+	
+	ld a, [wSelectedDoll]
+	cp 0
+	jr z, .saveIndex1
+	cp 1
+	jr z, .saveIndex2
+	jr .saveIndex3
+
+.saveIndex1
+	ld a, [wSelectedDollIndex]
+	ld [wDoll1Index], a
+	jr .saveIndexDone
+
+.saveIndex2
+	ld a, [wSelectedDollIndex]
+	ld [wDoll2Index], a
+	jr .saveIndexDone
+
+.saveIndex3
+	ld a, [wSelectedDollIndex]
+	ld [wDoll3Index], a
+
+.saveIndexDone
+	ld a, [wSelectedDollIndex]
 
 	ld hl, DollObjectIndexes
 	ld e, a
@@ -458,14 +514,7 @@ ApplyDollSelection:
 	call GetSpriteMovementByte2Pointer
 	ld a, d
 	ld [hl], a ; Movement Byte 2 = actual facing direction
-
-	; a = (doll * 3) + set
-	ld a, [wSelectedDoll]
-	add a
-	ld d, a
-	ld a, [wSelectedDoll]
-	add d
-	add b
+	ld a, [wSelectedDollIndex]
 
 	cp 0
 	jr z, .c1s1
@@ -521,10 +570,9 @@ ApplyDollSelection:
 .showCommon
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
+	SetEvent EVENT_USED_DOLL_SWAP
 	call UpdateSprites
-
 .done
-	pop bc
 	ret
 	
 ShowGenericDollMenu:
@@ -617,3 +665,46 @@ DollFacingDirections:
 	db DOWN
 	db UP
 	db LEFT
+
+RestoreDollFacings:
+	ld a, [wDoll1Index]
+	ld b, a
+	ld a, [wDoll1Facing]
+	ld c, a
+	call .Apply
+	ld a, [wDoll2Index]
+	ld b, a
+	ld a, [wDoll2Facing]
+	ld c, a
+	call .Apply
+	ld a, [wDoll3Index]
+	ld b, a
+	ld a, [wDoll3Facing]
+	ld c, a
+	call .Apply
+	ret
+
+
+.Apply
+	; b = index (0–8)
+	; c = facing (0–2)
+	; sprite
+	ld hl, DollObjectIndexes
+	ld e, b
+	ld d, 0
+	add hl, de
+	ld a, [hl]
+	ldh [hSpriteIndex], a
+	; facing
+	ld a, c
+	ld hl, DollFacingDirections
+	ld d, 0
+	ld e, a
+	add hl, de
+	ld d, [hl]
+	call GetSpriteMovementByte1Pointer
+	ld [hl], STAY
+	call GetSpriteMovementByte2Pointer
+	ld a, d
+	ld [hl], a
+	ret
