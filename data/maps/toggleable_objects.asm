@@ -239,7 +239,6 @@ ToggleableObjectStates:
 	toggle_object_state SSANNE2F_RIVAL, OFF
 
 	toggleable_objects_for SS_ANNE_BOW
-	toggle_object_state SSANNEBOW_SUPER_NERD, ON
 	toggle_object_state SSANNEBOW_ROOKIE, OFF
 
 	toggleable_objects_for SS_ANNE_CAPTAINS_ROOM
@@ -250,7 +249,6 @@ ToggleableObjectStates:
 	toggle_object_state SSANNE1FROOMS_ROOKIE1,          OFF
 	toggle_object_state SSANNE1FROOMS_ROOKIE2,          OFF
 	toggle_object_state SSANNE1FROOMS_ROOKIE3,          OFF
-	toggle_object_state SSANNE1FROOMS_GIRL1,            ON
 	toggle_object_state SSANNE1FROOMS_TM_BODY_SLAM,     ON
 
 	toggleable_objects_for SS_ANNE_2F_ROOMS
@@ -275,6 +273,17 @@ ToggleableObjectStates:
 	toggle_object_state CHAMPIONSHOUSE1F_MOM, OFF
 	toggle_object_state CHAMPIONSHOUSE1F_BILL, OFF
 	toggle_object_state CHAMPIONSHOUSE1F_BIRD, OFF
+	
+	toggleable_objects_for CHAMPIONS_HOUSE_2F
+	toggle_object_state CHAMPIONSHOUSE2F_CHARMANDERDOLL, ON
+	toggle_object_state CHAMPIONSHOUSE2F_SQUIRTLEDOLL, ON
+	toggle_object_state CHAMPIONSHOUSE2F_BULBASAURDOLL, ON
+	toggle_object_state CHAMPIONSHOUSE2F_PIKACHUDOLL, OFF
+	toggle_object_state CHAMPIONSHOUSE2F_JIGGLYPUFFDOLL, OFF
+	toggle_object_state CHAMPIONSHOUSE2F_SURFPIKACHUDOLL, OFF
+	toggle_object_state CHAMPIONSHOUSE2F_GENGARDOLL, OFF
+	toggle_object_state CHAMPIONSHOUSE2F_CLEFAIRYDOLL, OFF
+	toggle_object_state CHAMPIONSHOUSE2F_GEODUDEDOLL, OFF
 	
 	toggleable_objects_for ROUTE_22_YUJIROU_PRE_GYM
 	toggle_object_state ROUTE_22_YUJIROU_PRE_GYM_YUJIROU, ON

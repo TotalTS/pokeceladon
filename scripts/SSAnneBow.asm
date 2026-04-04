@@ -16,11 +16,7 @@ SSAnneBowPostGameToggle:
     CheckEvent EVENT_SSANNEBOW_NEWTRAINER
     ret nz 
 
-	SetEvent EVENT_SSANNEBOW_NEWTRAINER 
-
-	ld a, TOGGLE_SSANNEBOW_SUPER_NERD
-	ld [wToggleableObjectIndex], a
-	predef HideObject
+	SetEvent EVENT_SSANNEBOW_NEWTRAINER
 
 	ld a, TOGGLE_SSANNEBOW_ROOKIE
 	ld [wToggleableObjectIndex], a
@@ -52,7 +48,25 @@ SSAnne5TrainerHeader2:
 	db -1
 
 SSAnneBowSuperNerdText:
+	text_asm
+	ld a, [wNumHoFTeams]
+    and a
+    jr nz, .postgame
+	ld hl, .normal_text
+	jr .done
+.postgame
+	ld hl, .postgame_text
+
+.done:
+	call PrintText
+	jp TextScriptEnd
+
+.normal_text:
 	text_far _SSAnneBowSuperNerdText
+	text_end
+
+.postgame_text:
+	text_far _SSAnneBowSuperNerdPostGameText
 	text_end
 
 SSAnneBowSailor1Text:

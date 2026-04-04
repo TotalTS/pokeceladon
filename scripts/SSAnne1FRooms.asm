@@ -18,10 +18,6 @@ SSAnne1FRoomsPostGameToggle:
 
 	SetEvent EVENT_SS_ANNE_1F_POSTGAME
 
-	ld a, TOGGLE_SS_ANNE_1F_ROOMS_GIRL1
-	ld [wToggleableObjectIndex], a
-	predef HideObject
-
 	ld a, TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE1
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
@@ -208,7 +204,25 @@ SSAnne1FRoomsRookie3Text:
 	jp TextScriptEnd
 
 SSAnne1FRoomsGirl1Text:
+	text_asm
+	ld a, [wNumHoFTeams]
+    and a
+    jr nz, .postgame
+	ld hl, .normal_text
+	jr .done
+.postgame
+	ld hl, .postgame_text
+
+.done:
+	call PrintText
+	jp TextScriptEnd
+
+.normal_text:
 	text_far _SSAnne1FRoomsGirl1Text
+	text_end
+
+.postgame_text:
+	text_far _SSAnne1FRoomsGirl1PostGameText
 	text_end
 
 SSAnne1FRoomsMiddleAgedManText:

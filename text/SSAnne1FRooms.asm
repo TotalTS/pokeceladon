@@ -219,3 +219,10 @@ _SSAnne1FRoomsRookie3AfterBattleText::
 	para "I have a lot"
 	line "to learn yet!"
 	done
+
+_SSAnne1FRoomsGirl1PostGameText::
+	text "Wait! You're the"
+	line "new CHAMPION!"
+	cont "Can I get your"
+	cont "autograph?"
+	done

@@ -483,7 +483,6 @@ DEF ANY_FACING EQU $d0
 
 	hidden_events_for CHAMPIONS_HOUSE_2F
 	hidden_event  0,  1, OpenPokemonCenterPC, SPRITE_FACING_UP
-	hidden_event  2,  1, PrintChampionCupText, SPRITE_FACING_UP
 	hidden_event  2,  5, PrintRedSNESText, ANY_FACING
 	db -1 ; end
 

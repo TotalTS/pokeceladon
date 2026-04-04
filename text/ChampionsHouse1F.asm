@@ -1,3 +1,5 @@
+;ChampionsHouse1FTexts
+
 _ChampionsHouse1FMomText::
 	text "MOM: I'm so proud"
 	line "of you, <PLAYER>!"
@@ -115,31 +117,6 @@ _ChampionsHouse1FBirdDoneText::
 	text "PIDGEY looks"
 	line "happy now!"
 	done
-	
-_ChampionsHouse2FCupText::
-	text "The #MON LEAGUE"
-	line "GOLDEN CUP."
-
-	para "It gleams with a"
-	line "brilliant light,"
-	cont "honoring the new"
-	cont "CHAMPION!"
-	done
-
-_ChampionsHouse2FPikachuDollText::
-	text "A rare, golden-"
-	line "furred PIKACHU"
-	cont "plush doll."
-
-	para "Only League"
-	line "CHAMPIONS can"
-	cont "afford this!"
-	done
-	
-_ChampionsHouse2FGameboyText::
-	text "A brand new"
-	line "GAMEBOY!"
-	done
 
 _ChampionsHouse1FRivalText::
 	text "<RIVAL>: Yo!"
@@ -150,4 +127,126 @@ _ChampionsHouse1FRivalText::
 	para "I'll be training"
 	line "harder than you."
 	cont "Smell ya later!"
+	done
+	
+;ChampionsHouse2FTexts
+
+_ChampionsHouse2FCupText::
+	text "The #MON LEAGUE"
+	line "GOLDEN CUP."
+
+	para "It gleams with a"
+	line "brilliant light,"
+	cont "honoring the new"
+	cont "CHAMPION!"
+	done
+	
+_ChampionsHouse2FCharmanderDollText::
+	text "A small, warm"
+	line "CHARMANDER"
+	cont "plush doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FSquirtleDollText::
+	text "A soft, round"
+	line "SQUIRTLE"
+	cont "plush doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FBulbasaurDollText::
+	text "A cute BULBASAUR"
+	line "plush doll with a"
+	cont "seed on its back."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+
+_ChampionsHouse2FPikachuDollText::
+	text "A rare, golden-"
+	line "furred PIKACHU"
+	cont "plush doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FJigglypuffDollText::
+	text "A cute, pink"
+	line "JIGGLYPUFF"
+	cont "plush doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FSurfPikachuDollText::
+	text "A surfing"
+	line "PIKACHU plush"
+	cont "doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FGengarDollText::
+	text "A creepy, grinning"
+	line "GENGAR plush"
+	cont "doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FClefairyDollText::
+	text "A soft, fairy-like"
+	line "CLEFAIRY plush"
+	cont "doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FGeodudeDollText::
+	text "A rough, rocky"
+	line "GEODUDE plush"
+	cont "doll."
+
+	para "A special gift"
+	line "from the #MON"
+	cont "LEAGUE!"
+	done
+	
+_ChampionsHouse2FGameboyText::
+	text "A brand new"
+	line "GAMEBOY!"
+	
+	para "On the back"
+	line "it says:"
+	
+	para "This includes"
+	line "an option for"
+	cont "DECORATIONS."
+	
+	para "Want to arrange"
+	line "the dolls in"
+	cont "the room?"
+	done
+
+_SelectADollText::
+	text "Select a DOLL."
 	done

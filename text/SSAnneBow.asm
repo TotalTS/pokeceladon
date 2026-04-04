@@ -73,3 +73,10 @@ _SSAnneBowRookieAfterBattleText::
 
 	para "I won't give up!"
 	done
+
+_SSAnneBowSuperNerdPostGameText::
+	text "The CHAMPION is"
+	line "still on board?"
+	cont "What a fine day"
+	cont "to be here!"
+	done
