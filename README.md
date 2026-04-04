@@ -59,6 +59,9 @@ Post game events:
 ![0010](screenshots/0010.bmp)
 ![0011](screenshots/0011.bmp)
 ![0012](screenshots/0012.bmp)
+![0013](screenshots/0013.bmp)
+![0014](screenshots/0014.bmp)
+![0015](screenshots/0015.bmp)
 
 # Credits
 
