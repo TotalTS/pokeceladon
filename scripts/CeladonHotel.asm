@@ -68,6 +68,8 @@ CeladonHotelSatoText:
 	call PrintText
 
 .done
+	xor a
+	ld [wListScrollOffset], a
 	jp TextScriptEnd
 
 .HomeItemList:
