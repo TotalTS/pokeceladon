@@ -32,6 +32,7 @@ Features:
 - In Rock Tunnel, there's an NPC that uses FLASH for you without need to learn the HM.
 - Restored PC on Celadon Hotel.
 - Added USE/QUIT before throwing PokéBalls.
+- Trainers on Gyms now have post badge and post game texts.
 
 Post game events:
 
