@@ -2117,7 +2117,8 @@ wDoll3Facing:: db
 wDoll1Index:: db
 wDoll2Index:: db
 wDoll3Index:: db
-	ds 2
+wSavedMusicID:: db
+	ds 1
 
 wTownVisitedFlag:: flag_array NUM_CITY_MAPS
 
