@@ -78,13 +78,6 @@ _CeruleanGymEndBattleText1::
 	line "overwhelmed me!"
 	prompt
 
-_CeruleanGymAfterBattleText1::
-	text "You have to face"
-	line "other trainers to"
-	cont "find out how good"
-	cont "you really are."
-	done
-
 _CeruleanGymBattleText2::
 	text "Splash!"
 
@@ -96,14 +89,6 @@ _CeruleanGymEndBattleText2::
 	text "That"
 	line "can't be!"
 	prompt
-
-_CeruleanGymAfterBattleText2::
-	text "MISTY is going to"
-	line "keep improving!"
-
-	para "She won't lose to"
-	line "someone like you!"
-	done
 
 _CeruleanGymGymGuideChampInMakingText::
 	text "Yo! Champ in"

@@ -96,12 +96,6 @@ _PewterGymCooltrainerMEndBattleText::
 	cont "distance!"
 	prompt
 
-_PewterGymCooltrainerMAfterBattleText::
-	text "You're pretty hot,"
-	line "but not as hot"
-	cont "as BROCK!"
-	done
-
 _PewterGymGuidePreAdviceText::
 	text "Hiya! I can tell"
 	line "you have what it"

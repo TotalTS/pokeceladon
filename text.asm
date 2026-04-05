@@ -271,6 +271,7 @@ INCLUDE "data/text/text_6.asm"
 SECTION "Text 11", ROMX
 
 INCLUDE "data/text/text_7.asm"
+INCLUDE "text/extra_gym_texts.asm"
 
 
 SECTION "Pokédex Text", ROMX

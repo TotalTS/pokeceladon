@@ -79,15 +79,6 @@ _CinnabarGymSuperNerd1EndBattleText::
 	line "Hot, hot, hot!"
 	prompt
 
-_CinnabarGymSuperNerd1AfterBattleText::
-	text "Fire, or to be"
-	line "more precise,"
-	cont "combustion..."
-
-	para "Blah, blah, blah,"
-	line "blah..."
-	done
-
 _CinnabarGymSuperNerd2BattleText::
 	text "I was a thief, but"
 	line "I became straight"
@@ -98,12 +89,6 @@ _CinnabarGymSuperNerd2EndBattleText::
 	text "I"
 	line "surrender!"
 	prompt
-
-_CinnabarGymSuperNerd2AfterBattleText::
-	text "I can't help"
-	line "stealing other"
-	cont "people's #MON!"
-	done
 
 _CinnabarGymSuperNerd3BattleText::
 	text "You can't win!"
@@ -116,12 +101,6 @@ _CinnabarGymSuperNerd3EndBattleText::
 	line "My studies!"
 	prompt
 
-_CinnabarGymSuperNerd3AfterBattleText::
-	text "My theories are"
-	line "too complicated"
-	cont "for you!"
-	done
-
 _CinnabarGymSuperNerd4BattleText::
 	text "I just like using"
 	line "fire #MON!"
@@ -132,12 +111,6 @@ _CinnabarGymSuperNerd4EndBattleText::
 	line "to handle!"
 	prompt
 
-_CinnabarGymSuperNerd4AfterBattleText::
-	text "I wish there was"
-	line "a thief #MON!"
-	cont "I'd use that!"
-	done
-
 _CinnabarGymSuperNerd5BattleText::
 	text "I know why BLAINE"
 	line "became a trainer!"
@@ -146,17 +119,6 @@ _CinnabarGymSuperNerd5BattleText::
 _CinnabarGymSuperNerd5EndBattleText::
 	text "Ow!"
 	prompt
-
-_CinnabarGymSuperNerd5AfterBattleText::
-	text "BLAINE was lost"
-	line "in the mountains"
-	cont "when a fiery bird"
-	cont "#MON appeared."
-
-	para "Its light enabled"
-	line "BLAINE to find"
-	cont "his way down!"
-	done
 
 _CinnabarGymSuperNerd6BattleText::
 	text "I've been to many"
@@ -169,12 +131,6 @@ _CinnabarGymSuperNerd6EndBattleText::
 	line "Too hot!"
 	prompt
 
-_CinnabarGymSuperNerd6AfterBattleText::
-	text "Us fire #MON"
-	line "fans like PONYTA"
-	cont "and NINETALES!"
-	done
-
 _CinnabarGymSuperNerd7BattleText::
 	text "Fire is weak"
 	line "against H2O!"
@@ -184,12 +140,6 @@ _CinnabarGymSuperNerd7EndBattleText::
 	text "Oh!"
 	line "Snuffed out!"
 	prompt
-
-_CinnabarGymSuperNerd7AfterBattleText::
-	text "Water beats fire!"
-	line "But, fire melts"
-	cont "ice #MON!"
-	done
 
 _CinnabarGymGymGuideChampInMakingText::
 	text "Yo! Champ in"

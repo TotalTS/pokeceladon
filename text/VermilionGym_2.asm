@@ -66,14 +66,6 @@ _VermilionGymGentlemanEndBattleText::
 	line "You're very good!"
 	prompt
 
-_VermilionGymGentlemanAfterBattleText::
-	text "The door won't"
-	line "open?"
-
-	para "LT.SURGE always"
-	line "was cautious!"
-	done
-
 _VermilionGymSuperNerdBattleText::
 	text "I'm a lightweight,"
 	line "but I'm good with"
@@ -84,14 +76,6 @@ _VermilionGymSuperNerdEndBattleText::
 	text "Fried!"
 	prompt
 
-_VermilionGymSuperNerdAfterBattleText::
-	text "OK, I'll talk!"
-
-	para "LT.SURGE said he"
-	line "hid door switches"
-	cont "inside something!"
-	done
-
 _VermilionGymSailorBattleText::
 	text "This is no place"
 	line "for kids!"
@@ -101,17 +85,6 @@ _VermilionGymSailorEndBattleText::
 	text "Wow!"
 	line "Surprised me!"
 	prompt
-
-_VermilionGymSailorAfterBattleText::
-	text "LT.SURGE set up"
-	line "double locks!"
-	cont "Here's a hint!"
-
-	para "When you open the"
-	line "1st lock, the 2nd"
-	cont "lock is right"
-	cont "next to it!"
-	done
 
 _VermilionGymGymGuideChampInMakingText::
 	text "Yo! Champ in"

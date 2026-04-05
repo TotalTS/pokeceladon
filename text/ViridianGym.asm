@@ -95,12 +95,6 @@ _ViridianGymCooltrainerM1EndBattleText::
 	line "ran out of gas!"
 	prompt
 
-_ViridianGymCooltrainerM1AfterBattleText::
-	text "You need power to"
-	line "keep up with our"
-	cont "GYM LEADER!"
-	done
-
 _ViridianGymHiker1BattleText::
 	text "Rrrroar! I'm"
 	line "working myself"
@@ -110,11 +104,6 @@ _ViridianGymHiker1BattleText::
 _ViridianGymHiker1EndBattleText::
 	text "Wargh!"
 	prompt
-
-_ViridianGymHiker1AfterBattleText::
-	text "I'm still not"
-	line "worthy!"
-	done
 
 _ViridianGymRocker1BattleText::
 	text "#MON and I, we"
@@ -127,12 +116,6 @@ _ViridianGymRocker1EndBattleText::
 	line "perfect harmony!"
 	prompt
 
-_ViridianGymRocker1AfterBattleText::
-	text "Do you know the"
-	line "identity of our"
-	cont "GYM LEADER?"
-	done
-
 _ViridianGymHiker2BattleText::
 	text "Karate is the"
 	line "ultimate form of"
@@ -142,12 +125,6 @@ _ViridianGymHiker2BattleText::
 _ViridianGymHiker2EndBattleText::
 	text "Atcho!"
 	prompt
-
-_ViridianGymHiker2AfterBattleText::
-	text "If my #MON"
-	line "were as good at"
-	cont "Karate as I..."
-	done
 
 _ViridianGymCooltrainerM2BattleText::
 	text "The truly talented"
@@ -159,11 +136,6 @@ _ViridianGymCooltrainerM2EndBattleText::
 	line "lost my grip!"
 	prompt
 
-_ViridianGymCooltrainerM2AfterBattleText::
-	text "The LEADER will"
-	line "scold me!"
-	done
-
 _ViridianGymHiker3BattleText::
 	text "I'm the KARATE"
 	line "KING! Your fate"
@@ -173,12 +145,6 @@ _ViridianGymHiker3BattleText::
 _ViridianGymHiker3EndBattleText::
 	text "Ayah!"
 	prompt
-
-_ViridianGymHiker3AfterBattleText::
-	text "#MON LEAGUE?"
-	line "You? Don't get"
-	cont "cocky!"
-	done
 
 _ViridianGymRocker2BattleText::
 	text "Your #MON will"
@@ -191,11 +157,6 @@ _ViridianGymRocker2EndBattleText::
 	line "Whiplash!"
 	prompt
 
-_ViridianGymRocker2AfterBattleText::
-	text "Wait! I was just"
-	line "careless!"
-	done
-
 _ViridianGymCooltrainerM3BattleText::
 	text "VIRIDIAN GYM was"
 	line "closed for a long"
@@ -207,13 +168,6 @@ _ViridianGymCooltrainerM3EndBattleText::
 	text "I"
 	line "was beaten?"
 	prompt
-
-_ViridianGymCooltrainerM3AfterBattleText::
-	text "You can go onto"
-	line "#MON LEAGUE"
-	cont "only by defeating"
-	cont "our GYM LEADER!"
-	done
 
 _ViridianGymGuidePreBattleText::
 	text "Yo! Champ in"

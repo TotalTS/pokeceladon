@@ -97,12 +97,6 @@ _CeladonGymEndBattleText2::
 	line "too rough!"
 	prompt
 
-_CeladonGymAfterBattleText2::
-	text "Bleaah!"
-	line "I hope ERIKA"
-	cont "wipes you out!"
-	done
-
 _CeladonGymBattleText3::
 	text "I was getting"
 	line "bored."
@@ -112,16 +106,6 @@ _CeladonGymEndBattleText3::
 	text "Give me a"
 	line "break."
 	prompt
-
-_CeladonGymAfterBattleText3::
-	text "Grass-type #MON"
-	line "are tough against"
-	cont "the water-type!"
-
-	para "They also have an"
-	line "edge on rock and"
-	cont "ground #MON!"
-	done
 
 _CeladonGymBattleText4::
 	text "Weren't you"
@@ -135,13 +119,6 @@ _CeladonGymEndBattleText4::
 	cont "see myself lose!"
 	prompt
 
-_CeladonGymAfterBattleText4::
-	text "Oh, you were"
-	line "looking at ERIKA,"
-	cont "you weren't"
-	cont "looking at me..."
-	done
-
 _CeladonGymBattleText5::
 	text "Look at my grass"
 	line "#MON!"
@@ -154,16 +131,6 @@ _CeladonGymEndBattleText5::
 	text "No!"
 	prompt
 
-_CeladonGymAfterBattleText5::
-	text "We only use grass-"
-	line "type #MON at"
-	cont "our GYM!"
-
-	para "We also use them"
-	line "for making flower"
-	cont "arrangements!"
-	done
-
 _CeladonGymBattleText6::
 	text "Don't bring any"
 	line "bugs or fire"
@@ -175,13 +142,6 @@ _CeladonGymEndBattleText6::
 	line "You!"
 	prompt
 
-_CeladonGymAfterBattleText6::
-	text "Our LEADER, ERIKA,"
-	line "might be quiet,"
-	cont "but she's also"
-	cont "very skilled!"
-	done
-
 _CeladonGymBattleText7::
 	text "Pleased to meet"
 	line "you. My hobby is"
@@ -192,13 +152,6 @@ _CeladonGymEndBattleText7::
 	text "Oh!"
 	line "Splendid!"
 	prompt
-
-_CeladonGymAfterBattleText7::
-	text "I have a blind"
-	line "date coming up."
-	cont "I have to learn"
-	cont "to be polite."
-	done
 
 _CeladonGymBattleText8::
 	text "Welcome to"
@@ -213,14 +166,6 @@ _CeladonGymEndBattleText8::
 	text "Oh!"
 	line "Beaten!"
 	prompt
-
-_CeladonGymAfterBattleText8::
-	text "I didn't bring my"
-	line "best #MON!"
-
-	para "Wait 'til next"
-	line "time!"
-	done
 
 _CeladonGymRematchPreBattleText::
 	text "Oh, if it isn't"

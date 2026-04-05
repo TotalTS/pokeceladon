@@ -111,17 +111,6 @@ _SaffronGymChanneler1EndBattleText::
 	line "good enough!"
 	prompt
 
-_SaffronGymChanneler1AfterBattleText::
-	text "In a battle of"
-	line "equals, the one"
-	cont "with the stronger"
-	cont "will wins!"
-
-	para "If you wish"
-	line "to beat SABRINA,"
-	cont "focus on winning!"
-	done
-
 _SaffronGymYoungster1BattleText::
 	text "Does our unseen"
 	line "power scare you?"
@@ -131,12 +120,6 @@ _SaffronGymYoungster1EndBattleText::
 	text "I never"
 	line "foresaw this!"
 	prompt
-
-_SaffronGymYoungster1AfterBattleText::
-	text "Psychic #MON"
-	line "fear only ghosts"
-	cont "and bugs!"
-	done
 
 _SaffronGymChanneler2BattleText::
 	text "#MON take on"
@@ -152,12 +135,6 @@ _SaffronGymChanneler2EndBattleText::
 	line "it!"
 	prompt
 
-_SaffronGymChanneler2AfterBattleText::
-	text "I must teach"
-	line "better techniques"
-	cont "to my #MON!"
-	done
-
 _SaffronGymYoungster2BattleText::
 	text "You know that"
 	line "power alone isn't"
@@ -169,12 +146,6 @@ _SaffronGymYoungster2EndBattleText::
 	line "believe this!"
 	prompt
 
-_SaffronGymYoungster2AfterBattleText::
-	text "SABRINA just wiped"
-	line "out the KARATE"
-	cont "MASTER next door!"
-	done
-
 _SaffronGymChanneler3BattleText::
 	text "You and I, our"
 	line "#MON shall"
@@ -185,12 +156,6 @@ _SaffronGymChanneler3EndBattleText::
 	text "I lost"
 	line "after all!"
 	prompt
-
-_SaffronGymChanneler3AfterBattleText::
-	text "I knew that this"
-	line "was going to take"
-	cont "place."
-	done
 
 _SaffronGymYoungster3BattleText::
 	text "SABRINA is young,"
@@ -206,18 +171,6 @@ _SaffronGymYoungster3EndBattleText::
 	line "my concentration!"
 	prompt
 
-_SaffronGymYoungster3AfterBattleText::
-	text "There used to be"
-	line "2 #MON GYMs in"
-	cont "SAFFRON."
-
-	para "The FIGHTING DOJO"
-	line "next door lost"
-	cont "its GYM status"
-	cont "when we went and"
-	cont "creamed them!"
-	done
-
 _SaffronGymYoungster4BattleText::
 	text "SAFFRON #MON"
 	line "GYM is famous for"
@@ -231,12 +184,6 @@ _SaffronGymYoungster4BattleText::
 _SaffronGymYoungster4EndBattleText::
 	text "Arrrgh!"
 	prompt
-
-_SaffronGymYoungster4AfterBattleText::
-	text "That's right! I"
-	line "used telepathy to"
-	cont "read your mind!"
-	done
 
 _SaffronGymRematchPreBattleText::
 	text "... It's true"
