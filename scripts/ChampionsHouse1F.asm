@@ -212,6 +212,8 @@ ChampionsHouse1FDaisyText:
 	text_end
 	
 .refusedTeaText
+	xor a
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, ChampionsHouse1FDaisy3Text
 	call PrintText
 	jr .exit
