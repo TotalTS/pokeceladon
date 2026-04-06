@@ -289,3 +289,19 @@ _ChampionsHouse2FGameboyText::
 _SelectADollText::
 	text "Select a DOLL."
 	done
+
+_ChampionsHouse2FBedText::
+	text "A brand new"
+	line "comfy bed!"
+	
+	para "Want to rest"
+	line "a bit?"
+	done
+
+_ChampionsHouse2FBedWellRestedText::
+	text "You feel well"
+	line "rested!"
+	
+	para "All your #MON"
+	line "are fully healed!"
+	done

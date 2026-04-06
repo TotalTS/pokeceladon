@@ -54,6 +54,7 @@ ChampionsHouse2F_TextPointers:
 	dw_const ChampionsHouse2FGeodudeDollText,     TEXT_CHAMPIONSHOUSE2F_GEODUDEDOLL
 	dw_const ChampionsHouse2FCupText,             TEXT_CHAMPIONSHOUSE2F_CUP
 	dw_const ChampionsHouse2FGameboyText,         TEXT_CHAMPIONSHOUSE2F_GAMEBOY
+	dw_const ChampionsHouse2FBedText,             TEXT_CHAMPIONSHOUSE2F_BED
 
 ; this logic repeats for all dolls from Charmander to Geodude, depending on their facing, displays different texts according to the current sprite shown.
 ChampionsHouse2FCharmanderDollText:
@@ -757,3 +758,44 @@ RestoreDollFacings:
 	ld a, d
 	ld [hl], a
 	ret
+
+ChampionsHouse2FBedText:
+	text_asm
+	ld hl, .ChampionsHouse2FBedText
+	call PrintText
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a	
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, ChampionsHouse2FBedChoiceEnd
+	xor a
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+
+	ld a, [wLastMusicSoundID]
+	ld [wSavedMusicID], a
+	
+	call GBFadeOutToWhite
+	call ReloadMapData
+	predef HealParty
+	ld a, MUSIC_PKMN_HEALED
+	call PlayMusic
+	call WaitForSongToFinish
+	
+	ld a, [wSavedMusicID]
+	call PlayMusic
+	call GBFadeInFromWhite
+	ld hl, .ChampionsHouse2FBedWellRestedText
+	call PrintText
+	jp TextScriptEnd
+
+.ChampionsHouse2FBedText
+	text_far _ChampionsHouse2FBedText
+	text_end
+	
+.ChampionsHouse2FBedWellRestedText
+	text_far _ChampionsHouse2FBedWellRestedText
+	text_end
+
+ChampionsHouse2FBedChoiceEnd:
+	jp TextScriptEnd

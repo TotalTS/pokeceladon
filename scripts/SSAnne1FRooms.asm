@@ -50,6 +50,7 @@ SSAnne1FRooms_TextPointers:
 	dw_const SSAnne1FRoomsGirl2Text,         TEXT_SSANNE1FROOMS_GIRL2
 	dw_const PickUpItemText,                 TEXT_SSANNE1FROOMS_TM_BODY_SLAM
 	dw_const SSAnne1FRoomsGentleman3Text,    TEXT_SSANNE1FROOMS_GENTLEMAN3
+	dw_const SSAnne1FRoomsBedText,           TEXT_SSANNE1FROOMS_BED
 
 SSAnne8TrainerHeaders:
 	def_trainers
@@ -294,3 +295,41 @@ SSAnne1FRoomsRookie3EndBattleText:
 SSAnne1FRoomsRookie3AfterBattleText:
 	text_far _SSAnne1FRoomsRookie3AfterBattleText
 	text_end
+
+SSAnne1FRoomsBedText:
+	text_asm
+	ld hl, .SSAnne1FRoomsBedText
+	call PrintText
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a	
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, SSAnne1FRoomsBedChoiceEnd
+	xor a
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+
+	call GBFadeOutToWhite
+	call ReloadMapData
+	predef HealParty
+	ld a, MUSIC_PKMN_HEALED
+	call PlayMusic
+	call WaitForSongToFinish
+	
+	ld a, [wMapMusicSoundID]
+	call PlayMusic
+	call GBFadeInFromWhite
+	ld hl, .SSAnne1FRoomsBedWellRestedText
+	call PrintText
+	jp TextScriptEnd
+
+.SSAnne1FRoomsBedText
+	text_far _ChampionsHouse2FBedText
+	text_end
+	
+.SSAnne1FRoomsBedWellRestedText
+	text_far _ChampionsHouse2FBedWellRestedText
+	text_end
+
+SSAnne1FRoomsBedChoiceEnd:
+	jp TextScriptEnd

@@ -17,6 +17,7 @@ ChampionsHouse2F_Object:
 
 	def_bg_events
 	bg_event  1,  1, TEXT_CHAMPIONSHOUSE2F_GAMEBOY
+	bg_event  0,  6, TEXT_CHAMPIONSHOUSE2F_BED
 
 	def_object_events
 	object_event  3,  4, SPRITE_DOLL_SET_1, STAY, DOWN, TEXT_CHAMPIONSHOUSE2F_CHARMANDERDOLL

@@ -24,8 +24,10 @@ SSAnne1FRooms_Object:
 	warp_event  0, 10, SS_ANNE_1F, 6
 	warp_event 10, 10, SS_ANNE_1F, 7
 	warp_event 20, 10, SS_ANNE_1F, 8
+	warp_event 30,  0, SS_ANNE_1F, 12
 
 	def_bg_events
+	bg_event   33,  4, TEXT_SSANNE1FROOMS_BED
 
 	def_object_events
 	object_event  2,  3, SPRITE_GENTLEMAN, STAY, LEFT, TEXT_SSANNE1FROOMS_GENTLEMAN1, OPP_GENTLEMAN, 1
