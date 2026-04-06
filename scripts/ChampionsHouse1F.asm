@@ -17,8 +17,8 @@ ChampionsHouse1FDefaultScript:
 	res 5, [hl]
 	ret z
 
-	ResetEvent EVENT_GOT_CHAMPIONS_HOUSE_BIRD_GIFT
-	ResetEvent EVENT_DRINK_TEA_WITH_DAISY
+	ResetEvent EVENT_CHAMPIONSHOUSE1F_BIRD_GIFT
+	ResetEvent EVENT_CHAMPIONSHOUSE1F_DRINK_TEA_WITH_DAISY
 	call Random
 	cp 50
 	ld a, TOGGLE_CHAMPIONSHOUSE1F_DAISY
@@ -190,7 +190,7 @@ ChampionsHouse1FOakText:
 ; In PureRGB there's a similar feature made by Vortyne, this inspired me to make my own with a different approach
 ChampionsHouse1FDaisyText:
 	text_asm
-	CheckEvent EVENT_DRINK_TEA_WITH_DAISY
+	CheckEvent EVENT_CHAMPIONSHOUSE1F_DRINK_TEA_WITH_DAISY
 	jr nz, .alreadyDrinkTea
 
 	ld hl, .ChampionsHouse1FDaisyText
@@ -202,7 +202,7 @@ ChampionsHouse1FDaisyText:
 	and a
 	jr nz, .refusedTeaText
 
-	SetEvent EVENT_DRINK_TEA_WITH_DAISY
+	SetEvent EVENT_CHAMPIONSHOUSE1F_DRINK_TEA_WITH_DAISY
 	ld a, SCRIPT_CHAMPIONSHOUSE1F_PLAYERMOVE
 	ld [wChampionsHouse1FCurScript], a
 	jr .exit
@@ -244,11 +244,11 @@ ChampionsHouse1FDaisy5Text:
 	
 ChampionsHouse1FBillText:
 	text_asm
-	CheckEvent EVENT_CHAMPIONS_HOUSE_OPEN_BILLS_GARDEN
+	CheckEvent EVENT_CHAMPIONSHOUSE1F_BILLS_GARDEN
     jr nz, .alreadyOpened
 	ld hl, .ChampionsHouse1FBillText
 	call PrintText
-	SetEvent EVENT_CHAMPIONS_HOUSE_OPEN_BILLS_GARDEN
+	SetEvent EVENT_CHAMPIONSHOUSE1F_BILLS_GARDEN
 	jr .done
 .alreadyOpened:
 	ld hl, .ChampionsHouse1FBillEnjoyText
@@ -266,7 +266,7 @@ ChampionsHouse1FBillText:
 	
 ChampionsHouse1FBirdText:
 	text_asm
-	CheckEvent EVENT_GOT_CHAMPIONS_HOUSE_BIRD_GIFT
+	CheckEvent EVENT_CHAMPIONSHOUSE1F_BIRD_GIFT
 	jr nz, .alreadyGotItem
 	ld hl, .ChampionsHouse1FBirdText
 	call PrintText
@@ -290,7 +290,7 @@ ChampionsHouse1FBirdText:
 .giveIt
 	call GiveItem
 	jr nc, .bagFull
-	SetEvent EVENT_GOT_CHAMPIONS_HOUSE_BIRD_GIFT
+	SetEvent EVENT_CHAMPIONSHOUSE1F_BIRD_GIFT
 	ld hl, .ChampionsHouse1FBirdGaveItemText
 	call PrintText
 	jr .done

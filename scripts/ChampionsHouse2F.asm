@@ -1,3 +1,21 @@
+; Visual reference only: This describes how the sprite sheet (png/2bpp) is arranged visually.
+; It does NOT reflect engine behavior or code logic.
+
+;SPRITE DOLL_SET1 (2bpp sprite sheet layout):
+;DOWN = SPRITE CHARMANDER
+;UP = SPRITE SQUIRTLE
+;LEFT = SPRITE BULBASAUR
+
+;SPRITE DOLL_SET2 (2bpp sprite sheet layout):
+;DOWN = SPRITE PIKACHU
+;UP = SPRITE JIGGLYPUFF
+;LEFT = SPRITE SURF PIKACHU
+
+;SPRITE DOLL_SET3 (2bpp sprite sheet layout):
+;DOWN = SPRITE GENGAR
+;UP = SPRITE CLEFAIRY
+;LEFT = SPRITE GEODUDE
+
 ChampionsHouse2F_Script:
 	call EnableAutoTextBoxDrawing
 	ld hl, ChampionsHouse2F_ScriptPointers
@@ -9,15 +27,19 @@ ChampionsHouse2F_ScriptPointers:
 	dw_const ChampionsHouse2FDefaultScript, SCRIPT_CHAMPIONSHOUSE2F_DEFAULT
 
 ChampionsHouse2FDefaultScript:
-	ld hl, wStatusFlags3
-	set BIT_NO_NPC_FACE_PLAYER, [hl]
-	CheckEvent EVENT_USED_DOLL_SWAP
-	jr z, .done
-	call RestoreDollFacings
-	ret
-	
-.done
-	ret
+    ld hl, wStatusFlags3
+    set BIT_NO_NPC_FACE_PLAYER, [hl]
+
+    ld hl, wCurrentMapScriptFlags
+    bit BIT_CUR_MAP_LOADED_2, [hl]
+    res BIT_CUR_MAP_LOADED_2, [hl]
+    ret z
+
+    CheckEvent EVENT_CHAMPIONSHOUSE2F_USED_DOLL_SWAP
+    ret z
+
+    call RestoreDollFacings
+    ret
 
 ChampionsHouse2F_TextPointers:
 	def_text_pointers
@@ -32,7 +54,8 @@ ChampionsHouse2F_TextPointers:
 	dw_const ChampionsHouse2FGeodudeDollText,     TEXT_CHAMPIONSHOUSE2F_GEODUDEDOLL
 	dw_const ChampionsHouse2FCupText,             TEXT_CHAMPIONSHOUSE2F_CUP
 	dw_const ChampionsHouse2FGameboyText,         TEXT_CHAMPIONSHOUSE2F_GAMEBOY
-	
+
+; this logic repeats for all dolls from Charmander to Geodude, depending on their facing, displays different texts according to the current sprite shown.
 ChampionsHouse2FCharmanderDollText:
 	text_asm
 	call GetSpriteMovementByte2Pointer
@@ -390,11 +413,20 @@ ChampionsHouse2FGameboyText:
 	text_far _SelectADollText
 	text_end
 
+
+; Doll index mapping:
+; Index = (selected Doll slot * 3) + selected Set
+; This index is used to:
+; * Lookup sprite object in DollObjectIndexes
+; * Determine which map object to Show/Hide
+
 ApplyDollSelection:
 	ld a, [wSelectedDollSet]
 	ld b, a
 	ld a, [wSelectedDollOption]
 	ld c, a
+	
+; if Doll 1, 2 or 3 is selected, save facing on WRAM
 
 	ld a, [wSelectedDoll]
 	cp 0
@@ -417,6 +449,7 @@ ApplyDollSelection:
 	ld a, c
 	ld [wDoll3Facing], a
 
+; hide objects in map if selected Doll 1, 2, 3
 .saveDone
 	ld a, [wSelectedDoll]
 	and a
@@ -424,6 +457,8 @@ ApplyDollSelection:
 	dec a
 	jr z, .hideDoll2
 	jr .hideDoll3
+
+; Charmander slot (Doll 1)
 .hideDoll1
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_CHARMANDERDOLL
 	ld [wToggleableObjectIndex], a
@@ -435,6 +470,8 @@ ApplyDollSelection:
 	ld [wToggleableObjectIndex], a
 	predef HideObject
 	jr .hideDone
+
+; Squirtle slot (Doll 2)
 .hideDoll2
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_SQUIRTLEDOLL
 	ld [wToggleableObjectIndex], a
@@ -446,6 +483,8 @@ ApplyDollSelection:
 	ld [wToggleableObjectIndex], a
 	predef HideObject
 	jr .hideDone
+
+; Bulbasaur slot (Doll 3)
 .hideDoll3
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_BULBASAURDOLL
 	ld [wToggleableObjectIndex], a
@@ -456,7 +495,9 @@ ApplyDollSelection:
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_GEODUDEDOLL
 	ld [wToggleableObjectIndex], a
 	predef HideObject
+
 .hideDone
+; calculate new Index
 	ld a, [wSelectedDollSet]
 	ld b, a
 	ld a, [wSelectedDollOption]
@@ -469,7 +510,9 @@ ApplyDollSelection:
 	add d          ; *3
 	add b          ; + set
 	ld [wSelectedDollIndex], a
-	
+
+; save selected Doll 1, 2 or 3 in wDollXIndex
+
 	ld a, [wSelectedDoll]
 	cp 0
 	jr z, .saveIndex1
@@ -500,6 +543,8 @@ ApplyDollSelection:
 	add hl, de
 	ld a, [hl]
 	ldh [hSpriteIndex], a
+	
+; set facing of Doll 1, 2 or 3
 
 	ld a, c
 	ld hl, DollFacingDirections
@@ -514,8 +559,10 @@ ApplyDollSelection:
 	call GetSpriteMovementByte2Pointer
 	ld a, d
 	ld [hl], a ; Movement Byte 2 = actual facing direction
-	ld a, [wSelectedDollIndex]
 
+; show the selected Doll (after Hide)
+
+	ld a, [wSelectedDollIndex]
 	cp 0
 	jr z, .c1s1
 	cp 1
@@ -534,7 +581,7 @@ ApplyDollSelection:
 	jr z, .c3s2
 	jr .c3s3
 
-; Charmander slot
+; Charmander slot (Doll 1)
 .c1s1
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_CHARMANDERDOLL
 	jr .showCommon
@@ -545,7 +592,7 @@ ApplyDollSelection:
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_GENGARDOLL
 	jr .showCommon
 
-; Squirtle slot
+; Squirtle slot (Doll 2)
 .c2s1
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_SQUIRTLEDOLL
 	jr .showCommon
@@ -556,7 +603,7 @@ ApplyDollSelection:
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_CLEFAIRYDOLL
 	jr .showCommon
 
-; Bulbasaur slot
+; Bulbasaur slot (Doll 3)
 .c3s1
 	ld a, TOGGLE_CHAMPIONSHOUSE2F_BULBASAURDOLL
 	jr .showCommon
@@ -568,13 +615,16 @@ ApplyDollSelection:
 	jr .showCommon
 
 .showCommon
+; Show selected doll object (map object toggle)
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
-	SetEvent EVENT_USED_DOLL_SWAP
+
+	SetEvent EVENT_CHAMPIONSHOUSE2F_USED_DOLL_SWAP
 	call UpdateSprites
 .done
 	ret
-	
+
+; handles menu ChooseADollOptionsText, DollMenuOptionsText, DollSet1Text/DollSet2Text/DollSet3Text
 ShowGenericDollMenu:
 	push de
 	hlcoord 5, 5
@@ -634,7 +684,6 @@ GetDollSetTextPointer:
 	ld l, a
 	ret
 
-
 DollSet1Text:
 	db "CHARMANDER"
 	next "SQUIRTLE"
@@ -666,12 +715,8 @@ DollFacingDirections:
 	db UP
 	db LEFT
 
+; Applies facing ONLY to sprite state
 RestoreDollFacings:
-	ld a, [wDoll1Index]
-	ld b, a
-	ld a, [wDoll1Facing]
-	ld c, a
-	call .Apply
 	ld a, [wDoll2Index]
 	ld b, a
 	ld a, [wDoll2Facing]
@@ -682,8 +727,12 @@ RestoreDollFacings:
 	ld a, [wDoll3Facing]
 	ld c, a
 	call .Apply
+	ld a, [wDoll1Index]
+	ld b, a
+	ld a, [wDoll1Facing]
+	ld c, a
+	call .Apply
 	ret
-
 
 .Apply
 	; b = index (0–8)

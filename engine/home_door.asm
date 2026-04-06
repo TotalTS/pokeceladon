@@ -183,7 +183,7 @@ HomeDoor_Apply::
 	cp ROUTE_25
 	jr nz, .done
 	
-	CheckEvent EVENT_CHAMPIONS_HOUSE_OPEN_BILLS_GARDEN
+	CheckEvent EVENT_CHAMPIONSHOUSE1F_BILLS_GARDEN
 	jr z, .done
 	
 	ld a, $53
