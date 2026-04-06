@@ -93,7 +93,7 @@ CeladonUniversityProfText:
 	ld a, MAGIKARP
 	ld [wInGameTradeReceiveMonSpecies], a
 	ld [wCurPartySpecies], a
-	ld a, 5
+	ld a, 10
 	ld [wCurEnemyLevel], a
 	; Prepare OT ID and Name (Based on the player)
 	ld a, [wPartyCount]
