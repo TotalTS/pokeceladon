@@ -46,17 +46,17 @@ _SilphCo9FScientistAfterBattleText::
 	cont "element types!"
 	done
 
-_SilphCo9FRocket2BattleText::
+_SilphCo9FRocket2BattleText:: ; Rocket Girl
 	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	line "ROCKET SISTERS!"
 	done
 
 _SilphCo9FRocket2EndBattleText::
 	text "Warg!"
-	line "Brothers, I lost!"
+	line "Sisters, I lost!"
 	prompt
 
 _SilphCo9FRocket2AfterBattleText::
-	text "My brothers will"
+	text "My sisters will"
 	line "avenge me!"
 	done

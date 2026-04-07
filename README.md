@@ -24,7 +24,7 @@ Features:
 - If you have badge(s) Guards have shorter texts on Route 23.
 - Nurse at Silph Co. 9F still heals you after beating Giovanni.
 - Mew under the truck.
-- New trainer classes Rookie and Yujirou. (From prototypes)
+- New trainer classes Rookie, Yujirou (From prototypes), Female Rocket (inspired locations in Let's Go Pikachu/Eevee). 
 - You can battle Yujirou before Brock at Route 22 Gate 2F. He will give you TM19 to make the battle against Brock easier if you have a Charmander as starter.
 - You can make Erik and Sara meet again at Safari Zone. Doing so will unlock free pass to it.
 - New Celadon University location, where you can get a Magikarp with Dragon Rage and a Celadon University Diploma.
@@ -45,7 +45,7 @@ Post game events:
 - At your new home, Daisy will visit you randomly and share a cup of tea with you. This is a way to restore your Pokémon's health if needed. The original idea was made by Vortyne on PureRGB.
 - At your new home, Bill will visit you randomly and give you access to Bill's Garden. There's also a low chance that a Pidgey spawns on the house near the stairs, it will give you some random gifts.
 - Before visiting Bill's Garden, you can search for a Long House at Route 25, where you can get the Skateboard.
-- Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou)
+- Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou) (Inspired rematch texts in Let's Go Pikachu/Eevee).
 - If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
 
 # Screenshots

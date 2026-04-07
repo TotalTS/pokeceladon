@@ -107,7 +107,7 @@ _MtMoonB2FRocket3AfterBattleText::
 	cont "to me and scram!"
 	done
 
-_MtMoonB2FRocket4BattleText::
+_MtMoonB2FRocket4BattleText:: ; Rocket Girl
 	text "Little kids"
 	line "should leave"
 	cont "grown-ups alone!"

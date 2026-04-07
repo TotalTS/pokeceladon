@@ -48,6 +48,7 @@ TrainerDataPointers:
 	dw AgathaData
 	dw LanceData
 	dw YujirouData
+	dw RocketFData
 	assert_table_length NUM_TRAINERS
 
 ; if first byte != $FF, then
@@ -785,3 +786,21 @@ YujirouData:
 	db $FF, 9, NIDORAN_M, 9, NIDORAN_F, 11, DIGLETT, 0
 ; Rematch
 	db $FF, 68, RHYHORN, 68, DUGTRIO, 68, NIDOKING, 68, NIDOQUEEN, 70, RHYDON, 0
+	
+RocketFData:
+; Mt. Moon B2F
+	db 16, RATICATE, 0
+; Rocket Hideout B1F
+	db 20, GRIMER, KOFFING, KOFFING, 0
+; Rocket Hideout B3F
+	db 21, MACHOP, MACHOP, 0
+; Silph Co. 5F
+	db 33, HYPNO, 0
+; Silph Co. 6F
+	db 29, MACHOP, MACHOKE, 0
+; Silph Co. 7F
+	db 29, CUBONE, CUBONE, 0
+; Silph Co. 8F
+	db 28, WEEZING, GOLBAT, KOFFING, 0
+; Silph Co. 9F
+	db 28, GOLBAT, DROWZEE, HYPNO, 0

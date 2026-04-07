@@ -9,7 +9,7 @@ _SilphCo5FRockerAfterBattleText::
 	cont "to my BOSS!"
 	done
 
-_SilphCo5FRocket2BattleText::
+_SilphCo5FRocket2BattleText:: ; Rocket Girl
 	text "Show TEAM ROCKET"
 	line "a little respect!"
 	done

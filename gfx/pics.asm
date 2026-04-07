@@ -380,6 +380,7 @@ SECTION "Pics 6", ROMX
 ; trainers
 RookiePic::        INCBIN "gfx/new_trainers/rookie.pic"
 YujirouPic::       INCBIN "gfx/new_trainers/yujirou.pic"
+RocketFPic::       INCBIN "gfx/new_trainers/rocket_f.pic"
 RocketPicBack::    INCBIN "gfx/player/rocketb.pic"
 FRocketPicBack::   INCBIN "gfx/player/frocketb.pic"
 ; pokemon

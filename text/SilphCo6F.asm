@@ -55,9 +55,9 @@ _SilphCo6FSilphWorkerM3WorkForSilphText::
 	cont "get older!"
 	done
 
-_SilphCo6FRocket1BattleText::
+_SilphCo6FRocket1BattleText:: ; Rocket Girl
 	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	line "ROCKET SISTERS!"
 	done
 
 _SilphCo6FRocket1EndBattleText::
@@ -67,7 +67,7 @@ _SilphCo6FRocket1EndBattleText::
 
 _SilphCo6FRocket1AfterBattleText::
 	text "No matter!"
-	line "My brothers will"
+	line "My sisters will"
 	cont "avenge me!"
 	done
 

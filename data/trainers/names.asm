@@ -48,4 +48,5 @@ TrainerNames::
 	li "AGATHA"
 	li "LANCE"
 	li "YUJIROU"
+	li "ROCKET"
 	assert_list_length NUM_TRAINERS

@@ -32,7 +32,7 @@ _RocketHideoutB1FRocket2AfterBattleText::
 	cont "this, brat!"
 	done
 
-_RocketHideoutB1FRocket3BattleText::
+_RocketHideoutB1FRocket3BattleText:: ; Rocket Girl
 	text "Intruder alert!"
 	done
 

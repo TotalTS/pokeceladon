@@ -51,5 +51,6 @@ TrainerAIPointers:
 	dbw 3, GenericAI
 	dbw 2, AgathaAI ; agatha
 	dbw 1, LanceAI ; lance
-	dbw 3, GenericAI	
+	dbw 3, GenericAI ; yujirou
+	dbw 3, GenericAI ; rocket_f
 	assert_table_length NUM_TRAINERS

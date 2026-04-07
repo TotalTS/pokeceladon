@@ -40,17 +40,17 @@ _SilphCo8FScientistAfterBattleText::
 	cont "BUILDING's maze?"
 	done
 
-_SilphCo8FRocket2BattleText::
+_SilphCo8FRocket2BattleText:: ; Rocket Girl
 	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	line "ROCKET SISTERS!"
 	done
 
 _SilphCo8FRocket2EndBattleText::
 	text "Whoo!"
-	line "Oh brothers!"
+	line "Oh sisters!"
 	prompt
 
 _SilphCo8FRocket2AfterBattleText::
 	text "I'll leave you up"
-	line "to my brothers!"
+	line "to my sisters!"
 	done

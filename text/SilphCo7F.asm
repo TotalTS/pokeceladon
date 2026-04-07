@@ -112,19 +112,19 @@ _SilphCo7FScientistAfterBattleText::
 	cont "trainer!"
 	done
 
-_SilphCo7FRocket2BattleText::
+_SilphCo7FRocket2BattleText:: ; Rocket Girl
 	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	line "ROCKET SISTERS!"
 	done
 
 _SilphCo7FRocket2EndBattleText::
 	text "Aack!"
-	line "Brothers, I lost!"
+	line "Sisters, I lost!"
 	prompt
 
 _SilphCo7FRocket2AfterBattleText::
 	text "Doesn't matter."
-	line "My brothers will"
+	line "My sisters will"
 	cont "repay the favor!"
 	done
 

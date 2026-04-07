@@ -6833,6 +6833,8 @@ _LoadTrainerPic:
 	jr z, .loadRookie
 	cp YUJIROU
 	jr z, .loadYujirou
+	cp ROCKET_F
+	jr z, .loadRocketF
 
 	ld a, BANK(YoungsterPic)
 	jr .loadSprite
@@ -6843,6 +6845,10 @@ _LoadTrainerPic:
 	
 .loadYujirou
 	ld a, BANK(YujirouPic)
+	jr .loadSprite	
+	
+.loadRocketF
+	ld a, BANK(RocketFPic)
 	jr .loadSprite	
 
 .useRed
