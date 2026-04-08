@@ -1,52 +1,67 @@
 # Pokémon Celadon Version
 
-This hack tries to be a little upgrade from Red/Blue/Green without being too ambitious. Mostly the whole game has graphic updates and some new events.
+This hack is designed as an upgrade to the original Pokémon Red, Blue, and Green, aiming to enhance the classic experience without overcomplicating its core identity. It features a personal pick of improved graphics, expanded events, and a variety of restored content.
 Started this project a long time ago and some ideas changed, but I'm commited to finish it now: https://web.archive.org/web/20180903101807/https://hax.iimarckus.org/topic/7257/
 
 Why Celadon Version?:
-Celadon City is my favorite city in Gen 1, this is a very personal hack.
+Celadon City has always been my favorite location in the first generation, from the music to the visuals and the variety of events. This is a very personal hack.
 
 To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilities/893/
 
-Features:
+## Features
 
-- New sprites.
-- New party menu icons ported from Gen 2.
-- New palettes.
-- New Super Gameboy border.
-- Gender selection.
-- New item Skateboard, use it to go as fast as Bike and jump ledges in reverse.
-- You can press SELECT to switch Pokémon in your party menu.
-- You can press B to move faster while walking, cycling, skating, or swimming.
-- You can talk to use SURF, CUT, STRENGTH.
-- You can have all starters like in Pokémon Yellow.
-- Lapras and Pikachu have unique sprites for SURF.
-- If you have badge(s) Guards have shorter texts on Route 23.
-- Nurse at Silph Co. 9F still heals you after beating Giovanni.
+### Core Mechanics, Enhanced Gameplay & QoL
+
+- Gender Selection.
+- Skateboard: A new way to travel! Match the Bike's speed and jump over ledges in reverse. (Find the Secret Long House on Route 25 to obtain it).
+- Running Shoes: Press B to move faster while walking, cycling, skating, or swimming.
+- Field Moves: Use SURF, CUT, and STRENGTH by interacting directly with the overworld. No menus required.
+- Swap Pokémon positions instantly by pressing SELECT in the party menu.
+- Added a USE/QUIT prompt before throwing Pokéballs to avoid accidental throws.
+- An NPC in Rock Tunnel uses FLASH for you without needing the HM.
+- New trainer classes: Female Rocket, Rookie and Yujirou (From Prototypes).
+
+### Upgraded Graphics
+
+- New sprites, new palettes, Gen 2-style party icons, custom Super Gameboy border.
+- Unique surfing sprites for Lapras and Pikachu.
+
+### Optional Sidequests
+
+- Battle Yujirou early at 2nd floor of Route 22 Gate for a strategic TM19 gift!
+- You can have all 3 starters like in Pokémon Yellow.
+- Obtain a Rocket Suit after Nugget Bridge. Use it to skip Team Rocket battles or even steal enemy Pokémon (ends the battle instantly).
+- Celadon University: A new location, graduate to earn a Diploma and a unique Magikarp with Dragon Rage.
+- Reunite Erik and Sara in the Safari Zone to earn a Free Pass.
 - Mew under the truck.
-- New trainer classes Rookie, Yujirou (From prototypes), Female Rocket (inspired locations in Let's Go Pikachu/Eevee). 
-- You can battle Yujirou before Brock at Route 22 Gate 2F. He will give you TM19 to make the battle against Brock easier if you have a Charmander as starter.
-- You can make Erik and Sara meet again at Safari Zone. Doing so will unlock free pass to it.
-- New Celadon University location, where you can get a Magikarp with Dragon Rage and a Celadon University Diploma.
-- You can have a Rocket Suit after beating the Nugget Bridge. (Optional) Use it to skip battles against the Team Rocket. You can also use it to catch enemy's Pokémon. (But it ends the battle instantly)
-- In Rock Tunnel, there's an NPC that uses FLASH for you without need to learn the HM.
+
+## Post-Game
+
+### Your New Home
+
+- Move out of Pallet Town! Visit the Celadon Hotel to set your new residence in any city (including the Summer Beach House on Route 19).
+- Decoration: Interact with the Gameboy in your room to arrange your Pokémon Dolls.
+- Visits: Your new home feels alive! Daisy might drop by for tea to heal your team, or Bill might visit to grant you access to his secret Garden.
+- Pidgey Rewards: Keep an eye out for a friendly Pidgey that occasionally leaves gifts.
+
+### New quests
+
+- S.S. Anne: The cruise ship returns with a deck full of new trainers.
+- Complete your PokéDex in brand-new zones: Bill’s Garden, Mystery Cave, and extended Routes 0, 1, and 21.
+- Rematch the Gym Leaders as much as you want (Yujirou replaces Giovanni).
+- Catch all 151 to unlock the battle Professor Oak at the League.
+
+### Additional Improvements
+
+- There's a new room with a healing bed in SS Anne.
+- Trainers in Gyms now have dialogue after you earn a badge or reach the post-game.
+- If you have badge(s) Guards have shorter texts on Route 23.
+- Nurse at Silph Co. 9F still heals you after beating Team Rocket.
 - Restored PC on Celadon Hotel.
-- Added USE/QUIT before throwing PokéBalls.
-- Trainers on Gyms now have post badge and post game texts.
-- There's a new room with a healing bed in SSAnne1FRooms.
 
-Post game events:
+## Version Exclusives & Completion
 
-- Currently, there are 2 versions of Celadon based on Red and Blue. The player can choose if they want their experience to be closer to og Red or og Blue versions, both versions have 151 Pokémon catchable post game.
-- S.S. Anne returns with new trainers.
-- New Areas to explore and complete the Pokédex: Bill's Garden, Mystery Cave, Route 1 East/West, Route 0 East/West, Route 21 East/West.
-- At Celadon Hotel, you can select a new home in any city you want. (Plus the Summer Beach House from Yellow on Route 19) You will receive random visits every time you enter.
-- At your new home, on your new room, you can arrange the displayed dolls at the table interacting with a Gameboy. There's also a healing bed.
-- At your new home, Daisy will visit you randomly and share a cup of tea with you. This is a way to restore your Pokémon's health if needed. The original idea was made by Vortyne on PureRGB.
-- At your new home, Bill will visit you randomly and give you access to Bill's Garden. There's also a low chance that a Pidgey spawns on the house near the stairs, it will give you some random gifts.
-- Before visiting Bill's Garden, you can search for a Long House at Route 25, where you can get the Skateboard.
-- Rematch the Gym Leaders as much as you want. (Giovanni is replaced by Yujirou) (Inspired rematch texts in Let's Go Pikachu/Eevee).
-- If you have all 151 Pokémon catched, you will battle with Professor Oak at the Pokémon League.
+Celadon Version is split into Red and Blue editions. While each maintains its original exclusive encounters, all 151 Pokémon are obtainable in the post-game by exploring the Mystery Cave.
 
 # Screenshots
 
