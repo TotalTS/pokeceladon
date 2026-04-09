@@ -1,5 +1,5 @@
 CeladonUniversity_Object:
-	db $f ; border block
+	db $18 ; border block
 
 	def_warp_events
 	warp_event  4, 15, LAST_MAP, 14
