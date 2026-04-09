@@ -50,7 +50,7 @@ MonPartyData:
 	db ICON_MOTH        ; VENOMOTH
 	db ICON_DIGLETT     ; DIGLETT
 	db ICON_DIGLETT     ; DUGTRIO
-	db ICON_FOX         ; MEOWTH
+	db ICON_MEOWTH      ; MEOWTH
 	db ICON_FOX         ; PERSIAN
 	db ICON_MONSTER     ; PSYDUCK
 	db ICON_MONSTER     ; GOLDUCK
