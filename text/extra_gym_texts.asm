@@ -6,6 +6,7 @@ _PewterGymCooltrainerMAfterBattleText::
 	bit BIT_BOULDERBADGE, a
 	jr nz, .afterBeat
 	ld hl, .PewterGymCooltrainerMAfterBattleText
+	jr .print
 .isChampion
 	ld hl, _PewterGymCooltrainerMAfterChampionText
 	jr .print
@@ -47,6 +48,7 @@ _CeruleanGymAfterBattleText1::
 	bit BIT_CASCADEBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeruleanGymAfterBattleText1
+	jr .print
 .isChampion
 	ld hl, _CeruleanGymAfterChampionText1
 	jr .print
@@ -89,6 +91,7 @@ _CeruleanGymAfterBattleText2::
 	bit BIT_CASCADEBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeruleanGymAfterBattleText2
+	jr .print
 .isChampion
 	ld hl, _CeruleanGymAfterChampionText2
 	jr .print
@@ -130,6 +133,7 @@ _VermilionGymGentlemanAfterBattleText::
 	bit BIT_THUNDERBADGE, a
 	jr nz, .afterBeat
 	ld hl, .VermilionGymGentlemanAfterBattleText
+	jr .print
 .isChampion
 	ld hl, _VermilionGymGentlemanAfterSurgeText
 	jr .print
@@ -170,6 +174,7 @@ _VermilionGymSuperNerdAfterBattleText::
 	bit BIT_THUNDERBADGE, a
 	jr nz, .afterBeat
 	ld hl, .VermilionGymSuperNerdAfterBattleText
+	jr .print
 .isChampion
 	ld hl, _VermilionGymSuperNerdAfterSurgeText
 	jr .print
@@ -212,6 +217,7 @@ _VermilionGymSailorAfterBattleText::
 	bit BIT_THUNDERBADGE, a
 	jr nz, .afterBeat
 	ld hl, .VermilionGymSailorAfterBattleText
+	jr .print
 .isChampion
 	ld hl, _VermilionGymSailorAfterSurgeText
 	jr .print
@@ -256,6 +262,7 @@ _CeladonGymAfterBattleText2::
 	bit BIT_RAINBOWBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeladonGymAfterBattleText2
+	jr .print
 .isChampion
 	ld hl, _CeladonGymAfterChampionText2
 	jr .print
@@ -294,6 +301,7 @@ _CeladonGymAfterBattleText3::
 	bit BIT_RAINBOWBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeladonGymAfterBattleText3
+	jr .print
 .isChampion
 	ld hl, _CeladonGymAfterChampionText3
 	jr .print
@@ -337,6 +345,7 @@ _CeladonGymAfterBattleText4::
 	bit BIT_RAINBOWBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeladonGymAfterBattleText4
+	jr .print
 .isChampion
 	ld hl, _CeladonGymAfterChampionText4
 	jr .print
@@ -383,6 +392,7 @@ _CeladonGymAfterBattleText5::
 	bit BIT_RAINBOWBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeladonGymAfterBattleText5
+	jr .print
 .isChampion
 	ld hl, _CeladonGymAfterChampionText5
 	jr .print
@@ -429,6 +439,7 @@ _CeladonGymAfterBattleText6::
 	bit BIT_RAINBOWBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeladonGymAfterBattleText6
+	jr .print
 .isChampion
 	ld hl, _CeladonGymAfterChampionText6
 	jr .print
@@ -446,8 +457,7 @@ _CeladonGymAfterBattleText6::
 	done
 	
 _CeladonGymAfterErikaText6:
-	text "You won"
-	line "fairly."
+	text "You won fairly."
 	done
 
 _CeladonGymAfterChampionText6:
@@ -467,6 +477,7 @@ _CeladonGymAfterBattleText7::
 	bit BIT_RAINBOWBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeladonGymAfterBattleText7
+	jr .print
 .isChampion
 	ld hl, _CeladonGymAfterChampionText7
 	jr .print
@@ -506,6 +517,7 @@ _CeladonGymAfterBattleText8::
 	bit BIT_RAINBOWBADGE, a
 	jr nz, .afterBeat
 	ld hl, .CeladonGymAfterBattleText8
+	jr .print
 .isChampion
 	ld hl, _CeladonGymAfterChampionText8
 	jr .print
@@ -544,17 +556,13 @@ _FuchsiaGymRocker1AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_SOULBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .FuchsiaGymRocker1AfterBattleText
 	jr .print
-
 .afterBeat
 	ld hl, _FuchsiaGymRocker1AfterKogaText
 	jr .print
-
 .isChampion
 	ld hl, _FuchsiaGymRocker1AfterChampionText
-
 .print
 	call PrintText
 	jp TextScriptEnd
@@ -588,17 +596,13 @@ _FuchsiaGymRocker2AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_SOULBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .FuchsiaGymRocker2AfterBattleText
 	jr .print
-
 .afterBeat
 	ld hl, _FuchsiaGymRocker2AfterKogaText
 	jr .print
-
 .isChampion
 	ld hl, _FuchsiaGymRocker2AfterChampionText
-
 .print
 	call PrintText
 	jp TextScriptEnd
@@ -633,14 +637,11 @@ _FuchsiaGymRocker3AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_SOULBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .FuchsiaGymRocker3AfterBattleText
 	jr .print
-
 .afterBeat
 	ld hl, _FuchsiaGymRocker3AfterKogaText
 	jr .print
-
 .isChampion
 	ld hl, _FuchsiaGymRocker3AfterChampionText
 	
@@ -677,17 +678,13 @@ _FuchsiaGymRocker4AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_SOULBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .FuchsiaGymRocker4AfterBattleText
 	jr .print
-
 .afterBeat
 	ld hl, _FuchsiaGymRocker4AfterKogaText
 	jr .print
-
 .isChampion
 	ld hl, _FuchsiaGymRocker4AfterChampionText
-	
 .print
 	call PrintText
 	jp TextScriptEnd
@@ -721,17 +718,13 @@ _FuchsiaGymRocker5AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_SOULBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .FuchsiaGymRocker5AfterBattleText
 	jr .print
-
 .afterBeat
 	ld hl, _FuchsiaGymRocker5AfterKogaText
 	jr .print
-
 .isChampion
 	ld hl, _FuchsiaGymRocker5AfterChampionText
-	
 .print
 	call PrintText
 	jp TextScriptEnd
@@ -761,17 +754,13 @@ _FuchsiaGymRocker6AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_SOULBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .FuchsiaGymRocker6AfterBattleText
 	jr .print
-
 .afterBeat
 	ld hl, _FuchsiaGymRocker6AfterKogaText
 	jr .print
-
 .isChampion
 	ld hl, _FuchsiaGymRocker6AfterChampionText
-	
 .print
 	call PrintText
 	jp TextScriptEnd
@@ -810,7 +799,6 @@ _SaffronGymChanneler1AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_MARSHBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .SaffronGymChanneler1AfterBattleText
 	jr .print
 .afterBeat
@@ -860,7 +848,6 @@ _SaffronGymYoungster1AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_MARSHBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .SaffronGymYoungster1AfterBattleText
 	jr .print
 .afterBeat
@@ -903,7 +890,6 @@ _SaffronGymChanneler2AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_MARSHBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .SaffronGymChanneler2AfterBattleText
 	jr .print
 .afterBeat
@@ -947,7 +933,6 @@ _SaffronGymYoungster2AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_MARSHBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .SaffronGymYoungster2AfterBattleText
 	jr .print
 .afterBeat
@@ -988,7 +973,6 @@ _SaffronGymChanneler3AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_MARSHBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .SaffronGymChanneler3AfterBattleText
 	jr .print
 .afterBeat
@@ -1029,7 +1013,6 @@ _SaffronGymYoungster3AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_MARSHBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .SaffronGymYoungster3AfterBattleText
 	jr .print
 .afterBeat
@@ -1080,7 +1063,6 @@ _SaffronGymYoungster4AfterBattleText::
 	ld a, [wBeatGymFlags]
 	bit BIT_MARSHBADGE, a
 	jr nz, .afterBeat
-	
 	ld hl, .SaffronGymYoungster4AfterBattleText
 	jr .print
 .afterBeat
@@ -1662,23 +1644,8 @@ _ViridianGymRocker2AfterChampionText:
 	cont "the CHAMPION's"
 	cont "spirit!"
 	done
-	
+
 _ViridianGymCooltrainerM3AfterBattleText::
-	text "You can go onto"
-	line "#MON LEAGUE"
-	cont "only by defeating"
-	cont "our GYM LEADER!"
-	done
-
-_ViridianGymCooltrainerM3AfterEarthBadgeText:
-	text "You defeated"
-	line "the LEADER!"
-	
-	para "The LEAGUE awaits"
-	line "you, TRAINER!"
-	done
-
-_ViridianGymCooltrainerM3AfterChampionText:
 	text_asm
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
 	jr nz, .isChampion
@@ -1697,6 +1664,21 @@ _ViridianGymCooltrainerM3AfterChampionText:
 	jp TextScriptEnd
 
 .ViridianGymCooltrainerM3AfterBattleText:
+	text "You can go onto"
+	line "#MON LEAGUE"
+	cont "only by defeating"
+	cont "our GYM LEADER!"
+	done
+
+_ViridianGymCooltrainerM3AfterEarthBadgeText:
+	text "You defeated"
+	line "the LEADER!"
+	
+	para "The LEAGUE awaits"
+	line "you, TRAINER!"
+	done
+
+_ViridianGymCooltrainerM3AfterChampionText:
 	text "YUJIROU has"
 	line "reopened the"
 	cont "GYM for good."
