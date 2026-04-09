@@ -115,6 +115,7 @@ ZapdosSprite::                  INCBIN "gfx/new_sprites/zapdos.2bpp"
 MoltresSprite::                 INCBIN "gfx/new_sprites/moltres.2bpp"
 MewSprite::                     INCBIN "gfx/new_sprites/mew.2bpp"
 MewtwoSprite::                  INCBIN "gfx/new_sprites/mewtwo.2bpp"
+MeowthSprite::                  INCBIN "gfx/new_sprites/meowth.2bpp"
 
 
 SECTION "MonIcons", ROMX
