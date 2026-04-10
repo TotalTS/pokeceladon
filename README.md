@@ -48,6 +48,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 
 - S.S. Anne: The cruise ship returns with a deck full of new trainers.
 - Complete your PokéDex in brand-new zones: Bill’s Garden, Mystery Cave, and extended Routes 0, 1, and 21.
+- Find a NPC in the Mystery Cave who gives you the Fossil you missed in Mt. Moon.
 - Rematch the Gym Leaders as much as you want (Yujirou replaces Giovanni).
 - Catch all 151 to unlock the battle Professor Oak at the League.
 

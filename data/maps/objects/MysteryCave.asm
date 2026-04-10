@@ -19,5 +19,6 @@ MysteryCave_Object:
 	def_bg_events
 
 	def_object_events
+	object_event 40, 28, SPRITE_SUPER_NERD, STAY, DOWN, TEXT_MYSTERYCAVE_SUPER_NERD
 
 	def_warps_to MYSTERY_CAVE
