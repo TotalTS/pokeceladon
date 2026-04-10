@@ -1284,3 +1284,8 @@ INCLUDE "data/maps/headers/Route25LongHouse.asm"
 INCLUDE "scripts/Route25LongHouse.asm"
 INCLUDE "data/maps/objects/Route25LongHouse.asm"
 Route25LongHouse_Blocks: INCBIN "maps/Route25LongHouse.blk"
+
+INCLUDE "data/maps/headers/Route19Gate.asm"
+INCLUDE "scripts/Route19Gate.asm"
+INCLUDE "data/maps/objects/Route19Gate.asm"
+Route19Gate_Blocks: INCBIN "maps/Route19Gate.blk"

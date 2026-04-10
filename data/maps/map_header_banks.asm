@@ -120,7 +120,6 @@ MapHeaderBanks::
 	db BANK(VictoryRoad1F_h)
 	db BANK(MysteryCave_h)
 	db BANK(LancesRoom_h)
-	db $1D ; UNUSED_MAP_74
 	db $1D ; UNUSED_MAP_75
 	db BANK(HallOfFame_h)
 	db BANK(UndergroundPathNorthSouth_h)
@@ -197,6 +196,7 @@ MapHeaderBanks::
 	db BANK(Route12SuperRodHouse_h)
 	db BANK(Route18Gate1F_h)
 	db BANK(Route18Gate2F_h)
+	db BANK(Route19Gate_h)
 	db BANK(SeafoamIslands1F_h)
 	db BANK(Route22Gate_h)
 	db BANK(VictoryRoad2F_h)

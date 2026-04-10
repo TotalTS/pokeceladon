@@ -139,7 +139,7 @@ HomeDoor_Apply::
 
     ld a, $02
     ld [wNewTileBlockID], a
-    lb bc, 4, 2
+    lb bc, 7, 2
     predef ReplaceTileBlock
     jp .done
 	

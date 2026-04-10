@@ -57,7 +57,7 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_16,                      20,  9 ; $1B
 	map_const ROUTE_17,                      10, 72 ; $1C
 	map_const ROUTE_18,                      25,  9 ; $1D
-	map_const ROUTE_19,                      10, 27 ; $1E
+	map_const ROUTE_19,                      10, 30 ; $1E
 	map_const ROUTE_20,                      50,  9 ; $1F
 	map_const ROUTE_21,                      16, 45 ; $20
 	map_const ROUTE_22,                      20, 10 ; $21
@@ -196,7 +196,6 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	end_indoor_group MYSTERY_CAVE
 
 	map_const LANCES_ROOM,                   13, 13 ; $71
-	map_const UNUSED_MAP_74,                  0,  0 ; $74
 	map_const UNUSED_MAP_75,                  0,  0 ; $75
 	map_const HALL_OF_FAME,                   5,  4 ; $76
 	end_indoor_group POKEMON_LEAGUE
@@ -316,6 +315,9 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const ROUTE_18_GATE_1F,               4,  5 ; $BE
 	map_const ROUTE_18_GATE_2F,               4,  4 ; $BF
 	end_indoor_group ROUTE_18
+	
+	map_const ROUTE_19_GATE,                  5,  4 ; $new
+	end_indoor_group ROUTE_19
 
 	map_const SEAFOAM_ISLANDS_1F,            15,  9 ; $C0
 	end_indoor_group SEAFOAM_ISLANDS_2

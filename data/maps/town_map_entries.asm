@@ -110,6 +110,7 @@ InternalMapEntries:
 	indoor_map ROUTE_16,            4,  5, Route16Name
 	indoor_map ROUTE_12_2,         14, 10, Route12Name
 	indoor_map ROUTE_18,            7, 13, Route18Name
+	indoor_map ROUTE_19,            6, 15, Route19Name
 	indoor_map SEAFOAM_ISLANDS_2,   5, 15, SeafoamIslandsName
 	indoor_map ROUTE_22,            0,  7, Route22Name
 	indoor_map VICTORY_ROAD_2,      0,  4, VictoryRoadName

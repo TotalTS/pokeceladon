@@ -114,6 +114,6 @@ HomeWarpDataPtr:
 .HomeCeladon:   fly_warp CELADON_CITY,      29, 10
 .HomeSaffron:   fly_warp SAFFRON_CITY,      13, 30
 .HomeFuchsia:   fly_warp FUCHSIA_CITY,      15, 28
-.HomeRoute19:   fly_warp ROUTE_19,           5, 10
+.HomeRoute19:   fly_warp ROUTE_19,           5, 16
 .HomeCinnabar:  fly_warp CINNABAR_ISLAND,    9, 12
 .HomeIndigo:    fly_warp ROUTE_23,           1, 18

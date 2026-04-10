@@ -120,7 +120,6 @@ MapHeaderPointers::
 	dw VictoryRoad1F_h
 	dw MysteryCave_h
 	dw LancesRoom_h
-	dw LancesRoom_h ; UNUSED_MAP_74
 	dw LancesRoom_h ; UNUSED_MAP_75
 	dw HallOfFame_h
 	dw UndergroundPathNorthSouth_h
@@ -197,6 +196,7 @@ MapHeaderPointers::
 	dw Route12SuperRodHouse_h
 	dw Route18Gate1F_h
 	dw Route18Gate2F_h
+	dw Route19Gate_h
 	dw SeafoamIslands1F_h
 	dw Route22Gate_h
 	dw VictoryRoad2F_h

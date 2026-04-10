@@ -155,3 +155,27 @@ _Route19SignText::
 	line "FUCHSIA CITY -"
 	cont "SEAFOAM ISLANDS"
 	done
+	
+_Route19GateGuardText::
+    text "Many years ago,"
+    line "CINNABAR's VOLCANO"
+    cont "erupted very"
+	cont "frequently."
+
+    para "Huge boulders"
+    line "blocked ROUTE 19"
+    cont "for months."
+
+    para "ROUTE 19 is safe"
+    line "now, unlike the"
+    cont "old days."
+    done
+	
+_CarefulSwimmingSignText::
+	text "Please be careful"
+	line "if you are swim-"
+	cont "ming to SEAFOAM"
+	cont "ISLANDS."
+
+	para "FUCHSIA POLICE"
+	done
