@@ -75,6 +75,8 @@ FlyWarpDataPtr:
 	fly_warp_spec SAFFRON_CITY,    .SaffronCity
 	fly_warp_spec ROUTE_4,         .Route4
 	fly_warp_spec ROUTE_10,        .Route10
+	fly_warp_spec ROUTE_19,        .Route19
+	fly_warp_spec ROUTE_23,        .Route23
 
 .PalletTown:     fly_warp PALLET_TOWN,     11,  6
 .ViridianCity:   fly_warp VIRIDIAN_CITY,   23, 26
@@ -89,6 +91,8 @@ FlyWarpDataPtr:
 .SaffronCity:    fly_warp SAFFRON_CITY,     9, 30
 .Route4:         fly_warp ROUTE_4,         11,  6
 .Route10:        fly_warp ROUTE_10,        11, 20
+.Route19:        fly_warp ROUTE_19,         5, 16
+.Route23:        fly_warp ROUTE_23,         1, 18
 
 
 HomeWarpDataPtr:

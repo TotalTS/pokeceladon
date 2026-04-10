@@ -8,7 +8,6 @@ INCLUDE "engine/movie/title.asm"
 INCLUDE "engine/pokemon/load_mon_data.asm"
 INCLUDE "data/items/prices.asm"
 INCLUDE "data/items/names.asm"
-INCLUDE "data/text/unused_names.asm"
 INCLUDE "engine/gfx/sprite_oam.asm"
 INCLUDE "engine/gfx/oam_dma.asm"
 INCLUDE "engine/link/print_waiting_text.asm"
@@ -360,3 +359,4 @@ SECTION "bank1F", ROMX
 
 INCLUDE "engine/gfx/palettes.asm"
 INCLUDE "engine/gfx/animated_tiles_code.asm"
+INCLUDE "data/text/unused_names.asm"
