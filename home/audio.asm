@@ -27,21 +27,35 @@ PlayDefaultMusicCommon::
 	cp 3
 	jr z, .skating
 
-	ld a, [wLastMusicSoundID]
-	cp MUSIC_BIKE_RIDING
-	jr z, .skip_bicycle_update
 	ld a, [wMapMusicSoundID]
+	ld b, a
+	cp MUSIC_KEEP
+	jr z, .skip_bicycle_update
+
+	ld a, [wLastMapMusicBeforeBicycle]
+	cp b
+	jr z, .skip_bicycle_update
+
+	ld a, b
 	ld [wLastMapMusicBeforeBicycle], a
+
 .skip_bicycle_update
 	ld a, MUSIC_BIKE_RIDING
 	jr .next
 
 .skating
-	ld a, [wLastMusicSoundID]
-	cp MUSIC_SKATEBOARD
-	jr z, .skip_skate_update
 	ld a, [wMapMusicSoundID]
+	ld b, a
+	cp MUSIC_KEEP
+	jr z, .skip_skate_update
+
+	ld a, [wLastMapMusicBeforeBicycle]
+	cp b
+	jr z, .skip_skate_update
+
+	ld a, b
 	ld [wLastMapMusicBeforeBicycle], a
+
 .skip_skate_update
 	ld a, MUSIC_SKATEBOARD
 	jr .next
