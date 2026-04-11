@@ -23,9 +23,9 @@ SSAnne1FRoomsPostGameToggle:
 	predef ShowObject
 	ld a, TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE2
 	ld [wToggleableObjectIndex], a
-	predef ShowObject
-	ld a, TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE3
-	ld [wToggleableObjectIndex], a
+;	predef ShowObject
+;	ld a, TOGGLE_SS_ANNE_1F_ROOMS_ROOKIE3
+;	ld [wToggleableObjectIndex], a
 	predef_jump ShowObject
 
 SSAnne1FRooms_ScriptPointers:
@@ -42,7 +42,7 @@ SSAnne1FRooms_TextPointers:
 	dw_const SSAnne1FRoomsCooltrainerFText,  TEXT_SSANNE1FROOMS_COOLTRAINER_F
 	dw_const SSAnne1FRoomsRookie1Text,       TEXT_SSANNE1FROOMS_ROOKIE1
 	dw_const SSAnne1FRoomsRookie2Text,       TEXT_SSANNE1FROOMS_ROOKIE2
-	dw_const SSAnne1FRoomsRookie3Text,       TEXT_SSANNE1FROOMS_ROOKIE3
+;	dw_const SSAnne1FRoomsRookie3Text,       TEXT_SSANNE1FROOMS_ROOKIE3
 	dw_const SSAnne1FRoomsGirl1Text,         TEXT_SSANNE1FROOMS_GIRL1
 	dw_const SSAnne1FRoomsMiddleAgedManText, TEXT_SSANNE1FROOMS_MIDDLE_AGED_MAN
 	dw_const SSAnne1FRoomsLittleGirlText,    TEXT_SSANNE1FROOMS_LITTLE_GIRL
@@ -66,8 +66,8 @@ SSAnne8TrainerHeader4:
 	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_4, 3, SSAnne1FRoomsRookie1BattleText, SSAnne1FRoomsRookie1EndBattleText, SSAnne1FRoomsRookie1AfterBattleText
 SSAnne8TrainerHeader5:
 	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_5, 2, SSAnne1FRoomsRookie2BattleText, SSAnne1FRoomsRookie2EndBattleText, SSAnne1FRoomsRookie2AfterBattleText
-SSAnne8TrainerHeader6:
-	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_6, 2, SSAnne1FRoomsRookie3BattleText, SSAnne1FRoomsRookie3EndBattleText, SSAnne1FRoomsRookie3AfterBattleText
+;SSAnne8TrainerHeader6:
+;	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_6, 2, SSAnne1FRoomsRookie3BattleText, SSAnne1FRoomsRookie3EndBattleText, SSAnne1FRoomsRookie3AfterBattleText
 	db -1 ; end
 
 SSAnne1FRoomsGentleman1Text:
@@ -198,11 +198,11 @@ SSAnne1FRoomsRookie2Text:
 	call TalkToTrainer
 	jp TextScriptEnd
 	
-SSAnne1FRoomsRookie3Text:
-	text_asm
-	ld hl, SSAnne8TrainerHeader6
-	call TalkToTrainer
-	jp TextScriptEnd
+;SSAnne1FRoomsRookie3Text:
+;	text_asm
+;	ld hl, SSAnne8TrainerHeader6
+;	call TalkToTrainer
+;	jp TextScriptEnd
 
 SSAnne1FRoomsGirl1Text:
 	text_asm
@@ -284,17 +284,17 @@ SSAnne1FRoomsRookie2AfterBattleText:
 	text_far _SSAnne1FRoomsRookie2AfterBattleText
 	text_end
 
-SSAnne1FRoomsRookie3BattleText:
-	text_far _SSAnne1FRoomsRookie3BattleText
-	text_end
+;SSAnne1FRoomsRookie3BattleText:
+;	text_far _SSAnne1FRoomsRookie3BattleText
+;	text_end
 
-SSAnne1FRoomsRookie3EndBattleText:
-	text_far _SSAnne1FRoomsRookie3EndBattleText
-	text_end
+;SSAnne1FRoomsRookie3EndBattleText:
+;	text_far _SSAnne1FRoomsRookie3EndBattleText
+;	text_end
 
-SSAnne1FRoomsRookie3AfterBattleText:
-	text_far _SSAnne1FRoomsRookie3AfterBattleText
-	text_end
+;SSAnne1FRoomsRookie3AfterBattleText:
+;	text_far _SSAnne1FRoomsRookie3AfterBattleText
+;	text_end
 
 SSAnne1FRoomsBedText:
 	text_asm

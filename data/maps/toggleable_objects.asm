@@ -248,7 +248,7 @@ ToggleableObjectStates:
 	toggleable_objects_for SS_ANNE_1F_ROOMS
 	toggle_object_state SSANNE1FROOMS_ROOKIE1,          OFF
 	toggle_object_state SSANNE1FROOMS_ROOKIE2,          OFF
-	toggle_object_state SSANNE1FROOMS_ROOKIE3,          OFF
+;	toggle_object_state SSANNE1FROOMS_ROOKIE3,          OFF
 	toggle_object_state SSANNE1FROOMS_TM_BODY_SLAM,     ON
 
 	toggleable_objects_for SS_ANNE_2F_ROOMS
