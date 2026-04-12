@@ -120,7 +120,6 @@ MapHeaderBanks::
 	db BANK(VictoryRoad1F_h)
 	db BANK(MysteryCave_h)
 	db BANK(LancesRoom_h)
-	db $1D ; UNUSED_MAP_75
 	db BANK(HallOfFame_h)
 	db BANK(UndergroundPathNorthSouth_h)
 	db BANK(ChampionsRoom_h)
@@ -253,4 +252,5 @@ MapHeaderBanks::
 	db BANK(LoreleisRoom_h)
 	db BANK(BrunosRoom_h)
 	db BANK(AgathasRoom_h)
+	db BANK(Route1Museum1F_h)
 	assert_table_length NUM_MAPS

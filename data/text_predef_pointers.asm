@@ -30,10 +30,10 @@ TextPredefs::
 	add_tx_pre SaffronCityPokecenterBenchGuyText    ; 18
 	add_tx_pre MtMoonPokecenterBenchGuyText         ; 19
 	add_tx_pre RockTunnelPokecenterBenchGuyText     ; 1A
-	add_tx_pre ChampionsHouseCupText                ; 1B XXX unused
-	add_tx_pre MagikarpStatue1Text                  ; 1C
-	add_tx_pre MagikarpStatue2Text                  ; 1D
-	add_tx_pre UnusedPredefText                     ; 1E XXX unused
+	add_tx_pre ChampionsHouseCupText                ; 1B new
+	add_tx_pre MagikarpStatue1Text                  ; 1C new
+	add_tx_pre MagikarpStatue2Text                  ; 1D new
+	add_tx_pre YoshiMuseumText                      ; 1E new
 	add_tx_pre PokemonCenterPCText                  ; 1F
 	add_tx_pre ViridianSchoolNotebook               ; 20
 	add_tx_pre ViridianSchoolBlackboard             ; 21
@@ -63,7 +63,7 @@ TextPredefs::
 	add_tx_pre NewBicycleText                       ; 39
 	add_tx_pre IndigoPlateauStatues                 ; 3A
 	add_tx_pre VermilionGymTrashSuccessText1        ; 3B
-	add_tx_pre ChikoritaIntroText                   ; 3C
+	add_tx_pre ChikoritaIntroText                   ; 3C new
 	add_tx_pre VermilionGymTrashSuccessText3        ; 3D
 	add_tx_pre VermilionGymTrashFailText            ; 3E
 	add_tx_pre TownMapText                          ; 3F

@@ -362,3 +362,4 @@ INCLUDE "engine/gfx/animated_tiles_code.asm"
 INCLUDE "data/text/unused_names.asm"
 
 INCLUDE "engine/decorations.asm"
+INCLUDE "engine/pokemon/calc_stats.asm"

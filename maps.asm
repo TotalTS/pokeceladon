@@ -1289,3 +1289,8 @@ INCLUDE "data/maps/headers/Route19Gate.asm"
 INCLUDE "scripts/Route19Gate.asm"
 INCLUDE "data/maps/objects/Route19Gate.asm"
 Route19Gate_Blocks: INCBIN "maps/Route19Gate.blk"
+
+INCLUDE "data/maps/headers/Route1Museum1F.asm"
+INCLUDE "scripts/Route1Museum1F.asm"
+INCLUDE "data/maps/objects/Route1Museum1F.asm"
+Route1Museum1F_Blocks: INCBIN "maps/Route1Museum1F.blk"

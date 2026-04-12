@@ -196,7 +196,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	end_indoor_group MYSTERY_CAVE
 
 	map_const LANCES_ROOM,                   13, 13 ; $71
-	map_const UNUSED_MAP_75,                  0,  0 ; $75
+;	map_const UNUSED_MAP_75,                  0,  0 ; $75
 	map_const HALL_OF_FAME,                   5,  4 ; $76
 	end_indoor_group POKEMON_LEAGUE
 
@@ -408,6 +408,9 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const BRUNOS_ROOM,                    5,  6 ; $F6
 	map_const AGATHAS_ROOM,                   5,  6 ; $F7
 	end_indoor_group POKEMON_LEAGUE_3
+	
+	map_const ROUTE_1_MUSEUM_1F,             23, 4 ; new was previously $75
+	end_indoor_group ROUTE_1_MUSEUM
 	
 DEF NUM_MAPS EQU const_value
 

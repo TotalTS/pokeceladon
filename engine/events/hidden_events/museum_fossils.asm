@@ -35,6 +35,18 @@ ChikoritaShowSprite::
 ChikoritaIntroText::
 	text_far _ChikoritaIntroText
 	text_end
+	
+YoshiMuseum:
+	ld a, YOSHI
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+	call EnableAutoTextBoxDrawing
+	tx_pre YoshiMuseumText
+	ret
+
+YoshiMuseumText::
+	text_far _YoshiMuseumText
+	text_end
 
 DisplayMonFrontSpriteInBox::
 ; Displays a pokemon's front sprite in a pop-up window.

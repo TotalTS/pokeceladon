@@ -385,3 +385,4 @@ RocketPicBack::    INCBIN "gfx/player/rocketb.pic"
 FRocketPicBack::   INCBIN "gfx/player/frocketb.pic"
 ; pokemon
 ChikoritaPic::     INCBIN "gfx/pokemon/front/chikorita.pic"
+YoshiPic::         INCBIN "gfx/pokemon/front/yoshi.pic"

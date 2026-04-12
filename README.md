@@ -3,6 +3,8 @@
 This hack is designed as an upgrade to the original Pokémon Red, Blue, and Green, aiming to enhance the classic experience without overcomplicating its core identity. It features a personal pick of improved graphics, expanded events, and a variety of restored content.
 Started this project a long time ago and some ideas changed, but I'm commited to finish it now: https://web.archive.org/web/20180903101807/https://hax.iimarckus.org/topic/7257/
 
+This hack is intended to be played in Super Gameboy mode to appreciate a variety of new graphics and palettes.
+
 Why Celadon Version?:
 Celadon City has always been my favorite location in the first generation, from the music to the visuals and the variety of events. This is a very personal hack.
 
@@ -104,6 +106,7 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 - Press SELECT to switch Pokémon in your party menu.
 - Optimization on Home bank.
 - Move badge "item" definitions outside actual item list.
+- Original idea of Erik and Sara Reunion.
 - Original idea of drinking tea with Daisy.
 
 **Mr. Cheeze**
@@ -140,6 +143,8 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 - Adding Gender Selection (original tutorial done by **Luna**)
 - Add debug mode to Red version
 - Restore the invisible PC in the Celadon Hotel
+- Free some space in the Home BANK
+- Free MORE some space in the Home BANK
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 

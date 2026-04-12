@@ -116,6 +116,8 @@ MoltresSprite::                 INCBIN "gfx/new_sprites/moltres.2bpp"
 MewSprite::                     INCBIN "gfx/new_sprites/mew.2bpp"
 MewtwoSprite::                  INCBIN "gfx/new_sprites/mewtwo.2bpp"
 MeowthSprite::                  INCBIN "gfx/new_sprites/meowth.2bpp"
+LugiaSprite::                   INCBIN "gfx/new_sprites/lugia.2bpp"
+HoOhSprite::                    INCBIN "gfx/new_sprites/ho_oh.2bpp"
 
 
 SECTION "MonIcons", ROMX

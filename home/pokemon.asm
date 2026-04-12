@@ -395,6 +395,10 @@ GetMonHeader::
     ld b, $55 ; Chikorita 5x5
     cp CHIKORITA
     jr z, .specialID
+	ld de, YoshiPic
+    ld b, $77 ; Yoshi 7x7
+    cp YOSHI
+    jr z, .specialID
 	ld de, FossilAerodactylPic
 	ld b, $77 ; size of Aerodactyl fossil sprite
 	cp FOSSIL_AERODACTYL ; Aerodactyl fossil

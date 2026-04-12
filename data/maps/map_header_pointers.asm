@@ -120,7 +120,6 @@ MapHeaderPointers::
 	dw VictoryRoad1F_h
 	dw MysteryCave_h
 	dw LancesRoom_h
-	dw LancesRoom_h ; UNUSED_MAP_75
 	dw HallOfFame_h
 	dw UndergroundPathNorthSouth_h
 	dw ChampionsRoom_h
@@ -253,4 +252,5 @@ MapHeaderPointers::
 	dw LoreleisRoom_h
 	dw BrunosRoom_h
 	dw AgathasRoom_h
+	dw Route1Museum1F_h
 	assert_table_length NUM_MAPS

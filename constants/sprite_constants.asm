@@ -105,4 +105,6 @@ DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_MEW                     ; $47
 	const SPRITE_GAMBLER_ASLEEP          ; $48
 	const SPRITE_MEOWTH                  ; new
+	const SPRITE_LUGIA                   ; new
+	const SPRITE_HO_OH                   ; new
 DEF NUM_SPRITES EQU const_value - 1
