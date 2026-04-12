@@ -43,7 +43,7 @@ MonPartyData:
 	db ICON_BAT         ; GOLBAT
 	db ICON_ODDISH      ; ODDISH
 	db ICON_ODDISH      ; GLOOM
-	db ICON_ODDISH      ; VILEPLUME
+	db ICON_VILEPLUME   ; VILEPLUME
 	db ICON_BUG         ; PARAS
 	db ICON_BUG         ; PARASECT
 	db ICON_CATERPILLAR ; VENONAT

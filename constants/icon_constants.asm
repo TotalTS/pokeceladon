@@ -43,6 +43,7 @@
 	const ICON_MEW
 	const ICON_MEOWTH
 	const ICON_FOSSIL
+	const ICON_VILEPLUME
 
 DEF ICON_TRADEBUBBLE EQU $e ; difference between alternating icon frames' tile IDs
 
