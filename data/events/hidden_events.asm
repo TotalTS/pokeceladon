@@ -595,6 +595,7 @@ DEF ANY_FACING EQU $d0
 
 	hidden_events_for CERULEAN_CITY
 	hidden_event 15,  8, HiddenItems, RARE_CANDY
+	hidden_event 39,  9, HiddenItems, MAX_ELIXER
 	db -1 ; end
 
 	hidden_events_for ROUTE_4
