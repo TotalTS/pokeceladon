@@ -109,4 +109,6 @@ SpriteSheetPointerTable:
 	overworld_sprite MewSprite, 4               ; SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_GAMBLER_ASLEEP
 	overworld_sprite MeowthSprite, 4            ; new
+	overworld_sprite LugiaSprite, 4             ; new
+	overworld_sprite HoOhSprite, 4              ; new
 	assert_table_length NUM_SPRITES
