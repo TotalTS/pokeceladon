@@ -6828,6 +6828,12 @@ _LoadTrainerPic:
 	ld d, a ; de contains pointer to trainer pic
 	ld a, [wLinkState]
 	and a
+	jr z, .notLinkBattle
+    ld a, BANK(RedPicFront)
+    ld de, RedPicFront
+    jr .loadSprite
+
+.notLinkBattle ; thanks to Narishma-gb and Engezerstorung for pointing the issue with RedPicFront not loading
 	ld a, [wTrainerClass]
 	cp ROOKIE
 	jr z, .loadRookie
@@ -6835,24 +6841,16 @@ _LoadTrainerPic:
 	jr z, .loadYujirou
 	cp ROCKET_F
 	jr z, .loadRocketF
-
 	ld a, BANK(YoungsterPic)
 	jr .loadSprite
-
 .loadRookie
 	ld a, BANK(RookiePic)
 	jr .loadSprite
-	
 .loadYujirou
 	ld a, BANK(YujirouPic)
-	jr .loadSprite	
-	
+	jr .loadSprite
 .loadRocketF
 	ld a, BANK(RocketFPic)
-	jr .loadSprite	
-
-.useRed
-	ld a, BANK(RedPicFront)
 
 .loadSprite
 	call UncompressSpriteFromDE
