@@ -23,12 +23,18 @@ Route1Museum1FScientist2Text:
 	text_end
 
 Route1Museum1FSPokemonText:
-	text_far _FuchsiaCityPokemonText
-	text_end
+	text_asm
+    farcall HoOhShowSprite
+    ld a, 1
+    ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+    jp TextScriptEnd
 	
 Route1Museum1FSPokemon2Text:
-	text_far _FuchsiaCityPokemonText
-	text_end
+	text_asm
+    farcall LugiaShowSprite
+    ld a, 1
+    ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+    jp TextScriptEnd
 
 Route1Museum1FSGrampsText:
 	text_far _Route1Museum1FSGrampsText

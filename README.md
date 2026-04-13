@@ -137,6 +137,12 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 **LuigiTKO**
 - Articuno, Zapdos, Moltres, Mew, Mewtwo overworld sprites.
 
+**Chibi-Pika**
+- Lugia sprite.
+
+**icycatelf**
+- Togepi sprite.
+
 **pret tutorials**
 - Add a new map sprite
 - Adding gym leader rematches

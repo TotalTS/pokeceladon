@@ -44,17 +44,6 @@ _Route1Museum1FScientist2Text::
 	cont "current records."
 	done
 
-_YoshiMuseumText::
-	text "A photo of a"
-	line "green DRAGON"
-	cont "#MON."
-
-	para "It was once said"
-	line "to be a secret"
-	cont "evolution of"
-	cont "DRAGONITE."
-	done
-
 _Route1Museum1FSGrampsText::
 	text "April 1, 1999!"
 
@@ -75,4 +64,52 @@ _Route1Museum1FSGrampsText::
 	line "#MON No. 999!"
 	
 	para "I'm a believer!"
+	done
+	
+_YoshiMuseumText::
+	text "A photo of a"
+	line "green dragon"
+	cont "#MON."
+
+	para "It was once said"
+	line "to be a secret"
+	cont "evolution of"
+	cont "DRAGONITE."
+	done
+	
+_MarillMuseumText::
+	text "A photo of a"
+	line "blue round"
+	cont "#MON."
+
+	para "It was once said"
+	line "to be a water"
+	cont "evolution of"
+	cont "PIKACHU."
+	done
+
+_LugiaMuseumText::
+	text "A statue of a"
+	line "silver winged"
+	cont "#MON."
+
+	para "Rumors say it"
+	line "is the guardian"
+	cont "of the seas."
+	
+	para "It is said"
+	line "that it appears"
+	cont "when storms"
+	cont "start."
+	done
+	
+_HoOhMuseumText::
+	text "A statue of a"
+	line "golden bird"
+	cont "#MON."
+
+	para "A trainer saw it"
+	line "at the start of"
+	cont "his journey in"
+	cont "PALLET TOWN."
 	done

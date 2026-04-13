@@ -395,6 +395,18 @@ GetMonHeader::
     ld b, $55 ; Chikorita 5x5
     cp CHIKORITA
     jr z, .specialID
+	ld de, MarillPic
+    ld b, $55 ; Marill 5x5
+    cp MARILL
+    jr z, .specialID
+	ld de, LugiaPic
+    ld b, $77 ; Lugia 7x7
+    cp LUGIA
+    jr z, .specialID
+	ld de, HoOhPic
+    ld b, $77 ; HoOh 7x7
+    cp HOOH
+    jr z, .specialID
 	ld de, YoshiPic
     ld b, $77 ; Yoshi 7x7
     cp YOSHI

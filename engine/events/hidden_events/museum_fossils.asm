@@ -47,6 +47,46 @@ YoshiMuseum:
 YoshiMuseumText::
 	text_far _YoshiMuseumText
 	text_end
+	
+MarillMuseum:
+	ld a, MARILL
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+	call EnableAutoTextBoxDrawing
+	tx_pre MarillMuseumText
+	ret
+
+MarillMuseumText::
+	text_far _MarillMuseumText
+	text_end
+	
+LugiaShowSprite::
+	call EnableAutoTextBoxDrawing
+	tx_pre LugiaMuseumText
+	ld a, LUGIA
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+    call Delay3
+	call UpdateSprites
+    ret
+
+LugiaMuseumText::
+	text_far _LugiaMuseumText
+	text_end
+	
+HoOhShowSprite::
+	call EnableAutoTextBoxDrawing
+	tx_pre HoOhMuseumText
+	ld a, HOOH
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+    call Delay3
+	call UpdateSprites
+    ret
+
+HoOhMuseumText::
+	text_far _HoOhMuseumText
+	text_end
 
 DisplayMonFrontSpriteInBox::
 ; Displays a pokemon's front sprite in a pop-up window.

@@ -30,6 +30,18 @@ UncompressMonSprite::
 	ld a, BANK(ChikoritaPic)
 	jr z, .GotBank
 	ld a, b
+	cp MARILL
+	ld a, BANK(MarillPic)
+	jr z, .GotBank
+	ld a, b
+	cp LUGIA
+	ld a, BANK(LugiaPic)
+	jr z, .GotBank
+	ld a, b
+	cp HOOH
+	ld a, BANK(HoOhPic)
+	jr z, .GotBank
+	ld a, b
 	cp YOSHI
 	ld a, BANK(YoshiPic)
 	jr z, .GotBank

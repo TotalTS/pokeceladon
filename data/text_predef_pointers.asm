@@ -40,7 +40,7 @@ TextPredefs::
 	add_tx_pre JustAMomentText                      ; 22
 	add_tx_pre OpenBillsPCText                      ; 23
 	add_tx_pre FoundHiddenItemText                  ; 24
-	add_tx_pre HiddenItemBagFullText                ; 25 XXX unused
+	add_tx_pre MarillMuseumText                     ; 25 new
 	add_tx_pre VermilionGymTrashText                ; 26
 	add_tx_pre IndigoPlateauHQText                  ; 27
 	add_tx_pre GameCornerOutOfOrderText             ; 28
@@ -70,3 +70,5 @@ TextPredefs::
 	add_tx_pre BookOrSculptureText                  ; 40
 	add_tx_pre ElevatorText                         ; 41
 	add_tx_pre PokemonStuffText                     ; 42
+	add_tx_pre LugiaMuseumText                      ; 43 new
+	add_tx_pre HoOhMuseumText                       ; 44 new

@@ -156,7 +156,18 @@ SetPal_Overworld:
 	cp BRUNOS_ROOM
 	jr z, .caveOrBruno
 .normalDungeonOrBuilding
+	cp ROUTE_1_MUSEUM_1F
+	jr z, .Route1Museum1F
+	cp ROUTE_25_LONG_HOUSE
+	jr z, .Route25LongHouse
 	ld a, [wLastMap] ; town or route that current dungeon or building is located
+	jr .townOrRoute
+.Route1Museum1F
+	ld a, PAL_LEMONMON - 1
+	jr .town
+.Route25LongHouse
+	ld a, PAL_CERULEAN - 1
+	jr .town
 .townOrRoute
 	cp ROUTE_0_WEST
 	jr z, .Route0

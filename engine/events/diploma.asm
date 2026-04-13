@@ -199,5 +199,5 @@ DiplomaUniversity:
 	db "CELADON UNIVERSITY@"
 	
 MagikarpDRSprite:
-    INCBIN "gfx/pokemon/magikarpdr.2bpp"
+    INCBIN "gfx/misc_sprites/magikarpdr.2bpp"
 MagikarpDRSpriteEnd:
