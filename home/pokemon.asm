@@ -387,7 +387,7 @@ GetMonHeader::
 	ld de, FossilKabutopsPic
 	ld b, $66 ; size of Kabutops fossil and Ghost sprites
 	cp FOSSIL_KABUTOPS ; Kabutops fossil
-	jr z, .specialID
+	jp z, .specialID
 	ld de, GhostPic
 	cp MON_GHOST ; Ghost
 	jr z, .specialID
@@ -406,6 +406,22 @@ GetMonHeader::
 	ld de, HoOhPic
     ld b, $77 ; HoOh 7x7
     cp HO_OH
+    jr z, .specialID
+	ld de, TogepiPic
+    ld b, $55 ; Togepi 5x5
+    cp TOGEPI
+    jr z, .specialID
+	ld de, LeafeonPic
+    ld b, $66 ; Leafeon 6x6
+    cp LEAFEON
+    jr z, .specialID
+	ld de, DonphanPic
+    ld b, $77 ; Donphan 7x7
+    cp DONPHAN
+    jr z, .specialID
+	ld de, HonogumaPic
+    ld b, $55 ; Honoguma 5x5
+    cp HONOGUMA
     jr z, .specialID
 	ld de, YoshiPic
     ld b, $77 ; Yoshi 7x7

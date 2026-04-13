@@ -72,3 +72,7 @@ TextPredefs::
 	add_tx_pre PokemonStuffText                     ; 42
 	add_tx_pre LugiaMuseumText                      ; 43 new
 	add_tx_pre HoOhMuseumText                       ; 44 new
+	add_tx_pre TogepiMuseumText                     ; 45 new
+	add_tx_pre LeafeonMuseumText                    ; 46 new
+	add_tx_pre DonphanMuseumText                    ; 47 new
+	add_tx_pre HonogumaMuseumText                   ; 48 new

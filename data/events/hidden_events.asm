@@ -610,4 +610,8 @@ DEF ANY_FACING EQU $d0
 	hidden_events_for ROUTE_1_MUSEUM_1F
 	hidden_event 34,  3, YoshiMuseum, SPRITE_FACING_UP
 	hidden_event 34,  6, MarillMuseum, SPRITE_FACING_UP
+	hidden_event 54,  3, TogepiMuseum, SPRITE_FACING_UP
+	hidden_event 60,  3, LeafeonMuseum, SPRITE_FACING_UP
+	hidden_event 54,  6, DonphanMuseum, SPRITE_FACING_UP
+	hidden_event 60,  6, HonogumaMuseum, SPRITE_FACING_UP
 	db -1 ; end

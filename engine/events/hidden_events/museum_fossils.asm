@@ -87,6 +87,54 @@ HoOhShowSprite::
 HoOhMuseumText::
 	text_far _HoOhMuseumText
 	text_end
+	
+TogepiMuseum:
+	ld a, TOGEPI
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+	call EnableAutoTextBoxDrawing
+	tx_pre TogepiMuseumText
+	ret
+
+TogepiMuseumText::
+	text_far _TogepiMuseumText
+	text_end
+	
+LeafeonMuseum:
+	ld a, LEAFEON
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+	call EnableAutoTextBoxDrawing
+	tx_pre LeafeonMuseumText
+	ret
+
+LeafeonMuseumText::
+	text_far _LeafeonMuseumText
+	text_end
+	
+DonphanMuseum:
+	ld a, DONPHAN
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+	call EnableAutoTextBoxDrawing
+	tx_pre DonphanMuseumText
+	ret
+
+DonphanMuseumText::
+	text_far _DonphanMuseumText
+	text_end
+	
+HonogumaMuseum:
+	ld a, HONOGUMA
+	ld [wCurPartySpecies], a
+	call DisplayMonFrontSpriteInBox
+	call EnableAutoTextBoxDrawing
+	tx_pre HonogumaMuseumText
+	ret
+
+HonogumaMuseumText::
+	text_far _HonogumaMuseumText
+	text_end
 
 DisplayMonFrontSpriteInBox::
 ; Displays a pokemon's front sprite in a pop-up window.

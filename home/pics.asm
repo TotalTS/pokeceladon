@@ -42,6 +42,22 @@ UncompressMonSprite::
 	ld a, BANK(HoOhPic)
 	jr z, .GotBank
 	ld a, b
+	cp TOGEPI
+	ld a, BANK(TogepiPic)
+	jr z, .GotBank
+	ld a, b
+	cp LEAFEON
+	ld a, BANK(LeafeonPic)
+	jr z, .GotBank
+	ld a, b
+	cp DONPHAN
+	ld a, BANK(DonphanPic)
+	jr z, .GotBank
+	ld a, b
+	cp HONOGUMA
+	ld a, BANK(HonogumaPic)
+	jr z, .GotBank
+	ld a, b
 	cp YOSHI
 	ld a, BANK(YoshiPic)
 	jr z, .GotBank

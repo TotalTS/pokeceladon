@@ -162,13 +162,13 @@
 	const BULBASAUR          ; $99
 	const VENUSAUR           ; $9A
 	const TENTACRUEL         ; $9B
-	const_skip               ; $9C
+	const LEAFEON            ; $9C
 	const GOLDEEN            ; $9D
 	const SEAKING            ; $9E
 	const MARILL             ; $9F
 	const LUGIA              ; $A0
 	const HO_OH              ; $A1
-	const_skip               ; $A2
+	const TOGEPI             ; $A2
 	const PONYTA             ; $A3
 	const RAPIDASH           ; $A4
 	const RATTATA            ; $A5
@@ -178,9 +178,9 @@
 	const GEODUDE            ; $A9
 	const PORYGON            ; $AA
 	const AERODACTYL         ; $AB
-	const_skip               ; $AC
+	const DONPHAN            ; $AC
 	const MAGNEMITE          ; $AD
-	const_skip               ; $AE
+	const HONOGUMA           ; $AE
 	const YOSHI              ; $AF
 	const CHARMANDER         ; $B0
 	const SQUIRTLE           ; $B1
