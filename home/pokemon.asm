@@ -405,7 +405,7 @@ GetMonHeader::
     jr z, .specialID
 	ld de, HoOhPic
     ld b, $77 ; HoOh 7x7
-    cp HOOH
+    cp HO_OH
     jr z, .specialID
 	ld de, YoshiPic
     ld b, $77 ; Yoshi 7x7

@@ -167,7 +167,7 @@
 	const SEAKING            ; $9E
 	const MARILL             ; $9F
 	const LUGIA              ; $A0
-	const HOOH               ; $A1
+	const HO_OH              ; $A1
 	const_skip               ; $A2
 	const PONYTA             ; $A3
 	const RAPIDASH           ; $A4

@@ -38,7 +38,7 @@ UncompressMonSprite::
 	ld a, BANK(LugiaPic)
 	jr z, .GotBank
 	ld a, b
-	cp HOOH
+	cp HO_OH
 	ld a, BANK(HoOhPic)
 	jr z, .GotBank
 	ld a, b

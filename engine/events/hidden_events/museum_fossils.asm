@@ -77,7 +77,7 @@ LugiaMuseumText::
 HoOhShowSprite::
 	call EnableAutoTextBoxDrawing
 	tx_pre HoOhMuseumText
-	ld a, HOOH
+	ld a, HO_OH
 	ld [wCurPartySpecies], a
 	call DisplayMonFrontSpriteInBox
     call Delay3
