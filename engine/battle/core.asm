@@ -1892,6 +1892,26 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	push hl
+	ld a, [wIsInBattle]
+	cp 2
+	jr z, .notOwned
+	ld a, [wEnemyMonSpecies2]
+	ld [wPokedexNum], a
+	callfar IndexToPokedex
+	ld a, [wPokedexNum]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	hlcoord 1, 1
+	ld [hl], $72
+.notOwned
+	pop hl
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName

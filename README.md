@@ -151,6 +151,7 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 - Restore the invisible PC in the Celadon Hotel
 - Free some space in the Home BANK
 - Free MORE some space in the Home BANK
+- Add caught icon to battle HUD for already‐owned Pokémon
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 
