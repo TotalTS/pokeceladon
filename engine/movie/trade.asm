@@ -15,9 +15,9 @@ UniversityDistroAnim:
 	ld [wCustomTradeTextboxMode], a ; 1 = university wide textbox
 	ld a, MAGIKARP
 	ld [wTradedPlayerMonSpecies], a
-    ld [wTradedEnemyMonSpecies], a
-    ld [wLeftGBMonSpecies], a
-    ld [wRightGBMonSpecies], a
+	ld [wTradedEnemyMonSpecies], a
+	ld [wLeftGBMonSpecies], a
+	ld [wRightGBMonSpecies], a
 	ld de, UniversityDistroSequence
 	jr TradeAnimCommon
 
@@ -128,15 +128,15 @@ ExternalClockTradeFuncSequence:
 	db -1 ; end
 	
 UniversityDistroSequence:
-    tradefunc LoadTradingGFXAndMonNames
+	tradefunc LoadTradingGFXAndMonNames
 	tradefunc Trade_SetGenericPal
-    tradefunc Trade_AnimRightToLeft
-    tradefunc Trade_ShowClearedWindow
-    tradefunc Trade_DrawOpenEndOfLinkCable
-    tradefunc Trade_ShowMagikarp
-    tradefunc Trade_Delay100
+	tradefunc Trade_AnimRightToLeft
+	tradefunc Trade_ShowClearedWindow
+	tradefunc Trade_DrawOpenEndOfLinkCable
+	tradefunc Trade_ShowMagikarp
+	tradefunc Trade_Delay100
 	tradefunc Trade_Cleanup
-    db -1 ;
+	db -1 ;
 
 TradeFuncPointerTable:
 	addtradefunc LoadTradingGFXAndMonNames
@@ -251,8 +251,8 @@ Trade_Cleanup:
 	ret
 	
 Trade_SetGenericPal:
-    ld b, SET_PAL_GENERIC
-    jp RunPaletteCommand
+	ld b, SET_PAL_GENERIC
+	jp RunPaletteCommand
 
 Trade_ShowPlayerMon:
 	ld a, LCDC_ON | LCDC_WIN_9800 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC_BG_9C00 | LCDC_OBJ_8 | LCDC_OBJ_ON | LCDC_BG_ON
@@ -410,42 +410,42 @@ Trade_ShowEnemyMon:
 	jp PrintTradeTakeCareText
 	
 Trade_ShowMagikarp:
-    ld a, TRADE_BALL_TILT_ANIM
-    call Trade_ShowAnimation
-    call Trade_ShowClearedWindow
-    
-    hlcoord 4, 10
-    ld b, 6
-    ld c, 10
-    call TextBoxBorder
-    
-    ld a, MAGIKARP
-    ld [wTradedEnemyMonSpecies], a
-    ld [wNamedObjectIndex], a
-    call GetMonName
-    
-    call Trade_PrintEnemyMonInfoText
-    call Trade_CopyTileMapToVRAM
-    ld a, $1
-    ldh [hAutoBGTransferEnabled], a
-    
-    ld a, [wTradedEnemyMonSpecies]
-    call Trade_LoadMonSprite
-    
-    ld a, TRADE_BALL_POOF_ANIM
-    call Trade_ShowAnimation
-    
-    ld a, $1
-    ldh [hAutoBGTransferEnabled], a
-    ld a, [wTradedEnemyMonSpecies]
-    call PlayCry
-    
-    call Trade_Delay100
+	ld a, TRADE_BALL_TILT_ANIM
+	call Trade_ShowAnimation
+	call Trade_ShowClearedWindow
+	
+	hlcoord 4, 10
+	ld b, 6
+	ld c, 10
+	call TextBoxBorder
+	
+	ld a, MAGIKARP
+	ld [wTradedEnemyMonSpecies], a
+	ld [wNamedObjectIndex], a
+	call GetMonName
+	
+	call Trade_PrintEnemyMonInfoText
+	call Trade_CopyTileMapToVRAM
+	ld a, $1
+	ldh [hAutoBGTransferEnabled], a
+	
+	ld a, [wTradedEnemyMonSpecies]
+	call Trade_LoadMonSprite
+	
+	ld a, TRADE_BALL_POOF_ANIM
+	call Trade_ShowAnimation
+	
+	ld a, $1
+	ldh [hAutoBGTransferEnabled], a
+	ld a, [wTradedEnemyMonSpecies]
+	call PlayCry
+	
+	call Trade_Delay100
 
-    hlcoord 4, 10
-    lb bc, 8, 12
-    call ClearScreenArea
-    ret
+	hlcoord 4, 10
+	lb bc, 8, 12
+	call ClearScreenArea
+	ret
 
 Trade_AnimLeftToRight:
 ; Animates the mon moving from the left GB to the right one.

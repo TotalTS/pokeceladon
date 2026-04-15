@@ -163,7 +163,7 @@ _CeladonUniversityProfPassText::
 	para "As a reward..."
 	line "take this"
 	cont "special MAGIKARP!"
-	prompt
+	done
 
 _CeladonUniversityProfPassText2::	
 	text "Now..."
@@ -172,7 +172,7 @@ _CeladonUniversityProfPassText2::
 	para "Let me initialize"
 	line "my SPECIAL"
 	cont "MACHINE!"
-	prompt
+	done
 
 _CeladonUniversityProfAfterGiftText::
 	text "That MAGIKARP"

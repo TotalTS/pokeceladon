@@ -2082,7 +2082,8 @@ wRoute18Gate1FCurScript:: db
 wChampionsHouse1FCurScript:: db
 wChampionsHouse2FCurScript:: db
 wRoute22YujirouPreGymCurScript:: db
-	ds 3
+wCeladonUniversityCurScript:: db
+	ds 2
 wGameProgressFlagsEnd::
 
 UNION

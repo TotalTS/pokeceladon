@@ -1,20 +1,161 @@
 CeladonUniversity_Script:
 	call EnableAutoTextBoxDrawing
+	ld hl, CeladonUniversity_ScriptPointers
+	ld a, [wCeladonUniversityCurScript]
+	jp CallFunctionInTable
+	
+CeladonUniversity_ScriptPointers:
+	def_script_pointers
+	dw_const CeladonUniversityDefaultScript,               SCRIPT_CELADONUNIVERSITY_DEFAULT
+	dw_const CeladonUniversityMachineScript,               SCRIPT_CELADONUNIVERSITY_MACHINE
+	dw_const CeladonUniversityInitMachineScript,           SCRIPT_CELADONUNIVERSITY_INIT_MACHINE
+	
+CeladonUniversityDefaultScript:
 	ret
+
+CeladonUniversityInitMachineScript:
+	ld a, 1
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_UP
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
+	ld a, TEXT_CELADONUNIVERSITY_PROF_PASS2
+	ldh [hTextID], a
+	call DisplayTextID
+	ld a, SFX_TELEPORT_EXIT_1
+	call PlaySound
+	call WaitForSoundToFinish
+	ld a, SCRIPT_CELADONUNIVERSITY_MACHINE
+	ld [wCeladonUniversityCurScript], a
+	ret
+
+CeladonUniversityMachineScript:
+	call SaveScreenTilesToBuffer2
+	; prepare data
+	ld a, MAGIKARP
+	ld [wInGameTradeReceiveMonSpecies], a
+	ld [wCurPartySpecies], a
+	ld a, 10
+	ld [wCurEnemyLevel], a
+	; Prepare OT ID and Name (Based on the player)
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMonOT
+	ld bc, NAME_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wPlayerName ; Copy player name as Original Trainer
+	ld bc, NAME_LENGTH
+	call CopyData
+	ld hl, wPlayerName
+	ld de, wTradedEnemyMonOT
+	ld bc, NAME_LENGTH
+	call CopyData
+	ld hl, wPlayerID
+	ld de, wTradedEnemyMonOTID
+	ld bc, 2
+	call CopyData
+	ld hl, .CustomOTName
+	ld de, wLinkEnemyTrainerName
+	ld bc, NAME_LENGTH
+	call CopyData
+	; trade animation
+	call LoadFontTilePatterns
+	call LoadHpBarAndStatusTilePatterns
+	predef UniversityDistroAnim
+	; Define origins of data for AddPartyMon
+	ld hl, .ReceivedMagikarpText
+	call PrintText
+	ld a, SFX_GET_KEY_ITEM ; Music
+	call PlaySound
+	call WaitForSoundToFinish
+	xor a
+	ld [wJoyIgnore], a
+	xor a
+	ld [wMonDataLocation], a
+	call AddPartyMon
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1Moves
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes ; HL now points the moves of the recently acquired Magikarp
+	; Define moves
+	ld [hl], SPLASH ; First move
+	inc hl
+	ld [hl], DRAGON_RAGE ; Second move
+	inc hl
+	ld [hl], 0 ; Empty
+	inc hl
+	ld [hl], 0 ; Empty
+	; Define PP
+	push hl
+	ld bc, wPartyMon1PP - (wPartyMon1Moves + 4)
+	add hl, bc
+	inc hl
+	ld [hl], 40 ; Splash PP
+	inc hl
+	ld [hl], 10 ; Dragon Rage PP
+	pop hl
+	SetEvent EVENT_GOT_UNIVERSITY_MAGIKARP
+	; cleaning screen
+	call ClearScreen
+	farcall InGameTrade_RestoreScreen
+	farcall RedrawMapView
+	; make look at player again
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	cp SPRITE_FACING_DOWN
+	jr z, .skip_change
+	cp SPRITE_FACING_UP
+	jr z, .prof_face_down
+	cp SPRITE_FACING_LEFT
+	jr z, .prof_face_right
+	; else assume facing right
+.prof_face_left
+	ld a, SPRITE_FACING_LEFT
+	jr .set_prof_facing
+.prof_face_down
+	ld a, SPRITE_FACING_DOWN
+	jr .set_prof_facing
+.prof_face_right
+	ld a, SPRITE_FACING_RIGHT
+.set_prof_facing
+	ldh [hSpriteFacingDirection], a
+	ld a, 1
+	ldh [hSpriteIndex], a
+	call SetSpriteFacingDirectionAndDelay
+.skip_change
+	ld a, TEXT_CELADONUNIVERSITY_AFTER_GIFT
+	ldh [hTextID], a
+	call DisplayTextID
+	xor a
+	ld [wCeladonUniversityCurScript], a
+	ret
+	
+.ReceivedMagikarpText:
+	text "Received a"
+	line "MAGIKARP with"
+	cont "DRAGON RAGE!@"
+	text_end
+	
+.CustomOTName:
+	db "UNIVERSITY@"	
 
 CeladonUniversity_TextPointers:
 	def_text_pointers
-	dw_const CeladonUniversityProfText, TEXT_CELADONUNIVERSITY_PROF
-	dw_const CeladonUniversityReceText, TEXT_CELADONUNIVERSITY_RECEPTIONIST
-	dw_const CeladonUniversityGBKText,  TEXT_CELADONUNIVERSITY_GAMEBOY_KID
-	dw_const CeladonUniversityCTFText,  TEXT_CELADONUNIVERSITY_COOLTRAINER_F
-	dw_const CeladonUniversitySignText, TEXT_CELADONUNIVERSITY_SIGN
-	dw_const CeladonUniversitySignText2,TEXT_CELADONUNIVERSITY_SIGN2
-	dw_const CeladonUniversitySignText3,TEXT_CELADONUNIVERSITY_SIGN3
-	dw_const CeladonUniversitySignText4,TEXT_CELADONUNIVERSITY_SIGN4
-	dw_const CeladonUniversitySignText5,TEXT_CELADONUNIVERSITY_SIGN5
-	dw_const CeladonUniversityStatueGD, TEXT_CELADONUNIVERSITY_SIGN6
-	dw_const CeladonUniversityBlackboard,TEXT_CELADONUNIVERSITY_SIGN7
+	dw_const CeladonUniversityProfText,            TEXT_CELADONUNIVERSITY_PROF
+	dw_const CeladonUniversityReceText,            TEXT_CELADONUNIVERSITY_RECEPTIONIST
+	dw_const CeladonUniversityGBKText,             TEXT_CELADONUNIVERSITY_GAMEBOY_KID
+	dw_const CeladonUniversityCTFText,             TEXT_CELADONUNIVERSITY_COOLTRAINER_F
+	dw_const CeladonUniversityProfPassText2,       TEXT_CELADONUNIVERSITY_PROF_PASS2
+	dw_const CeladonUniversityAfterGiftText,       TEXT_CELADONUNIVERSITY_AFTER_GIFT
+	dw_const CeladonUniversitySignText,            TEXT_CELADONUNIVERSITY_SIGN
+	dw_const CeladonUniversitySignText2,           TEXT_CELADONUNIVERSITY_SIGN2
+	dw_const CeladonUniversitySignText3,           TEXT_CELADONUNIVERSITY_SIGN3
+	dw_const CeladonUniversitySignText4,           TEXT_CELADONUNIVERSITY_SIGN4
+	dw_const CeladonUniversitySignText5,           TEXT_CELADONUNIVERSITY_SIGN5
+	dw_const CeladonUniversityStatueGD,            TEXT_CELADONUNIVERSITY_SIGN6
+	dw_const CeladonUniversityBlackboard,          TEXT_CELADONUNIVERSITY_SIGN7
 
 CeladonUniversitySignText:
 	text_far _CeladonUniversitySignText
@@ -89,136 +230,16 @@ CeladonUniversityProfText:
 .giveMagikarp
 	ld hl, .CeladonUniversityProfPassText
 	call PrintText
-	; prepare data
-	ld a, MAGIKARP
-	ld [wInGameTradeReceiveMonSpecies], a
-	ld [wCurPartySpecies], a
-	ld a, 10
-	ld [wCurEnemyLevel], a
-	; Prepare OT ID and Name (Based on the player)
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMonOT
-	ld bc, NAME_LENGTH
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ld hl, wPlayerName ; Copy player name as Original Trainer
-	ld bc, NAME_LENGTH
-	call CopyData
-	ld hl, wPlayerName
-	ld de, wTradedEnemyMonOT
-	ld bc, NAME_LENGTH
-	call CopyData
-	ld hl, wPlayerID
-	ld de, wTradedEnemyMonOTID
-	ld bc, 2
-	call CopyData
-	ld hl, .CustomOTName
-	ld de, wLinkEnemyTrainerName
-	ld bc, NAME_LENGTH
-	call CopyData
-	ld a, 1
-	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_UP
-	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
-	ld hl, .CeladonUniversityProfPassText2
-	call PrintText
-	ld a, SFX_TELEPORT_EXIT_1
-	call PlaySound
-	call WaitForSoundToFinish
-	; trade animation
-	call LoadHpBarAndStatusTilePatterns
-	predef UniversityDistroAnim
-	; Define origins of data for AddPartyMon
-	ld hl, .ReceivedMagikarpText
-	call PrintText
-	ld a, SFX_GET_KEY_ITEM ; Music
-	call PlaySound
-	call WaitForSoundToFinish
-	xor a
-	ld [wMonDataLocation], a
-	call AddPartyMon
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1Moves
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes ; HL now points the moves of te recently acquired Magikarp
-	; Define moves
-	ld [hl], SPLASH ; First move
-	inc hl
-	ld [hl], DRAGON_RAGE ; Second move
-	inc hl
-	ld [hl], 0 ; Empty
-	inc hl
-	ld [hl], 0 ; Empty
-	; Define PP
-	push hl
-	ld bc, wPartyMon1PP - (wPartyMon1Moves + 4)
-	add hl, bc
-	inc hl
-	ld [hl], 40 ; Splash PP
-	inc hl
-	ld [hl], 10 ; Dragon Rage PP
-	pop hl
-	SetEvent EVENT_GOT_UNIVERSITY_MAGIKARP
-	; cleaning screen
-	ld a, $90
-	ldh [hWY], a
-	call ClearScreen
-	farcall InGameTrade_RestoreScreen
-	farcall RedrawMapView
-	call UpdateSprites
-	call DelayFrame
-	call DelayFrame
-	xor a
-	ldh [hWY], a	  ; re-enable window for textbox
-	; make look at player again
-	ld a, [wSpritePlayerStateData1FacingDirection]
-	cp SPRITE_FACING_DOWN
-	jr z, .skip_change
-	cp SPRITE_FACING_UP
-	jr z, .prof_face_down
-	cp SPRITE_FACING_LEFT
-	jr z, .prof_face_right
-	; else assume facing right
-.prof_face_left
-	ld a, SPRITE_FACING_LEFT
-	jr .set_prof_facing
-.prof_face_down
-	ld a, SPRITE_FACING_DOWN
-	jr .set_prof_facing
-.prof_face_right
-	ld a, SPRITE_FACING_RIGHT
-.set_prof_facing
-	ldh [hSpriteFacingDirection], a
-	ld a, 1
-	ldh [hSpriteIndex], a
-	call SetSpriteFacingDirectionAndDelay
-.skip_change
-	ld hl, .AfterGiftText
-	call PrintText
-	jp TextScriptEnd
+	ld a, PAD_SELECT | PAD_START | PAD_CTRL_PAD
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_CELADONUNIVERSITY_INIT_MACHINE
+	ld [wCeladonUniversityCurScript], a
 .done
 	jp TextScriptEnd
 
 .CeladonUniversityProfPassText:
 	text_far _CeladonUniversityProfPassText
 	text_end
-	
-.CeladonUniversityProfPassText2:
-	text_far _CeladonUniversityProfPassText2
-	text_end
-
-.ReceivedMagikarpText:
-	text "Received a"
-	line "MAGIKARP with"
-	cont "DRAGON RAGE!@"
-	text_end
-	
-.CustomOTName:
-	db "UNIVERSITY@"
 	
 .PartyFullText:
 	text_far _PartyFullText
@@ -254,11 +275,10 @@ CeladonUniversityProfText:
 .AlreadyWonText:
 	text_far _CeladonUniversityProfAlreadyWonText
 	text_end
-
-.AfterGiftText:
-	text_far _CeladonUniversityProfAfterGiftText
+	
+CeladonUniversityProfPassText2:
+	text_far _CeladonUniversityProfPassText2
 	text_end
-
 
 CeladonUniversityReceText:
 	text_far _CeladonUniversityReceText
@@ -323,4 +343,8 @@ CeladonUniversityProfCorrectText:
 
 CeladonUniversityProfFailText:
 	text_far _CeladonUniversityProfFailText
+	text_end
+
+CeladonUniversityAfterGiftText:
+	text_far _CeladonUniversityProfAfterGiftText
 	text_end
