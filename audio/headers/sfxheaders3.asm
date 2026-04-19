@@ -38,3 +38,39 @@ SFX_Slots_New_Spin::
 SFX_Shooting_Star::
 	channel_count 1
 	channel 5, SFX_Shooting_Star_Ch5
+
+SFX_Call::
+	channel_count 1
+	channel 5, SFX_Call_Ch5
+
+SFX_Call_Ch5:
+	pitch_sweep 6, 7
+	square_note 4, 15, 7, 1952
+	square_note 4, 15, 7, 1952
+	square_note 4, 15, 7, 1952
+	square_note 4, 15, 7, 1952
+	square_note 4, 15, 7, 1952
+	pitch_sweep 0, 8
+	square_note 4, 0, 0, 0
+	sound_ret
+	
+SFX_HangUp::
+	channel_count 1
+	channel 5, SFX_HangUp_Ch5
+	
+SFX_NoSignal::
+	channel_count 1
+	channel 5, SFX_NoSignal_Ch5
+	
+SFX_HangUp_Ch5:
+	duty_cycle 2
+	square_note 4, 11, 8, 1915
+	square_note 2, 2, 1, 1915
+	square_note 16, 0, 0, 0
+
+SFX_NoSignal_Ch5:
+	duty_cycle 2
+	square_note 20, 14, 8, 1803
+	square_note 28, 0, 0, 0
+	sound_loop 3, SFX_NoSignal_Ch5
+	sound_ret

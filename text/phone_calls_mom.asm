@@ -4,7 +4,15 @@ _CeladonMart1FPhoneText::
 	para "Wanna call home?"
 	done
 
-; Start/End Text 
+_CeladonMart1FPhoneEllipseText::
+	text "……"
+	done
+	
+_PhoneClickText::
+	text "Click!"
+	done
+
+; Start/End Text
 
 _MomPhoneText_Default::
 	text "Hi <PLAYER>!"
@@ -13,7 +21,7 @@ _MomPhoneText_Default::
 	
 _MomPhoneText_EndText::
 	text "Take care!"
-	done
+	prompt
 
 ; Pokemon Status (first in party) wPartyMon1Status, wPartyMon1Species
 

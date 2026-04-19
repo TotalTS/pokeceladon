@@ -114,4 +114,8 @@ SFX:
 	dba SFX_Shooting_Star
 
 	dba SFX_PokefluteInBattle
+	
+	dba SFX_Call
+	dba SFX_HangUp
+	dba SFX_NoSignal
 	assert_table_length NUM_SFX
