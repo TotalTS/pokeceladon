@@ -276,6 +276,10 @@ INCLUDE "text/extra_gym_texts.asm"
 INCLUDE "text/Route1Museum1F.asm"
 
 
+SECTION "Text 12", ROMX
+INCLUDE "text/phone_calls_mom.asm"
+
+
 SECTION "Pokédex Text", ROMX
 
 INCLUDE "data/pokemon/dex_text.asm"
