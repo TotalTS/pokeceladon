@@ -47,8 +47,31 @@ CeladonMart1FPhoneText:
 	call PrintText
 	call MomPhone_StatusText
 	call MomPhone_CheckPokemonText
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr nz, .Champion
+	call MomPhone_CheckProgressText
+	CheckEvent EVENT_BEAT_BLAINE
+	jr nz, .skipHM
 	call MomPhone_CheckHMText
-	call MomPhone_CheckLavenderText
+.skipHM
+	CheckEvent EVENT_BEAT_ROUTE22_RIVAL_2ND_BATTLE
+	jr nz, .skipGym
+	call MomPhone_CheckGymText
+.skipGym
+	CheckEvent EVENT_PASSED_EARTHBADGE_CHECK
+	jr nz, .skipRival
+	call MomPhone_CheckRivalText
+	CheckEvent EVENT_BEAT_VICTORY_ROAD_1_TRAINER_0
+	jr z, .skipBadge
+	call MomPhone_CheckBadgeCheckText
+.skipRival
+	jr .End
+.skipBadge
+	jr .End
+.Champion
+	ld hl, MomPhoneText_Champion
+	call PrintText
+.End
 	ld hl, .MomPhoneText_EndText
 	call PrintText
 	ld hl, .PhoneClickText
@@ -217,20 +240,32 @@ MomPhone_CheckPokemonText:
 	ld hl, MomPhoneText_Zapdos
 	jr .doneCheckPokemon
 .Hitmonlee
+	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	jr nz, .returnCheckPokemon
 	ld hl, MomPhoneText_Hitmonlee
 	jr .doneCheckPokemon
 .Hitmonchan
+	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	jr nz, .returnCheckPokemon
 	ld hl, MomPhoneText_Hitmonchan
 	jr .doneCheckPokemon
 .Squirtle
+	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
+	jr nz, .returnCheckPokemon
 	ld hl, MomPhoneText_Squirtle
 	jr .doneCheckPokemon
 .Charmander
+	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
+	jr nz, .returnCheckPokemon
 	ld hl, MomPhoneText_Charmander
 	jr .doneCheckPokemon
 .Bulbasaur
+	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
+	jr nz, .returnCheckPokemon
 	ld hl, MomPhoneText_Bulbasaur
 	jr .doneCheckPokemon
+.returnCheckPokemon
+	ret
 .doneCheckPokemon
 	call PrintText
 	ret
@@ -274,7 +309,29 @@ MomPhoneText_Charmander:
 MomPhoneText_Bulbasaur:
 	text_far _MomPhoneText_Bulbasaur
 	text_end
-
+	
+MomPhone_CheckProgressText:
+	CheckEvent EVENT_GAVE_FOSSIL_TO_LAB
+	jr nz, .Cinnabar
+	CheckEvent EVENT_BEAT_ROUTE12_SNORLAX
+	jr nz, .Fuchsia
+	CheckEvent EVENT_BEAT_ROUTE16_SNORLAX
+	jr nz, .Fuchsia
+	ld a, [wTownVisitedFlag + 1]
+	bit 2, a ; SAFFRON_CITY
+	jr z, .LavenderCeladon
+	ld a, [wStatusFlags1]
+	bit BIT_GAVE_SAFFRON_GUARDS_DRINK, a
+	jr nz, .Saffron
+.LavenderCeladon
+	jp MomPhone_CheckLavenderCeladon
+.Cinnabar
+	jp MomPhone_CheckCinnabarText
+.Fuchsia
+	jp MomPhone_CheckFuchsiaText
+.Saffron
+	jp MomPhone_CheckSaffronText
+	
 MomPhone_CheckHMText:
 	; higher priority first
 	CheckEvent EVENT_GOT_HM04
@@ -309,45 +366,55 @@ MomPhoneText_Strength:
 	text_far _MomPhoneText_Strength
 	text_end
 
-MomPhone_CheckLavenderText:
-	; higher priority first
+MomPhone_CheckLavenderCeladon:
+	; Lavender Part 2
 	CheckEvent EVENT_GOT_POKE_FLUTE
-	jr z, .checkFuji
+	jr nz, .Flute
+	CheckEvent EVENT_RESCUED_MR_FUJI
+	jr nz, .Fuji
+	CheckEvent EVENT_BEAT_GHOST_MAROWAK
+	jr nz, .Marowak
+	; Celadon
+	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
+	jr nz, .GiovanniCeladon
+	CheckEvent EVENT_FOUND_ROCKET_HIDEOUT
+	jr nz, .RocketHideout
+	; Lavender Part 1
+	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
+	jr nz, .FlashHelp
+	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP
+	jr nz, .FlashHelp
+	CheckEvent EVENT_GOT_HM05
+	jr nz, .Flash
+	jr .Flash
+.Flash
+	ld hl, MomPhoneText_Flash
+	jr .doneCheckLavenderCeladon
+.FlashHelp
+	ld hl, MomPhoneText_FlashHelp1or2
+	jr .doneCheckLavenderCeladon
+.RocketHideout
+	ld hl, MomPhoneText_RocketHideoutFound
+	jr .doneCheckLavenderCeladon
+.GiovanniCeladon
+	ld hl, MomPhoneText_GiovanniCeladon
+	jr .doneCheckLavenderCeladon
+.Marowak
+	ld hl, MomPhoneText_Marowak
+	jr .doneCheckLavenderCeladon
+.Fuji
+	ld hl, MomPhoneText_Marowak
+	call PrintText
+	ld hl, MomPhoneText_Fuji
+	jr .doneCheckLavenderCeladon
+.Flute
 	ld hl, MomPhoneText_Marowak
 	call PrintText
 	ld hl, MomPhoneText_Fuji
 	call PrintText
 	ld hl, MomPhoneText_Flute
-	call PrintText
-	ret
-.checkFuji
-	CheckEvent EVENT_RESCUED_MR_FUJI
-	jr z, .checkMarowak
-	ld hl, MomPhoneText_Marowak
-	call PrintText
-	ld hl, MomPhoneText_Fuji
-	call PrintText
-	ret
-.checkMarowak
-	CheckEvent EVENT_BEAT_GHOST_MAROWAK
-	jr z, .checkFlashHelp
-	ld hl, MomPhoneText_Marowak
-	call PrintText
-	ret
-.checkFlashHelp
-	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP2
-	jr nz, .FlashHelp
-	CheckEvent EVENT_ROCK_TUNNEL_FLASH_HELP
-	jr nz, .FlashHelp
-.checkFlash
-	CheckEvent EVENT_GOT_HM05
-	jr nz, .Flash
-.Flash
-	ld hl, MomPhoneText_Flash
-	call PrintText
-	ret
-.FlashHelp
-	ld hl, MomPhoneText_FlashHelp1or2
+	jr .doneCheckLavenderCeladon
+.doneCheckLavenderCeladon
 	call PrintText
 	ret
 	
@@ -358,7 +425,15 @@ MomPhoneText_Flash:
 MomPhoneText_FlashHelp1or2:
 	text_far _MomPhoneText_FlashHelp1or2
 	text_end
-	
+
+MomPhoneText_RocketHideoutFound:
+	text_far _MomPhoneText_RocketHideoutFound
+	text_end
+
+MomPhoneText_GiovanniCeladon:
+	text_far _MomPhoneText_GiovanniCeladon
+	text_end
+
 MomPhoneText_Marowak:
 	text_far _MomPhoneText_Marowak
 	text_end
@@ -371,60 +446,38 @@ MomPhoneText_Flute:
 	text_far _MomPhoneText_Flute
 	text_end
 
-MomPhone_CheckCeladonText:
-	; higher priority first
-	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
-	jr nz, .Giovanni
-	CheckEvent EVENT_FOUND_ROCKET_HIDEOUT
-	jr nz, .RocketHideout
-	ret ; none
-.Giovanni
-	ld hl, MomPhoneText_GiovanniCeladon
-	jr .doneCheckCeladon
-.RocketHideout
-	ld hl, MomPhoneText_RocketHideoutFound
-	jr .doneCheckCeladon
-.doneCheckCeladon
-	call PrintText
-	ret
-	
-MomPhoneText_RocketHideoutFound:
-	text_far _MomPhoneText_RocketHideoutFound
-	text_end
-
-MomPhoneText_GiovanniCeladon:
-	text_far _MomPhoneText_GiovanniCeladon
-	text_end
-
 MomPhone_CheckSaffronText:
 	; higher priority first
-	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
-	jr nz, .GiovanniSilph
 	CheckEvent EVENT_GOT_MASTER_BALL
 	jr nz, .MasterBall
-	CheckEvent EVENT_RESCUED_MR_FUJI
-	jr z, .checkVisitedOnly
+	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
+	jr nz, .GiovanniSilph
 	ld a, [wTownVisitedFlag + 1]
 	bit 2, a ; SAFFRON_CITY
-	jr nz, .GuardSleeping
-.checkVisitedOnly
-	ld a, [wTownVisitedFlag + 1]
-	bit 2, a
-	jr nz, .SilphBlocked
-	ret
+	jr z, .doneCheckSaffron
+	ld a, [wStatusFlags1]
+	bit BIT_GAVE_SAFFRON_GUARDS_DRINK, a
+	jr z, .SilphBlocked
+	CheckEvent EVENT_RESCUED_MR_FUJI
+	jr z, .SilphBlocked
+	jr .GuardSleeping
 .GiovanniSilph
 	ld hl, MomPhoneText_GiovanniSilph
-	jr .doneCheckSaffron
+	jr .printCheckSaffron
 .MasterBall
+	ld hl, MomPhoneText_GiovanniSilph
+	call PrintText
 	ld hl, MomPhoneText_MasterBall
-	jr .doneCheckSaffron
+	jr .printCheckSaffron
 .GuardSleeping
 	ld hl, MomPhoneText_GuardSleeping
-	jr .doneCheckSaffron
+	jr .printCheckSaffron
 .SilphBlocked
 	ld hl, MomPhoneText_SilphCoBlocked
-	jr .doneCheckSaffron
+	jr .printCheckSaffron
 .doneCheckSaffron
+	ret
+.printCheckSaffron
 	call PrintText
 	ret
 
@@ -442,4 +495,275 @@ MomPhoneText_GiovanniSilph:
 
 MomPhoneText_MasterBall:
 	text_far _MomPhoneText_MasterBall
+	text_end
+
+MomPhone_CheckFuchsiaText:
+	CheckEvent EVENT_GAVE_GOLD_TEETH
+	jr nz, .GoldTeeth
+	ld a, [wTownVisitedFlag]
+	bit 7, a ; FUCHSIA_CITY
+	jr z, .doneCheckFuchsia
+	CheckEvent EVENT_BEAT_ROUTE12_SNORLAX
+	jr z, .checkRoute16
+	CheckEvent EVENT_BEAT_ROUTE16_SNORLAX
+	jr nz, .BothSnorlax
+.checkRoute16
+	CheckEvent EVENT_BEAT_ROUTE16_SNORLAX
+	jr nz, .Snorlax16
+	CheckEvent EVENT_BEAT_ROUTE12_SNORLAX
+	jr nz, .Snorlax12
+	ret
+.BothSnorlax
+	ld hl, MomPhoneText_BothSnorlax
+	jr .printCheckFuchsia
+.Snorlax12
+	ld hl, MomPhoneText_Snorlax12
+	jr .printCheckFuchsia
+.Snorlax16
+	ld hl, MomPhoneText_Snorlax16
+	jr .printCheckFuchsia
+.GoldTeeth
+	CheckEvent EVENT_BEAT_BLAINE
+	jr nz, .doneCheckFuchsia
+	ld hl, MomPhoneText_GoldTeeth
+	jr .printCheckFuchsia
+.printCheckFuchsia
+	call PrintText
+.doneCheckFuchsia
+	ret
+	
+MomPhoneText_Snorlax12:
+	text_far _MomPhoneText_Snorlax12
+	text_end
+
+MomPhoneText_Snorlax16:
+	text_far _MomPhoneText_Snorlax16
+	text_end
+
+MomPhoneText_BothSnorlax:
+	text_far _MomPhoneText_BothSnorlax
+	text_end
+
+MomPhoneText_GoldTeeth:
+	text_far _MomPhoneText_GoldTeeth
+	text_end
+
+MomPhone_CheckCinnabarText:
+	; higher priority first
+	ld b, SECRET_KEY
+	call IsItemInBag
+	jr nc, .checkFossil
+	ld hl, MomPhoneText_SecretKey
+	jr .doneCheckCinnabar
+.checkFossil
+	CheckEvent EVENT_GAVE_FOSSIL_TO_LAB
+	jr nz, .Fossil
+	ret
+.Fossil
+	ld hl, MomPhoneText_FossilToLab
+	jr .doneCheckCinnabar
+.doneCheckCinnabar
+	call PrintText
+	ret
+	
+MomPhoneText_FossilToLab:
+	text_far _MomPhoneText_FossilToLab
+	text_end
+
+MomPhoneText_SecretKey:
+	text_far _MomPhoneText_SecretKey
+	text_end
+
+MomPhone_CheckGymText:
+	; higher priority first
+	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	jr nz, .GiovanniViridian
+	CheckEvent EVENT_VIRIDIAN_GYM_OPEN
+	jr nz, .ViridianGymOpen
+	CheckEvent EVENT_BEAT_BLAINE
+	jr nz, .Blaine
+	CheckEvent EVENT_BEAT_KOGA
+	jr nz, .Koga
+	CheckEvent EVENT_BEAT_SABRINA
+	jr nz, .Sabrina
+	CheckEvent EVENT_BEAT_ERIKA
+	jr nz, .Erika
+	CheckEvent EVENT_BEAT_KARATE_MASTER
+	jr nz, .KarateMaster
+	ret
+.GiovanniViridian
+	ld hl, MomPhoneText_GiovanniViridian
+	jr .doneCheckGym
+.ViridianGymOpen
+	ld hl, MomPhoneText_ViridianGymOpen
+	jr .doneCheckGym
+.Blaine
+	ld hl, MomPhoneText_Blaine
+	jr .doneCheckGym
+.Koga
+	ld hl, MomPhoneText_Koga
+	jr .doneCheckGym
+.Sabrina
+	ld hl, MomPhoneText_Sabrina
+	jr .doneCheckGym
+.Erika
+	ld hl, MomPhoneText_Erika
+	jr .doneCheckGym
+.KarateMaster
+	ld hl, MomPhoneText_KarateMaster
+	jr .doneCheckGym
+.doneCheckGym
+	call PrintText
+	ret
+
+MomPhoneText_Erika:
+	text_far _MomPhoneText_Erika
+	text_end
+
+MomPhoneText_KarateMaster:
+	text_far _MomPhoneText_KarateMaster
+	text_end
+
+MomPhoneText_Sabrina:
+	text_far _MomPhoneText_Sabrina
+	text_end
+
+MomPhoneText_Koga:
+	text_far _MomPhoneText_Koga
+	text_end
+
+MomPhoneText_Blaine:
+	text_far _MomPhoneText_Blaine
+	text_end
+
+MomPhoneText_ViridianGymOpen:
+	text_far _MomPhoneText_ViridianGymOpen
+	text_end
+
+MomPhoneText_GiovanniViridian:
+	text_far _MomPhoneText_GiovanniViridian
+	text_end
+
+MomPhone_CheckRivalText:
+	; higher priority first
+	CheckEvent EVENT_BEAT_ROUTE22_RIVAL_2ND_BATTLE
+	jr nz, .RivalRoute22
+	CheckEvent EVENT_BEAT_SILPH_CO_RIVAL
+	jr nz, .RivalSilph
+	CheckEvent EVENT_BEAT_POKEMON_TOWER_RIVAL
+	jr nz, .RivalTower
+	ret
+.RivalRoute22
+	ld hl, MomPhoneText_RivalRoute22
+	jr .doneCheckRival
+.RivalSilph
+	CheckEvent EVENT_BEAT_SABRINA
+	jr nz, .returnCheckRival
+	ld hl, MomPhoneText_RivalSilph
+	jr .doneCheckRival
+.RivalTower
+	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
+	jr nz, .returnCheckRival
+	ld hl, MomPhoneText_RivalTower
+	jr .doneCheckRival
+.doneCheckRival
+	call PrintText
+	ret
+.returnCheckRival
+	ret
+	
+MomPhoneText_RivalTower:
+	text_far _MomPhoneText_RivalTower
+	text_end
+
+MomPhoneText_RivalSilph:
+	text_far _MomPhoneText_RivalSilph
+	text_end
+
+MomPhoneText_RivalRoute22:
+	text_far _MomPhoneText_RivalRoute22
+	text_end
+
+MomPhone_CheckBadgeCheckText:
+	; higher priority first
+	CheckEvent EVENT_PASSED_EARTHBADGE_CHECK
+	jr nz, .Earth
+	CheckEvent EVENT_PASSED_VOLCANOBADGE_CHECK
+	jr nz, .Volcano
+	CheckEvent EVENT_PASSED_MARSHBADGE_CHECK
+	jr nz, .Marsh
+	CheckEvent EVENT_PASSED_SOULBADGE_CHECK
+	jr nz, .Soul
+	CheckEvent EVENT_PASSED_RAINBOWBADGE_CHECK
+	jr nz, .Rainbow
+	CheckEvent EVENT_PASSED_THUNDERBADGE_CHECK
+	jr nz, .Thunder
+	CheckEvent EVENT_PASSED_CASCADEBADGE_CHECK
+	jr nz, .Cascade
+	ret
+.Earth
+	ld hl, MomPhoneText_EarthBadgeCheck
+	jr .doneCheckBadge
+.Volcano
+	ld hl, MomPhoneText_VolcanoBadgeCheck
+	jr .doneCheckBadge
+.Marsh
+	ld hl, MomPhoneText_MarshBadgeCheck
+	jr .doneCheckBadge
+.Soul
+	ld hl, MomPhoneText_SoulBadgeCheck
+	jr .doneCheckBadge
+.Rainbow
+	ld hl, MomPhoneText_RainbowBadgeCheck
+	jr .doneCheckBadge
+.Thunder
+	ld hl, MomPhoneText_ThunderBadgeCheck
+	jr .doneCheckBadge
+.Cascade
+	ld hl, MomPhoneText_CascadeBadgeCheck
+	jr .doneCheckBadge
+.doneCheckBadge
+	call PrintText
+	ret
+	
+MomPhoneText_CascadeBadgeCheck:
+	text_far _MomPhoneText_CascadeBadgeCheck
+	text_end
+
+MomPhoneText_ThunderBadgeCheck:
+	text_far _MomPhoneText_ThunderBadgeCheck
+	text_end
+
+MomPhoneText_RainbowBadgeCheck:
+	text_far _MomPhoneText_RainbowBadgeCheck
+	text_end
+
+MomPhoneText_SoulBadgeCheck:
+	text_far _MomPhoneText_SoulBadgeCheck
+	text_end
+
+MomPhoneText_MarshBadgeCheck:
+	text_far _MomPhoneText_MarshBadgeCheck
+	text_end
+
+MomPhoneText_VolcanoBadgeCheck:
+	text_far _MomPhoneText_VolcanoBadgeCheck
+	text_end
+
+MomPhoneText_EarthBadgeCheck:
+	text_far _MomPhoneText_EarthBadgeCheck
+	text_end
+
+MomPhone_CheckChampionText:
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr nz, .Champion
+	ret
+
+.Champion
+	ld hl, MomPhoneText_Champion
+	call PrintText
+	ret
+
+MomPhoneText_Champion:
+	text_far _MomPhoneText_Champion
 	text_end

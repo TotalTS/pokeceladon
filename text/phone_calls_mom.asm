@@ -474,22 +474,19 @@ _MomPhoneText_Snorlax12::
 	prompt
 
 _MomPhoneText_Snorlax16::
-	text "You arrived via"
+	text "You finally made"
+	line "it to FUCHSIA?"
+
+	para "You arrived via"
 	line "CYCLING ROAD?"
 
 	para "That is quite a"
 	line "long ride!"
-
-	para "I hope you wore"
-	line "a helmet, dear."
 	prompt
 
 _MomPhoneText_BothSnorlax::
 	text "You finally made"
 	line "it to FUCHSIA?"
-
-	para "You have been"
-	line "all over KANTO!"
 
 	para "Are your shoes"
 	line "still holding up?"
@@ -514,8 +511,12 @@ _MomPhoneText_GoldTeeth::
 ; EVENT_GAVE_FOSSIL_TO_LAB
 
 _MomPhoneText_FossilToLab::
-	text "You gave a FOSSIL"
-	line "to the LAB?"
+	text "You arrived to"
+	line "CINNABAR ISLAND?"
+
+	para "You gave a FOSSIL"
+	line "to the CINNABAR"
+	cont "LAB?"
 
 	para "I wonder what"
 	line "is inside it..."
@@ -534,7 +535,7 @@ _MomPhoneText_SecretKey::
 	line "open, I wonder?"
 
 	para "Be careful"
-	line "on that island,"
+	line "on that ISLAND,"
 	cont "honey!"
 	prompt
 	
