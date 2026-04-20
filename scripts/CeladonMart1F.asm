@@ -331,7 +331,7 @@ MomPhone_CheckProgressText:
 	jp MomPhone_CheckFuchsiaText
 .Saffron
 	jp MomPhone_CheckSaffronText
-	
+
 MomPhone_CheckHMText:
 	; higher priority first
 	CheckEvent EVENT_GOT_HM04
@@ -357,11 +357,11 @@ MomPhone_CheckHMText:
 MomPhoneText_Fly:
 	text_far _MomPhoneText_Fly
 	text_end
-	
+
 MomPhoneText_Surf:
 	text_far _MomPhoneText_Surf
 	text_end
-	
+
 MomPhoneText_Strength:
 	text_far _MomPhoneText_Strength
 	text_end
@@ -662,7 +662,7 @@ MomPhone_CheckRivalText:
 	ld hl, MomPhoneText_RivalSilph
 	jr .doneCheckRival
 .RivalTower
-	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
+	CheckEvent EVENT_RESCUED_MR_FUJI
 	jr nz, .returnCheckRival
 	ld hl, MomPhoneText_RivalTower
 	jr .doneCheckRival
