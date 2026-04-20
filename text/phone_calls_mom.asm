@@ -154,7 +154,7 @@ _MomPhoneText_Bulbasaur::
 	line "of it, and it"
 	cont "will do the same"
 	cont "for you!"
-	done
+	prompt
 
 _MomPhoneText_Charmander::
 	text "Someone gave"
@@ -165,7 +165,7 @@ _MomPhoneText_Charmander::
 	para "That flame must"
 	line "keep you both"
 	cont "warm at night!"
-	done
+	prompt
 
 _MomPhoneText_Squirtle::
 	text "OFFICER JENNY"
@@ -177,7 +177,7 @@ _MomPhoneText_Squirtle::
 	para "That little one"
 	line "will be a loyal"
 	cont "partner, I know!"
-	done
+	prompt
 	
 _MomPhoneText_Eevee::
 	text "Oh, you found"
@@ -191,7 +191,7 @@ _MomPhoneText_Eevee::
 
 	para "It may grow into"
 	line "something special!"
-	done
+	prompt
 	
 _MomPhoneText_Hitmonlee::
     text "A #MON"
@@ -202,7 +202,7 @@ _MomPhoneText_Hitmonlee::
 
 	para "Take good care"
 	line "of it, honey."
-    done
+    prompt
 
 _MomPhoneText_Hitmonchan::
 	text "A #MON"
@@ -214,7 +214,7 @@ _MomPhoneText_Hitmonchan::
 	para "It looks like"
 	line "it can really"
 	cont "protect you!"
-	done
+	prompt
 	
 _MomPhoneText_Articuno::
 	text "You found a"
@@ -225,7 +225,7 @@ _MomPhoneText_Articuno::
 
 	para "And so cold!"
 	line "Stay warm, dear!"
-	done
+	prompt
 
 _MomPhoneText_Zapdos::
 	text "An ELECTRIC"
@@ -237,7 +237,7 @@ _MomPhoneText_Zapdos::
 	para "Be careful"
 	line "around that"
 	cont "lightning!"
-	done
+	prompt
 
 _MomPhoneText_Moltres::
 	text "A FIRE BIRD?"
@@ -249,7 +249,7 @@ _MomPhoneText_Moltres::
 	para "Don't get too"
 	line "close to the"
 	cont "flames!"
-	done
+	prompt
 	
 _MomPhoneText_Mewtwo::
 	text "You went deep"
@@ -266,7 +266,7 @@ _MomPhoneText_Mewtwo::
 	para "Please just"
 	line "come home safe,"
 	cont "<PLAYER>."
-	done
+	prompt
 
 _MomPhoneText_Mew::
 	text "You found"
@@ -282,11 +282,62 @@ _MomPhoneText_Mew::
 	para "You truly are"
 	line "one of a kind,"
 	cont "<PLAYER>!"
-	done
+	prompt
 
 ; HMs Check
-; EVENT_GOT_HM05, EVENT_ROCK_TUNNEL_FLASH_HELP, EVENT_ROCK_TUNNEL_FLASH_HELP2
 ; EVENT_GOT_HM02, EVENT_GOT_HM03, EVENT_GOT_HM04
+
+_MomPhoneText_Fly::
+	text "You can FLY now?"
+	line "That's amazing!"
+
+	para "Don't forget to"
+	line "visit me"
+	cont "sometimes, okay?"
+	prompt
+	
+_MomPhoneText_Surf::
+	text "You can swim on"
+	line "your #MON now?"
+
+	para "SURFING sounds"
+	line "so exciting!"
+
+	para "Just don't go"
+	line "too far from"
+	cont "the shore."
+	prompt
+	
+_MomPhoneText_Strength::
+	text "Moving heavy"
+	line "boulders?"
+	
+	para "I'm amazed at"
+	line "how strong you"
+	cont "have become!"
+	prompt
+	
+; Progress Events
+
+; Lavender Town
+
+; EVENT_GOT_HM05, EVENT_ROCK_TUNNEL_FLASH_HELP, EVENT_ROCK_TUNNEL_FLASH_HELP2
+; EVENT_BEAT_GHOST_MAROWAK, EVENT_RESCUED_MR_FUJI, EVENT_GOT_POKE_FLUTE
+
+_MomPhoneText_Flash::
+	text "ROCK TUNNEL?"
+	line "A dark cave?"
+
+	para "That sounds scary."
+
+	para "<PLAYER>..."
+	line "I heard rumors"
+	cont "about GHOSTs in"
+	cont "LAVENDER TOWN."
+
+	para "Please be extra"
+	line "careful, honey!"
+	prompt
 
 _MomPhoneText_FlashHelp1or2::
 	text "ROCK TUNNEL?"
@@ -303,63 +354,14 @@ _MomPhoneText_FlashHelp1or2::
 
 	para "Please be extra"
 	line "careful, honey!"
-	done
-	
-_MomPhoneText_Flash::
-	text "ROCK TUNNEL?"
-	line "A dark cave?"
-
-	para "That sounds scary."
-
-	para "<PLAYER>..."
-	line "I heard rumors"
-	cont "about GHOSTs in"
-	cont "LAVENDER TOWN."
-
-	para "Please be extra"
-	line "careful, honey!"
-	done
-	
-_MomPhoneText_Fly::
-	text "You can FLY now?"
-	line "That's amazing!"
-
-	para "Don't forget to"
-	line "visit me sometimes,"
-	cont "okay?"
-	done
-	
-_MomPhoneText_Surf::
-	text "You can swim on"
-	line "your #MON now?"
-
-	para "SURFING sounds"
-	line "so exciting!"
-
-	para "Just don't go"
-	line "too far from"
-	cont "the shore."
-	done
-	
-_MomPhoneText_Strength::
-	text "Moving heavy"
-	line "boulders?"
-	
-	para "I'm amazed at"
-	line "how strong you"
-	cont "have become!"
-	done
-	
-; Progress Events
-
-; EVENT_BEAT_GHOST_MAROWAK, EVENT_RESCUED_MR_FUJI, EVENT_GOT_POKE_FLUTE
+	prompt
 	
 _MomPhoneText_Marowak::
 	text "You saw a GHOST?"
 	line "That's scary!"
 
 	para "Are you okay?"
-	done
+	prompt
 	
 _MomPhoneText_Fuji::
 	text "You saved"
@@ -369,7 +371,7 @@ _MomPhoneText_Fuji::
 	line "you, <PLAYER>!"
 
 	para "You're so brave!"
-	done
+	prompt
 	
 _MomPhoneText_Flute::
     text "A # FLUTE?"
@@ -379,7 +381,7 @@ _MomPhoneText_Flute::
 
     para "Stay safe on the"
     line "road, dear!"
-	done
+	prompt
 	
 ; EVENT_FOUND_ROCKET_HIDEOUT, EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
 	
@@ -396,7 +398,7 @@ _MomPhoneText_RocketHideoutFound::
 
 	para "Please be careful,"
 	line "<PLAYER>!"
-	done
+	prompt
 	
 _MomPhoneText_GiovanniCeladon::
 	text "You stopped"
@@ -410,9 +412,9 @@ _MomPhoneText_GiovanniCeladon::
 
 	para "But please don't"
 	line "push too hard."
-	done
+	prompt
 	
-; EVENT_RESCUED_MR_FUJI and visited Saffron
+; EVENT_RESCUED_MR_FUJI and visited Saffron (should be registered in fly warps)
 
 _MomPhoneText_SilphCoBlocked::
 	text "SILPH CO. is"
@@ -423,7 +425,7 @@ _MomPhoneText_SilphCoBlocked::
 
 	para "Please be careful,"
 	line "<PLAYER>."
-	done
+	prompt
 
 _MomPhoneText_GuardSleeping::
 	text "You got inside"
@@ -432,7 +434,7 @@ _MomPhoneText_GuardSleeping::
 	para "Be careful..."
 	line "Something feels"
 	cont "wrong there."
-	done
+	prompt
 	
 ; EVENT_BEAT_SILPH_CO_GIOVANNI, EVENT_GOT_MASTER_BALL
 
@@ -443,10 +445,10 @@ _MomPhoneText_GiovanniSilph::
 
 	para "Wow!"
 
-	para "The whole KANTO"
-	line "region is in"
-	cont "your debt!"
-	done
+	para "SAFFRON CITY"
+	line "is in your"
+	cont "debt!"
+	prompt
 
 _MomPhoneText_MasterBall::
 	text "A MASTER BALL?"
@@ -457,7 +459,7 @@ _MomPhoneText_MasterBall::
 
 	para "You must be very"
 	line "special, dear!"
-	done
+	prompt
 	
 ; EVENT_BEAT_ROUTE12_SNORLAX, EVENT_BEAT_ROUTE16_SNORLAX and visited FUCHSIA
 	
@@ -469,7 +471,7 @@ _MomPhoneText_Snorlax12::
 	para "The ocean air is"
 	line "so good for"
 	cont "your health!"
-	done
+	prompt
 
 _MomPhoneText_Snorlax16::
 	text "You arrived via"
@@ -480,7 +482,7 @@ _MomPhoneText_Snorlax16::
 
 	para "I hope you wore"
 	line "a helmet, dear."
-	done
+	prompt
 
 _MomPhoneText_BothSnorlax::
 	text "You finally made"
@@ -494,7 +496,7 @@ _MomPhoneText_BothSnorlax::
 
 	para "That's a lot of"
 	line "walking, dear!"
-	done
+	prompt
 	
 ; EVENT_GAVE_GOLD_TEETH
 
@@ -507,7 +509,7 @@ _MomPhoneText_GoldTeeth::
 	para "I'm glad the"
 	line "WARDEN has his"
 	cont "smile back now."
-	done
+	prompt
 	
 ; EVENT_GAVE_FOSSIL_TO_LAB
 
@@ -520,7 +522,7 @@ _MomPhoneText_FossilToLab::
 
 	para "Science is so"
 	line "amazing, dear!"
-	done
+	prompt
 	
 ; Check Item SECRET KEY
 
@@ -534,7 +536,7 @@ _MomPhoneText_SecretKey::
 	para "Be careful"
 	line "on that island,"
 	cont "honey!"
-	done
+	prompt
 	
 ; Gym Check
 
@@ -551,7 +553,7 @@ _MomPhoneText_Erika::
 
 	para "You're doing great,"
 	line "<PLAYER>!"
-	done
+	prompt
 
 _MomPhoneText_KarateMaster::
 	text "You beat the"
@@ -562,7 +564,7 @@ _MomPhoneText_KarateMaster::
 	cont "fighter, honey!"
 
 	para "I'm impressed!"
-    done
+    prompt
 
 _MomPhoneText_Sabrina::
 	text "You won"
@@ -575,7 +577,7 @@ _MomPhoneText_Sabrina::
 	para "Did she see"
 	line "your victory"
 	cont "coming?"
-	done
+	prompt
 
 _MomPhoneText_Koga::
 	text "You beat KOGA"
@@ -587,7 +589,7 @@ _MomPhoneText_Koga::
 
 	para "The SOULBADGE"
 	line "looks great!"
-	done
+	prompt
 
 _MomPhoneText_Blaine::
 	text "You beat BLAINE?"
@@ -599,7 +601,7 @@ _MomPhoneText_Blaine::
 
 	para "I'm so proud"
 	line "of you, dear!"
-	done
+	prompt
 
 _MomPhoneText_ViridianGymOpen::
 	text "The VIRIDIAN"
@@ -610,7 +612,7 @@ _MomPhoneText_ViridianGymOpen::
 
 	para "Be ready for"
 	line "anything, honey!"
-	done
+	prompt
 
 _MomPhoneText_GiovanniViridian::
 	text "You beat the"
@@ -621,7 +623,7 @@ _MomPhoneText_GiovanniViridian::
 
 	para "You've come so"
 	line "far, <PLAYER>!"
-	done
+	prompt
 	
 ; Rival Check
 
@@ -635,7 +637,7 @@ _MomPhoneText_RivalTower::
 
 	para "He's always been"
 	line "so busy..."
-	done
+	prompt
 
 _MomPhoneText_RivalSilph::
 	text "You saw"
@@ -650,7 +652,7 @@ _MomPhoneText_RivalSilph::
 	para "I hope he's"
 	line "treating you"
 	cont "well."
-	done
+	prompt
 
 _MomPhoneText_RivalRoute22::
 	text "You saw <RIVAL>"
@@ -664,7 +666,7 @@ _MomPhoneText_RivalRoute22::
 	para "Don't let him"
 	line "get ahead of"
 	cont "you, <PLAYER>!"
-	done
+	prompt
 
 ; Badge Checks
 
@@ -678,7 +680,7 @@ _MomPhoneText_CascadeBadgeCheck::
 	para "VICTORY ROAD"
 	line "is getting"
 	cont "closer, dear!"
-	done
+	prompt
 
 _MomPhoneText_ThunderBadgeCheck::
 	text "Another badge"
@@ -690,7 +692,7 @@ _MomPhoneText_ThunderBadgeCheck::
 
 	para "I can hardly"
 	line "believe it!"
-	done
+	prompt
 
 _MomPhoneText_RainbowBadgeCheck::
 	text "Halfway through"
@@ -699,7 +701,7 @@ _MomPhoneText_RainbowBadgeCheck::
 	para "You've worked"
 	line "so hard for"
 	cont "this, <PLAYER>!"
-	done
+	prompt
 
 _MomPhoneText_SoulBadgeCheck::
 	text "You are getting"
@@ -711,7 +713,7 @@ _MomPhoneText_SoulBadgeCheck::
 
 	para "I am so proud,"
 	line "honey!"
-	done
+	prompt
 
 _MomPhoneText_MarshBadgeCheck::
 	text "Almost there!"
@@ -721,7 +723,7 @@ _MomPhoneText_MarshBadgeCheck::
 	para "You have come"
 	line "such a long"
 	cont "way, <PLAYER>!"
-	done
+	prompt
 
 _MomPhoneText_VolcanoBadgeCheck::
 	text "One more badge"
@@ -733,7 +735,7 @@ _MomPhoneText_VolcanoBadgeCheck::
 
 	para "You can do it,"
 	line "honey!"
-	done
+	prompt
 
 _MomPhoneText_EarthBadgeCheck::
 	text "You passed all"
@@ -745,7 +747,7 @@ _MomPhoneText_EarthBadgeCheck::
 	para "Give it your"
 	line "very best,"
 	cont "<PLAYER>!"
-	done
+	prompt
 	
 ; Champion
 
@@ -768,4 +770,4 @@ _MomPhoneText_Champion::
 
 	para "I love you so"
 	line "much, <PLAYER>!"
-	done
+	prompt
