@@ -447,6 +447,10 @@ MakeNPCFacePlayer:
 	jr z, .CeruleanCaveB1F
 	cp FUCHSIA_CITY
 	jr z, .FuchsiaCity
+	cp SS_ANNE_B1F_ROOMS
+	jr z, .SSAnneB1FRooms
+	cp VERMILION_CITY
+	jr z, .VermiliionCity
 	jr .normal
 .VictoryRoad2F
 	ld a, b
@@ -475,6 +479,16 @@ MakeNPCFacePlayer:
 	cp FUCHSIACITY_VOLTORB
 	jr z, NotYetMoving
 	cp FUCHSIACITY_FOSSIL
+	jr z, NotYetMoving
+	jr .normal
+.SSAnneB1FRooms
+	ld a, b
+	cp SSANNEB1FROOMS_MACHOKE
+	jr z, NotYetMoving
+	jr .normal
+.VermiliionCity
+	ld a, b
+	cp VERMILIONCITY_MACHOP
 	jr z, NotYetMoving
 	jr .normal
 .normal
