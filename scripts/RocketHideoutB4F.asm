@@ -52,6 +52,8 @@ RocketHideoutB4FBeatGiovanniScript:
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	SetEvent EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
+	ld a, PROGRESS_CELADON
+	ld [wLastProgressEvent], a
 	ld a, TEXT_ROCKETHIDEOUTB4F_GIOVANNI_HOPE_WE_MEET_AGAIN
 	ldh [hTextID], a
 	call DisplayTextID

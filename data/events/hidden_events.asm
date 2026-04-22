@@ -94,6 +94,7 @@ HiddenEventMaps:
 	hidden_event_map ROUTE_4
 	hidden_event_map CELADON_UNIVERSITY
 	hidden_event_map ROUTE_1_MUSEUM_1F
+	hidden_event_map CELADON_MART_1F
 	db -1 ; end
 
 HiddenEventPointers:
@@ -614,4 +615,8 @@ DEF ANY_FACING EQU $d0
 	hidden_event 60,  3, LeafeonMuseum, SPRITE_FACING_UP
 	hidden_event 54,  6, DonphanMuseum, SPRITE_FACING_UP
 	hidden_event 60,  6, HonogumaMuseum, SPRITE_FACING_UP
+
+	hidden_events_for CELADON_MART_1F
+	hidden_event 16,  2, MomPhoneText, SPRITE_FACING_UP
+	hidden_event 17,  2, MomPhoneText, SPRITE_FACING_UP
 	db -1 ; end

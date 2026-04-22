@@ -363,3 +363,5 @@ INCLUDE "data/text/unused_names.asm"
 
 INCLUDE "engine/decorations.asm"
 INCLUDE "engine/pokemon/calc_stats.asm"
+INCLUDE "engine/events/phone_mom.asm"
+INCLUDE "engine/events/hidden_events/phone_mom.asm"

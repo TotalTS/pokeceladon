@@ -54,6 +54,8 @@ SaffronGymSabrinaReceiveTM46Script:
 	ldh [hTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_SABRINA
+	ld a, GYM_SABRINA
+	ld [wLastGymEvent], a
 	lb bc, TM_PSYWAVE, 1
 	call GiveItem
 	jr nc, .BagFull

@@ -79,6 +79,8 @@ MrFujisHouseMrFujiText:
 	ld hl, .ReceivedPokeFluteText
 	call PrintText
 	SetEvent EVENT_GOT_POKE_FLUTE
+	cp PROGRESS_LAVENDER_LATE
+	ld [wLastProgressEvent], a
 	jr .done
 .bag_full
 	ld hl, .PokeFluteNoRoomText

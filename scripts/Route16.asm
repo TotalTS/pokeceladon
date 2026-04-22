@@ -57,6 +57,8 @@ Route16SnorlaxPostBattleScript:
 .caught
 	SetEvent EVENT_BEAT_ROUTE16_SNORLAX
 	call Delay3
+	ld a, PROGRESS_FUCHSIA
+	ld [wLastProgressEvent], a
 	ld a, SCRIPT_ROUTE16_DEFAULT
 	ld [wRoute16CurScript], a
 	ld [wCurMapScript], a

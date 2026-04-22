@@ -18,5 +18,6 @@ CeladonMansionRoofHouseEeveePokeballText:
 	ld a, TOGGLE_CELADON_MANSION_EEVEE_GIFT
 	ld [wToggleableObjectIndex], a
 	predef HideObject
+	SetEvent EVENT_GOT_EEVEE
 .party_full
 	jp TextScriptEnd

@@ -44,6 +44,8 @@ Route5GateDefaultScript:
 	call DisplayTextID
 	ld hl, wStatusFlags1
 	set BIT_GAVE_SAFFRON_GUARDS_DRINK, [hl]
+	ld a, PROGRESS_SAFFRON
+	ld [wLastProgressEvent], a
 	ret
 
 .PlayerInCoordsArray:

@@ -68,7 +68,7 @@ PokemonMansionB1F_TextPointers:
 	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_TM_BLIZZARD
 	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_TM_SOLARBEAM
 	dw_const PokemonMansionB1FDiaryText,     TEXT_POKEMONMANSIONB1F_DIARY
-	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_SECRET_KEY
+	dw_const PokemonMansionB1FSecretKeyText, TEXT_POKEMONMANSIONB1F_SECRET_KEY
 	dw_const PokemonMansion2FSwitchText,     TEXT_POKEMONMANSIONB1F_SWITCH ; This switch uses the text script from the 2F.
 
 Mansion4TrainerHeaders:
@@ -118,3 +118,22 @@ PokemonMansionB1FScientistAfterBattleText:
 PokemonMansionB1FDiaryText:
 	text_far _PokemonMansionB1FDiaryText
 	text_end
+
+PokemonMansionB1FSecretKeyText:
+	text_asm
+	predef PickUpItem
+	call TrySetEventIfItemObtained
+	jp TextScriptEnd
+	
+TrySetEventIfItemObtained:
+	CheckEvent EVENT_MANSION_SECRET_KEY
+	ret nz
+	ld b, SECRET_KEY
+	call IsItemInBag
+	jr nz, .havingSecretKey
+	ret
+.havingSecretKey
+	SetEvent EVENT_MANSION_SECRET_KEY
+	ld a, PROGRESS_CINNABAR
+	ld [wLastProgressEvent], a
+	ret

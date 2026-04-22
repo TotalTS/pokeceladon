@@ -21,7 +21,7 @@ CinnabarIslandDefaultScript:
 	cp 4
 	ret nz
 	ld a, [wXCoord]
-	cp 18
+	cp 26
 	ret nz
 	ld a, PLAYER_DIR_UP
 	ld [wPlayerMovingDirection], a

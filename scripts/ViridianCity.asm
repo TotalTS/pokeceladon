@@ -22,6 +22,8 @@ ViridianCityCheckGymOpenScript:
 	cp ~(1 << BIT_EARTHBADGE)
 	jr nz, .gym_closed
 	SetEvent EVENT_VIRIDIAN_GYM_OPEN
+	ld a, GYM_VIRIDIAN_OPEN
+	ld [wLastGymEvent], a
 	ret
 .gym_closed
 	ld a, [wYCoord]

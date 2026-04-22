@@ -440,6 +440,8 @@ GameCornerRocketText:
 	call WaitForSoundToFinish
 	
 	SetEvent EVENT_FOUND_ROCKET_HIDEOUT
+	ld a, PROGRESS_CELADON
+	ld [wLastProgressEvent], a
 	ld a, $43
 	ld [wNewTileBlockID], a
 	lb bc, 2, 8
@@ -510,6 +512,8 @@ GameCornerPosterText:
 	call PlaySound
 	call WaitForSoundToFinish
 	SetEvent EVENT_FOUND_ROCKET_HIDEOUT
+	ld a, PROGRESS_CELADON
+	ld [wLastProgressEvent], a
 	ld a, $43
 	ld [wNewTileBlockID], a
 	lb bc, 2, 8

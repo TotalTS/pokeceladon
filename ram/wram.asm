@@ -2174,7 +2174,9 @@ wSelectedDollSet::   db
 wSelectedDollOption:: db
 wSelectedDollIndex:: db
 
-	ds 4
+wLastGymEvent:: db
+wLastProgressEvent:: db
+	ds 2
 
 wStatusFlags1:: db
 	ds 1

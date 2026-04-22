@@ -35,6 +35,8 @@ Route6GateDefaultScript:
 .have_drink
 	ld hl, wStatusFlags1
 	set BIT_GAVE_SAFFRON_GUARDS_DRINK, [hl]
+	ld a, PROGRESS_SAFFRON
+	ld [wLastProgressEvent], a
 	ld a, TEXT_ROUTE6GATE_GUARD_GIVE_DRINK
 	ldh [hTextID], a
 	jp DisplayTextID

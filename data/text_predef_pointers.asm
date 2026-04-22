@@ -76,3 +76,4 @@ TextPredefs::
 	add_tx_pre LeafeonMuseumText                    ; 46 new
 	add_tx_pre DonphanMuseumText                    ; 47 new
 	add_tx_pre HonogumaMuseumText                   ; 48 new
+	add_tx_pre CeladonMart1FMomPhoneText            ; 49 new

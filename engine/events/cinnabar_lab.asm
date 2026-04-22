@@ -66,6 +66,8 @@ GiveFossilToCinnabarLab::
 	ld hl, .GoForAWalkText
 	call PrintText
 	SetEvents EVENT_GAVE_FOSSIL_TO_LAB, EVENT_LAB_STILL_REVIVING_FOSSIL
+	ld a, PROGRESS_CINNABAR
+	ld [wLastProgressEvent], a
 	ret
 .cancelledGivingFossil
 	ld hl, .ComeAgainText

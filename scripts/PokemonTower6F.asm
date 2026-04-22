@@ -62,6 +62,8 @@ PokemonTower6FMarowakBattleScript:
 	and a
 	jr nz, .did_not_defeat
 	SetEvent EVENT_BEAT_GHOST_MAROWAK
+	cp PROGRESS_LAVENDER_LATE
+	ld [wLastProgressEvent], a
 	ld a, TEXT_POKEMONTOWER6F_MAROWAK_DEPARTED
 	ldh [hTextID], a
 	call DisplayTextID

@@ -231,6 +231,8 @@ SilphCo11FGiovanniAfterBattleScript:
 	call Delay3
 	call GBFadeInFromBlack
 	SetEvent EVENT_BEAT_SILPH_CO_GIOVANNI
+	ld a, PROGRESS_SAFFRON
+	ld [wLastProgressEvent], a
 	xor a
 	ld [wJoyIgnore], a
 	jp SilphCo11FSetCurScript
@@ -302,6 +304,8 @@ SilphCo11FSilphPresidentText:
 	ld hl, .ReceivedMasterBallText
 	call PrintText
 	SetEvent EVENT_GOT_MASTER_BALL
+	ld a, PROGRESS_SAFFRON
+	ld [wLastProgressEvent], a
 	jr .done
 .bag_full
 	ld hl, .NoRoomText

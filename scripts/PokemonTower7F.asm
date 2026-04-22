@@ -228,6 +228,8 @@ PokemonTower7FMrFujiText:
 	call PrintText
 	SetEvent EVENT_RESCUED_MR_FUJI
 	SetEvent EVENT_RESCUED_MR_FUJI_2
+	cp PROGRESS_LAVENDER_LATE
+	ld [wLastProgressEvent], a
 	ld a, TOGGLE_MR_FUJIS_HOUSE_MR_FUJI
 	ld [wToggleableObjectIndex], a
 	predef ShowObject

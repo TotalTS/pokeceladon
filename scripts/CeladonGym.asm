@@ -54,6 +54,8 @@ CeladonGymReceiveTM21:
 	ldh [hTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_ERIKA
+	ld a, GYM_ERIKA
+	ld [wLastGymEvent], a
 	lb bc, TM_MEGA_DRAIN, 1
 	call GiveItem
 	jr nc, .BagFull

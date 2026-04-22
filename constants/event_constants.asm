@@ -118,7 +118,8 @@
 ; Celadon City events
 	const_next $180
 	const EVENT_GOT_TM41
-	const_skip 11
+	const EVENT_GOT_EEVEE
+	const_skip 10
 	const EVENT_GOT_TM13
 	const EVENT_GOT_TM48
 	const EVENT_GOT_TM49
@@ -170,7 +171,8 @@
 	const EVENT_MANSION_SWITCH_ON
 	const_skip 16
 	const EVENT_BEAT_MANSION_1_TRAINER_0
-	const_skip 14
+	const EVENT_MANSION_SECRET_KEY
+	const_skip 13
 	const EVENT_GOT_TM38
 	const EVENT_BEAT_BLAINE
 	const EVENT_BEAT_CINNABAR_GYM_TRAINER_0

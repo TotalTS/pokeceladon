@@ -149,6 +149,8 @@ ViridianGymReceiveTM27:
 	ldh [hTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	ld a, GYM_GIOVANNI
+	ld [wLastGymEvent], a
 	lb bc, TM_FISSURE, 1
 	call GiveItem
 	jr nc, .bag_full

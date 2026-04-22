@@ -29,6 +29,8 @@ FightingDojoDefaultScript:
 	and a
 	ret nz
 	CheckEvent EVENT_BEAT_KARATE_MASTER
+	ld a, GYM_KARATE_MASTER
+	ld [wLastGymEvent], a
 	ret nz
 	xor a
 	ldh [hJoyHeld], a

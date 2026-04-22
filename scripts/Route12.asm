@@ -56,6 +56,8 @@ Route12SnorlaxPostBattleScript:
 .caught_snorlax
 	SetEvent EVENT_BEAT_ROUTE12_SNORLAX
 	call Delay3
+	ld a, PROGRESS_FUCHSIA
+	ld [wLastProgressEvent], a
 	ld a, SCRIPT_ROUTE12_DEFAULT
 	ld [wRoute12CurScript], a
 	ld [wCurMapScript], a

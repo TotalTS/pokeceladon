@@ -36,6 +36,8 @@ WardensHouseWardenText:
 	ldh [hItemToRemoveID], a
 	farcall RemoveItemByID
 	SetEvent EVENT_GAVE_GOLD_TEETH
+	ld a, PROGRESS_FUCHSIA
+	ld [wLastProgressEvent], a
 .gave_gold_teeth
 	ld hl, .ThanksText
 	call PrintText
