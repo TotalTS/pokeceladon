@@ -240,6 +240,8 @@ MomPhone_CheckProgressText:
 	jr z, .Fuchsia
 	cp PROGRESS_SAFFRON
 	jr z, .Saffron
+	cp PROGRESS_CELADON
+	jr z, .Celadon
 	cp PROGRESS_LAVENDER_LATE
 	jr z, .LavenderLate
 	; default
@@ -250,6 +252,8 @@ MomPhone_CheckProgressText:
 	jp MomPhone_CheckFuchsiaText
 .Saffron
 	jp MomPhone_CheckSaffronText
+.Celadon
+	jp MomPhone_CheckCeladon
 .LavenderLate
 	jp MomPhone_CheckLavenderLate
 
