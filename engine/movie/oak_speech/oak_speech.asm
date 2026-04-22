@@ -64,9 +64,46 @@ OakSpeech:
 	ld a, [wStatusFlags6]
 	bit BIT_DEBUG_MODE, a
 	jp nz, .skipSpeech
-	ld de, ProfOakPic
-	lb bc, BANK(ProfOakPic), $00
-	call IntroDisplayPicCenteredOrUpperRight
+	call DisableLCD
+
+	ld hl, OakSpeechGFX1
+	ld de, vChars2
+	ld bc, $44 tiles
+	ld a, BANK(OakSpeechGFX1)
+	call FarCopyData2
+
+	; Copy the tilemap to a temporary area outside the visible screen boundaries
+	ld hl, OakSpeech1Tilemap
+	ld de, wTileMap + $170 ; ← $170 is after the map (20×18 = $168), safe area
+	ld bc, 7*13
+	ld a, BANK(OakSpeech1Tilemap)
+	call FarCopyData2
+
+	; Position the tilemap at the center
+	hlcoord 6, 2 ; x=6 (centered), y=2
+	ld d, h
+	ld e, l ; de = destination in wTileMap
+	ld hl, wTileMap + $170 ; hl = source (safe area)
+	ld b, 13 ; height = 13 tiles
+.placeTilemapLoop
+	push bc
+	ld c, 7 ; width = 7 tiles
+.placeRowLoop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+    jr nz, .placeRowLoop
+	pop bc
+	ld a, SCREEN_WIDTH - 7
+	add e
+	ld e, a
+	jr nc, .noCarry
+	inc d
+.noCarry
+	dec b
+	jr nz, .placeTilemapLoop
+	call EnableLCD
 	call FadeInIntroPic
 	ld hl, OakSpeechText1
 	call PrintText

@@ -395,3 +395,8 @@ LugiaPic::         INCBIN "gfx/misc_sprites/lugia.pic"
 MarillPic::        INCBIN "gfx/misc_sprites/marill.pic"
 TogepiPic::        INCBIN "gfx/misc_sprites/togepi.pic"
 YoshiPic::         INCBIN "gfx/misc_sprites/yoshi.pic"
+; oak's speech
+OakSpeechGFX1::
+	INCBIN "gfx/misc_sprites/oakspeech_1.2bpp"
+OakSpeech1Tilemap::
+	INCBIN "gfx/misc_sprites/oakspeech_1.tilemap"
