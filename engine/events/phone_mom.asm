@@ -18,11 +18,10 @@ MomPhone_RunDialogue::
 	CheckEvent EVENT_PASSED_EARTHBADGE_CHECK
 	jr nz, .skipRival
 	call MomPhone_CheckRivalText
-	CheckEvent EVENT_BEAT_VICTORY_ROAD_1_TRAINER_0
-	jr z, .skipBadge
-	call MomPhone_CheckBadgeCheckText
 .skipRival
-	jr .End
+	call CheckAnyVictoryRoadTrainerBeaten
+	jr nz, .skipBadge
+	call MomPhone_CheckBadgeCheckText
 .skipBadge
 	jr .End
 .Champion
@@ -486,6 +485,8 @@ MomPhone_CheckCinnabarText:
 	jr nz, .Fossil
 	ret
 .SecretKey
+	CheckEvent EVENT_BEAT_BLAINE
+	jr nz, .returnCheckCinnabar
 	ld hl, MomPhoneText_SecretKey
 	jr .doneCheckCinnabar
 .Fossil
@@ -493,6 +494,8 @@ MomPhone_CheckCinnabarText:
 	jr .doneCheckCinnabar
 .doneCheckCinnabar
 	call PrintText
+	ret
+.returnCheckCinnabar
 	ret
 	
 MomPhoneText_FossilToLab:
@@ -507,11 +510,11 @@ MomPhone_CheckGymText:
 	; higher priority first
 	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
 	jr nz, .GiovanniViridian
-	CheckEvent EVENT_BEAT_BLAINE
-	jr nz, .Blaine
-	CheckEvent EVENT_VIRIDIAN_GYM_OPEN
-	jr nz, .ViridianGymOpen
 	ld a, [wLastGymEvent]
+	cp GYM_VIRIDIAN_OPEN
+	jr z, .ViridianGymOpen
+	cp GYM_BLAINE
+	jr z, .Blaine
 	cp GYM_KOGA
 	jr z, .Koga
 	cp GYM_SABRINA
@@ -688,3 +691,17 @@ MomPhoneText_EarthBadgeCheck:
 MomPhoneText_Champion:
 	text_far _MomPhoneText_Champion
 	text_end
+
+CheckAnyVictoryRoadTrainerBeaten:
+	CheckEvent EVENT_BEAT_VICTORY_ROAD_1_TRAINER_0
+	ret nz
+	CheckEvent EVENT_BEAT_VICTORY_ROAD_2_TRAINER_1
+	ret nz
+	CheckEvent EVENT_BEAT_VICTORY_ROAD_2_TRAINER_2
+	ret nz
+	CheckEvent EVENT_BEAT_VICTORY_ROAD_2_TRAINER_3
+	ret nz
+	CheckEvent EVENT_BEAT_VICTORY_ROAD_2_TRAINER_4
+	ret nz
+	xor a
+	ret
