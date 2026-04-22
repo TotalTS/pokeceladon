@@ -61,6 +61,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 - If you have badge(s) Guards have shorter texts on Route 23.
 - Nurse at Silph Co. 9F still heals you after beating Team Rocket.
 - Restored PC on Celadon Hotel.
+- You can use the Phone to call Mom at Celadon Mart 1F.
 
 ## Version Exclusives & Completion
 
@@ -109,6 +110,7 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 - Move badge "item" definitions outside actual item list.
 - Original idea of Erik and Sara Reunion.
 - Original idea of drinking tea with Daisy.
+- Original idea to use the Phone to call Mom at Celadon Mart 1F.
 
 **Mr. Cheeze**
 - Music: VS Mew.
