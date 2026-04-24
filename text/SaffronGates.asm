@@ -36,3 +36,36 @@ _SaffronGateGuardThanksForTheDrinkText::
 	text "Hi, thanks for"
 	line "the cool drinks!"
 	done
+	
+_EvadeGuardQuestionText::
+    text "Do you want to"
+    line "evade the guard?"
+    done
+
+_InfractionHandOverText::
+    text "You've made an"
+    line "INFRACTION!"
+	
+	para "Hand over"
+    line "¥1000!"
+    done
+
+_NotEnoughMoneyText::
+    text "You don't have"
+    line "enough money!"
+    done
+
+_RocketsShouldNotBeAroundText::
+    text "You ROCKETs"
+    line "should not be"
+    cont "around SAFFRON"
+	cont "anymore!"
+    done
+
+_CanYouBelieveItRocketsPassedText::
+    text "Can you believe"
+	line "it? ROCKETs just"
+    cont "passed through"
+    cont "the gate without"
+    cont "caring!"
+    done

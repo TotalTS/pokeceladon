@@ -15,14 +15,32 @@ Route5GateMovePlayerUpScript:
 	ld a, $1
 	ld [wSimulatedJoypadStatesIndex], a
 	jp StartSimulatingJoypadStates
+	
+Route5GateMovePlayerForwardScript:
+	ld a, PAD_DOWN
+	ld [wSimulatedJoypadStatesEnd], a
+	ld a, $1
+	ld [wSimulatedJoypadStatesIndex], a
+	jp StartSimulatingJoypadStates
 
 Route5GateDefaultScript:
 	ld a, [wStatusFlags1]
 	bit BIT_GAVE_SAFFRON_GUARDS_DRINK, a
 	ret nz
+	CheckEvent EVENT_BRIBED_SAFFRON_GUARD
+	ret nz
 	ld hl, .PlayerInCoordsArray
 	call ArePlayerCoordsInArray
 	ret nc
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .noRocketSuit
+	ld a, TEXT_ROUTE5GATE_GUARD
+	ldh [hTextID], a
+	call DisplayTextID
+	ret
+
+.noRocketSuit
 	ld a, PLAYER_DIR_LEFT
 	ld [wPlayerMovingDirection], a
 	xor a
@@ -73,6 +91,65 @@ SaffronGateGuardText:
 	text_asm
 	ld a, [wStatusFlags1]
 	bit BIT_GAVE_SAFFRON_GUARDS_DRINK, a
+	jp nz, .gave_drink
+	CheckEvent EVENT_BRIBED_SAFFRON_GUARD
+	jp nz, .bribedAlready
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, SaffronGateGuardDefaultText
+	call PrintText
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, EvadeGuardQuestionText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .choseNoToEvade
+	xor a
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, InfractionHandOverText
+	call PrintText
+	xor a
+	ldh [hMoney], a
+	ldh [hMoney + 2], a
+	ld a, $10
+	ldh [hMoney + 1], a
+	call HasEnoughMoney
+	jr nc, .enoughMoneyForFine
+	ld hl, NotEnoughMoneyText
+	call PrintText
+	call Route5GateMovePlayerUpScript
+	ld a, SCRIPT_ROUTE5GATE_PLAYER_MOVING
+	ld [wRoute5GateCurScript], a
+	jp TextScriptEnd
+
+.enoughMoneyForFine
+	xor a
+	ld [wPriceTemp], a
+	ld [wPriceTemp + 2], a
+	ld a, $10
+	ld [wPriceTemp + 1], a
+    ld hl, wPriceTemp + 2
+    ld de, wPlayerMoney + 2
+    ld c, $3
+    predef SubBCDPredef
+	SetEvent EVENT_BRIBED_SAFFRON_GUARD
+	call Route5GateMovePlayerForwardScript
+	ld a, SCRIPT_ROUTE5GATE_PLAYER_MOVING
+	ld [wRoute5GateCurScript], a
+	jp TextScriptEnd
+
+.choseNoToEvade
+	call Route5GateMovePlayerUpScript
+	ld a, SCRIPT_ROUTE5GATE_PLAYER_MOVING
+	ld [wRoute5GateCurScript], a
+	jp TextScriptEnd
+
+.normalBehavior
+	ld a, [wStatusFlags1]
+	bit BIT_GAVE_SAFFRON_GUARDS_DRINK, a
 	jr nz, .thanks_for_drink
 	farcall RemoveGuardDrink
 	ldh a, [hItemToRemoveID]
@@ -96,6 +173,27 @@ SaffronGateGuardText:
 	ld hl, SaffronGateGuardThanksForTheDrinkText
 	call PrintText
 	jp TextScriptEnd
+	
+.gave_drink
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .thanks_for_drink
+	ld hl, RocketsShouldNotBeAroundText
+	call PrintText
+	jp TextScriptEnd
+
+.bribedAlready
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .surprisedRockets
+	ld hl, RocketsShouldNotBeAroundText
+	call PrintText
+	jp TextScriptEnd
+
+.surprisedRockets
+	ld hl, CanYouBelieveItRocketsPassedText
+	call PrintText
+	jp TextScriptEnd
 
 SaffronGateGuardGeeImThirstyText:
 	text_far _SaffronGateGuardGeeImThirstyText
@@ -109,4 +207,29 @@ SaffronGateGuardGiveDrinkText:
 
 SaffronGateGuardThanksForTheDrinkText:
 	text_far _SaffronGateGuardThanksForTheDrinkText
+	text_end
+
+EvadeGuardQuestionText:
+	text_far _EvadeGuardQuestionText
+	text_end
+
+InfractionHandOverText:
+	text_far _InfractionHandOverText
+	text_end
+
+NotEnoughMoneyText:
+	text_far _NotEnoughMoneyText
+	text_end
+
+RocketsShouldNotBeAroundText:
+	text_far _RocketsShouldNotBeAroundText
+	text_end
+
+CanYouBelieveItRocketsPassedText:
+	text_far _CanYouBelieveItRocketsPassedText
+	text_end
+
+SaffronGateGuardDefaultText:
+	text_far _SaffronGateGuardGeeImThirstyText
+	text_waitbutton
 	text_end
