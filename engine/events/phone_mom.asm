@@ -123,10 +123,15 @@ MomPhone_CheckPokemonText:
 	jr nz, .Articuno
 	CheckEvent EVENT_BEAT_ZAPDOS
 	jr nz, .Zapdos
+	ld a, [wStatusFlags4]
+	bit BIT_GOT_LAPRAS, a
+	jr nz, .Lapras
 	CheckEvent EVENT_GOT_HITMONLEE
 	jr nz, .Hitmonlee
 	CheckEvent EVENT_GOT_HITMONCHAN
 	jr nz, .Hitmonchan
+	CheckEvent EVENT_GOT_UNIVERSITY_MAGIKARP
+	jr nz, .Magikarp
 	CheckEvent EVENT_GOT_EEVEE
 	jr nz, .Eevee
 	CheckEvent EVENT_GOT_SQUIRTLE_FROM_OFFICER_JENNY
@@ -151,6 +156,11 @@ MomPhone_CheckPokemonText:
 .Zapdos
 	ld hl, MomPhoneText_Zapdos
 	jr .doneCheckPokemon
+.Lapras
+	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	jr nz, .returnCheckPokemon
+	ld hl, MomPhoneText_Lapras
+	jr .doneCheckPokemon
 .Hitmonlee
 	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
 	jr nz, .returnCheckPokemon
@@ -160,6 +170,11 @@ MomPhone_CheckPokemonText:
 	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
 	jr nz, .returnCheckPokemon
 	ld hl, MomPhoneText_Hitmonchan
+	jr .doneCheckPokemon
+.Magikarp
+	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
+	jr nz, .returnCheckPokemon
+	ld hl, MomPhoneText_Magikarp
 	jr .doneCheckPokemon
 .Eevee
 	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
@@ -207,6 +222,10 @@ MomPhoneText_Zapdos:
 	text_far _MomPhoneText_Zapdos
 	text_end
 
+MomPhoneText_Lapras:
+	text_far _MomPhoneText_Lapras
+	text_end
+
 MomPhoneText_Hitmonlee:
 	text_far _MomPhoneText_Hitmonlee
 	text_end
@@ -214,7 +233,11 @@ MomPhoneText_Hitmonlee:
 MomPhoneText_Hitmonchan:
 	text_far _MomPhoneText_Hitmonchan
 	text_end
-	
+
+MomPhoneText_Magikarp:
+	text_far _MomPhoneText_Magikarp
+	text_end
+
 MomPhoneText_Eevee:
 	text_far _MomPhoneText_Eevee
 	text_end

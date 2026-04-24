@@ -106,10 +106,11 @@ _MomPhoneText_StatusAsleep::
 	prompt
 
 _MomPhoneText_StatusFainted::
-	text "Oh no, your @"
+	text "Oh no!"
+	line "Your @"
 	text_ram wNameBuffer
 	text_start
-	line "has fainted!"
+	cont "has fainted!"
 
 	para "Please get to"
 	line "a #MON CENTER"
@@ -139,7 +140,9 @@ _MomPhoneText_Evolution::
 ; Pokémon Check
 ; EVENT_GOT_BULBASAUR_IN_CERULEAN, EVENT_GOT_CHARMANDER_FROM_DAMIAN, EVENT_GOT_SQUIRTLE_FROM_OFFICER_JENNY
 ; EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
-; TOGGLE_CELADON_MANSION_EEVEE_GIFT ; wToggleableObjectIndex (if hidden)
+; BIT_GOT_LAPRAS
+; EVENT_GOT_EEVEE
+; EVENT_GOT_UNIVERSITY_MAGIKARP
 ; EVENT_BEAT_ARTICUNO, EVENT_BEAT_ZAPDOS, EVENT_BEAT_MOLTRES
 ; EVENT_BEAT_MEWTWO, EVENT_FOUND_MEW
 
@@ -178,7 +181,7 @@ _MomPhoneText_Squirtle::
 	line "will be a loyal"
 	cont "partner, I know!"
 	prompt
-	
+
 _MomPhoneText_Eevee::
 	text "Oh, you found"
 	line "an EEVEE?"
@@ -192,7 +195,35 @@ _MomPhoneText_Eevee::
 	para "It may grow into"
 	line "something special!"
 	prompt
-	
+
+_MomPhoneText_Magikarp::
+	text "You got a"
+	line "MAGIKARP?"
+
+	para "Oh... those are"
+	line "usually quite"
+	cont "weak, dear..."
+
+	para "You say it has"
+	line "a diploma"
+	cont "from CELADON"
+	cont "UNIVERSITY?"
+
+	para "And it knows"
+	line "DRAGON RAGE?"
+
+	para "That doesn't"
+	line "sound like an"
+	cont "ordinary one!"
+
+	para "Maybe it's more"
+	line "special than it"
+	cont "looks!"
+
+	para "Take good care"
+	line "of it, alright?"
+	prompt
+
 _MomPhoneText_Hitmonlee::
     text "A #MON"
     line "that kicks?"
@@ -215,7 +246,27 @@ _MomPhoneText_Hitmonchan::
 	line "it can really"
 	cont "protect you!"
 	prompt
-	
+
+_MomPhoneText_Lapras::
+	text "Someone gave"
+	line "you a LAPRAS?"
+
+	para "That's such a"
+	line "kind #MON..."
+
+	para "They say LAPRAS"
+	line "carry people"
+	cont "across the sea."
+
+	para "It sounds like"
+	line "a very gentle"
+	cont "companion."
+
+	para "Take good care"
+	line "of each other,"
+	cont "dear!"
+	prompt
+
 _MomPhoneText_Articuno::
 	text "You found a"
 	line "giant ICE BIRD?"
@@ -250,7 +301,7 @@ _MomPhoneText_Moltres::
 	line "close to the"
 	cont "flames!"
 	prompt
-	
+
 _MomPhoneText_Mewtwo::
 	text "You went deep"
 	line "into CERULEAN"
