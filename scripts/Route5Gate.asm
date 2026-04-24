@@ -96,6 +96,10 @@ SaffronGateGuardText:
 	jp nz, .bribedAlready
 	ld a, [wIsRocketSuit]
 	and a
+	jr z, .checkIfLavenderWasVisited
+.checkIfLavenderWasVisited
+	ld a, [wTownVisitedFlag]
+	bit 4, a ; LAVENDER_TOWN
 	jr z, .normalBehavior
 	ld hl, SaffronGateGuardDefaultText
 	call PrintText

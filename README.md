@@ -33,6 +33,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 - Battle Yujirou early at 2nd floor of Route 22 Gate for a strategic TM19 gift!
 - You can have all 3 starters like in Pokémon Yellow.
 - Obtain a Rocket Suit after Nugget Bridge. Use it to skip Team Rocket battles or even steal enemy Pokémon (ends the battle instantly).
+- If you visited Lavender Town and you have the Rocket Suit on, you can skip the Guards at the Gates of Saffron for the cost of ¥1000 Pokédollars. Without the need of giving them drinks.
 - Celadon University: A new location, graduate to earn a Diploma and a unique Magikarp with Dragon Rage.
 - Reunite Erik and Sara in the Safari Zone to earn a Free Pass.
 - Mew under the truck.
