@@ -118,6 +118,7 @@ MewtwoSprite::                  INCBIN "gfx/new_sprites/mewtwo.2bpp"
 MeowthSprite::                  INCBIN "gfx/new_sprites/meowth.2bpp"
 LugiaSprite::                   INCBIN "gfx/new_sprites/lugia.2bpp"
 HoOhSprite::                    INCBIN "gfx/new_sprites/ho_oh.2bpp"
+RocketAsleepSprite::            INCBIN "gfx/new_sprites/rocket_asleep.2bpp"
 
 
 SECTION "MonIcons", ROMX
@@ -167,3 +168,4 @@ MewtwoIcon::       INCBIN "gfx/icons_gen2/mewtwo.2bpp"
 MewIcon::          INCBIN "gfx/icons_gen2/mew.2bpp"
 MeowthIcon::       INCBIN "gfx/icons_gen2/meowth.2bpp"
 FossilIcon::       INCBIN "gfx/icons/fossil.2bpp"
+VileplumeIcon::    INCBIN "gfx/icons_gen2/vileplume.2bpp"
