@@ -20,3 +20,13 @@ _CeladonChiefHouseSailorText::
 	para "There's no secret"
 	line "switch behind it!"
 	done
+
+_CeladonChiefHouseSailorRocketSuitText::
+	text "The ROCKET at the"
+	line "GAME CORNER"
+	cont "needs a break."
+
+	para "There's a secret"
+	line "switch behind"
+	cont "the poster!"
+	done

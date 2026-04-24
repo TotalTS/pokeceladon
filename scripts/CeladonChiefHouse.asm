@@ -17,5 +17,23 @@ CeladonChiefHouseRocketText:
 	text_end
 
 CeladonChiefHouseSailorText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .CeladonChiefHouseSailorRocketSuitText
+	call PrintText
+	jr .done
+.normalBehavior
+	ld hl, .CeladonChiefHouseSailorText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+.CeladonChiefHouseSailorText:
 	text_far _CeladonChiefHouseSailorText
+	text_end
+	
+.CeladonChiefHouseSailorRocketSuitText:
+	text_far _CeladonChiefHouseSailorRocketSuitText
 	text_end

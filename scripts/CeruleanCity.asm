@@ -384,7 +384,24 @@ CeruleanCitySuperNerd2Text:
 	text_end
 
 CeruleanCityGuardText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .CeruleanCityGuardRocketSuitText
+	jr .doneGuard
+.normalBehavior
+	ld hl, .CeruleanCityGuardText
+.doneGuard
+	call PrintText
+	jp TextScriptEnd
+
+.CeruleanCityGuardText
 	text_far _CeruleanCityGuardText
+	text_end
+	
+.CeruleanCityGuardRocketSuitText
+	text_far _CeruleanCityGuardRocketSuitText
 	text_end
 
 CeruleanCityCooltrainerF1Text:

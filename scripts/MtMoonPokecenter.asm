@@ -20,7 +20,25 @@ MtMoonPokecenterYoungsterText:
 	text_end
 
 MtMoonPokecenterGentlemanText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .MtMoonPokecenterGentlemanRocketSuitText
+	call PrintText
+	jr .doneGentleman
+.normalBehavior
+	ld hl, .MtMoonPokecenterGentlemanText
+	call PrintText
+.doneGentleman
+	jp TextScriptEnd
+	
+.MtMoonPokecenterGentlemanText:
 	text_far _MtMoonPokecenterGentlemanText
+	text_end
+
+.MtMoonPokecenterGentlemanRocketSuitText:
+	text_far _MtMoonPokecenterGentlemanRocketSuitText
 	text_end
 
 MtMoonPokecenterMagikarpSalesmanText:

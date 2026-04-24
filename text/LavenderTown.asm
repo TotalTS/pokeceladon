@@ -62,3 +62,15 @@ _LavenderTownPokemonTowerSignText::
 	line "#MON Rest Easy"
 	cont "#MON TOWER"
 	done
+	
+_LavenderTownSuperNerdRocketSuitText::
+	text "..."
+
+	para "That uniform..."
+
+	para "Those GHOSTs..."
+
+	para "They're your"
+	line "doing, aren't"
+	cont "they?"
+	done

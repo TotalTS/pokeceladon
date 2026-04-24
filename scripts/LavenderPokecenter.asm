@@ -17,11 +17,47 @@ LavenderPokecenterNurseText:
 	script_pokecenter_nurse
 
 LavenderPokecenterGentlemanText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .LavenderPokecenterGentlemanRocketSuitText
+	call PrintText
+	jr .doneGentleman
+.normalBehavior
+	ld hl, .LavenderPokecenterGentlemanText
+	call PrintText
+.doneGentleman
+	jp TextScriptEnd
+	
+.LavenderPokecenterGentlemanText:
 	text_far _LavenderPokecenterGentlemanText
+	text_end
+	
+.LavenderPokecenterGentlemanRocketSuitText:
+	text_far _LavenderPokecenterGentlemanRocketSuitText
 	text_end
 
 LavenderPokecenterLittleGirlText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .LavenderPokecenterLittleGirlRocketSuitText
+	call PrintText
+	jr .done
+.normalBehavior
+	ld hl, .LavenderPokecenterLittleGirlText
+	call PrintText
+.done
+	jp TextScriptEnd
+	
+.LavenderPokecenterLittleGirlText:
 	text_far _LavenderPokecenterLittleGirlText
+	text_end
+	
+.LavenderPokecenterLittleGirlRocketSuitText:
+	text_far _LavenderPokecenterLittleGirlRocketSuitText
 	text_end
 
 LavenderPokecenterChanseyText:

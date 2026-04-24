@@ -250,3 +250,19 @@ _RocketSuitGreetingText::
 	para "Tell the BOSS I"
 	line "did the job!"
 	prompt
+	
+_CeruleanCityGuardRocketSuitText::
+	text "H-hey!"
+
+	para "That uniform..."
+	line "TEAM ROCKET?!"
+
+	para "...Wait a second."
+
+	para "You're just a kid!"
+	line "Is that a"
+	cont "costume?"
+
+	para "Don't scare people"
+	line "like that!"
+	done

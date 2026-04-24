@@ -190,8 +190,8 @@ _GameCornerOopsForgotCoinCaseText::
 	done
 
 _GameCornerRocketSuitGreetingText::
-	text "Oh! You're the"
-	line "relief scout?"
+	text "Oh! You're"
+	line "covering me?"
 	cont "About time!"
 
 	para "The BOSS is"
@@ -202,11 +202,10 @@ _GameCornerRocketSuitGreetingText::
 	line "secret path for"
 	cont "you. Stand back!"
 	prompt
-	
+
 _GameCornerRocketSuitFarewellText::
-	text "I'm off to the"
-	line "GAME CORNER for"
-	cont "a break."
+	text "I really need"
+	line "a break."
 
 	para "Don't let any"
 	line "strangers near"

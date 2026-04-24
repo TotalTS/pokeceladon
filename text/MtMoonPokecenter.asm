@@ -46,3 +46,13 @@ _MtMoonPokecenterMagikarpSalesmanNoRefundsText::
 _MtMoonPokecenterClipboardText::
 	text_start
 	done
+
+_MtMoonPokecenterGentlemanRocketSuitText::
+	text "Oh!"
+	line "TEAM ROCKET?"
+
+	para "You're always"
+	line "in the news..."
+
+	para "And now here?"
+	done

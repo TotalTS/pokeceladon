@@ -14,7 +14,25 @@ PewterPokecenterNurseText:
 	script_pokecenter_nurse
 
 PewterPokecenterGentlemanText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .PewterPokecenterGentlemanRocketSuitText
+	call PrintText
+	jr .doneGentleman
+.normalBehavior
+	ld hl, .PewterPokecenterGentlemanText
+	call PrintText
+.doneGentleman
+	jp TextScriptEnd
+	
+.PewterPokecenterGentlemanText:
 	text_far _PewterPokecenterGentlemanText
+	text_end
+
+.PewterPokecenterGentlemanRocketSuitText:
+	text_far _PewterPokecenterGentlemanRocketSuitText
 	text_end
 
 PewterPokecenterJigglypuffText:

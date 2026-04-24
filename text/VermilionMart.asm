@@ -21,3 +21,15 @@ _VermilionMartCooltrainerFText::
 	cont "evil. It depends"
 	cont "on the trainer."
 	done
+
+_VermilionMartCooltrainerMRocketSuitText::
+	text "You..."
+
+	para "Using #MON"
+	line "for crime?"
+	cont "That's wrong!"
+
+	para "Leave them out"
+	line "of it!"
+	done
+

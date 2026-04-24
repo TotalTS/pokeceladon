@@ -23,3 +23,25 @@ _LavenderCuboneHouseBrunetteGirlGhostIsGoneText::
 	line "soothed its"
 	cont "restless soul!"
 	done
+	
+_LavenderCuboneHouseBrunetteGirlPoorCubonesMotherRocketSuitText::
+	text "You..."
+
+	para "You're one of"
+	line "them!"
+
+	para "Get out!"
+
+	para "You've done"
+	line "enough already!"
+	done
+
+_LavenderCuboneHouseBrunetteGirlGhostIsGoneRocketSuitText::
+	text "The GHOST is"
+	line "gone..."
+
+	para "But you're"
+	line "still here."
+
+	para "Just leave."
+	done

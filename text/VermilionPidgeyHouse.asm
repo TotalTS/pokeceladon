@@ -20,3 +20,14 @@ _VermilionPidgeyHouseLetterText::
 	para "VERMILION appears"
 	line "to be safe."
 	done
+	
+_VermilionPidgeyHouseYoungsterRocketSuitText::
+	text "Have you been"
+	line "in SAFFRON?"
+	
+	para "You're a"
+	line "ROCKET, right?"
+
+	para "Don't hurt people"
+	line "or #MON!"
+	done

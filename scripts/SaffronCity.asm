@@ -30,7 +30,25 @@ SaffronCity_TextPointers:
 	dw_const SaffronCitySilphCoLatestProductSignText, TEXT_SAFFRONCITY_SILPH_CO_LATEST_PRODUCT_SIGN
 
 SaffronCityRocket1Text:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCityRocket1RocketSuitText
+	call PrintText
+	jr .done1
+.normalBehavior
+	ld hl, .SaffronCityRocket1Text
+	call PrintText
+.done1
+	jp TextScriptEnd
+	
+.SaffronCityRocket1Text:
 	text_far _SaffronCityRocket1Text
+	text_end
+	
+.SaffronCityRocket1RocketSuitText:
+	text_far _SaffronCityRocket1RocketSuitText
 	text_end
 
 SaffronCityRocket2Text:
@@ -38,7 +56,25 @@ SaffronCityRocket2Text:
 	text_end
 
 SaffronCityRocket3Text:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCityRocket3RocketSuitText
+	call PrintText
+	jr .done3
+.normalBehavior
+	ld hl, .SaffronCityRocket3Text
+	call PrintText
+.done3
+	jp TextScriptEnd
+	
+.SaffronCityRocket3Text:
 	text_far _SaffronCityRocket3Text
+	text_end
+	
+.SaffronCityRocket3RocketSuitText:
+	text_far _SaffronCityRocket3RocketSuitText
 	text_end
 
 SaffronCityRocket4Text:
@@ -50,7 +86,25 @@ SaffronCityRocket5Text:
 	text_end
 
 SaffronCityRocket6Text:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCityRocket6RocketSuitText
+	call PrintText
+	jr .done6
+.normalBehavior
+	ld hl, .SaffronCityRocket6Text
+	call PrintText
+.done6
+	jp TextScriptEnd
+	
+.SaffronCityRocket6Text:
 	text_far _SaffronCityRocket6Text
+	text_end
+	
+.SaffronCityRocket6RocketSuitText:
+	text_far _SaffronCityRocket6RocketSuitText
 	text_end
 
 SaffronCityRocket7Text:
@@ -58,20 +112,93 @@ SaffronCityRocket7Text:
 	text_end
 
 SaffronCityScientistText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCityScientistRocketSuitText
+	call PrintText
+	jr .doneScientist
+.normalBehavior
+	ld hl, .SaffronCityScientistText
+	call PrintText
+.doneScientist
+	jp TextScriptEnd
+	
+.SaffronCityScientistText:
 	text_far _SaffronCityScientistText
+	text_end
+	
+.SaffronCityScientistRocketSuitText:
+	text_far _SaffronCityScientistRocketSuitText
 	text_end
 
 SaffronCitySilphWorkerMText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCitySilphWorkerMRocketSuitText
+	call PrintText
+	jr .doneSilphWorkerM
+.normalBehavior
+	ld hl, .SaffronCitySilphWorkerMText
+	call PrintText
+.doneSilphWorkerM
+	jp TextScriptEnd
+	
+.SaffronCitySilphWorkerMText:
 	text_far _SaffronCitySilphWorkerMText
+	text_end
+	
+.SaffronCitySilphWorkerMRocketSuitText:
+	text_far _SaffronCitySilphWorkerMRocketSuitText
 	text_end
 
 SaffronCitySilphWorkerFText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCitySilphWorkerFRocketSuitText
+	call PrintText
+	jr .doneSilphWorkerF
+.normalBehavior
+	ld hl, .SaffronCitySilphWorkerFText
+	call PrintText
+.doneSilphWorkerF
+	jp TextScriptEnd
+	
+.SaffronCitySilphWorkerFText:
 	text_far _SaffronCitySilphWorkerFText
+	text_end
+	
+.SaffronCitySilphWorkerFRocketSuitText:
+	text_far _SaffronCitySilphWorkerFRocketSuitText
 	text_end
 
 SaffronCityGentlemanText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCityGentlemanRocketSuitText
+	call PrintText
+	jr .doneGentleman
+.normalBehavior
+	ld hl, .SaffronCityGentlemanText
+	call PrintText
+.doneGentleman
+	jp TextScriptEnd
+	
+.SaffronCityGentlemanText:
 	text_far _SaffronCityGentlemanText
 	text_end
+	
+.SaffronCityGentlemanRocketSuitText:
+	text_far _SaffronCityGentlemanRocketSuitText
+	text_end
+
 
 SaffronCityPidgeotText:
 	text_far _SaffronCityPidgeotText
@@ -79,11 +206,47 @@ SaffronCityPidgeotText:
 	text_end
 
 SaffronCityRockerText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCityRockerRocketSuitText
+	call PrintText
+	jr .doneRocker
+.normalBehavior
+	ld hl, .SaffronCityRockerText
+	call PrintText
+.doneRocker
+	jp TextScriptEnd
+	
+.SaffronCityRockerText:
 	text_far _SaffronCityRockerText
+	text_end
+	
+.SaffronCityRockerRocketSuitText:
+	text_far _SaffronCityRockerRocketSuitText
 	text_end
 
 SaffronCityRocket8Text:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .SaffronCityRocket8RocketSuitText
+	call PrintText
+	jr .done8
+.normalBehavior
+	ld hl, .SaffronCityRocket8Text
+	call PrintText
+.done8
+	jp TextScriptEnd
+	
+.SaffronCityRocket8Text:
 	text_far _SaffronCityRocket8Text
+	text_end
+	
+.SaffronCityRocket8RocketSuitText:
+	text_far _SaffronCityRocket8RocketSuitText
 	text_end
 
 SaffronCityRocket9Text:

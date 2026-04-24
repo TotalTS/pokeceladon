@@ -156,3 +156,22 @@ _CeladonCityGameCornerSignText::
 _CeladonCityText19::
 	text "CELADON UNIVERSITY"
 	done
+
+_CeladonCityRocket1RocketSuitText::
+	text "New recruit?"
+
+	para "...Or a spy?"
+	done
+
+
+_CeladonCityRocket2RocketSuitText::
+	text "A new face, huh?"
+
+	para "You look like a"
+	line "ROCKET..."
+
+	para "But I don't trust"
+	line "you one bit."
+
+	para "Move along!"
+	done

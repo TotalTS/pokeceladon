@@ -8,7 +8,25 @@ VermilionMart_TextPointers:
 	dw_const VermilionMartCooltrainerFText, TEXT_VERMILIONMART_COOLTRAINER_F
 
 VermilionMartCooltrainerMText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .VermilionMartCooltrainerMRocketSuitText
+	call PrintText
+	jr .done
+.normalBehavior
+	ld hl, .VermilionMartCooltrainerMText
+	call PrintText
+.done
+	jp TextScriptEnd
+	
+.VermilionMartCooltrainerMText:
 	text_far _VermilionMartCooltrainerMText
+	text_end
+
+.VermilionMartCooltrainerMRocketSuitText:
+	text_far _VermilionMartCooltrainerMRocketSuitText
 	text_end
 
 VermilionMartCooltrainerFText:

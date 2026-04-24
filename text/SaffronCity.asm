@@ -150,3 +150,82 @@ _SaffronCitySilphCoLatestProductSignText::
 	para "Release to be"
 	line "determined..."
 	done
+
+_SaffronCityRocket1RocketSuitText::
+	text "SAFFRON is ours!"
+	
+	para "We hold this"
+	line "town now!"
+
+	para "Don't mess it up!"
+	done
+	
+_SaffronCityRocket3RocketSuitText::
+	text "We're on patrol."
+	line "No mistakes."
+	cont "Got it?"
+	done
+	
+_SaffronCityRocket6RocketSuitText::
+	text "Stay alert!"
+	done
+	
+_SaffronCityRocket8RocketSuitText::
+	text "Stop! Orders are"
+	line "clear!"
+
+	para "No one enters!"
+	line "Not even you!"
+	done
+
+_SaffronCityScientistRocketSuitText::
+	text "Y-you..."
+
+	para "You're with"
+	line "TEAM ROCKET?"
+
+	para "...Please don't"
+	line "hurt anyone!"
+	done
+
+_SaffronCitySilphWorkerMRocketSuitText::
+	text "TEAM ROCKET is"
+	line "gone..."
+
+	para "So why are you"
+	line "still dressed"
+	cont "like that?"
+	done
+
+_SaffronCitySilphWorkerFRocketSuitText::
+	text "People are coming"
+	line "back now..."
+
+	para "You should change"
+	line "that outfit!"
+	done
+
+_SaffronCityRockerRocketSuitText::
+	text "Hey!"
+	line "I saw the BOSS"
+	cont "escape!"
+
+	para "You're not with"
+	line "them anymore,"
+	cont "right?"
+	done
+
+_SaffronCityGentlemanRocketSuitText::
+	text "Oh?"
+	line "You're with TEAM"
+	cont "ROCKET?"
+
+	para "I came to witness"
+	line "the incident!"
+	cont "But everyone"
+	cont "else's gone!"
+	
+	para "It seems I"
+	line "am too late."
+	cont "What a pity!"
+	done

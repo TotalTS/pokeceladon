@@ -94,11 +94,47 @@ CeladonCityPoliwrathText:
 	jp TextScriptEnd
 
 CeladonCityRocket1Text:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .CeladonCityRocket1RocketSuitText
+	call PrintText
+	jr .done1
+.normalBehavior
+	ld hl, .CeladonCityRocket1Text
+	call PrintText
+.done1
+	jp TextScriptEnd
+
+.CeladonCityRocket1Text:
 	text_far _CeladonCityRocket1Text
+	text_end
+	
+.CeladonCityRocket1RocketSuitText:
+	text_far _CeladonCityRocket1RocketSuitText
 	text_end
 
 CeladonCityRocket2Text:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .CeladonCityRocket2RocketSuitText
+	call PrintText
+	jr .done2
+.normalBehavior
+	ld hl, .CeladonCityRocket2Text
+	call PrintText
+.done2
+	jp TextScriptEnd
+
+.CeladonCityRocket2Text:
 	text_far _CeladonCityRocket2Text
+	text_end
+	
+.CeladonCityRocket2RocketSuitText:
+	text_far _CeladonCityRocket2RocketSuitText
 	text_end
 
 CeladonCityTrainerTips1Text:

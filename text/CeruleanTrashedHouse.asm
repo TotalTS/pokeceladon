@@ -34,3 +34,46 @@ _CeruleanTrashedHouseWallHoleText::
 	text "TEAM ROCKET left"
 	line "a way out!"
 	done
+
+_CeruleanTrashedHouseFishingGuruRocketSuitText::
+	text "You!"
+
+	para "TEAM ROCKET!"
+	line "Have you come"
+	cont "back?"
+
+	para "...Huh?"
+
+	para "You're just a"
+	line "kid..."
+
+	para "What's with that"
+	line "outfit?"
+
+	para "This isn't funny!"
+	done
+
+_CeruleanTrashedHouseFishingGuruRocketSuitAfterText::
+	text "Oh, it's you"
+	line "again..."
+
+	para "Still wearing that"
+	line "ROCKET costume?"
+
+	para "You had me fooled"
+	line "for a moment..."
+
+	para "Anyway, I don't"
+	line "need that TM now!"
+	done
+
+_CeruleanTrashedHouseGirlRocketSuitText::
+	text "Eek!"
+	line "A ROCKET!"
+
+	para "...Oh!"
+	line "You're just a kid?"
+
+	para "That's a weird"
+	line "costume..."
+	done

@@ -16,6 +16,19 @@ LavenderCuboneHouseCuboneText:
 
 LavenderCuboneHouseBrunetteGirlText:
 	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	CheckEvent EVENT_RESCUED_MR_FUJI
+	jr nz, .rescued_mr_fuji_rocket
+	ld hl, .PoorCubonesMotherRocketSuitText
+	call PrintText
+	jr .done
+.rescued_mr_fuji_rocket
+	ld hl, .TheGhostIsGoneRocketSuitText
+	call PrintText
+	jr .done
+.normalBehavior
 	CheckEvent EVENT_RESCUED_MR_FUJI
 	jr nz, .rescued_mr_fuji
 	ld hl, .PoorCubonesMotherText
@@ -33,4 +46,12 @@ LavenderCuboneHouseBrunetteGirlText:
 
 .TheGhostIsGoneText:
 	text_far _LavenderCuboneHouseBrunetteGirlGhostIsGoneText
+	text_end
+
+.PoorCubonesMotherRocketSuitText:
+	text_far _LavenderCuboneHouseBrunetteGirlPoorCubonesMotherRocketSuitText
+	text_end
+
+.TheGhostIsGoneRocketSuitText:
+	text_far _LavenderCuboneHouseBrunetteGirlGhostIsGoneRocketSuitText
 	text_end

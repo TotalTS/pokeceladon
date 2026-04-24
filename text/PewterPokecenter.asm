@@ -12,3 +12,13 @@ _PewterPokecenterJigglypuffText::
 	text "JIGGLYPUFF: Puu"
 	line "pupuu!"
 	done
+
+_PewterPokecenterGentlemanRocketSuitText::
+	text "What!?"
+
+	para "A ROCKET here?!"
+	line "...Hold on!"
+	cont "I'm on the phone!"
+
+	para "Scram!"
+	done

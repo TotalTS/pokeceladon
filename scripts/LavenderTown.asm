@@ -44,7 +44,25 @@ LavenderTownCooltrainerMText:
 	text_end
 
 LavenderTownSuperNerdText:
+	text_asm
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .normalBehavior
+	ld hl, .LavenderTownSuperNerdRocketSuitText
+	call PrintText
+	jr .done
+.normalBehavior
+	ld hl, .LavenderTownSuperNerdText
+	call PrintText
+.done
+	jp TextScriptEnd
+	
+.LavenderTownSuperNerdText:
 	text_far _LavenderTownSuperNerdText
+	text_end
+	
+.LavenderTownSuperNerdRocketSuitText:
+	text_far _LavenderTownSuperNerdRocketSuitText
 	text_end
 
 LavenderTownSignText:
