@@ -67,7 +67,7 @@ LancesRoomDefaultScript:
 	jp DisplayTextID
 .notStandingNextToLance
 	cp $5  ; Is player standing on the entrance staircase?
-	jr z, WalkToLance
+	jr z, .doNothing
 	CheckAndSetEvent EVENT_LANCES_ROOM_LOCK_DOOR
 	ret nz
 	ld hl, wCurrentMapScriptFlags
@@ -75,6 +75,9 @@ LancesRoomDefaultScript:
 	ld a, SFX_GO_INSIDE
 	call PlaySound
 	jp LanceShowOrHideEntranceBlocks
+	
+.doNothing
+	ret
 
 LanceTriggerMovementCoords:
 	dbmapcoord  5,  1
