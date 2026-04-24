@@ -404,8 +404,8 @@ MomPhone_CheckSaffronText:
 	jr nz, .MasterBall
 	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
 	jr nz, .GiovanniSilph
-	ld a, [wTownVisitedFlag]
-	bit 6, a ; SAFFRON_CITY
+	ld a, [wTownVisitedFlag + 1]
+	bit 2, a ; SAFFRON_CITY
 	jr z, .doneCheckSaffron
 	ld a, [wStatusFlags1]
 	bit BIT_GAVE_SAFFRON_GUARDS_DRINK, a
