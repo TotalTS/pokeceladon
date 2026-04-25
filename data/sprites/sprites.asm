@@ -87,6 +87,7 @@ SpriteSheetPointerTable:
 	overworld_sprite SandshrewSprite, 12        ; SPRITE_SANDSHREW
 	overworld_sprite SurgeSprite, 12            ; SPRITE_SURGE
 	overworld_sprite SwimmerGirlSprite, 12      ; SPRITE_SWIMMER_GIRL
+	overworld_sprite BlackbeltSprite, 12        ; SPRITE_BLACKBELT
 	overworld_sprite FuchsiaMonSprite, 12       ; SPRITE_FUCHSIA_MON
 	overworld_sprite ArticunoSprite, 12         ; new
 	overworld_sprite ZapdosSprite, 12           ; new

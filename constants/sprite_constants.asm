@@ -82,6 +82,7 @@
 	const SPRITE_SANDSHREW               ; new
 	const SPRITE_SURGE                   ; new
 	const SPRITE_SWIMMER_GIRL            ; new
+	const SPRITE_BLACKBELT               ; new
 	const SPRITE_FUCHSIA_MON             ; new
 	const SPRITE_ARTICUNO                ; new
 	const SPRITE_ZAPDOS                  ; new
