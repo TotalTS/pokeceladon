@@ -450,7 +450,7 @@ MakeNPCFacePlayer:
 	cp SS_ANNE_B1F_ROOMS
 	jr z, .SSAnneB1FRooms
 	cp VERMILION_CITY
-	jr z, .VermiliionCity
+	jr z, .VermilionCity
 	jr .normal
 .VictoryRoad2F
 	ld a, b
@@ -486,7 +486,7 @@ MakeNPCFacePlayer:
 	cp SSANNEB1FROOMS_MACHOKE
 	jr z, NotYetMoving
 	jr .normal
-.VermiliionCity
+.VermilionCity
 	ld a, b
 	cp VERMILIONCITY_MACHOP
 	jr z, NotYetMoving

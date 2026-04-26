@@ -615,6 +615,7 @@ DEF ANY_FACING EQU $d0
 	hidden_event 60,  3, LeafeonMuseum, SPRITE_FACING_UP
 	hidden_event 54,  6, DonphanMuseum, SPRITE_FACING_UP
 	hidden_event 60,  6, HonogumaMuseum, SPRITE_FACING_UP
+	db -1 ; end
 
 	hidden_events_for CELADON_MART_1F
 	hidden_event 16,  2, MomPhoneText, SPRITE_FACING_UP
