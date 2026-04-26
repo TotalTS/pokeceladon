@@ -16,7 +16,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 
 - Gender Selection.
 - Skateboard: A new way to travel! Match the Bike's speed and jump over ledges in reverse. (Find the Secret Long House on Route 25 to obtain it).
-- Running Shoes: Press B to move faster while walking, cycling, skating, or swimming.
+- Speed boost: Press B to move faster while walking, cycling, skating, or swimming.
 - Field Moves: Use SURF, CUT, and STRENGTH by interacting directly with the overworld. No menus required.
 - Swap Pokémon positions instantly by pressing SELECT in the party menu.
 - Added a USE/QUIT prompt before throwing Pokéballs to avoid accidental throws.
@@ -27,6 +27,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 
 - New sprites, new palettes, Gen 2-style party icons, custom Super Gameboy border.
 - Unique surfing sprites for Lapras and Pikachu.
+- New Oak intro sprite.
 
 ### Optional Sidequests
 
@@ -57,7 +58,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 
 ### Additional Improvements
 
-- There's a new room with a healing bed in SS Anne.
+- There's a new room with a healing bed in S.S. Anne.
 - Trainers in Gyms now have dialogue after you earn a badge or reach the post-game.
 - If you have badge(s) Guards have shorter texts on Route 23.
 - Nurse at Silph Co. 9F still heals you after beating Team Rocket.
@@ -66,7 +67,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 
 ## Version Exclusives & Completion
 
-Celadon Version is split into Red and Blue editions. While each maintains its original exclusive encounters, all 151 Pokémon are obtainable in the post-game by exploring the Mystery Cave.
+Celadon Version is split into Red and Blue editions. While each maintains its original exclusive encounters, all 151 Pokémon are obtainable in the post-game by exploring the Mystery Cave and Bill's Garden.
 
 # Screenshots
 
