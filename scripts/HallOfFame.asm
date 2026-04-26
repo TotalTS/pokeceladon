@@ -48,9 +48,6 @@ HallOfFameResetEventsAndSaveScript:
 	; Elite 4 events
 	ResetEvent EVENT_SS_ANNE_LEFT
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
-	ld a, TOGGLE_ROUTE22YUJIROU_YUJIROU
-	ld [wToggleableObjectIndex], a
-	predef HideObject
 	ld a,TOGGLE_VIRIDIAN_GYM_GIOVANNI
 	ld [wToggleableObjectIndex], a
 	predef HideObject

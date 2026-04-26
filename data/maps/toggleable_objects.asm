@@ -284,9 +284,6 @@ ToggleableObjectStates:
 	toggle_object_state CHAMPIONSHOUSE2F_GENGARDOLL, OFF
 	toggle_object_state CHAMPIONSHOUSE2F_CLEFAIRYDOLL, OFF
 	toggle_object_state CHAMPIONSHOUSE2F_GEODUDEDOLL, OFF
-	
-	toggleable_objects_for ROUTE_22_YUJIROU_PRE_GYM
-	toggle_object_state ROUTE_22_YUJIROU_PRE_GYM_YUJIROU, ON
 
 	toggleable_objects_for VICTORY_ROAD_3F
 	toggle_object_state VICTORYROAD3F_MAX_REVIVE,   ON

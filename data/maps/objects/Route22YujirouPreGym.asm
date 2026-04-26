@@ -5,7 +5,7 @@ Route22YujirouPreGym_Object:
 	db $a
 
 	def_warp_events
-	warp_event  9,  5, ROUTE_22_GATE, 5
+	warp_event  9,  7, ROUTE_22_GATE, 5
 
 	def_bg_events
 

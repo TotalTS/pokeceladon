@@ -161,11 +161,11 @@ HomeDoor_Apply::
 .check_indigo:
     ld a, [wCurMap]
     cp ROUTE_23
-    jr nz, .check_billsgarden
+    jr nz, .check_yujirogym
 
     ld a, [wPlayerHomeLocation]
     cp HOME_INDIGO
-    jr nz, .check_billsgarden
+    jr nz, .check_yujirogym
 
     ld a, $1d
     ld [wNewTileBlockID], a
@@ -176,6 +176,20 @@ HomeDoor_Apply::
     ld [wNewTileBlockID], a
     lb bc, 8, 1
     predef ReplaceTileBlock
+    jr .done
+
+.check_yujirogym
+	ld a, [wCurMap]
+	cp ROUTE_22_GATE
+	jr nz, .check_billsgarden
+
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr z, .check_billsgarden
+
+	ld a, $00
+	ld [wNewTileBlockID], a
+	lb bc, 3, 4
+	predef ReplaceTileBlock
     jr .done
 	
 .check_billsgarden
