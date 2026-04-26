@@ -25,9 +25,7 @@ _LavenderCuboneHouseBrunetteGirlGhostIsGoneText::
 	done
 	
 _LavenderCuboneHouseBrunetteGirlPoorCubonesMotherRocketSuitText::
-	text "You..."
-
-	para "You're one of"
+	text "You're one of"
 	line "them!"
 
 	para "Get out!"

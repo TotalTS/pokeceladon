@@ -64,11 +64,8 @@ _LavenderTownPokemonTowerSignText::
 	done
 	
 _LavenderTownSuperNerdRocketSuitText::
-	text "..."
-
-	para "That uniform..."
-
-	para "Those GHOSTs..."
+	text "That uniform..."
+	line "Those GHOSTs..."
 
 	para "They're your"
 	line "doing, aren't"

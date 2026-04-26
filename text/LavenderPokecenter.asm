@@ -12,22 +12,15 @@ _LavenderPokecenterLittleGirlText::
 	done
 
 _LavenderPokecenterGentlemanRocketSuitText::
-	text "..."
-
-	para "TEAM ROCKET."
-
-	para "Even here?"
+	text "TEAM ROCKET"
+	line "...Even here?"
 
 	para "Have you no"
 	line "shame?"
 	done
 
 _LavenderPokecenterLittleGirlRocketSuitText::
-	text "..."
-
-	para "You..."
-
-	para "Stay away!"
+	text "Stay away!"
 
 	para "Don't hurt any"
 	line "#MON!"

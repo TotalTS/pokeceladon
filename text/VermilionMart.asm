@@ -23,9 +23,7 @@ _VermilionMartCooltrainerFText::
 	done
 
 _VermilionMartCooltrainerMRocketSuitText::
-	text "You..."
-
-	para "Using #MON"
+	text "Using #MON"
 	line "for crime?"
 	cont "That's wrong!"
 
