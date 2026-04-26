@@ -180,6 +180,15 @@ ChampionsHouse1F_TextPointers:
 	dw_const ChampionsHouse1FDaisy4Text, TEXT_CHAMPIONSHOUSE1F_DAISY_RELAXED
 
 ChampionsHouse1FMomText:
+	text_asm
+	ld hl, .ChampionsHouse1FMomText
+	call PrintText
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	farcall MomPhone_StatusText
+	jp TextScriptEnd
+
+.ChampionsHouse1FMomText
 	text_far _ChampionsHouse1FMomText
 	text_end
 

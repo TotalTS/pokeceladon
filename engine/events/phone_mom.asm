@@ -30,7 +30,7 @@ MomPhone_RunDialogue::
 .End
 	ret
 
-MomPhone_StatusText:
+MomPhone_StatusText::
 	; Check fainted first
 	ld hl, wPartyMon1HP
 	ld a, [hli]

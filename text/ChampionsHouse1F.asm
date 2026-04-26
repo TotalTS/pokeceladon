@@ -5,7 +5,7 @@ _ChampionsHouse1FMomText::
 	line "of you, <PLAYER>!"
 	cont "The CHAMPION's"
 	cont "house is so big!"
-	done
+	prompt
 
 _ChampionsHouse1FOakText::
 	text "OAK: Oh, <PLAYER>!"
