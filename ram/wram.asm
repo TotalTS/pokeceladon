@@ -2083,7 +2083,8 @@ wChampionsHouse1FCurScript:: db
 wChampionsHouse2FCurScript:: db
 wRoute22YujirouPreGymCurScript:: db
 wCeladonUniversityCurScript:: db
-	ds 2
+wMysteryCaveCurScript:: db
+	ds 1
 wGameProgressFlagsEnd::
 
 UNION
