@@ -188,11 +188,25 @@ _MysteryCaveSuperNerdReceivedFossilText::
 	text_end
 
 _MysteryCaveBlackbeltText::
-	text "I have!"
+	text "CHAMPION!"
+
+	para "Your fists chose"
+	line "one path before."
+	cont "I guard the other"
+	cont "with discipline."
+
+	para "Take it!"
+
+	para "Master both"
+	line "styles!"
 	prompt
 
 _MysteryCaveBlackbeltAlreadyGotText::
-	text "Nice!"
+	text "A true fighter"
+	line "adapts to any"
+	cont "style."
+
+	para "Keep training!"
 	done
 
 _MysteryCaveRookie1BattleText::

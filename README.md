@@ -1,6 +1,6 @@
 # Pokémon Celadon Version
 
-This hack is designed as an upgrade to the original Pokémon Red, Blue, and Green, aiming to enhance the classic experience without overcomplicating its core identity. It features a personal pick of improved graphics, expanded events, and a variety of restored content.
+This hack is designed as an upgrade to the original Pokémon Red, Blue, and Green, aiming to enhance the classic experience and expanding it with new content. It features a personal pick of improved graphics, restored elements, expanded events, and a post-game with new areas and challenges.
 Started this project a long time ago and some ideas changed, but I'm commited to finish it now: https://web.archive.org/web/20180903101807/https://hax.iimarckus.org/topic/7257/
 
 This hack is intended to be played in Super Gameboy mode to appreciate a variety of new graphics and palettes.
@@ -15,7 +15,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 ### Core Mechanics, Enhanced Gameplay & QoL
 
 - Gender Selection.
-- Skateboard: A new way to travel! Match the Bike's speed and jump over ledges in reverse. (Find the Secret Long House on Route 25 to obtain it).
+- Skateboard: A new way to travel! Match the Bike's speed and jump over ledges in reverse.
 - Speed boost: Press B to move faster while walking, cycling, skating, or swimming.
 - Field Moves: Use SURF, CUT, and STRENGTH by interacting directly with the overworld. No menus required.
 - Swap Pokémon positions instantly by pressing SELECT in the party menu.
@@ -51,10 +51,14 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 ### New quests
 
 - S.S. Anne: The cruise ship returns with a deck full of new trainers.
-- Complete your PokéDex in brand-new zones: Bill’s Garden, Mystery Cave, and extended Routes 0, 1, and 21.
-- Find a NPC in the Mystery Cave who gives you the Fossil you missed in Mt. Moon.
-- Rematch the Gym Leaders as much as you want (Yujirou replaces Giovanni).
-- Catch all 151 to unlock the battle Professor Oak at the League.
+- Rematch Gym Leaders as many times as you want (Yujiro replaces Giovanni).
+- Catch all 151 Pokémon to unlock a battle against Professor Oak at the League.
+
+**All accessible after selecting a new home and talking to Bill:**
+- Complete your Pokédex in brand-new "out of bounds" areas: Bill's Garden, Mystery Cave, and extended Routes 0, 1, and 21.
+- Find the Secret Long House on Route 25 to receive the **Skateboard**!
+- Recover missed rewards with NPCs in the Mystery Cave: get the alternate Mt. Moon Fossil (Dome/Helix) and the Fighting Dojo Pokémon (Hitmonlee/Hitmonchan) you didn't choose.
+- Visit the Museum on Route 1 West to see prototype and rumored Pokémon.
 
 ### Additional Improvements
 

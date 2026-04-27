@@ -145,7 +145,6 @@ INCLUDE "text/ChampionsHouse1F.asm"
 INCLUDE "text/Route22YujirouPreGym.asm"
 INCLUDE "text/BillsGarden.asm"
 INCLUDE "text/Route25LongHouse.asm"
-INCLUDE "text/MysteryCave.asm"
 INCLUDE "text/BluesHouse.asm"
 INCLUDE "text/OaksLab.asm"
 INCLUDE "text/pokedex_ratings.asm"
@@ -189,6 +188,7 @@ INCLUDE "text/VermilionPokecenter.asm"
 INCLUDE "text/PokemonFanClub.asm"
 INCLUDE "text/VermilionMart.asm"
 INCLUDE "text/VermilionGym.asm"
+INCLUDE "text/MysteryCave.asm"
 
 
 SECTION "Text 8", ROMX
