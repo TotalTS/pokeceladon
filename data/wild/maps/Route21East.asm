@@ -5,11 +5,16 @@ Route21EastWildMons:
 	db 30, RATICATE
 	db 23, RATTATA
 	db 21, PIDGEY
-	db 30, PIDGEOTTO
-	db 32, PIDGEOTTO
-	db 28, TANGELA
-	db 30, TANGELA
-	db 32, TANGELA
+	db 50, RATICATE
+	db 52, PIDGEOT
+	db 55, KANGASKHAN
+	db 55, LICKITUNG
+IF DEF(_RED)
+	db 50, SCYTHER
+ENDC
+IF DEF(_BLUE)
+	db 50, PINSIR
+ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
@@ -18,9 +23,14 @@ Route21EastWildMons:
 	db 15, TENTACOOL
 	db  5, TENTACOOL
 	db 10, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACOOL
-	db 40, TENTACOOL
+	db 45, TENTACRUEL
+	db 48, SEADRA
+IF DEF(_RED)
+	db 50, STARMIE
+ENDC
+IF DEF(_BLUE)
+	db 50, CLOYSTER
+ENDC
+	db 55, GYARADOS
+	db 60, LAPRAS
 	end_water_wildmons
