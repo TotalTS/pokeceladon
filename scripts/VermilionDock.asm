@@ -222,8 +222,8 @@ VermilionDock_EraseSSAnne:
 
 VermilionDock_TextPointers:
 	def_text_pointers
-	dw_const VermilionDockUnusedText, TEXT_VERMILIONDOCK_UNUSED
-	dw_const VermilionDockMewText,    TEXT_VERMILIONDOCK_MEW
+	dw_const VermilionDockUnusedText,  TEXT_VERMILIONDOCK_UNUSED
+	dw_const VermilionDockMewText,     TEXT_VERMILIONDOCK_MEW
 
 VermilionDockUnusedText:
 	text_far _VermilionDockUnusedText
@@ -269,8 +269,8 @@ TruckOAMTable_Right:
 	db $58, $68, $C6, $10
 	db $58, $70, $C7, $10
 
-TruckSpriteGFX: INCBIN  "gfx/sprites/truck_sprite.2bpp"
-TruckWhiteGFX: INCBIN  "gfx/sprites/truck_white.2bpp"
+TruckSpriteGFX:  INCBIN  "gfx/new_sprites/truck_sprite.2bpp"
+TruckWhiteGFX:   INCBIN  "gfx/new_sprites/truck_white.2bpp"
 
 NoTruckAction:
 	ld hl, wCurrentMapScriptFlags
@@ -302,10 +302,10 @@ TruckCheck:
 	and a
 	jr nz, NoTruckAction
 
-	ld a, [hl]        ; X coord
-	cp 22             ; truck right
+	ld a, [hl] ; X coord
+	cp 22 ; truck right
 	jr z, .fromRight
-	cp 19             ; truck left
+	cp 19 ; truck left
 	jr z, .fromLeft
 	jr NoTruckAction
 	; if the player is trying to walk left
@@ -340,6 +340,8 @@ TruckCheck:
 	ret
 
 PushTruckLeft:
+	ld a, %11100100
+	ldh [rOBP1], a
 	call CorruptMewAudio
 	ld a, $ff
 	ld [wJoyIgnore], a
@@ -353,92 +355,92 @@ PushTruckLeft:
 	call CopyVideoData
 	; new: white background truck
 	xor a
-    ld bc, (Bank(TruckWhiteGFX) << 8) | 8
-    ld hl, vChars1 + $480 ; Tile $C8
-    ld de, TruckWhiteGFX
-    call CopyVideoData
+	ld bc, (Bank(TruckWhiteGFX) << 8) | 8
+	ld hl, vChars1 + $480 ; Tile $C8
+	ld de, TruckWhiteGFX
+	call CopyVideoData
 	ld hl, TruckOAMTable_Left
 	ld bc, $20
 	ld de, wShadowOAM + $20
 	call CopyData
 	ld hl, TruckOAMTable_Left
-    ld bc, $20
-    ld de, wShadowOAM + $40 ; below truck white sprite
-    call CopyData
+	ld bc, $20
+	ld de, wShadowOAM + $40 ; below truck white sprite
+	call CopyData
 	ld hl, wShadowOAM + $40 + 2 ; First byte of Tile ID of first sprite of 2nd layer
-    ld d, 8
+	ld d, 8
 .setWhiteTilesLoop
 	ld a, [hl]
-    add 8
-    ld [hl], a
-    inc hl
-    ld a, [hl]
-    res 4, a
-    ld [hl], a 
-    ld bc, 3
-    add hl, bc
-    dec d
-    jr nz, .setWhiteTilesLoop
+	add 8
+	ld [hl], a
+	inc hl
+	ld a, [hl]
+	res 4, a
+	ld [hl], a 
+	ld bc, 3
+	add hl, bc
+	dec d
+	jr nz, .setWhiteTilesLoop
 	ld a, $c
 	ld [wNewTileBlockID], a ; used to be wd09f
 	ld bc, $a
 	predef ReplaceTileBlock
 ; moving the truck
-    ld a, SFX_PUSH_BOULDER
-    call PlaySound
-    ld b, 32
+	ld a, SFX_PUSH_BOULDER
+	call PlaySound
+	ld b, 32
 .movingtruck
-    ; Move top layer (8 sprites)
-    ld hl, wShadowOAM + $21 ; X coordinate
-    ld a, 8
-    ld de, 4
+	; Move top layer (8 sprites)
+	ld hl, wShadowOAM + $21 ; X coordinate
+	ld a, 8
+	ld de, 4
 .moveTop
-    dec [hl]
-    add hl, de
-    dec a
-    jr nz, .moveTop
-    ; Move bottom layer (8 sprites)
-    ld hl, wShadowOAM + $41 ; X coordinate
-    ld a, 8
-    ld de, 4
+	dec [hl]
+	add hl, de
+	dec a
+	jr nz, .moveTop
+	; Move bottom layer (8 sprites)
+	ld hl, wShadowOAM + $41 ; X coordinate
+	ld a, 8
+	ld de, 4
 .moveBottom
-    dec [hl]
-    add hl, de
-    dec a
-    jr nz, .moveBottom
-    ld c, 2
-    call DelayFrames
-    dec b
-    jr nz, .movingtruck
+	dec [hl]
+	add hl, de
+	dec a
+	jr nz, .moveBottom
+	ld c, 2
+	call DelayFrames
+	dec b
+	jr nz, .movingtruck
 	ld a, $3
-    ld [wNewTileBlockID], a
-    ld bc, $9
-    predef ReplaceTileBlock
+	ld [wNewTileBlockID], a
+	ld bc, $9
+	predef ReplaceTileBlock
 	call UpdateSprites
-    ld a, 1
-    ldh [hAutoBGTransferEnabled], a
-    call Delay3
+	ld a, 1
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
 ; Hide OAM sprites after moving
-    ld hl, wShadowOAM + $20
-    ld d, $10
-    ld e, 4
-    xor a
+	ld hl, wShadowOAM + $20
+	ld d, $10
+	ld e, 4
+	xor a
 .hideSpritesLoop
-    ld [hl], 160
-    inc hl
-    ld [hl], 0
-    inc hl
-    ld [hl], 0
-    inc hl
-    ld [hl], 0
-    inc hl
-    dec d
-    jr nz, .hideSpritesLoop
+	ld [hl], 160
+	inc hl
+	ld [hl], 0
+	inc hl
+	ld [hl], 0
+	inc hl
+	ld [hl], 0
+	inc hl
+	dec d
+	jr nz, .hideSpritesLoop
 	SetEvent EVENT_FOUND_MEW
 	ResetEvent EVENT_TRUCK_PUSHED_RIGHT
 	xor a
-    ldh [hAutoBGTransferEnabled], a
-    call Delay3
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
 	callfar RedrawMapView
 	callfar AnimateBoulderDust
 	call ShowMew
@@ -449,6 +451,8 @@ PushTruckLeft:
 	ret
 
 PushTruckRight:
+	ld a, %11100100
+	ldh [rOBP1], a
 	call CorruptMewAudio
 	ld a, $ff
 	ld [wJoyIgnore], a
@@ -462,92 +466,92 @@ PushTruckRight:
 	call CopyVideoData
 	; new: white background truck
 	xor a
-    ld bc, (Bank(TruckWhiteGFX) << 8) | 8
-    ld hl, vChars1 + $480 ; Tile $C8
-    ld de, TruckWhiteGFX
-    call CopyVideoData
+	ld bc, (Bank(TruckWhiteGFX) << 8) | 8
+	ld hl, vChars1 + $480 ; Tile $C8
+	ld de, TruckWhiteGFX
+	call CopyVideoData
 	ld hl, TruckOAMTable_Right
 	ld bc, $20
 	ld de, wShadowOAM + $20
 	call CopyData
 	ld hl, TruckOAMTable_Right
-    ld bc, $20
-    ld de, wShadowOAM + $40 ; below truck white sprite
-    call CopyData
+	ld bc, $20
+	ld de, wShadowOAM + $40 ; below truck white sprite
+	call CopyData
 	ld hl, wShadowOAM + $40 + 2 ; First byte of Tile ID of first sprite of 2nd layer
-    ld d, 8
+	ld d, 8
 .setWhiteTilesLoop
 	ld a, [hl]
-    add 8
-    ld [hl], a
-    inc hl
-    ld a, [hl]
-    res 4, a
-    ld [hl], a 
-    ld bc, 3
-    add hl, bc
-    dec d
-    jr nz, .setWhiteTilesLoop
+	add 8
+	ld [hl], a
+	inc hl
+	ld a, [hl]
+	res 4, a
+	ld [hl], a 
+	ld bc, 3
+	add hl, bc
+	dec d
+	jr nz, .setWhiteTilesLoop
 	ld a, $c
 	ld [wNewTileBlockID], a ; used to be wd09f
 	ld bc, $a
 	predef ReplaceTileBlock
 ; moving the truck
-    ld a, SFX_PUSH_BOULDER
-    call PlaySound
-    ld b, 32
+	ld a, SFX_PUSH_BOULDER
+	call PlaySound
+	ld b, 32
 .movingtruck
-    ; Move top layer (8 sprites)
-    ld hl, wShadowOAM + $21 ; X coordinate
-    ld a, 8
-    ld de, 4
+	; Move top layer (8 sprites)
+	ld hl, wShadowOAM + $21 ; X coordinate
+	ld a, 8
+	ld de, 4
 .moveTop
-    inc [hl]
-    add hl, de
-    dec a
-    jr nz, .moveTop
-    ; Move bottom layer (8 sprites)
-    ld hl, wShadowOAM + $41 ; X coordinate
-    ld a, 8
-    ld de, 4
+	inc [hl]
+	add hl, de
+	dec a
+	jr nz, .moveTop
+	; Move bottom layer (8 sprites)
+	ld hl, wShadowOAM + $41 ; X coordinate
+	ld a, 8
+	ld de, 4
 .moveBottom
-    inc [hl]
-    add hl, de
-    dec a
-    jr nz, .moveBottom
-    ld c, 2
-    call DelayFrames
-    dec b
-    jr nz, .movingtruck
+	inc [hl]
+	add hl, de
+	dec a
+	jr nz, .moveBottom
+	ld c, 2
+	call DelayFrames
+	dec b
+	jr nz, .movingtruck
 	ld a, $3
-    ld [wNewTileBlockID], a
-    ld bc, $b
-    predef ReplaceTileBlock
+	ld [wNewTileBlockID], a
+	ld bc, $b
+	predef ReplaceTileBlock
 	call UpdateSprites
-    ld a, 1
-    ldh [hAutoBGTransferEnabled], a
-    call Delay3
+	ld a, 1
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
 ; Hide OAM sprites after moving
-    ld hl, wShadowOAM + $20
-    ld d, $10
-    ld e, 4
-    xor a
+	ld hl, wShadowOAM + $20
+	ld d, $10
+	ld e, 4
+	xor a
 .hideSpritesLoop
-    ld [hl], 160
-    inc hl
-    ld [hl], 0
-    inc hl
-    ld [hl], 0
-    inc hl
-    ld [hl], 0
-    inc hl
-    dec d
-    jr nz, .hideSpritesLoop
+	ld [hl], 160
+	inc hl
+	ld [hl], 0
+	inc hl
+	ld [hl], 0
+	inc hl
+	ld [hl], 0
+	inc hl
+	dec d
+	jr nz, .hideSpritesLoop
 	SetEvent EVENT_FOUND_MEW
 	SetEvent EVENT_TRUCK_PUSHED_RIGHT
 	xor a
-    ldh [hAutoBGTransferEnabled], a
-    call Delay3
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
 	callfar RedrawMapView
 	callfar AnimateBoulderDust
 	call ShowMew
@@ -566,19 +570,19 @@ ShowMew:
 	ret
 	
 CorruptMewAudio:
-    ld a, $44
-    ld [wChannel1VibratoRate], a
-    ld a, $0A
-    ld [wChannel1VibratoExtent], a
-    ld hl, wChannel1Flags2
-    set 0, [hl]
+	ld a, $44
+	ld [wChannel1VibratoRate], a
+	ld a, $0A
+	ld [wChannel1VibratoExtent], a
+	ld hl, wChannel1Flags2
+	set 0, [hl]
 
-    ld a, $33
-    ld [wChannel2VibratoRate], a
-    ld a, $0C
-    ld [wChannel2VibratoExtent], a
-    ld hl, wChannel2Flags2
-    set 0, [hl]
+	ld a, $33
+	ld [wChannel2VibratoRate], a
+	ld a, $0C
+	ld [wChannel2VibratoExtent], a
+	ld hl, wChannel2Flags2
+	set 0, [hl]
 	
 	ld a, $70
 	ld [wChannel1Tempo], a
@@ -594,7 +598,7 @@ CorruptMewAudio:
 	ld [wChannel1Transposition], a
 	ld [wChannel2Transposition], a
 
-    ret
+	ret
 
 ChangeTruckTile:
 	ld hl, wCurrentMapScriptFlags
@@ -603,7 +607,7 @@ ChangeTruckTile:
 	res 7, [hl]
 	ret z
 	CheckEvent EVENT_TRUCK_PUSHED_RIGHT
-    jr nz, .pushedRight
+	jr nz, .pushedRight
 	
 .pushedLeft
 	ld bc, $9
@@ -618,19 +622,19 @@ ChangeTruckTile:
 
 .pushedRight	
 	ld bc, $9
-    call GetOWCoord
-    ld a, $c
-    ld [hli], a
-    ld [hl], $c
+	call GetOWCoord
+	ld a, $c
+	ld [hli], a
+	ld [hl], $c
 
-    ld bc, $b
-    call GetOWCoord
-    ld a, [hl]
-    cp $3
-    jr z, .checkMew
-    ld a, $3
-    ld [hli], a
-    ld [hl], $c
+	ld bc, $b
+	call GetOWCoord
+	ld a, [hl]
+	cp $3
+	jr z, .checkMew
+	ld a, $3
+	ld [hli], a
+	ld [hl], $c
 
 .checkMew
 	CheckEvent EVENT_ENCOUNTERED_MEW
