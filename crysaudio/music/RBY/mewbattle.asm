@@ -1,3 +1,5 @@
+; made by Mr. Cheeze
+
 Music_MewBattle::
 	channel_count 3
 	channel 1, Music_MewBattle_Ch1
@@ -54,7 +56,7 @@ Music_MewBattle_Ch1::
 	note F_, 14
 	note G#, 6
 	note G_, 10
-	note_type 12, 4, 15
+	note_type 12, 4, -7
 	note F_, 10
 	note_type 12, 11, 1
 	note B_, 6
@@ -64,6 +66,7 @@ Music_MewBattle_Ch1::
 	note G#, 6
 	note G_, 10
 	note F_, 10
+
 
 Music_MewBattle_branch_230e0::
 	note_type 12, 11, 3
@@ -271,8 +274,8 @@ Music_MewBattle_branch_230e0::
 	note B_, 1
 	octave 4
 	note C_, 1
-	note_type 12, 11, 5
 	octave 3
+	note_type 12, 11, 5
 	note F#, 4
 	note E_, 4
 	note F#, 4
@@ -296,7 +299,7 @@ Music_MewBattle_branch_230e0::
 	note D#, 4
 	note_type 12, 11, 7
 	note E_, 16
-	note_type 12, 3, 15
+	note_type 12, 3, -7
 	note B_, 16
 	note_type 12, 11, 5
 	octave 3
@@ -392,7 +395,7 @@ Music_MewBattle_Ch2::
 	note B_, 2
 	note B_, 4
 	note B_, 6
-	note_type 12, 9, 0
+	note_type 12, 9, 8
 	note A#, 10
 	note_type 12, 12, 2
 	note B_, 4
@@ -419,6 +422,7 @@ Music_MewBattle_Ch2::
 	note B_, 6
 	note_type 12, 11, 7
 	note B_, 10
+
 
 Music_MewBattle_branch_23225::
 	octave 4
@@ -493,7 +497,7 @@ Music_MewBattle_branch_23225::
 	note_type 12, 12, 7
 	octave 4
 	note D_, 2
-	octave 3	
+	octave 3
 	note A_, 2
 	octave 4
 	note E_, 2
@@ -508,14 +512,13 @@ Music_MewBattle_branch_23225::
 	note G#, 1
 	octave 4
 	note D_, 1
-	note_type 12, 12, 0
+	note_type 12, 12, 8
 	note F_, 2
 	note E_, 2
-	octave 4
 	note D_, 2
 	octave 5
 	note C_, 10
-	note_type 12, 11, 0
+	note_type 12, 11, 8
 	note C_, 2
 	octave 4
 	note A_, 2
@@ -529,7 +532,7 @@ Music_MewBattle_branch_23225::
 	note C_, 2
 	octave 4
 	note F_, 2
-	note_type 12, 4, 14
+	note_type 12, 4, -6
 	note A#, 1
 	note B_, 15
 	note_type 12, 12, 7
@@ -555,7 +558,7 @@ Music_MewBattle_branch_23225::
 	note D_, 8
 	note F#, 8
 	note A_, 8
-	note_type 12, 12, 0
+	note_type 12, 12, 8
 	note G#, 16
 	note_type 12, 12, 7
 	note G#, 16
@@ -565,13 +568,12 @@ Music_MewBattle_branch_23225::
 	note D_, 8
 	note F#, 8
 	note A_, 8
-	note_type 12, 12, 0
+	note_type 12, 12, 8
 	note B_, 16
-	note_type 12, 3, 15
+	note_type 12, 3, -7
 	octave 5
 	note E_, 16
 	note_type 12, 12, 5
-	octave 5
 	note G#, 2
 	note E_, 2
 	octave 4
@@ -619,8 +621,8 @@ Music_MewBattle_branch_23225::
 	note C_, 1
 	octave 6
 	note C_, 2
-	note_type 12, 10, 3
 	octave 5
+	note_type 12, 10, 3
 	note B_, 2
 	octave 4
 	note F_, 1
@@ -667,6 +669,8 @@ Music_MewBattle_Ch3::
 	note E_, 1
 	note D_, 2
 	note D#, 2
+	octave 3
+
 
 Music_MewBattle_branch_232b5::
 	octave 4
@@ -710,13 +714,24 @@ Music_MewBattle_branch_232b5::
 	note A_, 2
 	sound_loop 2, Music_MewBattle_branch_232b5
 
+
 Music_MewBattle_branch_232d8::
-	octave 4
-	sound_loop 8, .loop1
 	note E_, 2
 	note B_, 2
-	sound_ret
-.loop1
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
 	octave 5
 	note C_, 12
 	octave 4
@@ -731,48 +746,196 @@ Music_MewBattle_branch_232d8::
 	note G#, 2
 	note F#, 2
 	note F_, 2
-	sound_loop 11, .loop2 ; Repeat E-B pattern 11 times
 	note E_, 2
 	note B_, 2
-	sound_ret
-.loop2
-	sound_loop 8, .loop3 ; Repeat F-C pattern 8 times
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
 	note F_, 2
 	octave 5
 	note C_, 2
 	octave 4
-	sound_ret
-.loop3
-	sound_loop 8, .loop4 ; Repeat E-B pattern 8 times
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
 	note E_, 2
 	note B_, 2
-	sound_ret
-.loop4
-	sound_loop 8, .loop5 ; Repeat D-A pattern 8 times
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
 	note D_, 2
 	note A_, 2
-	sound_ret
-.loop5
-	sound_loop 8, .loop6 ; Repeat E-B pattern 8 times
+	note D_, 2
+	note A_, 2
+	note D_, 2
+	note A_, 2
+	note D_, 2
+	note A_, 2
+	note D_, 2
+	note A_, 2
+	note D_, 2
+	note A_, 2
+	note D_, 2
+	note A_, 2
+	note D_, 2
+	note A_, 2
 	note E_, 2
 	note B_, 2
-	sound_ret
-.loop6
-	sound_loop 8, .loop7 ; Repeat E-A pattern 8 times
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
 	note E_, 2
 	note A_, 2
-	sound_ret
-.loop7
-	sound_loop 10, .loop8 ; Repeat E-B pattern 10 times
+	note E_, 2
+	note A_, 2
+	note E_, 2
+	note A_, 2
+	note E_, 2
+	note A_, 2
+	note E_, 2
+	note A_, 2
+	note E_, 2
+	note A_, 2
+	note E_, 2
+	note A_, 2
+	note E_, 2
+	note A_, 2
 	note E_, 2
 	note B_, 2
-	sound_ret
-.loop8
-	sound_loop 8, .loop9 ; Repeat F-C pattern 8 times
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
+	note E_, 2
+	note B_, 2
 	note F_, 2
 	octave 5
 	note C_, 2
 	octave 4
-	sound_ret
-.loop9
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
+	note F_, 2
+	octave 5
+	note C_, 2
+	octave 4
 	sound_loop 0, Music_MewBattle_branch_232d8
