@@ -1,7 +1,7 @@
 # Pokémon Celadon Version
 
 This hack is designed as an upgrade to the original Pokémon Red, Blue, and Green, aiming to enhance the classic experience and expanding it with new content. It features a personal pick of improved graphics, restored elements, expanded events, and a post-game with new areas and challenges.
-Started this project a long time ago and some ideas changed, but I'm commited to finish it now: https://web.archive.org/web/20180903101807/https://hax.iimarckus.org/topic/7257/
+Started this project a long time ago and some ideas changed, but I'm committed to finish it now: https://web.archive.org/web/20180903101807/https://hax.iimarckus.org/topic/7257/
 
 This hack is intended to be played in Super Gameboy mode to appreciate a variety of new graphics and palettes.
 
@@ -10,45 +10,51 @@ Celadon City has always been my favorite location in the first generation, from 
 
 To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilities/893/
 
-## Features
+# ![MBALL](gficons/MBALL.png) Features
 
-### Core Mechanics, Enhanced Gameplay & QoL
+### ![MBALL](gficons/MBALL.png) Core Mechanics, Enhanced Gameplay & QoL
 
-- Gender Selection.
+- Gender Selection. ![RED](gficons/RED.png)
 - Skateboard: A new way to travel! Match the Bike's speed and jump over ledges in reverse.
 - Speed boost: Press B to move faster while walking, cycling, skating, or swimming.
 - Field Moves: Use SURF, CUT, and STRENGTH by interacting directly with the overworld. No menus required.
 - Swap Pokémon positions instantly by pressing SELECT in the party menu.
 - Added a USE/QUIT prompt before throwing Pokéballs to avoid accidental throws.
-- An NPC in Rock Tunnel uses FLASH for you without needing the HM.
-- New trainer classes: Female Rocket, Rookie and Yujirou (From Prototypes).
+- New trainer classes: Female Rocket, (from sequels) Rookie and Yujirou (from prototypes).
+- There's a new room with a healing bed in S.S. Anne.
+- Trainers in Gyms now have dialogue after you earn a badge or reach the post-game.
+- If you have badge(s) Guards have shorter texts on Route 23.
+- Nurse at Silph Co. 9F still heals you after beating Team Rocket.
+- Restored PC on Celadon Hotel.
+- You can use the Phone to call Mom at Celadon Mart 1F.
 
-### Upgraded Graphics
+### ![MBALL](gficons/MBALL.png) Upgraded Graphics
 
 - New sprites, new palettes, Gen 2-style party icons, custom Super Gameboy border.
-- Unique surfing sprites for Lapras and Pikachu.
+- Unique surfing sprites for Lapras and Pikachu. ![131RAPR](gficons/131RAPR.png)
 - New Oak intro sprite.
 
-### Optional Sidequests
+### ![MBALL](gficons/MBALL.png) Optional Sidequests
 
 - Battle Yujirou early at 2nd floor of Route 22 Gate for a strategic TM19 gift!
-- You can have all 3 starters like in Pokémon Yellow.
+- You can have all 3 starters like in Pokémon Yellow. ![003FUSH](gficons/003FUSH.png) ![006LIZA](gficons/006LIZA.png) ![009KAME](gficons/009KAME.png)
 - Obtain a Rocket Suit after Nugget Bridge. Use it to skip Team Rocket battles or even steal enemy Pokémon (ends the battle instantly).
+- An NPC in Rock Tunnel uses FLASH for you without needing the HM.
 - If you visited Lavender Town and you have the Rocket Suit on, you can skip the Guards at the Gates of Saffron for the cost of ¥1000 Pokédollars. Without the need of giving them drinks.
-- Celadon University: A new location, graduate to earn a Diploma and a unique Magikarp with Dragon Rage.
+- Celadon University: A new location, graduate to earn a Diploma and a unique Magikarp with Dragon Rage. ![129KOI](gficons/129KOI.png)
 - Reunite Erik and Sara in the Safari Zone to earn a Free Pass.
-- Mew under the truck.
+- Mew under the truck. ![151MEW](gficons/151MEW.png)
 
-## Post-Game
+# ![MBALL](gficons/MBALL.png) Post-Game
 
-### Your New Home
+### ![MBALL](gficons/MBALL.png) Your New Home
 
 - Move out of Pallet Town! Visit the Celadon Hotel to set your new residence in any city (including the Summer Beach House on Route 19).
 - Decoration: Interact with the Gameboy in your room to arrange your Pokémon Dolls.
 - Visits: Your new home feels alive! Daisy might drop by for tea to heal your team, or Bill might visit to grant you access to his secret Garden.
-- Pidgey Rewards: Keep an eye out for a friendly Pidgey that occasionally leaves gifts.
+- Pidgey Rewards: Keep an eye out for a friendly Pidgey that occasionally leaves gifts. ![016POPP](gficons/016POPP.png)
 
-### New quests
+### ![MBALL](gficons/MBALL.png) New quests
 
 - S.S. Anne: The cruise ship returns with a deck full of new trainers.
 - Rematch Gym Leaders as many times as you want (Yujiro replaces Giovanni).
@@ -60,20 +66,11 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 - Recover missed rewards with NPCs in the Mystery Cave: get the alternate Mt. Moon Fossil (Dome/Helix) and the Fighting Dojo Pokémon (Hitmonlee/Hitmonchan) you didn't choose.
 - Visit the Museum on Route 1 West to see prototype and rumored Pokémon.
 
-### Additional Improvements
-
-- There's a new room with a healing bed in S.S. Anne.
-- Trainers in Gyms now have dialogue after you earn a badge or reach the post-game.
-- If you have badge(s) Guards have shorter texts on Route 23.
-- Nurse at Silph Co. 9F still heals you after beating Team Rocket.
-- Restored PC on Celadon Hotel.
-- You can use the Phone to call Mom at Celadon Mart 1F.
-
-## Version Exclusives & Completion
+### ![MBALL](gficons/MBALL.png) Version Exclusives & Completion
 
 Celadon Version is split into Red and Blue editions. While each maintains its original exclusive encounters, all 151 Pokémon are obtainable in the post-game by exploring the Mystery Cave and Bill's Garden.
 
-# Screenshots
+# ![MBALL](gficons/MBALL.png) Screenshots
 
 ![0001](screenshots/0001.bmp)
 ![0002](screenshots/0002.bmp)
@@ -91,7 +88,7 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 ![0014](screenshots/0014.bmp)
 ![0015](screenshots/0015.bmp)
 
-# Credits
+# ![MBALL](gficons/MBALL.png) Credits
 
 **Narishma-gb, Sylvie, Pan Docs files, superfamiconv** (HELPED A LOT with 4bpp adaptation used to built it.)
 - SGB Border.
