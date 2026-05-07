@@ -434,3 +434,17 @@ ENDM
 	const TOGGLE_ARTICUNO                      ; E3 X
 
 DEF NUM_TOGGLEABLE_OBJECTS EQU const_value
+
+; === EXTRA TOGGLEABLE OBJECTS (secondary set) ===
+; These are for maps that need their own separate toggle state flags
+; (e.g., Safari Zone, special event areas)
+
+	const_def
+
+	; Reserve space for extra toggleable objects here
+	; Example:
+	; toggle_consts_for SAFARI_ZONE_EXTRA
+	; const TOGGLE_SAFARI_ZONE_EXTRA_NPC_1
+	; ... etc ...
+
+DEF NUM_EXTRA_TOGGLEABLE_OBJECTS EQU const_value
