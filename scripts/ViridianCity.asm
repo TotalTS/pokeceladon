@@ -51,6 +51,11 @@ ViridianCityCheckGotPokedexScript:
 	ld a, [wXCoord]
 	cp 19
 	ret nz
+	ld a, SPRITE_FACING_RIGHT
+	ldh [hSpriteFacingDirection], a
+	ld a, 5
+	ldh [hSpriteIndex], a
+	call SetSpriteFacingDirectionAndDelay
 	ld a, TEXT_VIRIDIANCITY_OLD_MAN_SLEEPY
 	ldh [hTextID], a
 	call DisplayTextID
@@ -221,15 +226,6 @@ ViridianCityGirlText:
 	text_end
 
 ViridianCityOldManSleepyText:
-	text_asm
-	ld hl, .PrivatePropertyText
-	call PrintText
-	call ViridianCityMovePlayerDownScript
-	ld a, SCRIPT_VIRIDIANCITY_PLAYER_MOVING_DOWN
-	ld [wViridianCityCurScript], a
-	jp TextScriptEnd
-
-.PrivatePropertyText:
 	text_far _ViridianCityOldManSleepyPrivatePropertyText
 	text_end
 

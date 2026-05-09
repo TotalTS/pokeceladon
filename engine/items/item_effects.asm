@@ -675,6 +675,9 @@ ConfirmUseBall:
 	ld [hli], a
 	ld a, 14 ; cursor X
 	ld [hli], a
+	ld a, [wBattleType]
+	dec a
+	jr z, .OldManThrow
 	xor a
 	ld [hli], a ; wCurrentMenuItem
 	inc hl
@@ -690,6 +693,14 @@ ConfirmUseBall:
 	ret z
 .quit
 	scf
+	ret
+.OldManThrow
+	ld a, '▶'
+	ldcoord_a 14, 9 ; place menu cursor in front of first menu entry
+	ld c, 80
+	call DelayFrames
+	xor a
+	ld a, [wCurrentMenuItem]
 	ret
 
 BallMenuText:
