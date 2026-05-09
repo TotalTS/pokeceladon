@@ -153,6 +153,7 @@ DebugNewGameItemsList:
 	db BICYCLE, 1
 	db ROCKET_SUIT, 1
 	db SKATEBOARD, 1
+	db POKE_FLUTE, 1
 	db FULL_RESTORE, 99
 	db FULL_HEAL, 99
 	db MAX_REVIVE, 99

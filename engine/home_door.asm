@@ -178,20 +178,37 @@ HomeDoor_Apply::
     predef ReplaceTileBlock
     jr .done
 
+; Not a Home, rather a Post-Game Event
 .check_yujirogym
 	ld a, [wCurMap]
 	cp ROUTE_22_GATE
-	jr nz, .check_billsgarden
+	jr nz, .check_route22_snorlaxcave
 
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
-	jr z, .check_billsgarden
+	jr z, .check_route22_snorlaxcave
 
 	ld a, $00
 	ld [wNewTileBlockID], a
 	lb bc, 3, 4
 	predef ReplaceTileBlock
     jr .done
-	
+
+; Not a Home, rather a Post-Game Event
+.check_route22_snorlaxcave
+	ld a, [wCurMap]
+	cp ROUTE_22
+	jr nz, .check_billsgarden
+
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr z, .check_billsgarden
+
+	ld a, $06
+	ld [wNewTileBlockID], a
+	lb bc, 0, 16
+	predef ReplaceTileBlock
+    jr .done
+
+; Not a Home, rather a Post-Game Event
 .check_billsgarden
 	ld a, [wCurMap]
 	cp ROUTE_25

@@ -1919,7 +1919,7 @@ ItemUsePokeFlute:
 	ret
 .notRoute12
 	cp ROUTE_16
-	jr nz, .noSnorlaxToWakeUp
+	jr nz, .notRoute16
 	CheckEvent EVENT_BEAT_ROUTE16_SNORLAX
 	jr nz, .noSnorlaxToWakeUp
 ; if the player hasn't beaten Route 16 Snorlax
@@ -1929,6 +1929,21 @@ ItemUsePokeFlute:
 	ld hl, PlayedFluteHadEffectText
 	call PrintText
 	SetEvent EVENT_FIGHT_ROUTE16_SNORLAX
+	ret
+.notRoute16
+	cp ROUTE_22
+	jr nz, .noSnorlaxToWakeUp
+	CheckEvent EVENT_BEAT_ROUTE22_SNORLAX
+	jr nz, .noSnorlaxToWakeUp
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr z, .noSnorlaxToWakeUp
+; if the player hasn't beaten Route 22 Snorlax
+	ld hl, Route22SnorlaxFluteCoords
+	call ArePlayerCoordsInArray
+	jr nc, .noSnorlaxToWakeUp
+	ld hl, PlayedFluteHadEffectText
+	call PrintText
+	SetEvent EVENT_FIGHT_ROUTE22_SNORLAX
 	ret
 .noSnorlaxToWakeUp
 	ld hl, PlayedFluteNoEffectText
@@ -2016,6 +2031,11 @@ Route12SnorlaxFluteCoords:
 Route16SnorlaxFluteCoords:
 	dbmapcoord 27, 10 ; one space East of Snorlax
 	dbmapcoord 25, 10 ; one space West of Snorlax
+	db -1 ; end
+
+Route22SnorlaxFluteCoords:
+	dbmapcoord 31, 2 ; one space West of Snorlax
+	dbmapcoord 33, 2 ; one space East of Snorlax
 	db -1 ; end
 
 PlayedFluteNoEffectText:

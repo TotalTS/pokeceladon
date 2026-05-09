@@ -101,6 +101,7 @@ ToggleableObjectStates:
 	toggleable_objects_for ROUTE_22
 	toggle_object_state ROUTE22_RIVAL1, OFF
 	toggle_object_state ROUTE22_RIVAL2, OFF
+	toggle_object_state ROUTE22_SNORLAX, OFF
 
 	toggleable_objects_for ROUTE_24
 	toggle_object_state ROUTE24_COOLTRAINER_M1,  ON

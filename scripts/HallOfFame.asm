@@ -54,6 +54,9 @@ HallOfFameResetEventsAndSaveScript:
 	ld a, TOGGLE_VIRIDIAN_GYM_YUJIROU
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
+	ld a, TOGGLE_ROUTE_22_SNORLAX
+	ld [wToggleableObjectIndex], a
+	predef ShowObject
 	SetEvent EVENT_PLAYER_IS_CHAMPION
 	xor a
 	ld [wHallOfFameCurScript], a

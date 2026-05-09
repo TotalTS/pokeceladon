@@ -6,14 +6,17 @@ Route22_Script:
 
 Route22_ScriptPointers:
 	def_script_pointers
-	dw_const Route22DefaultScript,           SCRIPT_ROUTE22_DEFAULT
-	dw_const Route22Rival1StartBattleScript, SCRIPT_ROUTE22_RIVAL1_START_BATTLE
-	dw_const Route22Rival1AfterBattleScript, SCRIPT_ROUTE22_RIVAL1_AFTER_BATTLE
-	dw_const Route22Rival1ExitScript,        SCRIPT_ROUTE22_RIVAL1_EXIT
-	dw_const Route22Rival2StartBattleScript, SCRIPT_ROUTE22_RIVAL2_START_BATTLE
-	dw_const Route22Rival2AfterBattleScript, SCRIPT_ROUTE22_RIVAL2_AFTER_BATTLE
-	dw_const Route22Rival2ExitScript,        SCRIPT_ROUTE22_RIVAL2_EXIT
-	dw_const Route22NoopScript,              SCRIPT_ROUTE22_NOOP
+	dw_const Route22DefaultScript,                  SCRIPT_ROUTE22_DEFAULT
+	dw_const Route22Rival1StartBattleScript,        SCRIPT_ROUTE22_RIVAL1_START_BATTLE
+	dw_const Route22Rival1AfterBattleScript,        SCRIPT_ROUTE22_RIVAL1_AFTER_BATTLE
+	dw_const Route22Rival1ExitScript,               SCRIPT_ROUTE22_RIVAL1_EXIT
+	dw_const Route22Rival2StartBattleScript,        SCRIPT_ROUTE22_RIVAL2_START_BATTLE
+	dw_const Route22Rival2AfterBattleScript,        SCRIPT_ROUTE22_RIVAL2_AFTER_BATTLE
+	dw_const Route22Rival2ExitScript,               SCRIPT_ROUTE22_RIVAL2_EXIT
+	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_ROUTE22_START_BATTLE
+	dw_const EndTrainerBattle,                      SCRIPT_ROUTE22_END_BATTLE
+	dw_const Route22SnorlaxPostBattleScript,        SCRIPT_ROUTE22_SNORLAX_POST_BATTLE
+	dw_const Route22NoopScript,                     SCRIPT_ROUTE22_NOOP
 
 Route22SetDefaultScript:
 	xor a ; SCRIPT_ROUTE22_DEFAULT
@@ -56,6 +59,28 @@ Route22RivalMovementData:
 	db -1 ; end
 
 Route22DefaultScript:
+	CheckEvent EVENT_PLAYER_IS_CHAMPION
+	jr z, .rivalCheck
+	CheckEventHL EVENT_BEAT_ROUTE22_SNORLAX
+	jp nz, CheckFightingMapTrainers
+	CheckEventReuseHL EVENT_FIGHT_ROUTE22_SNORLAX
+	ResetEventReuseHL EVENT_FIGHT_ROUTE22_SNORLAX
+	jp z, CheckFightingMapTrainers
+	ld a, TEXT_ROUTE22_SNORLAX_WOKE_UP
+	ldh [hTextID], a
+	call DisplayTextID
+	ld a, SNORLAX
+	ld [wCurOpponent], a
+	ld a, 60
+	ld [wCurEnemyLevel], a
+	ld a, TOGGLE_ROUTE_22_SNORLAX
+	ld [wToggleableObjectIndex], a
+	predef HideObject
+	call UpdateSprites
+	ld a, SCRIPT_ROUTE22_SNORLAX_POST_BATTLE
+	ld [wRoute22CurScript], a
+	ret
+.rivalCheck
 	CheckEvent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	ret z
 	ld hl, .Route22RivalBattleCoords
@@ -79,6 +104,25 @@ Route22DefaultScript:
 	dbmapcoord 29,  4
 	dbmapcoord 29,  5
 	db -1 ; end
+	
+Route22SnorlaxPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, Route22SetDefaultScript
+	call UpdateSprites
+	ld a, [wBattleResult]
+	cp $2
+	jr z, .caught
+	ld a, TEXT_ROUTE22_SNORLAX_RETURNED_TO_MOUNTAINS
+	ldh [hTextID], a
+	call DisplayTextID
+.caught
+	SetEvent EVENT_BEAT_ROUTE22_SNORLAX
+	call Delay3
+	ld a, SCRIPT_ROUTE22_DEFAULT
+	ld [wRoute22CurScript], a
+	ld [wCurMapScript], a
+	ret
 
 Route22FirstRivalBattleScript:
 	ld a, ROUTE22_RIVAL1
@@ -379,9 +423,12 @@ Route22Rival2ExitScript:
 
 Route22_TextPointers:
 	def_text_pointers
-	dw_const Route22Rival1Text,            TEXT_ROUTE22_RIVAL1
-	dw_const Route22Rival2Text,            TEXT_ROUTE22_RIVAL2
-	dw_const Route22PokemonLeagueSignText, TEXT_ROUTE22_POKEMON_LEAGUE_SIGN
+	dw_const Route22Rival1Text,                     TEXT_ROUTE22_RIVAL1
+	dw_const Route22Rival2Text,                     TEXT_ROUTE22_RIVAL2
+	dw_const Route22SnorlaxText,                    TEXT_ROUTE22_SNORLAX
+	dw_const Route22SnorlaxWokeUpText,              TEXT_ROUTE22_SNORLAX_WOKE_UP
+	dw_const Route22SnorlaxReturnedToMountainsText, TEXT_ROUTE22_SNORLAX_RETURNED_TO_MOUNTAINS
+	dw_const Route22PokemonLeagueSignText,          TEXT_ROUTE22_POKEMON_LEAGUE_SIGN
 
 Route22Rival1Text:
 	text_asm
@@ -443,4 +490,16 @@ Route22Rival2VictoryText:
 
 Route22PokemonLeagueSignText:
 	text_far _Route22PokemonLeagueSignText
+	text_end
+	
+Route22SnorlaxText:
+	text_far _Route16Text7
+	text_end
+
+Route22SnorlaxWokeUpText:
+	text_far _Route16SnorlaxWokeUpText
+	text_end
+
+Route22SnorlaxReturnedToMountainsText:
+	text_far _Route16SnorlaxReturnedToMountainsText
 	text_end
