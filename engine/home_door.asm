@@ -202,7 +202,7 @@ HomeDoor_Apply::
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
 	jr z, .check_billsgarden
 
-	ld a, $06
+	ld a, $83
 	ld [wNewTileBlockID], a
 	lb bc, 0, 16
 	predef ReplaceTileBlock

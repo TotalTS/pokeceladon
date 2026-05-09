@@ -2034,8 +2034,9 @@ Route16SnorlaxFluteCoords:
 	db -1 ; end
 
 Route22SnorlaxFluteCoords:
-	dbmapcoord 31, 2 ; one space West of Snorlax
-	dbmapcoord 33, 2 ; one space East of Snorlax
+	dbmapcoord 32, 2 ; one space West of Snorlax
+	dbmapcoord 33, 3 ; one space South of Snorlax
+	dbmapcoord 34, 2 ; one space East of Snorlax
 	db -1 ; end
 
 PlayedFluteNoEffectText:
