@@ -493,7 +493,7 @@ DEF ANY_FACING EQU $d0
 	db -1 ; end
 
 	hidden_events_for VIRIDIAN_CITY
-	hidden_event 14,  4, HiddenItems, POTION
+	hidden_event 13,  4, HiddenItems, POTION
 	db -1 ; end
 
 	hidden_events_for SAFARI_ZONE_WEST_REST_HOUSE
