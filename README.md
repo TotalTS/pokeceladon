@@ -57,6 +57,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 ### ![MBALL](gficons/MBALL.png) New quests
 
 - S.S. Anne: The cruise ship returns with a deck full of new trainers.
+- New location: Snorlax Mountain at Route 22, (not technically a mountain, but rather a cave) where you can find wild LV. 30, 60, and 90 Snorlax.
 - Rematch Gym Leaders as many times as you want (Yujiro replaces Giovanni).
 - Catch all 151 Pokémon to unlock a battle against Professor Oak at the League.
 

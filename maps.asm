@@ -1225,6 +1225,8 @@ INCLUDE "scripts/AgathasRoom.asm"
 INCLUDE "data/maps/objects/AgathasRoom.asm"
 AgathasRoom_Blocks: INCBIN "maps/AgathasRoom.blk"
 
+SECTION "Maps 22", ROMX
+
 INCLUDE "data/maps/headers/ChampionsHouse1F.asm"
 INCLUDE "scripts/ChampionsHouse1F.asm"
 INCLUDE "data/maps/objects/ChampionsHouse1F.asm"
@@ -1294,3 +1296,8 @@ INCLUDE "data/maps/headers/Route1Museum1F.asm"
 INCLUDE "scripts/Route1Museum1F.asm"
 INCLUDE "data/maps/objects/Route1Museum1F.asm"
 Route1Museum1F_Blocks: INCBIN "maps/Route1Museum1F.blk"
+
+INCLUDE "data/maps/headers/SnorlaxMountain.asm"
+INCLUDE "scripts/SnorlaxMountain.asm"
+INCLUDE "data/maps/objects/SnorlaxMountain.asm"
+SnorlaxMountain_Blocks: INCBIN "maps/SnorlaxMountain.blk"

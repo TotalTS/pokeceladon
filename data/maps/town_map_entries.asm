@@ -129,5 +129,6 @@ InternalMapEntries:
 	indoor_map SILPH_CO_2,         10,  5, SilphCoName
 	indoor_map POKEMON_LEAGUE_3,    0,  2, PokemonLeagueName
 	indoor_map ROUTE_1_MUSEUM,      2, 10, Route1MuseumName
+	indoor_map SNORLAX_MOUNTAIN,    1,  6, SnorlaxMountainName
 	assert_table_length NUM_INDOOR_MAP_GROUPS
 	db -1 ; end

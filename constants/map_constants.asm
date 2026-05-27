@@ -345,7 +345,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const ROCKET_HIDEOUT_B3F,            15, 14 ; $C9
 	map_const ROCKET_HIDEOUT_B4F,            15, 12 ; $CA
 	map_const ROCKET_HIDEOUT_ELEVATOR,        3,  4 ; $CB
-	map_const UNUSED_MAP_CC,                  0,  0 ; $CC
+;	map_const UNUSED_MAP_CC,                  0,  0 ; $CC
 	map_const UNUSED_MAP_CD,                  0,  0 ; $CD
 	map_const UNUSED_MAP_CE,                  0,  0 ; $CE
 	end_indoor_group ROCKET_HQ
@@ -411,6 +411,9 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	
 	map_const ROUTE_1_MUSEUM_1F,             36,  4 ; new was previously $75
 	end_indoor_group ROUTE_1_MUSEUM
+
+	map_const SNORLAX_MOUNTAIN,               8, 10 ; new was previously $CC
+	end_indoor_group SNORLAX_MOUNTAIN
 	
 DEF NUM_MAPS EQU const_value
 

@@ -208,7 +208,7 @@ MapHeaderBanks::
 	db BANK(RocketHideoutB3F_h)
 	db BANK(RocketHideoutB4F_h)
 	db BANK(RocketHideoutElevator_h)
-	db $01 ; UNUSED_MAP_CC
+;	db $01 ; UNUSED_MAP_CC
 	db $01 ; UNUSED_MAP_CD
 	db $01 ; UNUSED_MAP_CE
 	db BANK(SilphCo2F_h)
@@ -253,4 +253,5 @@ MapHeaderBanks::
 	db BANK(BrunosRoom_h)
 	db BANK(AgathasRoom_h)
 	db BANK(Route1Museum1F_h)
+	db BANK(SnorlaxMountain_h)
 	assert_table_length NUM_MAPS

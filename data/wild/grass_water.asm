@@ -216,7 +216,6 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	dw NothingWildMons
 	dw PokemonMansion2FWildMons
 	dw PokemonMansion3FWildMons
 	dw PokemonMansionB1FWildMons
@@ -252,6 +251,7 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
+	dw SnorlaxMountainWildMons
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -334,3 +334,4 @@ INCLUDE "data/wild/maps/Route0East.asm"
 INCLUDE "data/wild/maps/PalletTown.asm"
 INCLUDE "data/wild/maps/Route21West.asm"
 INCLUDE "data/wild/maps/Route21East.asm"
+INCLUDE "data/wild/maps/SnorlaxMountain.asm"

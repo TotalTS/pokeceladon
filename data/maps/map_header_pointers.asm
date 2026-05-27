@@ -208,7 +208,7 @@ MapHeaderPointers::
 	dw RocketHideoutB3F_h
 	dw RocketHideoutB4F_h
 	dw RocketHideoutElevator_h
-	dw RocketHideoutElevator_h ; UNUSED_MAP_CC
+;	dw RocketHideoutElevator_h ; UNUSED_MAP_CC
 	dw RocketHideoutElevator_h ; UNUSED_MAP_CD
 	dw RocketHideoutElevator_h ; UNUSED_MAP_CE
 	dw SilphCo2F_h
@@ -253,4 +253,5 @@ MapHeaderPointers::
 	dw BrunosRoom_h
 	dw AgathasRoom_h
 	dw Route1Museum1F_h
+	dw SnorlaxMountain_h
 	assert_table_length NUM_MAPS

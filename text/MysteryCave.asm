@@ -324,3 +324,7 @@ _MysteryCaveCooltrainerF1AfterBattleText::
 	para "That's what sets"
 	line "you apart!"
 	done
+
+_SnorlaxMountainSignText::
+	text "SNORLAX MOUNTAIN"
+	done

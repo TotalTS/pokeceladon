@@ -8,6 +8,7 @@ Route22_Object:
 
 	def_warp_events
 	warp_event  8,  5, ROUTE_22_GATE, 1
+	warp_event 33,  1, SNORLAX_MOUNTAIN, 1
 
 	def_bg_events
 	bg_event  7, 11, TEXT_ROUTE22_POKEMON_LEAGUE_SIGN
