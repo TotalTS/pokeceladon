@@ -119,6 +119,9 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 **Mr. Cheeze**
 - Music: VS Mew.
 
+**Porygondolier**
+- Idea of the Snorlax Mountain.
+
 **cRz-Shadows**
 - New party icons code.
 
