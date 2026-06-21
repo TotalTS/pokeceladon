@@ -62,10 +62,10 @@ Route22DefaultScript:
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
 	jr z, .rivalCheck
 	CheckEventHL EVENT_BEAT_ROUTE22_SNORLAX
-	jp nz, .rivalCheck
+	jp nz, CheckFightingMapTrainers
 	CheckEventReuseHL EVENT_FIGHT_ROUTE22_SNORLAX
 	ResetEventReuseHL EVENT_FIGHT_ROUTE22_SNORLAX
-	jp z, .rivalCheck
+	jp z, CheckFightingMapTrainers
 	ld a, TEXT_ROUTE22_SNORLAX_WOKE_UP
 	ldh [hTextID], a
 	call DisplayTextID
@@ -79,6 +79,7 @@ Route22DefaultScript:
 	call UpdateSprites
 	ld a, SCRIPT_ROUTE22_SNORLAX_POST_BATTLE
 	ld [wRoute22CurScript], a
+	ld [wCurMapScript], a
 	ret
 .rivalCheck
 	CheckEvent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
