@@ -135,10 +135,10 @@ _VermilionGymGentlemanAfterBattleText::
 	ld hl, .VermilionGymGentlemanAfterBattleText
 	jr .print
 .isChampion
-	ld hl, _VermilionGymGentlemanAfterSurgeText
+	ld hl, _VermilionGymGentlemanAfterChampionText
 	jr .print
 .afterBeat
-	ld hl, _VermilionGymGentlemanAfterChampionText
+	ld hl, _VermilionGymGentlemanAfterSurgeText
 .print
 	call PrintText
 	jp TextScriptEnd
@@ -176,10 +176,10 @@ _VermilionGymSuperNerdAfterBattleText::
 	ld hl, .VermilionGymSuperNerdAfterBattleText
 	jr .print
 .isChampion
-	ld hl, _VermilionGymSuperNerdAfterSurgeText
+	ld hl, _VermilionGymSuperNerdAfterChampionText
 	jr .print
 .afterBeat
-	ld hl, _VermilionGymSuperNerdAfterChampionText
+	ld hl, _VermilionGymSuperNerdAfterSurgeText
 .print
 	call PrintText
 	jp TextScriptEnd
@@ -219,10 +219,10 @@ _VermilionGymSailorAfterBattleText::
 	ld hl, .VermilionGymSailorAfterBattleText
 	jr .print
 .isChampion
-	ld hl, _VermilionGymSailorAfterSurgeText
+	ld hl, _VermilionGymSailorAfterChampionText
 	jr .print
 .afterBeat
-	ld hl, _VermilionGymSailorAfterChampionText
+	ld hl, _VermilionGymSailorAfterSurgeText
 .print
 	call PrintText
 	jp TextScriptEnd
