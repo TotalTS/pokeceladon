@@ -156,6 +156,9 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 **brimicoo**
 - Used Charmander sprite as reference.
 
+**trusko, RetroPanda**
+- Reporting bugs in version v1.0.
+
 **pret tutorials**
 - Add a new map sprite
 - Adding gym leader rematches
