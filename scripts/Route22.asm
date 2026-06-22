@@ -1,8 +1,16 @@
 Route22_Script:
 	call EnableAutoTextBoxDrawing
-	ld hl, Route22_ScriptPointers
+	ld hl, Route22TrainerHeaders
+	ld de, Route22_ScriptPointers
 	ld a, [wRoute22CurScript]
-	jp CallFunctionInTable
+	call ExecuteCurMapScriptInTable
+	ld [wRoute22CurScript], a
+	ret
+
+Route22SetCurScript:
+	ld [wRoute22CurScript], a
+	ld [wCurMapScript], a
+	ret
 
 Route22_ScriptPointers:
 	def_script_pointers
@@ -21,7 +29,7 @@ Route22_ScriptPointers:
 Route22SetDefaultScript:
 	xor a ; SCRIPT_ROUTE22_DEFAULT
 	ld [wJoyIgnore], a
-	ld [wRoute22CurScript], a
+	jp Route22SetCurScript
 Route22NoopScript:
 	ret
 
@@ -78,9 +86,7 @@ Route22DefaultScript:
 	predef HideObject
 	call UpdateSprites
 	ld a, SCRIPT_ROUTE22_SNORLAX_POST_BATTLE
-	ld [wRoute22CurScript], a
-	ld [wCurMapScript], a
-	ret
+	jp Route22SetCurScript
 .rivalCheck
 	CheckEvent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	ret z
@@ -121,9 +127,7 @@ Route22SnorlaxPostBattleScript:
 	SetEvent EVENT_BEAT_ROUTE22_SNORLAX
 	call Delay3
 	ld a, SCRIPT_ROUTE22_DEFAULT
-	ld [wRoute22CurScript], a
-	ld [wCurMapScript], a
-	ret
+	jp Route22SetCurScript
 
 Route22FirstRivalBattleScript:
 	ld a, ROUTE22_RIVAL1
@@ -145,8 +149,7 @@ Route22FirstRivalBattleScript:
 	ldh [hSpriteIndex], a
 	call Route22MoveRivalRightScript
 	ld a, SCRIPT_ROUTE22_RIVAL1_START_BATTLE
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 Route22Rival1StartBattleScript:
 	ld a, [wStatusFlags5]
@@ -182,8 +185,7 @@ Route22Rival1StartBattleScript:
 	ld hl, .StarterTable
 	call Route22GetRivalTrainerNoByStarterScript
 	ld a, SCRIPT_ROUTE22_RIVAL1_AFTER_BATTLE
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 .StarterTable:
 ; starter the rival picked, rival trainer number
@@ -226,8 +228,7 @@ Route22Rival1AfterBattleScript:
 	call .RivalExit2Script
 .next_script
 	ld a, SCRIPT_ROUTE22_RIVAL1_EXIT
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 .RivalExit1Script:
 	ld de, Route22Rival1ExitMovementData1
@@ -275,8 +276,7 @@ Route22Rival1ExitScript:
 	call PlayDefaultMusic
 	ResetEvents EVENT_1ST_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	ld a, SCRIPT_ROUTE22_DEFAULT
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 Route22SecondRivalBattleScript:
 	ld a, ROUTE22_RIVAL2
@@ -299,8 +299,7 @@ Route22SecondRivalBattleScript:
 	ldh [hSpriteIndex], a
 	call Route22MoveRivalRightScript
 	ld a, SCRIPT_ROUTE22_RIVAL2_START_BATTLE
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 Route22Rival2StartBattleScript:
 	ld a, [wStatusFlags5]
@@ -338,8 +337,7 @@ Route22Rival2StartBattleScript:
 	ld hl, .StarterTable
 	call Route22GetRivalTrainerNoByStarterScript
 	ld a, SCRIPT_ROUTE22_RIVAL2_AFTER_BATTLE
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 .StarterTable:
 	db STARTER2, 10
@@ -385,8 +383,7 @@ Route22Rival2AfterBattleScript:
 	call .RivalExit2Script
 .next_script
 	ld a, SCRIPT_ROUTE22_RIVAL2_EXIT
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 .RivalExit1Script:
 	ld de, Route22Rival2ExitMovementData1
@@ -419,8 +416,7 @@ Route22Rival2ExitScript:
 	call PlayDefaultMusic
 	ResetEvents EVENT_2ND_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	ld a, SCRIPT_ROUTE22_NOOP
-	ld [wRoute22CurScript], a
-	ret
+	jp Route22SetCurScript
 
 Route22_TextPointers:
 	def_text_pointers
@@ -430,6 +426,10 @@ Route22_TextPointers:
 	dw_const Route22SnorlaxWokeUpText,              TEXT_ROUTE22_SNORLAX_WOKE_UP
 	dw_const Route22SnorlaxReturnedToMountainsText, TEXT_ROUTE22_SNORLAX_RETURNED_TO_MOUNTAINS
 	dw_const Route22PokemonLeagueSignText,          TEXT_ROUTE22_POKEMON_LEAGUE_SIGN
+
+Route22TrainerHeaders:
+	def_trainers 1
+	db -1 ; end
 
 Route22Rival1Text:
 	text_asm
