@@ -156,7 +156,7 @@ Celadon Version is split into Red and Blue editions. While each maintains its or
 **brimicoo**
 - Used Charmander sprite as reference.
 
-**trusko, RetroPanda**
+**trusko, RetroPanda, Aheqao**
 - Reporting bugs in version v1.0.
 
 **pret tutorials**
