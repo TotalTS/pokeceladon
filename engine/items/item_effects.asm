@@ -111,7 +111,7 @@ ItemUseBall:
 ; Rocket Suit can steal Pokémon
 	ld a, [wIsRocketSuit]
 	and a
-	jr nz, .useWithRocketSuit
+	jr nz, .checkPartyandBox ; this checks if Box is full beforehand catching trainers' Pokémon
 
 ; Balls can't catch trainers' Pokémon.
 	ld a, [wIsInBattle]
@@ -119,21 +119,25 @@ ItemUseBall:
 	jp nz, ThrowBallAtTrainerMon
 
 ; If this is for the old man battle, skip checking if the party & box are full.
+.checkPartyandBox
 	ld a, [wBattleType]
 	dec a
-	jr z, .canUseBall
+	jr z, .checkRocketSuit
 
 	ld a, [wPartyCount] ; is party full?
 	cp PARTY_LENGTH
-	jr nz, .canUseBall
+	jr nz, .checkRocketSuit
 	ld a, [wBoxCount] ; is box full?
 	cp MONS_PER_BOX
 	jp z, BoxFullCannotThrowBall
 	
-.useWithRocketSuit
+.checkRocketSuit
+	ld a, [wIsRocketSuit]
+	and a
+	jr z, .canUseBall
+
 	ld a, [wIsInBattle]
 	ld [wSavedIsInBattle], a	 ; save original state of battle
-	jr .canUseBall
 
 .canUseBall
 	call ConfirmUseBall
