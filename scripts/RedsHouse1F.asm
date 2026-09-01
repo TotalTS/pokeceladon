@@ -11,6 +11,9 @@ RedsHouse1FMomText:
 	ld a, [wStatusFlags4]
 	bit BIT_GOT_STARTER, a
 	jr nz, .heal
+	ld a, [wPlayerGender]
+    and a
+    jr nz, .GirlWakeUpText
 	ld hl, .WakeUpText
 	call PrintText
 	jr .done
@@ -21,6 +24,15 @@ RedsHouse1FMomText:
 
 .WakeUpText:
 	text_far _RedsHouse1FMomWakeUpText
+	text_end
+
+.GirlWakeUpText:
+	ld hl, .WakeUp2Text
+	call PrintText
+	jp TextScriptEnd
+
+.WakeUp2Text:
+	text_far _RedsHouse1FMomWakeUp2Text
 	text_end
 
 RedsHouse1FMomHealScript:
@@ -59,6 +71,9 @@ RedsHouse1FTVText:
 	cp SPRITE_FACING_UP
 	ld hl, .WrongSideText
 	jr nz, .got_text
+	ld a, [wPlayerGender]
+    and a
+    jr nz, .GirlMovieText
 	ld hl, .StandByMeMovieText
 .got_text
 	call PrintText
@@ -66,6 +81,15 @@ RedsHouse1FTVText:
 
 .StandByMeMovieText:
 	text_far _RedsHouse1FTVStandByMeMovieText
+	text_end
+	
+.GirlMovieText
+	ld hl, .WizardOfOzMovieText
+	call PrintText
+	jp TextScriptEnd
+
+.WizardOfOzMovieText:
+	text_far _RedsHouse1FTVTheWizardOfOzMovieText
 	text_end
 
 .WrongSideText:

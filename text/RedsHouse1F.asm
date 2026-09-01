@@ -35,3 +35,25 @@ _RedsHouse1FTVStandByMeMovieText::
 _RedsHouse1FTVWrongSideText::
 	text "Oops, wrong side."
 	done
+
+_RedsHouse1FMomWakeUp2Text::
+	text "MOM: Right."
+	line "All girls dream"
+	cont "of traveling."
+	cont "It said so on TV."
+
+	para "PROF.OAK, next"
+	line "door, is looking"
+	cont "for you."
+	done
+
+_RedsHouse1FTVTheWizardOfOzMovieText::
+	text "There's a movie"
+	line "on TV. A girl"
+	cont "with her hair in"
+	cont "pigtails is"
+	cont "walking up a"
+	cont "brick road."
+
+	para "I better go too."
+	done

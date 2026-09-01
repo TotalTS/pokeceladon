@@ -272,7 +272,7 @@ _ChampionsHouse2FGeodudeDollText::
 	
 _ChampionsHouse2FGameboyText::
 	text "A brand new"
-	line "GAMEBOY!"
+	line "GAME BOY!"
 	
 	para "On the back"
 	line "it says:"
