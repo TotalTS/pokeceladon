@@ -13,6 +13,7 @@ FuchsiaGym_Script:
 	bit BIT_CUR_MAP_LOADED_2, [hl]
 	res BIT_CUR_MAP_LOADED_2, [hl]
 	ret z
+	ResetEvent EVENT_BEAT_KOGA_REMATCH
 	ld hl, .CityName
 	ld de, .LeaderName
 	call LoadGymLeaderAndCityName
@@ -45,7 +46,8 @@ FuchsiaGymKogaPostBattleScript:
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
-	jr z, FuchsiaGymReceiveTM06	
+	jr z, FuchsiaGymReceiveTM06
+	SetEvent EVENT_BEAT_KOGA_REMATCH
 	ld a, TEXT_FUCHSIAGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -146,6 +148,8 @@ FuchsiaGymKogaText:
 	ldh [hJoyHeld], a
 	jr .endBattle
 .KogaRematch
+	CheckEvent EVENT_BEAT_KOGA_REMATCH
+	jr nz, .endBattleStatic
 	ld hl, .PreBattleRematchText
 	call PrintText
 	call YesNoChoice
@@ -174,6 +178,10 @@ FuchsiaGymKogaText:
 .endBattle
 	ld a, SCRIPT_FUCHSIAGYM_KOGA_POST_BATTLE
 	ld [wFuchsiaGymCurScript], a
+	jr .done
+.endBattleStatic
+	ld hl, .PostBattleRematchText
+	call PrintText
 .done
 	jp TextScriptEnd
 
@@ -195,6 +203,10 @@ FuchsiaGymKogaText:
 	
 .PreBattleRematchRefusedText:
 	text_far _FuchsiaGymRematchRefusedText
+	text_end
+
+.PostBattleRematchText:
+	text_far _FuchsiaGymRematchPostBattleText
 	text_end
 
 FuchsiaGymRematchDefeatedText:

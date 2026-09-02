@@ -12,6 +12,7 @@ PewterGym_Script:
 	ret
 
 .LoadNames:
+	ResetEvent EVENT_BEAT_BROCK_REMATCH
 	ld hl, .CityName
 	ld de, .LeaderName
 	jp LoadGymLeaderAndCityName
@@ -43,7 +44,8 @@ PewterGymBrockPostBattle:
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
-	jr z, PewterGymScriptReceiveTM34	
+	jr z, PewterGymScriptReceiveTM34
+	SetEvent EVENT_BEAT_BROCK_REMATCH
 	ld a, TEXT_PEWTERGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -118,7 +120,7 @@ PewterGymBrockText:
 	jr nz, .BrockRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
-	jr .done
+	jp .done
 .beforeBeat
 	ld hl, .PreBattleText
 	call PrintText
@@ -138,6 +140,8 @@ PewterGymBrockText:
 	ldh [hJoyHeld], a
 	jr .endBattle
 .BrockRematch
+	CheckEvent EVENT_BEAT_BROCK_REMATCH
+	jr nz, .endBattleStatic
 	ld hl, .PreBattleRematchText
 	call PrintText
 	call YesNoChoice
@@ -168,6 +172,10 @@ PewterGymBrockText:
 	ld a, SCRIPT_PEWTERGYM_BROCK_POST_BATTLE
 	ld [wPewterGymCurScript], a
 	ld [wCurMapScript], a
+	jr .done
+.endBattleStatic
+	ld hl, .PostBattleRematchText
+	call PrintText
 .done
 	jp TextScriptEnd
 
@@ -189,6 +197,10 @@ PewterGymBrockText:
 	
 .PreBattleRematchRefusedText:
 	text_far _PewterGymRematchRefusedText
+	text_end
+
+.PostBattleRematchText:
+	text_far _PewterGymRematchPostBattleText
 	text_end
 
 PewterGymRematchDefeatedText:

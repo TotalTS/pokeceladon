@@ -19,6 +19,7 @@ CinnabarGymSetMapAndTiles:
 	ret
 
 .LoadNames:
+	ResetEvent EVENT_BEAT_BLAINE_REMATCH
 	ld hl, .CityName
 	ld de, .LeaderName
 	jp LoadGymLeaderAndCityName
@@ -143,11 +144,13 @@ CinnabarGymBlainePostBattleScript:
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
-	jr z, CinnabarGymReceiveTM38	
+	jr z, CinnabarGymReceiveTM38
+	SetEvent EVENT_BEAT_BLAINE_REMATCH	
 	ld a, TEXT_CINNABARGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
 	jp CinnabarGymResetScripts
+
 CinnabarGymReceiveTM38:
 	ld a, TEXT_CINNABARGYM_BLAINE_VOLCANO_BADGE_INFO
 	ldh [hTextID], a
@@ -242,6 +245,8 @@ CinnabarGymBlaineText:
 	ld [wGymLeaderNo], a
 	jr .endBattle
 .BlaineRematch
+	CheckEvent EVENT_BEAT_BLAINE_REMATCH
+	jr nz, .endBattleStatic
 	ld hl, .PreBattleRematchText
 	call PrintText
 	call YesNoChoice
@@ -269,6 +274,10 @@ CinnabarGymBlaineText:
 	ld hl, .PreBattleRematchRefusedText
 	call PrintText
 	jp TextScriptEnd
+.endBattleStatic
+	ld hl, .PostBattleRematchText
+	call PrintText
+	jp TextScriptEnd
 .endBattle
 	jp CinnabarGymStartBattleScript
 
@@ -292,6 +301,10 @@ CinnabarGymBlaineText:
 	
 .PreBattleRematchRefusedText:
 	text_far _CinnabarGymRematchRefusedText
+	text_end
+
+.PostBattleRematchText:
+	text_far _CinnabarGymRematchPostBattleText
 	text_end
 
 CinnabarGymRematchDefeatedText:

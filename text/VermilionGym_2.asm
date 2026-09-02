@@ -145,9 +145,8 @@ _VermilionGymRematchRefusedText::
 	done
 
 _VermilionGymRematchDefeatedText::
-	text " "
-	line "Absolutely"
-	cont "shocking!"
+	text "Absolutely"
+	line "shocking!"
 	prompt
 
 _VermilionGymRematchPostBattleText::

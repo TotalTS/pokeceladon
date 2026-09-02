@@ -17,6 +17,7 @@ VermilionGym_Script:
 	ret
 
 .LoadNames:
+	ResetEvent EVENT_BEAT_LT_SURGE_REMATCH
 	ld hl, .CityName
 	ld de, .LeaderName
 	jp LoadGymLeaderAndCityName
@@ -62,7 +63,8 @@ VermilionGymLTSurgeAfterBattleScript:
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
-	jr z, VermilionGymLTSurgeReceiveTM24Script	
+	jr z, VermilionGymLTSurgeReceiveTM24Script
+	SetEvent EVENT_BEAT_LT_SURGE_REMATCH
 	ld a, TEXT_VERMILIONGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -152,6 +154,8 @@ VermilionGymLTSurgeText:
 	ldh [hJoyHeld], a
 	jr .endBattle
 .SurgeRematch
+	CheckEvent EVENT_BEAT_LT_SURGE_REMATCH
+	jr nz, .endBattleStatic
 	ld hl, .PreBattleRematchText
 	call PrintText
 	call YesNoChoice
@@ -180,6 +184,10 @@ VermilionGymLTSurgeText:
 	ld a, SCRIPT_VERMILIONGYM_LT_SURGE_AFTER_BATTLE
 	ld [wVermilionGymCurScript], a
 	ld [wCurMapScript], a
+	jr .text_script_end
+.endBattleStatic
+	ld hl, .PostBattleRematchText
+	call PrintText
 .text_script_end
 	jp TextScriptEnd
 
@@ -197,6 +205,10 @@ VermilionGymLTSurgeText:
 	
 .PreBattleRematchRefusedText:
 	text_far _VermilionGymRematchRefusedText
+	text_end
+
+.PostBattleRematchText:
+	text_far _VermilionGymRematchPostBattleText
 	text_end
 
 VermilionGymRematchDefeatedText:

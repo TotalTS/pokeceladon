@@ -12,6 +12,7 @@ CeladonGym_Script:
 	ret
 
 .LoadNames:
+	ResetEvent EVENT_BEAT_ERIKA_REMATCH
 	ld hl, .CityName
 	ld de, .LeaderName
 	jp LoadGymLeaderAndCityName
@@ -43,7 +44,8 @@ CeladonGymErikaPostBattleScript:
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
-	jr z, CeladonGymReceiveTM21	
+	jr z, CeladonGymReceiveTM21
+	SetEvent EVENT_BEAT_ERIKA_REMATCH
 	ld a, TEXT_CELADONGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -144,6 +146,8 @@ CeladonGymErikaText:
 	ld [wGymLeaderNo], a
 	jr .endBattle
 .ErikaRematch
+	CheckEvent EVENT_BEAT_ERIKA_REMATCH
+	jr nz, .endBattleStatic
 	ld hl, .PreBattleRematchText
 	call PrintText
 	call YesNoChoice
@@ -173,6 +177,10 @@ CeladonGymErikaText:
 	ld a, SCRIPT_CELADONGYM_ERIKA_POST_BATTLE
 	ld [wCeladonGymCurScript], a
 	ld [wCurMapScript], a
+	jr .done
+.endBattleStatic
+	ld hl, .PostBattleRematchText
+	call PrintText
 .done
 	jp TextScriptEnd
 
@@ -194,6 +202,10 @@ CeladonGymErikaText:
 	
 .PreBattleRematchRefusedText:
 	text_far _CeladonGymRematchRefusedText
+	text_end
+
+.PostBattleRematchText:
+	text_far _CeladonGymRematchPostBattleText
 	text_end
 
 CeladonGymRematchDefeatedText:

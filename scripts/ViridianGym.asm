@@ -1,4 +1,8 @@
 ViridianGym_Script:
+	ld hl, wCurrentMapScriptFlags
+	bit BIT_CUR_MAP_LOADED_2, [hl]
+	res BIT_CUR_MAP_LOADED_2, [hl]
+	call nz, .ResetYujirou
 	ld hl, .CityName
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
 	jr nz, .yujirouName
@@ -14,6 +18,10 @@ ViridianGym_Script:
 	ld a, [wViridianGymCurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wViridianGymCurScript], a
+	ret
+
+.ResetYujirou
+	ResetEvent EVENT_BEAT_VIRIDIAN_GYM_YUJIROU
 	ret
 
 .CityName:
@@ -182,14 +190,12 @@ ViridianGymYujirouPostBattle:
 	ld a, [wIsInBattle]
 	cp $ff
 	jp z, ViridianGymResetScripts
-	
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	
+	SetEvent EVENT_BEAT_VIRIDIAN_GYM_YUJIROU
 	ld a, TEXT_VIRIDIANGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
-	
 	jp ViridianGymResetScripts
 
 ViridianGym_TextPointers:
@@ -305,6 +311,8 @@ ViridianGymGiovanniTM27NoRoomText:
 	
 ViridianGymYujirouRematchText:
 	text_asm
+	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_YUJIROU
+	jr nz, .endBattleStatic
 	ld hl, .YujirouViridianPreBattleText
 	call PrintText
 	call YesNoChoice
@@ -341,6 +349,9 @@ ViridianGymYujirouRematchText:
 	ld hl, .PreBattleRematchRefusedText
 	call PrintText
 	jr .done
+.endBattleStatic
+	ld hl, .PostBattleRematchText
+	call PrintText
 .done
 	jp TextScriptEnd
 
@@ -354,6 +365,10 @@ ViridianGymYujirouRematchText:
 	
 .PreBattleRematchRefusedText:
 	text_far _YujirouViridianRematchRefusedText
+	text_end
+
+.PostBattleRematchText:
+	text_far _YujirouViridianPostBattleAdviceText
 	text_end
 
 YujirouViridianDefeatedText:

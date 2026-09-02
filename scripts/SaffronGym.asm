@@ -12,6 +12,7 @@ SaffronGym_Script:
 	ret
 
 .LoadNames:
+	ResetEvent EVENT_BEAT_SABRINA_REMATCH
 	ld hl, .CityName
 	ld de, .LeaderName
 	jp LoadGymLeaderAndCityName
@@ -43,7 +44,8 @@ SaffronGymSabrinaPostBattle:
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
-	jr z, SaffronGymSabrinaReceiveTM46Script	
+	jr z, SaffronGymSabrinaReceiveTM46Script
+	SetEvent EVENT_BEAT_SABRINA_REMATCH
 	ld a, TEXT_SAFFRONGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -145,6 +147,8 @@ SaffronGymSabrinaText:
 	ld [wGymLeaderNo], a
 	jr .endBattle
 .SabrinaRematch
+	CheckEvent EVENT_BEAT_SABRINA_REMATCH
+	jr nz, .endBattleStatic
 	ld hl, .PreBattleRematchText
 	call PrintText
 	call YesNoChoice
@@ -173,6 +177,10 @@ SaffronGymSabrinaText:
 .endBattle
 	ld a, SCRIPT_SAFFRONGYM_SABRINA_POST_BATTLE
 	ld [wSaffronGymCurScript], a
+	jr .done
+.endBattleStatic
+	ld hl, .PostBattleRematchText
+	call PrintText
 .done
 	jp TextScriptEnd
 
@@ -196,6 +204,10 @@ SaffronGymSabrinaText:
 	
 .PreBattleRematchRefusedText:
 	text_far _SaffronGymRematchRefusedText
+	text_end
+
+.PostBattleRematchText:
+	text_far _SaffronGymRematchPostBattleText
 	text_end
 
 SaffronGymRematchDefeatedText:
