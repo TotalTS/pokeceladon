@@ -1804,7 +1804,10 @@ _PromptToCutText::
 	done
 
 _PromptToStrengthText::
-	text "Want to use"
+	text "This requires"
+	line "STRENGTH to move!"
+
+	para "Want to use"
 	line "STRENGTH?"
 	done
 

@@ -198,16 +198,14 @@ _BoulderText2::
 	ld a, [wStatusFlags1]
 	bit 0, a ; using Strength?
 	jr nz, .alreadyActive
-	ld hl, BoulderText
-	call PrintText
 	ld a, [wObtainedBadges]
 	bit BIT_RAINBOWBADGE, a
-	jr z, .done 
+	jr z, .noStrength
 	ld d, STRENGTH
 	call HasPartyMove
 	ld a, [wWhichTrade]
 	and a 
-	jr nz, .done
+	jr nz, .noStrength
 	ld hl, PromptToStrengthText
 	call PrintText
 	call YesNoChoice
@@ -215,8 +213,7 @@ _BoulderText2::
 	and a
 	jr nz, .done
 	ld a, [wWhichPokemon]
-	push af 
-;	call ManualTextScroll
+	push af
 	pop af 
 	ld [wWhichPokemon], a 
 	call GetPartyMonName2
@@ -232,11 +229,15 @@ _BoulderText2::
 	ld a, [hl]
 	ld [wCurPartySpecies], a	
 	predef PrintStrengthText
+	jr .done
+.noStrength
+	ld hl, BoulderText
+	call PrintText
+	jp TextScriptEnd
 .done
 	ld a, $01
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	jp TextScriptEnd
-	
 .alreadyActive
 	ld hl, BouldersMayNowBeMovedText
 	call PrintText
