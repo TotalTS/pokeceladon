@@ -111,7 +111,7 @@ Route22DefaultScript:
 	dbmapcoord 29,  4
 	dbmapcoord 29,  5
 	db -1 ; end
-	
+
 Route22SnorlaxPostBattleScript:
 	ld a, [wIsInBattle]
 	cp $ff
@@ -415,7 +415,7 @@ Route22Rival2ExitScript:
 	predef HideObject
 	call PlayDefaultMusic
 	ResetEvents EVENT_2ND_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
-	ld a, SCRIPT_ROUTE22_NOOP
+	ld a, SCRIPT_ROUTE22_DEFAULT
 	jp Route22SetCurScript
 
 Route22_TextPointers:
