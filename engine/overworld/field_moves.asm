@@ -30,35 +30,32 @@ TrySurf:
 	ld a, [wObtainedBadges]
 	bit BIT_SOULBADGE, a
 	jr z, .no
-
+	; LancesRoom
+	ld a, [wCurMap]
+	cp LANCES_ROOM
+	jr z, .no
 	; cyclingRoad
 	ld a, [wStatusFlags6]
 	bit BIT_ALWAYS_ON_BIKE, a
 	jr nz, .cyclingRoad
-
+	; Seafoam B4F
 	ld a, [wCurMap]
 	cp SEAFOAM_ISLANDS_B4F
 	jr nz, .canSurfCheck
-
-	; Seafoam B4F
 	CheckBothEventsSet EVENT_SEAFOAM4_BOULDER1_DOWN_HOLE, EVENT_SEAFOAM4_BOULDER2_DOWN_HOLE
 	jr z, .canSurfCheck
-	
 	ld hl, SeafoamIslandsB4FStairsPressedACoords
 	call ArePlayerCoordsInArray
 	jr nc, .canSurfCheck
-	
 	call InitializeFieldMoveTextBox
 	ld hl, CurrentTooFastPressedAText
 	call PrintText
 	jr .yes2
-
 .cyclingRoad
 	call InitializeFieldMoveTextBox
 	ld hl, CyclingIsFunPressedAText
 	call PrintText
 	jr .yes2
-
 .canSurfCheck
 	call InitializeFieldMoveTextBox
 	ld hl, PromptToSurfText
@@ -67,7 +64,6 @@ TrySurf:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .yes2
-	
 	call GetPartyMonName2
 	ld a, SURFBOARD
 	ld [wCurItem], a
@@ -76,7 +72,6 @@ TrySurf:
 	call CloseFieldMoveTextBox
 	xor a
 	ret
-
 .yes2
 	call CloseFieldMoveTextBox
 .yes
