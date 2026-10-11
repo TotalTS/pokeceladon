@@ -1,7 +1,7 @@
 # Pokémon Celadon Version
 
 This hack is designed as an upgrade to the original Pokémon Red, Blue, and Green, aiming to enhance the classic experience and expanding it with new content. It features a personal pick of improved graphics, restored elements, expanded events, and a post-game with new areas and challenges.
-Started this project a long time ago and some ideas changed, but I'm committed to finish it now: https://web.archive.org/web/20180903101807/https://hax.iimarckus.org/topic/7257/
+Started this project a long time ago and some ideas changed, but I'm committed to finish it now: https://web.archive.org/web/20220517042240/https://hax.iimarckus.org/topic/7257/
 
 This hack is intended to be played in Super Gameboy mode to appreciate a variety of new graphics and palettes.
 
@@ -27,6 +27,7 @@ To patch the ROM, Beat Patcher is recommended. https://www.romhacking.net/utilit
 - Nurse at Silph Co. 9F still heals you after beating Team Rocket.
 - Restored PC on Celadon Hotel.
 - You can use the Phone to call Mom at Celadon Mart 1F.
+- Restored old Giovanni dialogue on Rocket Hideout B4F.
 
 ### ![MBALL](gficons/MBALL.png) Upgraded Graphics
 
